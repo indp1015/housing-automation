@@ -67,6 +67,14 @@
     <span class="stat-value">17.2</span>
   </div>
 </div>
+<!-- 5년 추이 차트 -->
+
+<div class="chart-container">
+  <h2>📈 5-Year Price Trend (2019 → 2023)</h2>
+  <div class="chart-wrapper">
+    <canvas id="trendChart"></canvas>
+  </div>
+</div>
 
 <div class="ad-slot ad-in-article"></div>
 
@@ -93,7 +101,7 @@
     <tr>
       <td>Owner Occupancy Rate</td>
       <td><strong>77.5%</strong></td>
-      <td>73.8%</td>
+      <td>73.7%</td>
       <td>73.0%</td>
     </tr>
     <tr>
@@ -126,7 +134,7 @@
 <p>
   Overton County has an owner-occupancy rate of
   <strong>77.5%</strong>, compared to
-  73.8% in Tennessee and
+  73.7% in Tennessee and
   73.0% nationally.
   
     This indicates a more homeowner-heavy market than the U.S. average.
@@ -150,13 +158,6 @@
     </tr>
     
     <tr>
-      <td>Randolph County</td>
-      <td>North Carolina</td>
-      <td>$171,600</td>
-      <td>$857</td>
-    </tr>
-    
-    <tr>
       <td>Wilson County</td>
       <td>North Carolina</td>
       <td>$171,800</td>
@@ -164,10 +165,10 @@
     </tr>
     
     <tr>
-      <td>Allamakee County</td>
-      <td>Iowa</td>
-      <td>$171,900</td>
-      <td>$717</td>
+      <td>Randolph County</td>
+      <td>North Carolina</td>
+      <td>$171,600</td>
+      <td>$857</td>
     </tr>
     
     <tr>
@@ -175,6 +176,13 @@
       <td>Iowa</td>
       <td>$171,500</td>
       <td>$798</td>
+    </tr>
+    
+    <tr>
+      <td>Allamakee County</td>
+      <td>Iowa</td>
+      <td>$171,900</td>
+      <td>$717</td>
     </tr>
     
   </tbody>
@@ -202,17 +210,17 @@
     </tr>
     
     <tr>
-      <td>Campbell County</td>
-      <td>$169,500</td>
-      <td>$715</td>
-      <td>67.3%</td>
-    </tr>
-    
-    <tr>
       <td>Warren County</td>
       <td>$173,900</td>
       <td>$775</td>
       <td>70.9%</td>
+    </tr>
+    
+    <tr>
+      <td>Campbell County</td>
+      <td>$169,500</td>
+      <td>$715</td>
+      <td>67.3%</td>
     </tr>
     
     <tr>
@@ -232,6 +240,87 @@
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
+
+<!-- 👇 여기에 차트 스크립트 삽입 👇 -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  const years = ['2019', '2020', '2021', '2022', '2023'];
+  const yearlyData = {
+    
+  };
+  
+  const homeValues = years.map(y => yearlyData[y].home_value);
+  const annualRents = years.map(y => yearlyData[y].rent ? yearlyData[y].rent * 12 : null);
+  
+  const ctx = document.getElementById('trendChart');
+  if (!ctx) return;
+  
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Median Home Value',
+          data: homeValues,
+          borderColor: '#1a3d5c',
+          backgroundColor: 'rgba(26, 61, 92, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Annual Rent (×12)',
+          data: annualRents,
+          borderColor: '#e67e22',
+          backgroundColor: 'rgba(230, 126, 34, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { font: { size: 13 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': $' + context.parsed.y.toLocaleString('en-US');
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          ticks: {
+            callback: function(value) {
+              return '$' + (value / 1000).toFixed(0) + 'k';
+            }
+          }
+        },
+        x: {
+          grid: { display: false }
+        }
+      }
+    }
+  });
+})();
+</script>
+
+<!-- 👆 여기까지 👆 -->
 
 
 </main>

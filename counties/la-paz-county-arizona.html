@@ -67,6 +67,14 @@
     <span class="stat-value">13.3</span>
   </div>
 </div>
+<!-- 5년 추이 차트 -->
+
+<div class="chart-container">
+  <h2>📈 5-Year Price Trend (2019 → 2023)</h2>
+  <div class="chart-wrapper">
+    <canvas id="trendChart"></canvas>
+  </div>
+</div>
 
 <div class="ad-slot ad-in-article"></div>
 
@@ -240,6 +248,87 @@
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
+
+<!-- 👇 여기에 차트 스크립트 삽입 👇 -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  const years = ['2019', '2020', '2021', '2022', '2023'];
+  const yearlyData = {
+    
+  };
+  
+  const homeValues = years.map(y => yearlyData[y].home_value);
+  const annualRents = years.map(y => yearlyData[y].rent ? yearlyData[y].rent * 12 : null);
+  
+  const ctx = document.getElementById('trendChart');
+  if (!ctx) return;
+  
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Median Home Value',
+          data: homeValues,
+          borderColor: '#1a3d5c',
+          backgroundColor: 'rgba(26, 61, 92, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Annual Rent (×12)',
+          data: annualRents,
+          borderColor: '#e67e22',
+          backgroundColor: 'rgba(230, 126, 34, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { font: { size: 13 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': $' + context.parsed.y.toLocaleString('en-US');
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          ticks: {
+            callback: function(value) {
+              return '$' + (value / 1000).toFixed(0) + 'k';
+            }
+          }
+        },
+        x: {
+          grid: { display: false }
+        }
+      }
+    }
+  });
+})();
+</script>
+
+<!-- 👆 여기까지 👆 -->
 
 
 </main>

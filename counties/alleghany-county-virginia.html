@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
 <title>Alleghany County Virginia Housing Market 2026: Home Values & Rent</title>
-<meta name="description" content="Housing data for Alleghany County, Virginia: median home value $122,300, median rent $774/mo. National rank #2464.">
+<meta name="description" content="Housing data for Alleghany County, Virginia: median home value $122,300, median rent $774/mo. National rank #2465.">
 <link rel="stylesheet" href="/housing-automation/static/style.css">
 <!-- Google AdSense 스크립트: 승인 후 아래 주석 해제 -->
 <!--
@@ -45,8 +45,8 @@
   In Alleghany County, Virginia, the median home value is
   <strong>$122,300</strong>, with a median monthly rent of
   <strong>$774</strong>. This places Alleghany County
-  at <strong>#2464</strong> nationally out of 3131 counties
-  by median home value, and <strong>#121</strong> within Virginia.
+  at <strong>#2465</strong> nationally out of 3131 counties
+  by median home value, and <strong>#122</strong> within Virginia.
 </p>
 
 <div class="key-stats">
@@ -65,6 +65,14 @@
   <div class="stat">
     <span class="stat-label">Price/Rent Ratio</span>
     <span class="stat-value">13.2</span>
+  </div>
+</div>
+<!-- 5년 추이 차트 -->
+
+<div class="chart-container">
+  <h2>📈 5-Year Price Trend (2019 → 2023)</h2>
+  <div class="chart-wrapper">
+    <canvas id="trendChart"></canvas>
   </div>
 </div>
 
@@ -150,17 +158,17 @@
     </tr>
     
     <tr>
-      <td>Screven County</td>
-      <td>Georgia</td>
-      <td>$122,300</td>
-      <td>$629</td>
-    </tr>
-    
-    <tr>
       <td>Sumter County</td>
       <td>Georgia</td>
       <td>$122,300</td>
       <td>$847</td>
+    </tr>
+    
+    <tr>
+      <td>Screven County</td>
+      <td>Georgia</td>
+      <td>$122,300</td>
+      <td>$629</td>
     </tr>
     
     <tr>
@@ -232,6 +240,87 @@
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
+
+<!-- 👇 여기에 차트 스크립트 삽입 👇 -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  const years = ['2019', '2020', '2021', '2022', '2023'];
+  const yearlyData = {
+    
+  };
+  
+  const homeValues = years.map(y => yearlyData[y].home_value);
+  const annualRents = years.map(y => yearlyData[y].rent ? yearlyData[y].rent * 12 : null);
+  
+  const ctx = document.getElementById('trendChart');
+  if (!ctx) return;
+  
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Median Home Value',
+          data: homeValues,
+          borderColor: '#1a3d5c',
+          backgroundColor: 'rgba(26, 61, 92, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Annual Rent (×12)',
+          data: annualRents,
+          borderColor: '#e67e22',
+          backgroundColor: 'rgba(230, 126, 34, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { font: { size: 13 } }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': $' + context.parsed.y.toLocaleString('en-US');
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          ticks: {
+            callback: function(value) {
+              return '$' + (value / 1000).toFixed(0) + 'k';
+            }
+          }
+        },
+        x: {
+          grid: { display: false }
+        }
+      }
+    }
+  });
+})();
+</script>
+
+<!-- 👆 여기까지 👆 -->
 
 
 </main>
