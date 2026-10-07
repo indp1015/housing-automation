@@ -62,6 +62,16 @@
   </div>
 </div>
 
+<!-- 5년 추이 차트 -->
+
+<div class="chart-container">
+  <h2>📈 Utah 5-Year Price Trend (2019 → 2023)</h2>
+  <div class="chart-wrapper">
+    <canvas id="stateTrendChart"></canvas>
+  </div>
+</div>
+
+
 <!-- 본문 중간 광고 슬롯 -->
 <div class="ad-slot ad-in-article">
   <!-- AdSense 광고 코드 삽입 위치 -->
@@ -483,6 +493,119 @@
   Rent), B25003 (Tenure). Data collected on 2026-10-07.
 </p>
 </article>
+<!-- 주 차트 스크립트 -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  const years = ["2019", "2020", "2021", "2022", "2023"];
+  const yearlyData = {
+    
+    "2019": {
+      "home_value": 235262,
+      "rent": 849
+    },
+    
+    "2020": {
+      "home_value": 252806,
+      "rent": 897
+    },
+    
+    "2021": {
+      "home_value": 277317,
+      "rent": 926
+    },
+    
+    "2022": {
+      "home_value": 337237,
+      "rent": 1029
+    },
+    
+    "2023": {
+      "home_value": 377586,
+      "rent": 1100
+    }
+    
+  };
+
+  const homeValues = years.map(y => yearlyData[y].home_value);
+  const annualRents = years.map(y => yearlyData[y].rent ? yearlyData[y].rent * 12 : null);
+
+  const ctx = document.getElementById('stateTrendChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Median Home Value (State Avg)',
+          data: homeValues,
+          borderColor: '#1a3d5c',
+          backgroundColor: 'rgba(26, 61, 92, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true,
+          yAxisID: 'y'
+        },
+        {
+          label: 'Annual Rent (×12, State Avg)',
+          data: annualRents,
+          borderColor: '#e67e22',
+          backgroundColor: 'rgba(230, 126, 34, 0.15)',
+          borderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.3,
+          fill: true,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top', labels: { font: { size: 13 } } },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': $' + context.parsed.y.toLocaleString('en-US');
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          type: 'linear', display: true, position: 'left',
+          title: { display: true, text: 'Home Value ($)', color: '#1a3d5c', font: { size: 12, weight: 'bold' } },
+          beginAtZero: false,
+          ticks: {
+            color: '#1a3d5c',
+            callback: function(value) { return '$' + (value / 1000).toFixed(0) + 'k'; }
+          }
+        },
+        y1: {
+          type: 'linear', display: true, position: 'right',
+          title: { display: true, text: 'Annual Rent ($)', color: '#e67e22', font: { size: 12, weight: 'bold' } },
+          beginAtZero: true,
+          grid: { drawOnChartArea: false },
+          ticks: {
+            color: '#e67e22',
+            callback: function(value) { return '$' + (value / 1000).toFixed(0) + 'k'; }
+          }
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 </main>
