@@ -289,7 +289,8 @@
           pointRadius: 5,
           pointHoverRadius: 7,
           tension: 0.3,
-          fill: true
+          fill: true,
+          yAxisID: 'y'                       // ← 추가
         },
         {
           label: 'Annual Rent (×12)',
@@ -300,13 +301,18 @@
           pointRadius: 5,
           pointHoverRadius: 7,
           tension: 0.3,
-          fill: true
+          fill: true,
+          yAxisID: 'y1'                      // ← 추가
         }
       ]
     },
-    options: {
+        options: {
       responsive: true,
       maintainAspectRatio: false,
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
       plugins: {
         legend: {
           position: 'top',
@@ -322,8 +328,39 @@
       },
       scales: {
         y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          title: {
+            display: true,
+            text: 'Home Value ($)',
+            color: '#1a3d5c',
+            font: { size: 12, weight: 'bold' }
+          },
           beginAtZero: false,
           ticks: {
+            color: '#1a3d5c',
+            callback: function(value) {
+              return '$' + (value / 1000).toFixed(0) + 'k';
+            }
+          }
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          title: {
+            display: true,
+            text: 'Annual Rent ($)',
+            color: '#e67e22',
+            font: { size: 12, weight: 'bold' }
+          },
+          beginAtZero: true,
+          grid: {
+            drawOnChartArea: false
+          },
+          ticks: {
+            color: '#e67e22',
             callback: function(value) {
               return '$' + (value / 1000).toFixed(0) + 'k';
             }
