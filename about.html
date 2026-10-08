@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
-<title>About Us — US Housing Data</title>
-<meta name="description" content="Learn about US Housing Data, our data sources, methodology, and mission.">
+<title>About US Housing Data - U.S. Housing Market Data</title>
+<meta name="description" content="About US Housing Data: independent U.S. housing market data sourced from the Census Bureau (ACS) and FHFA. Learn about our methodology and mission.">
 <link rel="stylesheet" href="/housing-automation/static/style.css">
 <!-- Google AdSense 스크립트: 승인 후 아래 주석 해제 -->
 <!--
@@ -35,69 +35,94 @@
 
 <article class="static-page">
 <h1>About US Housing Data</h1>
-<p class="page-meta">Last updated: 2026-10-08</p>
 
-<p>
-  <strong>US Housing Data</strong> is an independent data resource that makes U.S.
-  housing market information accessible to everyone — home buyers, renters, investors,
-  journalists, researchers, and policymakers.
+<p class="lead">
+  US Housing Data is an independent, data-driven resource that provides
+  free housing market information for every U.S. state and county. Our goal
+  is simple: make authoritative housing data accessible, understandable,
+  and useful for homebuyers, renters, researchers, and curious citizens.
 </p>
 
-<h2>Our Mission</h2>
+<h2>What We Cover</h2>
 <p>
-  The U.S. housing market is complex and fragmented. Reliable information about home
-  values, rent prices, and homeownership rates is often locked behind paywalls or
-  buried in government databases. We collect, organize, and present this data in a
-  clear, comparable format so anyone can make informed decisions.
+  We publish county-level and state-level housing metrics for all 50 U.S.
+  states and the District of Columbia, covering more than 3,100 counties:
 </p>
+<ul>
+  <li><strong>Median Home Value</strong> — the midpoint of all owner-occupied housing values</li>
+  <li><strong>Median Gross Rent</strong> — the midpoint of monthly rental costs, including utilities</li>
+  <li><strong>Owner Occupancy Rate</strong> — the percentage of occupied units that are owner-occupied</li>
+  <li><strong>Price-to-Rent Ratio</strong> — a key indicator of whether buying or renting is more favorable</li>
+  <li><strong>Historical Price Trends</strong> — multi-year price and rent trajectories</li>
+  <li><strong>FHFA House Price Index</strong> — recent market momentum data</li>
+</ul>
 
 <h2>Data Sources</h2>
 <p>
-  All data on this site is sourced from the
-  <a href="https://www.census.gov/programs-surveys/acs" target="_blank" rel="noopener">U.S. Census Bureau's American Community Survey (ACS)</a>,
-  specifically the <strong>2023 5-Year Estimates</strong>, the most recent comprehensive
-  dataset available at the county level.
-</p>
-<p>
-  We use the following ACS variables:
+  All data on US Housing Data comes from official, publicly available
+  government sources. We do not generate or estimate housing values ourselves.
 </p>
 <ul>
-  <li><strong>B25077</strong> — Median Home Value</li>
-  <li><strong>B25064</strong> — Median Gross Rent</li>
-  <li><strong>B25001</strong> — Total Housing Units</li>
-  <li><strong>B25003</strong> — Tenure (Owner vs. Renter Occupied)</li>
+  <li>
+    <strong>U.S. Census Bureau — American Community Survey (ACS) 5-Year Estimates</strong><br>
+    Provides median home values, median gross rent, and tenure data.
+    The ACS is the largest household survey in the United States and is
+    updated annually. Learn more at
+    <a href="https://www.census.gov/programs-surveys/acs" target="_blank" rel="noopener">census.gov</a>.
+  </li>
+  <li>
+    <strong>Federal Housing Finance Agency (FHFA) — House Price Index (HPI)</strong><br>
+    Provides a quarterly index of single-family home price changes based on
+    millions of mortgage transactions. Learn more at
+    <a href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index.aspx" target="_blank" rel="noopener">fhfa.gov</a>.
+  </li>
 </ul>
-<p>
-  The <strong>Price-to-Rent Ratio</strong> on our pages is calculated as
-  <em>Median Home Value ÷ (Median Monthly Rent × 12)</em>, a common rule-of-thumb
-  metric for comparing the cost of buying vs. renting.
-</p>
 
-<h2>Methodology</h2>
+<h2>Our Methodology</h2>
 <p>
-  Our data pipeline fetches raw ACS data directly from the U.S. Census Bureau API,
-  normalizes it, and calculates derived metrics. Pages are regenerated automatically
-  on a daily schedule to reflect any data corrections or updates.
+  We aggregate raw data from these sources and compute derived metrics
+  (such as price-to-rent ratio and year-over-year changes) using transparent,
+  reproducible formulas. We clearly label the vintage (year) of all data and
+  never claim to provide real-time prices.
 </p>
 <p>
-  We do not modify the underlying values. We exclude counties where the Census Bureau
-  reports missing or zero values for the key variables.
+  Where FHFA county-level data is unavailable (typically due to limited
+  mortgage transaction volume), we indicate this explicitly rather than
+  substituting estimates.
 </p>
 
 <h2>Editorial Standards</h2>
 <p>
-  US Housing Data is an automated data project. Content is generated from public
-  government data using open-source software. No sponsored content, affiliate
-  relationships, or paid placements influence the data we publish.
+  Some pages include an "Editor's Insight" section that summarizes key
+  patterns in the underlying data. These insights are generated using AI
+  language models based on the actual data points, and are reviewed for
+  accuracy. They are analytical commentary, not investment advice.
+</p>
+
+<h2>What We Are Not</h2>
+<p>
+  US Housing Data is <strong>not</strong> a real estate brokerage, lender,
+  or financial advisor. We do not sell, buy, or list properties. Nothing on
+  this Site constitutes financial, legal, or investment advice. Always
+  consult a qualified professional before making major financial decisions.
+</p>
+
+<h2>Independence</h2>
+<p>
+  US Housing Data is independently operated and is not affiliated with,
+  endorsed by, or sponsored by the U.S. Census Bureau, the FHFA, or any
+  government agency. This product uses FHFA Data but is neither endorsed
+  nor certified by FHFA.
 </p>
 
 <h2>Contact</h2>
 <p>
-  Questions, corrections, or feedback? Please visit our
-  <a href="/housing-automation/contact.html">Contact page</a>.
+  Questions, corrections, or partnership inquiries?
+  Email us at <a href="mailto:indp1015@gmail.com">indp1015@gmail.com</a>.
+  We welcome feedback on data accuracy and site usability.
 </p>
-</article>
 
+</article>
 
 </main>
 

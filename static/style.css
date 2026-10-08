@@ -209,3 +209,19 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   color: #888;
   font-size: 0.85rem;
 }
+/* ── Static Pages (About / Privacy / Contact) ── */
+.static-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.last-updated {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.static-page .muted {
+  color: #888;
+  font-size: 0.9rem;
+  font-style: italic;
+}
