@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -70,7 +71,7 @@
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
-  <h2>📈 5-Year Price Trend (2019 → 2023)</h2>
+  <h2>📈 Price Trend (2017 → 2024)</h2>
   <div class="chart-wrapper">
     <canvas id="trendChart"></canvas>
   </div>
@@ -271,12 +272,21 @@
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
-  const years = ["2019", "2020", "2021", "2022", "2023"];
+  const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
   const yearlyData = {
+    
+    "2017": {
+      "home_value": 114700,
+      "rent": 741
+    },
+    
+    "2018": {
+      "home_value": 121300,
+      "rent": 730
+    },
     
     "2019": {
       "home_value": 133100,
@@ -301,10 +311,14 @@
     "2023": {
       "home_value": 163300,
       "rent": 858
+    },
+    
+    "2024": {
+      "home_value": 171800,
+      "rent": 899
     }
     
   };
-  
   const homeValues = years.map(y => yearlyData[y].home_value);
   const annualRents = years.map(y => yearlyData[y].rent ? yearlyData[y].rent * 12 : null);
   
