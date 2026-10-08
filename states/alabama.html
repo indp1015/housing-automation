@@ -71,6 +71,31 @@
   </div>
 </div>
 
+<!-- 🆕 FHFA Recent Momentum 섹션 -->
+
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — Purchase-Only, Quarterly (2000 = 100)
+     · Latest: 2026-Q2
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 최근 1년 동향:</strong>
+    Alabama의 주택가격은 전년동기대비
+    <strong class="up">
+      +2.8%
+    </strong>
+    상승했습니다.
+    (2026-Q2 기준)
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaChart"></canvas>
+  </div>
+</div>
 
 <!-- 본문 중간 광고 슬롯 -->
 <div class="ad-slot ad-in-article">
@@ -889,6 +914,56 @@
 </script>
 
 
+<script>
+(function() {
+  const series = {"2023-Q3": 348.37, "2023-Q4": 343.35, "2024-Q1": 346.6, "2024-Q2": 358.01, "2024-Q3": 359.67, "2024-Q4": 360.04, "2025-Q1": 362.5, "2025-Q2": 370.46, "2025-Q3": 367.01, "2025-Q4": 369.03, "2026-Q1": 370.64, "2026-Q2": 380.81};
+  const quarters = Object.keys(series).sort();
+  const values = quarters.map(q => series[q]);
+
+  const ctx = document.getElementById('fhfaChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: quarters,
+      datasets: [{
+        label: 'FHFA HPI (Purchase-Only)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: (c) => 'HPI: ' + c.parsed.y.toFixed(1)
+          }
+        }
+      },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60', font: { weight: 'bold' } },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
+
+
 </main>
 
 <footer class="site-footer">
@@ -901,6 +976,11 @@
       <a href="/housing-automation/contact.html">Contact</a>
     </nav>
   </div>
+  <p class="disclaimer">
+  Housing data: U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates.<br>
+  Price index data: <strong>This product uses FHFA Data but is neither endorsed nor certified by FHFA.</strong>
+</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </body>
 </html>

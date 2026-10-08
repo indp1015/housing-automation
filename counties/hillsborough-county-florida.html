@@ -76,6 +76,34 @@
   </div>
 </div>
 
+
+<!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
+
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 최근 1년 동향:</strong>
+    Hillsborough County의 주택가격은 전년대비
+    <strong class="up">
+      +1.7%
+    </strong>
+    상승했습니다.
+    (2025 기준, 출처: FHFA)
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
+</div>
+
+
 <div class="ad-slot ad-in-article"></div>
 
 
@@ -385,6 +413,51 @@
 
 <!-- 👆 여기까지 👆 -->
 
+<!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  const series = {"2016": 176.46, "2017": 193.57, "2018": 210.51, "2019": 224.65, "2020": 237.22, "2021": 276.16, "2022": 341.07, "2023": 372.26, "2024": 381.06, "2025": 387.39};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
+
+
 
 </main>
 
@@ -398,6 +471,11 @@
       <a href="/housing-automation/contact.html">Contact</a>
     </nav>
   </div>
+  <p class="disclaimer">
+  Housing data: U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates.<br>
+  Price index data: <strong>This product uses FHFA Data but is neither endorsed nor certified by FHFA.</strong>
+</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </body>
 </html>
