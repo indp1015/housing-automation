@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Cherokee County exhibits a balanced market profile, characterized by a price-to-rent ratio of 18.4, closely mirroring the national average of 18.0. This parity suggests neither buyers nor renters hold a distinct structural advantage. Over five years, home values expanded at a 7.7% CAGR, significantly outpacing the 4.9% rent growth. This divergence indicates that equity accumulation is accelerating faster than rental cost inflation, favoring long-term ownership over leasing. Affordability metrics remain stable relative to national benchmarks, with a price-to-income ratio of 3.27 slightly exceeding the 3.09 average. Similarly, the 17.7% rent burden aligns closely with the 17.2% national standard. A critical insight emerges from the county’s 10.8% premium over the Alabama state average in home values, despite household incomes lagging the national mean by 23.1%. This specific dynamic highlights that local pricing power is driven by regional demand rather than broad economic strength, making the market more expensive than the state norm despite lower income levels.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-07 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-07 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -272,15 +272,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -437,7 +437,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 134.74, "2017": 136.68, "2018": 143.99, "2019": 152.08, "2020": 158.57, "2021": 177.59, "2022": 214.09, "2023": 221.3, "2024": 253.94, "2025": 259.14};

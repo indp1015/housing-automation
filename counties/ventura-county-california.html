@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Ventura County exhibits a strong renter’s market dynamic, evidenced by a price-to-rent ratio of 28.5, significantly exceeding the national average of 18.1. This disparity indicates that purchasing offers superior long-term value compared to renting, despite high entry costs. Over the past five years, home values appreciated at a 6.9% CAGR, slightly outpacing the 6.1% CAGR in rents. This modest divergence suggests that while both asset classes are inflating, equity accumulation through ownership is marginally more effective than wealth preservation through fixed rental agreements. Affordability remains a critical constraint, with a price-to-income ratio of 7.16, more than double the national benchmark of 3.10. Furthermore, the rent burden consumes 25.1% of median household income, substantially higher than the 17.2% national average. A critical insight for potential residents is that the 64.2% owner occupancy rate, combined with income levels 61.8% above the national mean, signals a market where high-income professionals dominate. Consequently, competition for entry-level housing is likely intense, as the median home value of $768,400 requires substantial capital, effectively pricing out lower-income segments and concentrating demand among affluent buyers who can absorb the elevated cost of entry.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-07 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-07 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -272,15 +272,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -437,7 +437,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 197.75, "2017": 208.31, "2018": 217.43, "2019": 223.83, "2020": 228.91, "2021": 254.9, "2022": 294.03, "2023": 305.98, "2024": 323.52, "2025": 329.85};

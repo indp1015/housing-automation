@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Las Animas County presents a balanced market structure, evidenced by a 70.1% owner-occupancy rate and a price-to-rent ratio of 20.4, which sits only slightly above the national average of 18.0. Over the past five years, home values surged at a 9.2% CAGR, significantly outpacing the 5.3% CAGR in gross rents. This divergence indicates that equity accumulation is accelerating faster than rental cost inflation, favoring long-term ownership over leasing. However, affordability remains strained relative to national benchmarks. The price-to-income ratio stands at 4.26, substantially higher than the 3.09 national average, while the rent burden reaches 20.8% of income compared to the 17.2% norm. These metrics suggest that despite lower absolute prices, purchasing power is constrained by incomes 23.6% below the national mean. A critical insight for prospective residents is that the county’s home values are 46.1% below the state average, creating a significant discount relative to Colorado’s broader market. This gap implies that while local affordability is challenged by low incomes, the asset value offers a cheaper entry point into the state’s real estate market compared to urban centers.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-08 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-08 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -271,15 +271,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -436,7 +436,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 125.63, "2017": 126.5, "2018": 139.51, "2019": 149.68, "2020": 154.39, "2021": 172.69, "2022": 199.29, "2023": 229.49, "2024": 234.65, "2025": 218.96};

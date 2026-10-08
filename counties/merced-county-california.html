@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Merced County exhibits a distinct renter’s advantage, evidenced by a 23.9 price-to-rent ratio that exceeds the national average of 18.0. This metric suggests that renting is comparatively more economical than purchasing, despite the 53.3% owner-occupancy rate. Over the past five years, home values surged at a 9.9% CAGR to reach $368,400, significantly outpacing the 5.9% CAGR observed in median gross rents. This divergence indicates that asset appreciation has accelerated faster than rental costs, potentially widening the wealth gap between owners and tenants. Affordability remains constrained; the price-to-income ratio stands at 5.66, nearly double the national benchmark of 3.09. Furthermore, the 23.7% rent burden surpasses the national average of 17.2%, placing substantial financial pressure on households with a median income of $65,044. A critical insight for potential residents is that while home values are 35.5% below the California state average, the local income level is only 1.4% below the national mean. This specific combination creates a unique affordability profile where regional price suppression does not fully offset the high cost of living relative to local earnings, demanding careful budgeting for both renters and prospective buyers.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-07 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-07 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -271,15 +271,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -436,7 +436,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 158.19, "2017": 173.09, "2018": 188.18, "2019": 197.7, "2020": 204.41, "2021": 239.54, "2022": 278.36, "2023": 277.94, "2024": 295.45, "2025": 297.79};

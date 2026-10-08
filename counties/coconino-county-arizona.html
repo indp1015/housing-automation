@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Coconino County exhibits a distinct seller’s market, evidenced by a price-to-rent ratio of 24.5, significantly exceeding the national average of 18.0. This disparity suggests that purchasing offers superior long-term value relative to renting, despite current entry barriers. The five-year trend reveals a 10.1% annual compounded growth rate in home values, substantially outpacing the 4.5% increase in rents. This divergence indicates that equity accumulation through ownership has accelerated faster than rental cost escalation, reinforcing the structural advantage of homeownership in this region. However, affordability remains constrained, with a price-to-income ratio of 5.92, nearly double the national benchmark of 3.09. Additionally, the rent burden stands at 24.2% of median income, well above the 17.2% national average. A critical insight for potential residents is that the 58.8% owner-occupancy rate, combined with high price-to-income metrics, signals limited inventory liquidity. Consequently, both buyers and renters face compressed negotiating power, as the market’s high valuation relative to local income levels creates persistent demand pressure that suppresses concessions for either party.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-07 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-07 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -272,15 +272,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -437,7 +437,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 175.75, "2017": 188.03, "2018": 200.6, "2019": 210.91, "2020": 221.11, "2021": 260.83, "2022": 318.42, "2023": 335.21, "2024": 349.97, "2025": 358.01};

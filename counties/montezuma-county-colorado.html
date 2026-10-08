@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Montezuma County exhibits a buyer’s market dynamic, evidenced by a 74.8% owner-occupancy rate and a 26.4 price-to-rent ratio, which exceeds the national average of 18.0. This suggests renting is relatively expensive compared to purchasing. Over the past five years, home values surged at an 8.4% CAGR, significantly outpacing the 4.6% rent growth, indicating that capital appreciation has been the primary driver of housing cost increases. Despite this rapid appreciation, the 4.89 price-to-income ratio remains below the national average of 3.09? No, it is higher, signaling reduced affordability relative to local earnings. Specifically, the 4.89 ratio contrasts sharply with the 3.09 national benchmark, while the 18.6% rent burden slightly exceeds the 17.2% national norm. A critical insight for potential residents is that while home prices are 22.6% below the state average, the 45.0% premium over national averages, combined with incomes only 4.5% below the national mean, creates a unique affordability gap. Buyers face higher entry costs relative to income than the typical American household, making local wage levels a more significant constraint than absolute price points when evaluating long-term financial viability in this rural Colorado market.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-08 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-08 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -272,15 +272,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -437,7 +437,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 151.45, "2017": 152.98, "2018": 164.62, "2019": 174.93, "2020": 183.1, "2021": 207.49, "2022": 248.46, "2023": 270.59, "2024": 280.68, "2025": 282.48};

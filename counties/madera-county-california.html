@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Madera County exhibits a strong renter’s market dynamic, evidenced by a price-to-rent ratio of 23.4, significantly exceeding the national average of 18.1. This disparity indicates that purchasing is less economically efficient than renting for many households compared to broader national standards. The five-year trend reveals aggressive appreciation in home values, with a 10.0% CAGR outpacing the 6.5% CAGR in rents. This divergence suggests that capital gains in real estate have accelerated faster than the cost of occupancy, potentially widening the wealth gap between owners and tenants. Affordability metrics remain strained; the price-to-income ratio stands at 4.87, far above the national benchmark of 3.10, while the rent burden consumes 20.8% of median income against a 17.2% national average. Although home values are 35.6% below the California state average, they are 71.7% above the national mean. A critical insight for potential residents is that despite lower absolute prices than coastal California, the rapid 10% annual appreciation rate significantly erodes affordability gains for first-time buyers, making entry increasingly difficult relative to income growth.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-07 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-07 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -271,15 +271,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -436,7 +436,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 170.78, "2017": 183.04, "2018": 197.9, "2019": 208.33, "2020": 217.93, "2021": 251.48, "2022": 296.61, "2023": 303.01, "2024": 322.16, "2025": 326.06};

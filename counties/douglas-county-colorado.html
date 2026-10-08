@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Douglas County exhibits a pronounced owner-occupancy bias, with a 77.8% rate and a price-to-rent ratio of 26.8, significantly exceeding the national average of 18.0. This disparity indicates that purchasing remains more economically advantageous than renting for qualified buyers, despite high entry costs. Over five years, median home values surged at a 9.5% CAGR, outpacing the 5.0% rent inflation, suggesting sustained capital appreciation driven by specific local demand factors rather than general market trends. Affordability presents a mixed profile; while the rent burden of 17.3% aligns closely with the national 17.2% benchmark, the price-to-income ratio of 4.62 is substantially higher than the national 3.09. This divergence highlights that housing costs are manageable for renters but challenging for buyers. A critical insight is that the county’s median household income of $145,737, which is 120.9% above the national average, partially offsets the 4.62 price-to-income ratio. Consequently, the market is not uniformly unaffordable but is segmented, where high-income professionals can absorb the premium, while lower-income households face significant barriers to homeownership despite reasonable rental costs.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-08 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-08 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -272,15 +272,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -437,7 +437,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 161.89, "2017": 176.07, "2018": 189.06, "2019": 195.95, "2020": 199.37, "2021": 226.04, "2022": 267.85, "2023": 271.97, "2024": 273.91, "2025": 278.69};

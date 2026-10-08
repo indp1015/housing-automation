@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -111,9 +111,9 @@
 <div class="ai-insight">
   <h2>📝 Editor's Insight</h2>
   <p>Alamosa County presents a balanced market leaning toward renters, evidenced by a price-to-rent ratio of 20.2, which exceeds the national average of 18.0. This metric indicates that purchasing costs are high relative to rental expenses, yet the 56.4% owner-occupancy rate suggests sufficient inventory for buyers. The five-year trend reveals significant appreciation, with home values growing at an 8.6% CAGR compared to a 6.6% CAGR for rents. This divergence signals that equity accumulation is outpacing rental cost inflation, favoring long-term owners over short-term tenants. Affordability remains a critical constraint; the price-to-income ratio stands at 4.25, substantially above the national benchmark of 3.09. Additionally, the rent burden consumes 21.1% of median income, surpassing the national average of 17.2%. A non-obvious insight is the county’s extreme income disparity relative to national averages. With median household income 22.0% below the national mean, the modest 2.9% premium in home values masks severe affordability challenges. Residents must prioritize income stability, as the market’s low absolute prices do not offset the high cost of living relative to local earnings, making entry-level financing particularly difficult despite seemingly low sticker prices.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-08 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-08 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -271,15 +271,15 @@
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -436,7 +436,6 @@
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 143.31, "2017": 148.99, "2018": 161.12, "2019": 169.23, "2020": 171.63, "2021": 194.96, "2022": 231.63, "2023": 266.28, "2024": 260.18, "2025": 286.55};

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
@@ -113,9 +113,9 @@
   <p>Del Norte County exhibits a balanced market structure, evidenced by a 71.2% owner-occupancy rate and a price-to-rent ratio of 22.5, which exceeds the national average of 18.1. This disparity suggests that purchasing offers better long-term value than renting, despite current entry costs. Over the past five years, home values expanded at a 9.9% CAGR, significantly outpacing the 7.7% CAGR in median gross rent. This divergence indicates that capital appreciation in real estate has accelerated faster than rental cost inflation, shifting relative economic advantage toward prospective buyers.
 
 Affordability remains strained for both segments. The price-to-income ratio stands at 4.79, substantially higher than the national benchmark of 3.10, while the rent burden consumes 21.2% of median household income compared to the 17.2% national average. Although the median home value of $319,600 is 44.0% below the California state average, it remains 49.2% above the national mean. A critical insight is that despite high relative affordability metrics, the low population of 27,293 limits liquidity. Consequently, potential residents face a thin buyer pool, meaning exit strategies may require extended holding periods to find suitable counterparties, a risk not captured by static valuation ratios.</p>
-  <p class="insight-meta">
-    Analyzed on 2026-10-07 using U.S. Census ACS 2023 data and AI reasoning.
-  </p>
+<p class="insight-meta">
+  Analyzed on 2026-10-07 using U.S. Census ACS 2024 data and AI reasoning.
+</p>
 </div>
 
 
@@ -273,15 +273,15 @@ Affordability remains strained for both segments. The price-to-income ratio stan
 
 <p class="methodology">
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
-  2023 5-Year Estimates. Variables: B25077 (Median Home Value), B25064 (Median Gross
-  Rent), B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
+  2024 5-Year Estimates (2017–2024).
+  Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
+  B25003 (Tenure). Data collected on 2026-10-08. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
 
 <!-- 👇 여기에 차트 스크립트 삽입 👇 -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"];
@@ -438,7 +438,6 @@ Affordability remains strained for both segments. The price-to-income ratio stan
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function() {
   const series = {"2016": 178.54, "2017": 191.36, "2018": 206.11, "2019": 217.36, "2020": 233.26, "2021": 270.91, "2022": 318.79, "2023": 321.77, "2024": 346.1, "2025": 349.06};
