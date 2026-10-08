@@ -205,3 +205,7 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   margin-top: 1.5rem;
   line-height: 1.5;
 }
+.insight-source {
+  color: #888;
+  font-size: 0.85rem;
+}
