@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
 <title>About US Housing Data - U.S. Housing Market Data</title>
-<meta name="description" content="About US Housing Data: independent U.S. housing market data sourced from the Census Bureau (ACS) and FHFA. Learn about our methodology and mission.">
+<meta name="description" content="About US Housing Data: independent U.S. housing market data sourced from the Census Bureau (ACS), FHFA, BLS, IRS, and FRED. Learn about our methodology and mission.">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="/housing-automation/static/style.css">
 <!-- Google AdSense 스크립트: 승인 후 아래 주석 해제 -->
@@ -57,19 +57,67 @@
   <li><strong>Price-to-Rent Ratio</strong> — a key indicator of whether buying or renting is more favorable</li>
   <li><strong>Historical Price Trends</strong> — multi-year price and rent trajectories</li>
   <li><strong>FHFA House Price Index</strong> — recent market momentum data</li>
+  <li><strong>Local Employment &amp; Wages</strong> — county-level jobs and average weekly wages</li>
+  <li><strong>Housing Supply</strong> — new residential building permits authorized</li>
+  <li><strong>Migration Patterns</strong> — county-to-county population and income flows</li>
+  <li><strong>Mortgage Rates</strong> — 30-year and 15-year fixed mortgage rate trends</li>
 </ul>
 
 <h2>Data Sources</h2>
 <p>
   All data on US Housing Data comes from official, publicly available
   government sources. We do not generate or estimate housing values ourselves.
+  Each dataset is used under its original license terms.
 </p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Provider</th>
+      <th>License</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>American Community Survey (ACS) 5-Year Estimates</td>
+      <td>U.S. Census Bureau</td>
+      <td>Public Domain</td>
+    </tr>
+    <tr>
+      <td>House Price Index (HPI)</td>
+      <td>Federal Housing Finance Agency (FHFA)</td>
+      <td>Public Domain</td>
+    </tr>
+    <tr>
+      <td>Quarterly Census of Employment and Wages (QCEW)</td>
+      <td>U.S. Bureau of Labor Statistics (BLS)</td>
+      <td>Public Domain</td>
+    </tr>
+    <tr>
+      <td>Building Permits Survey</td>
+      <td>U.S. Census Bureau</td>
+      <td>Public Domain (CC0 1.0)</td>
+    </tr>
+    <tr>
+      <td>County-to-County Migration Data</td>
+      <td>IRS Statistics of Income</td>
+      <td>Public Domain</td>
+    </tr>
+    <tr>
+      <td>Mortgage Rate Series (MORTGAGE30US, MORTGAGE15US)</td>
+      <td>FRED, Federal Reserve Bank of St. Louis</td>
+      <td>Public Domain (U.S. Government Work)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Detailed Source Links</h3>
 <ul>
   <li>
     <strong>U.S. Census Bureau — American Community Survey (ACS) 5-Year Estimates</strong><br>
     Provides median home values, median gross rent, and tenure data.
-    The ACS is the largest household survey in the United States and is
-    updated annually. Learn more at
+    Learn more at
     <a href="https://www.census.gov/programs-surveys/acs" target="_blank" rel="noopener">census.gov</a>.
   </li>
   <li>
@@ -78,19 +126,43 @@
     millions of mortgage transactions. Learn more at
     <a href="https://www.fhfa.gov/DataTools/Downloads/Pages/House-Price-Index.aspx" target="_blank" rel="noopener">fhfa.gov</a>.
   </li>
+  <li>
+    <strong>U.S. Bureau of Labor Statistics — Quarterly Census of Employment and Wages (QCEW)</strong><br>
+    Provides county-level employment, wage, and establishment data.
+    Learn more at
+    <a href="https://www.bls.gov/cew/" target="_blank" rel="noopener">bls.gov/cew</a>.
+  </li>
+  <li>
+    <strong>U.S. Census Bureau — Building Permits Survey</strong><br>
+    Provides monthly and annual counts of new residential construction authorized.
+    Learn more at
+    <a href="https://www.census.gov/construction/bps/" target="_blank" rel="noopener">census.gov/construction/bps</a>.
+  </li>
+  <li>
+    <strong>IRS Statistics of Income — County-to-County Migration Data</strong><br>
+    Provides annual migration flows derived from individual tax returns.
+    Learn more at
+    <a href="https://www.irs.gov/statistics/soi-tax-stats-migration-data" target="_blank" rel="noopener">irs.gov</a>.
+  </li>
+  <li>
+    <strong>FRED, Federal Reserve Bank of St. Louis</strong><br>
+    Provides economic time series including national mortgage rate benchmarks.
+    Learn more at
+    <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">fred.stlouisfed.org</a>.
+  </li>
 </ul>
 
 <h2>Our Methodology</h2>
 <p>
   We aggregate raw data from these sources and compute derived metrics
   (such as price-to-rent ratio and year-over-year changes) using transparent,
-  reproducible formulas. We clearly label the vintage (year) of all data and
-  never claim to provide real-time prices.
+  reproducible formulas. We clearly label the vintage (year or quarter) of
+  all data and never claim to provide real-time prices.
 </p>
 <p>
-  Where FHFA county-level data is unavailable (typically due to limited
-  mortgage transaction volume), we indicate this explicitly rather than
-  substituting estimates.
+  Where county-level data is unavailable (for example, FHFA HPI is limited
+  to areas with sufficient mortgage transaction volume), we indicate this
+  explicitly rather than substituting estimates.
 </p>
 
 <h2>Editorial Standards</h2>
@@ -98,7 +170,8 @@
   Some pages include an "Editor's Insight" section that summarizes key
   patterns in the underlying metrics. These insights are derived directly from
   rigorous analysis of actual data points to highlight meaningful market trends.
-  They are analytical commentary for informational purposes, not financial or investment advice.
+  They are analytical commentary for informational purposes, not financial or
+  investment advice.
 </p>
 
 <h2>What We Are Not</h2>
@@ -111,10 +184,12 @@
 
 <h2>Independence</h2>
 <p>
-  US Housing Data is an independently operated platform. We analyze publicly available
-  open data provided by government agencies, including the U.S. Census Bureau and the FHFA,
-  to deliver accessible housing market insights. US Housing Data operates as an autonomous entity
-  and is not affiliated with or sponsored by these agencies.
+  US Housing Data is an independently operated platform. We analyze publicly
+  available open data provided by government agencies, including the U.S.
+  Census Bureau, the Bureau of Labor Statistics, the IRS, the Federal Housing
+  Finance Agency, and the Federal Reserve Bank of St. Louis, to deliver
+  accessible housing market insights. US Housing Data operates as an autonomous
+  entity and is not affiliated with or sponsored by these agencies.
 </p>
 
 <h2>Contact</h2>
@@ -122,6 +197,20 @@
   Questions, corrections, or partnership inquiries?
   Email us at <a href="mailto:indp1015@gmail.com">indp1015@gmail.com</a>.
   We welcome feedback on data accuracy and site usability.
+</p>
+
+<h3>Attribution Notice</h3>
+<p class="attribution-notice">
+  Employment and wage data: Source: U.S. Bureau of Labor Statistics,
+  Quarterly Census of Employment and Wages (QCEW). Public domain.<br>
+  Building permits data: Source: U.S. Census Bureau, Building Permits Survey.
+  Public domain (CC0 1.0).<br>
+  Migration data: Source: IRS Statistics of Income, County-to-County Migration
+  Data. Public domain (U.S. Government Work).<br>
+  Interest rate data: Source: FRED, Federal Reserve Bank of St. Louis.
+  Public domain (U.S. Government Work).<br>
+  Housing price index: This product uses FHFA Data but is neither endorsed
+  nor certified by FHFA.
 </p>
 
 </article>
