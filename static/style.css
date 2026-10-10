@@ -331,3 +331,88 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   border-left: 4px solid #1a3d5c;
   margin-top: 1.5rem;
 }
+/* ── Economic Snapshot ── */
+.econ-snapshot {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f9fbfd;
+  border-radius: 8px;
+  border: 1px solid #e0e8f0;
+}
+.econ-snapshot h2 {
+  margin-top: 0;
+  border-bottom: none;
+  color: #1a3d5c;
+}
+.econ-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.econ-card {
+  background: white;
+  padding: 18px;
+  border-radius: 6px;
+  border-left: 4px solid #27ae60;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.econ-icon {
+  font-size: 1.8em;
+  margin-bottom: 8px;
+}
+.econ-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 0.95em;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.econ-value {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #1a3d5c;
+  margin-bottom: 4px;
+}
+.econ-value.positive { color: #27ae60; }
+.econ-value.negative { color: #c0392b; }
+.econ-label {
+  font-size: 0.85em;
+  color: #888;
+  margin-bottom: 12px;
+}
+.econ-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85em;
+  color: #555;
+}
+.econ-details li {
+  padding: 3px 0;
+}
+.econ-source {
+  color: #aaa;
+  font-size: 0.8em;
+  margin-top: 8px;
+  font-style: italic;
+}
+.rate-banner {
+  background: linear-gradient(135deg, #1a3d5c 0%, #2c5f8a 100%);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 1rem;
+  text-align: center;
+}
+.rate-banner .rate-value {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #f39c12;
+  margin: 0 6px;
+}
+.rate-banner .rate-date {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
