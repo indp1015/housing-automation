@@ -416,3 +416,31 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   font-size: 0.85em;
   opacity: 0.8;
 }
+/* ── Sub-Market Activity (ZIP section) ── */
+.zip-section {
+  background: #fff9f0;
+  border: 1px solid #ffe4c4;
+}
+.zip-section h2 {
+  color: #1a3d5c;
+}
+.zip-section .data-table {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+.zip-section .data-table th {
+  background: #fdf3e7;
+  color: #1a3d5c;
+}
+.zip-section .data-table td {
+  padding: 8px 12px;
+}
+.zip-section .up { color: #c0392b; font-weight: 600; }
+.zip-section .down { color: #27ae60; font-weight: 600; }
+.zip-section .econ-source {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.75em;
+  color: #aaa;
+  font-style: italic;
+}
