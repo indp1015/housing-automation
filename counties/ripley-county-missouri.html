@@ -69,6 +69,116 @@
     <span class="stat-value">15.2</span>
   </div>
 </div>
+<!-- 🆕 Mortgage Calculator Widget -->
+
+<div class="mortgage-calc">
+  <h3>💵 Monthly Payment Calculator</h3>
+  <p class="calc-subtitle">
+    Based on Ripley County's median home value of
+    $119,600 and the current 30-year fixed
+    mortgage rate of <strong>7.40%</strong>
+    (2026-10-08).
+  </p>
+
+  <div class="calc-controls">
+    <div class="calc-control">
+      <label for="calc-down">Down Payment</label>
+      <select id="calc-down">
+        <option value="0.05">5%</option>
+        <option value="0.10">10%</option>
+        <option value="0.20" selected>20%</option>
+        <option value="0.30">30%</option>
+      </select>
+    </div>
+    <div class="calc-control">
+      <label for="calc-term">Loan Term</label>
+      <select id="calc-term">
+        <option value="15">15 years</option>
+        <option value="30" selected>30 years</option>
+      </select>
+    </div>
+    <div class="calc-control">
+      <label for="calc-rate">Interest Rate (%)</label>
+      <input type="number" id="calc-rate" value="7.40" step="0.1" min="0.1" max="20">
+    </div>
+  </div>
+
+  <div class="calc-result">
+    <div class="calc-main">
+      <span class="calc-label">Estimated Monthly Payment</span>
+      <span class="calc-value" id="calc-monthly">$—</span>
+      <span class="calc-detail" id="calc-breakdown">—</span>
+    </div>
+    <div class="calc-sensitivity">
+      <span class="calc-sensitivity-label">If rate changes:</span>
+      <span id="calc-sensitivity-rows"></span>
+    </div>
+  </div>
+
+  <p class="calc-note">
+    Principal and interest only. Excludes property taxes, homeowners insurance,
+    HOA fees, and mortgage insurance. Estimates are for illustration only.
+  </p>
+</div>
+
+<script>
+(function() {
+  const HOME_PRICE = 119600;
+  const BASE_RATE = 7.4000;
+
+  const downSelect = document.getElementById('calc-down');
+  const termSelect = document.getElementById('calc-term');
+  const rateInput = document.getElementById('calc-rate');
+  const monthlyEl = document.getElementById('calc-monthly');
+  const breakdownEl = document.getElementById('calc-breakdown');
+  const sensitivityEl = document.getElementById('calc-sensitivity-rows');
+
+  function calcPayment(principal, annualRate, years) {
+    const r = annualRate / 100 / 12;
+    const n = years * 12;
+    if (r === 0) return principal / n;
+    return principal * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  }
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function update() {
+    const downPct = parseFloat(downSelect.value);
+    const term = parseInt(termSelect.value);
+    const rate = parseFloat(rateInput.value) || BASE_RATE;
+
+    const principal = HOME_PRICE * (1 - downPct);
+    const monthly = calcPayment(principal, rate, term);
+
+    monthlyEl.textContent = fmt(monthly) + '/mo';
+    breakdownEl.textContent = fmt(principal) + ' loan · ' + term + ' yrs @ ' + rate.toFixed(2) + '%';
+
+    // Sensitivity: rate ±1% and ±2%
+    const deltas = [-2, -1, 1, 2];
+    const rows = deltas.map(d => {
+      const altRate = rate + d;
+      if (altRate <= 0) return '';
+      const altMonthly = calcPayment(principal, altRate, term);
+      const diff = altMonthly - monthly;
+      const sign = diff >= 0 ? '+' : '';
+      const color = diff > 0 ? '#c0392b' : '#27ae60';
+      return '<span style="color:' + color + '">' + altRate.toFixed(1) + '% → ' +
+             fmt(altMonthly) + ' (' + sign + fmt(diff) + ')</span>';
+    }).filter(x => x).join(' · ');
+
+    sensitivityEl.innerHTML = rows;
+  }
+
+  downSelect.addEventListener('change', update);
+  termSelect.addEventListener('change', update);
+  rateInput.addEventListener('input', update);
+
+  update();
+})();
+</script>
+
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
