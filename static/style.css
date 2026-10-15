@@ -523,8 +523,9 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
 .score-number { font-size: 42px; font-weight: 800; color: #1a3d5c; }
 .score-denom  { font-size: 18px; color: #7f8c8d; }
 .score-tier-label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 6px; }
-.score-breakdown { display: flex; gap: 16px; font-size: 14px; color: #34495e; }
-.score-methodology { width: 100%; margin-top: 10px; font-size: 12px; color: #666; }
+.score-breakdown { display: flex; gap: 20px; font-size: 14px; color: #34495e; }
+.score-breakdown span { white-space: nowrap; }
+.score-methodology { width: 100%; margin-top: 14px; padding-top: 10px; border-top: 1px solid #e0e8f0;font-size: 12px; color: #666;}
 .score-methodology summary { cursor: pointer; color: #1a3d5c; font-weight: 600; }
 /* ── Market Score 랭킹용 tier 태그 ── */
 .tier-tag {
@@ -542,3 +543,83 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
 .tier-tag.tier-balanced   { background: #fdf3d4; color: #b8860b; }
 .tier-tag.tier-challenging{ background: #fce5d4; color: #c05621; }
 .tier-tag.tier-stressed   { background: #f8d7da; color: #b02a37; }
+/* ═══════════════════════════════════════════
+   TOP MARKET SCORES (homepage)
+   ═══════════════════════════════════════════ */
+.top-scores-section {
+  margin: 40px 0;
+}
+.section-subtitle {
+  color: #666;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+}
+.section-subtitle a {
+  color: #1a3d5c;
+  font-weight: 600;
+  text-decoration: none;
+}
+.section-subtitle a:hover {
+  text-decoration: underline;
+}
+.top-scores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+.top-score-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: white;
+  border: 1px solid #e0e8f0;
+  border-left: 4px solid #27ae60;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.top-score-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 61, 92, 0.1);
+}
+.top-score-rank {
+  font-size: 1.4em;
+  font-weight: 800;
+  color: #1a3d5c;
+  min-width: 40px;
+  text-align: center;
+}
+.top-score-info {
+  flex: 1;
+  min-width: 0;
+}
+.top-score-county {
+  font-weight: 600;
+  color: #1a3d5c;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.top-score-breakdown {
+  font-size: 0.78em;
+  color: #888;
+  letter-spacing: 1.5px;
+}
+.top-score-value {
+  text-align: right;
+  min-width: 55px;
+}
+.top-score-num {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #27ae60;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+@media (max-width: 500px) {
+  .top-scores-grid { grid-template-columns: 1fr; }
+}
