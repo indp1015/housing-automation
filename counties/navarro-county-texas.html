@@ -69,81 +69,16 @@
     <span class="stat-value">13.4</span>
   </div>
 </div>
-<!-- 🆕 Quick Payment Estimate (sister site CTA) -->
 
-<div class="quick-payment">
-  <div class="quick-payment-header">
-    <h3>💵 At a Glance: Monthly Payment</h3>
-    <span class="quick-payment-rate">30-yr fixed: 7.40%</span>
-  </div>
-  <p class="quick-payment-subtitle">
-    Principal &amp; interest on Navarro County's median home value of
-    <strong>$172,600</strong>:
-  </p>
-
-  <div class="quick-payment-grid">
-    <div class="quick-payment-card">
-      <span class="qp-label">5% down</span>
-      <span class="qp-value" data-down="0.05">$—</span>
-      <span class="qp-detail" data-loan="0.05">—</span>
-    </div>
-    <div class="quick-payment-card">
-      <span class="qp-label">10% down</span>
-      <span class="qp-value" data-down="0.10">$—</span>
-      <span class="qp-detail" data-loan="0.10">—</span>
-    </div>
-    <div class="quick-payment-card featured">
-      <span class="qp-label">20% down</span>
-      <span class="qp-value" data-down="0.20">$—</span>
-      <span class="qp-detail" data-loan="0.20">—</span>
-    </div>
-  </div>
-
-  <div class="quick-payment-cta">
-    <div class="qp-cta-text">
-      <strong>Need the full picture?</strong>
-      Include property taxes, homeowners insurance, HOA fees, and compare
-      FHA · VA · USDA · Conventional loan options.
-    </div>
-    <a href="https://mortgage.dataindp.com/counties/navarro-county-texas.html"
-       class="qp-cta-btn">
-      Full Mortgage Calculator →
-    </a>
-  </div>
-
-  <p class="quick-payment-note">
-    Principal &amp; interest only, assuming a 30-year fixed loan at the current
-    national average rate. Estimates for illustration only.
-  </p>
-</div>
-
-<script>
-(function() {
-  const HOME_PRICE = 172600;
-  const RATE = 7.4000;
-  const YEARS = 30;
-
-  function monthlyPayment(principal, annualRate, years) {
-    const r = annualRate / 100 / 12;
-    const n = years * 12;
-    if (r === 0) return principal / n;
-    return principal * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
-  }
-
-  function fmt(n) {
-    return '$' + Math.round(n).toLocaleString('en-US');
-  }
-
-  [0.05, 0.10, 0.20].forEach(down => {
-    const principal = HOME_PRICE * (1 - down);
-    const monthly = monthlyPayment(principal, RATE, YEARS);
-    const valEl = document.querySelector('[data-down="' + down.toFixed(2) + '"]');
-    const detailEl = document.querySelector('[data-loan="' + down.toFixed(2) + '"]');
-    if (valEl) valEl.textContent = fmt(monthly) + '/mo';
-    if (detailEl) detailEl.textContent = fmt(principal) + ' loan';
-  });
-})();
-</script>
+<p class="payment-teaser">
+  💰 <strong>Estimated monthly payment:</strong>
+  from <strong>$956/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.40%)</span>
+  &nbsp;·&nbsp;
+  <a href="https://mortgage.dataindp.com/counties/navarro-county-texas.html">
+    See loan limits, FHA · VA · USDA options for Navarro County →
+  </a>
+</p>
 
 
 <div class="market-score-badge tier-stressed">
