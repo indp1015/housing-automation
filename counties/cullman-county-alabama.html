@@ -69,6 +69,33 @@
     <span class="stat-value">18.3</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">48.5</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 41.9</span>
+      <span title="Stability">🏠 61.6</span>
+      <span title="Momentum">📈 41.5</span>
+      <span title="Vitality">⚡ 50.8</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -400,15 +427,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Cullman County, Alabama, functions as a balanced market leaning slightly toward buyers, characterized by strong historical appreciation tempered by recent stabilization. The price-to-income ratio of 3.18 aligns closely with the national average of 3.20, while the rent burden of 17.4% mirrors the national benchmark of 17.2%, indicating that both purchasing and renting remain relatively accessible compared to broader U.S. standards. The price-to-rent ratio of 18.3 is marginally below the national average of 18.7, suggesting that ownership costs are not disproportionately high relative to rental expenses. This equilibrium is supported by a median home value of $199,100 and a median household income of $62,656, creating a stable foundation for housing demand.
 
 The multi-year trend reveals a period of accelerated growth that has recently moderated. Home values increased from $121,900 in 2017 to $199,100 in 2024, representing a cumulative gain of approximately 63.3%. The peak annual appreciation of 15.5% in 2022 has since decelerated to 10.3% in 2024. However, the most recent FHFA HPI data indicates a slight year-over-year decline of 0.26% for 2025, underperforming the state’s 2.79% growth by 3.05 percentage points. This divergence suggests that while long-term structural appreciation remains intact, short-term momentum has stalled relative to the broader Alabama market. Notably, home values are rising faster than rents, which could compress rental yields and incentivize conversion to ownership or new construction.
 
 Regional context highlights Cullman County’s premium position within Alabama, where home values exceed the state average by 24.7%, while remaining 12.6% below the national mean. This disparity is driven by robust net migration of 1,708 filers between 2021 and 2022, with incoming residents averaging an income of $72,783. Local economic fundamentals support this demand, with total employment at 26,390 jobs and an average weekly wage of $1,043. Housing supply remains constrained, with only 196 new units authorized in 2025, all single-family, and zero multi-family permits. This limited new supply, combined with a national 30-year fixed mortgage rate of 7.40%, creates a challenging environment for new entrants. Potential buyers should note that while affordability metrics are favorable compared to national averages, the recent price stabilization and high interest rates may limit immediate leverage, whereas renters face stable costs with minimal rent growth pressure.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -585,7 +613,7 @@ Regional context highlights Cullman County’s premium position within Alabama, 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

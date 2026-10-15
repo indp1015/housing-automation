@@ -69,6 +69,33 @@
     <span class="stat-value">22.5</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-challenging">
+  <div class="score-main">
+    <span class="score-number">52.2</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Challenging</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 29.5</span>
+      <span title="Stability">🏠 69.6</span>
+      <span title="Momentum">📈 48.8</span>
+      <span title="Vitality">⚡ 68.5</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -213,8 +240,8 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>The user wants a 280-320 word analysis of White County, Georgia's housing market based on provided data. I need to cover 8 specific points in 2-3 paragraphs, professional tone, third person, data-driven, no predictions.
 
 Let me organize the key data points:
@@ -240,8 +267,9 @@ Let me organize the key data points:
 Now I need to classify market: Price-to-income 3.95 > 3.20 national, price-to-rent 22.5 > 18.7 national, owner occupancy high at 78.8%, but FHFA shows slowing appreciation (+1.24%). This suggests a seller's market but cooling. Actually, buyer's vs seller's market typically based on inventory/months supply, not directly given. But high price-to-income and price-to-rent suggest less affordable for buyers. Renter's market would be low rent burden, but rent burden is near national. Price-to-rent high suggests buying less favorable vs renting. So maybe "buyer's market" is not right. Let's think: High price-to-rent (22.5 vs 18.7) means buying is expensive relative to renting → renter's market? Actually high price-to-rent favors renting. But rent burden is only slightly above national. Owner occupancy high suggests strong ownership demand. FHFA shows deceleration. I'd classify as "moderately seller-favorable but cooling" or "balanced with affordability constraints." The prompt asks: Buyer's, renter's, or balanced market? Justify with specific metrics.
 
 Price-to-rent 22.5 > 18.7 national → renting relatively more attractive → renter's market? But rent burden 17.5% vs 17.2% national, similar. High owner occupancy 78.8%</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -417,7 +445,7 @@ Price-to-rent 22.5 > 18.7 national → renting relatively more attractive → re
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

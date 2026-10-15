@@ -69,6 +69,33 @@
     <span class="stat-value">13.3</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">35.5</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 68.5</span>
+      <span title="Stability">🏠 11.6</span>
+      <span title="Momentum">📈 28.1</span>
+      <span title="Vitality">⚡ 25.1</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -133,15 +160,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Telfair County, Georgia, operates as a distinctively affordable market, characterized by a price-to-income ratio of 2.22, significantly below the national average of 3.20. The median home value of $113,300 sits 50.2% below the national mean and 42.8% below the Georgia state average, establishing a clear buyer’s advantage in terms of entry cost. This affordability is reinforced by a rent burden of 16.8%, which is marginally lower than the national benchmark of 17.2%. However, the market structure leans toward a balanced dynamic rather than a pure buyer’s market, as evidenced by the 64.9% owner-occupancy rate and a price-to-rent ratio of 13.3. This ratio, well below the national average of 18.7, indicates that purchasing remains a mathematically favorable alternative to renting for long-term residents, yet the low absolute price points limit significant equity accumulation compared to higher-cost regions.
 
 The multi-year trend reveals a dramatic acceleration in housing values, with median prices surging from $55,600 in 2017 to $113,300 in 2024. This period included a peak year-over-year increase of 30.2% in 2022, followed by a 20.2% rise in 2023, before moderating to 4.7% in 2024. This rapid appreciation contrasts sharply with the relatively stable median gross rent of $712, creating a notable divergence where asset values are rising faster than rental costs. The local economic foundation remains modest, supported by 1,322 jobs and an average weekly wage of $845, which translates to an annualized income well below the national average. Despite this, net migration of +237 filers between 2021 and 2022 suggests sustained demographic interest, with inflow incomes averaging $44,111.
 
 For potential buyers, the primary consideration is the recent momentum in price appreciation relative to stagnant local wage growth. The 7.40% national mortgage rate further impacts borrowing costs, making the low absolute price of $113,300 a mitigating factor for monthly payments. The data indicates that while the market is currently stabilizing after a period of exponential growth, the underlying affordability metrics remain robust. Renters face a low burden, but the widening gap between rising home values and flat rents may further incentivize the transition to homeownership among those with stable income. The combination of low price-to-income ratios and positive net migration suggests a market that is accessible but experiencing structural shifts in demand, driven by external factors rather than local industrial expansion.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -318,7 +346,7 @@ For potential buyers, the primary consideration is the recent momentum in price 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

@@ -69,6 +69,33 @@
     <span class="stat-value">18.3</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">47.4</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 22.5</span>
+      <span title="Stability">🏠 34.6</span>
+      <span title="Momentum">📈 68.5</span>
+      <span title="Vitality">⚡ 74.4</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -381,15 +408,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Cochise County, Arizona, functions as a balanced market with a slight tilt toward buyers, characterized by a price-to-rent ratio of 18.3, which sits marginally below the national average of 18.7. This metric suggests that purchasing equity offers a competitive alternative to long-term renting, particularly given the 71.0% owner-occupancy rate. The market’s affordability profile remains accessible relative to national standards, with a price-to-income ratio of 3.65, slightly above the national mean of 3.20, and a rent burden of 20.0% compared to the national average of 17.2%. These figures indicate that while housing costs are manageable, they are not exceptionally cheap, reflecting a moderate cost of living that aligns with the county’s median household income of $59,742.
 
 The multi-year trend reveals a significant acceleration in home values, which rose from $144,400 in 2017 to $218,300 in 2024, representing a cumulative increase of approximately 51%. This growth peaked at 14.7% year-over-year in 2022 before moderating to 5.3% in 2024, signaling a cooling phase after a period of rapid appreciation. Recent momentum, as indicated by the FHFA House Price Index, shows a 3.13% year-over-year increase, outperforming the Arizona state average of 0.52% by 2.61 percentage points. This divergence highlights that Cochise County is experiencing stronger price appreciation than the broader state, likely driven by sustained demand rather than broad economic expansion. A notable pattern is the divergence between price and rent growth, where home values have risen faster than rents, shifting the market dynamics toward ownership.
 
 Regional context places Cochise County below both national and state averages in terms of home value, sitting 17.8% below the state average and 4.1% below the national average. This relative affordability is supported by a local economy with 24,238 jobs and an average weekly wage of $1,049. Housing supply remains constrained, with only 463 new units authorized in 2025, predominantly single-family homes. Migration data shows a net inflow of 4,260 filers, with incoming residents earning an average income of $60,379, slightly lower than outgoing residents. With national mortgage rates at 7.40%, the high interest burden may limit further price escalation, providing a natural ceiling on affordability. For potential buyers, the current environment offers entry points below state averages, while renters face a 20% income burden that is slightly higher than the national norm. The combination of strong price momentum and limited new supply suggests that the market remains tight, favoring those with immediate purchasing power.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -566,7 +594,7 @@ Regional context places Cochise County below both national and state averages in
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

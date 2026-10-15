@@ -69,6 +69,33 @@
     <span class="stat-value">47.4</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">24.7</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 2.3</span>
+      <span title="Stability">🏠 8.6</span>
+      <span title="Momentum">📈 24.4</span>
+      <span title="Vitality">⚡ 78.9</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -215,15 +242,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Pitkin County, Colorado, operates as a distinctively expensive buyer’s market, characterized by extreme asset appreciation relative to local income levels. The median home value of $1,139,100 stands at 400.3% above the national average and 166.4% above the Colorado state average, while the median household income of $102,645 is only 51.0% higher than the national norm. This disparity results in a price-to-income ratio of 11.10, nearly four times the national benchmark of 3.20, indicating that home ownership is financially inaccessible for the majority of local residents. Conversely, the rental sector shows a price-to-rent ratio of 47.4 compared to the national average of 18.7, suggesting that while purchasing is prohibitively expensive, the rent burden of 23.4% of income, though higher than the national 17.2%, remains a more viable entry point for lower-income households seeking stability in the region.
 
 The market trajectory reveals a period of aggressive inflation followed by recent stabilization. Home values surged from $593,600 in 2017 to $1,139,100 in 2024, driven by peak year-over-year growth of 24.9% in 2022. However, recent momentum has shifted; the FHFA House Price Index indicates a 4.75% year-over-year decline in 2025, significantly underperforming the state’s -0.61% change. This divergence suggests a correction phase where asset prices are adjusting to high interest rates, currently at 7.40% for 30-year fixed mortgages. Despite this price cooling, the fundamental supply constraints remain severe. With only 36 new single-family units authorized in 2025 and zero multi-family permits, the housing stock is insufficient to absorb the 848 net positive migration recorded between 2021 and 2022. Inflowing households, with an average income of $560,492, significantly out-earn outflowing residents, injecting high purchasing power into a market with limited inventory.
 
 The local economic context further complicates affordability. Total employment of 15,055 jobs supports an average weekly wage of $1,569, which is insufficient to offset the high cost of living without substantial external income sources. The owner occupancy rate of 62.8% reflects a population that is largely locked into existing equity but faces limited mobility options due to the high barrier to entry for new purchases. The notable pattern of rising home values outpacing rent growth in recent years indicates that the primary market is driven by capital investment and high-net-worth migration rather than local residential demand. For potential buyers, the current price correction may offer a marginal improvement in affordability, yet the structural lack of new supply and the high mortgage rate environment ensure that entry costs remain exceptionally high. Renters may find slightly more leverage in negotiations if the price correction continues to pressure the broader real estate sector, but the extreme price-to-rent ratio suggests that rental costs will remain elevated relative to national norms.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -400,7 +428,7 @@ The local economic context further complicates affordability. Total employment o
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

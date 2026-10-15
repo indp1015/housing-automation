@@ -69,6 +69,33 @@
     <span class="stat-value">17.5</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">31.3</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 8.9</span>
+      <span title="Stability">🏠 38.2</span>
+      <span title="Momentum">📈 37.0</span>
+      <span title="Vitality">⚡ 49.3</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -404,11 +431,12 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Gwinnett County exhibits a seller's market characterized by persistent inventory constraints and elevated valuation metrics. The price-to-income ratio of 4.33 significantly exceeds the national average of 3.20, while the rent burden of 24.7% surpasses the 17.2% national benchmark, indicating acute affordability pressure for both owners and renters. Despite a price-to-rent ratio of 17.5 sitting slightly below the 18.7 national average—suggesting relative rental value</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -585,7 +613,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

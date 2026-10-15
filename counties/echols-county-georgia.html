@@ -69,6 +69,33 @@
     <span class="stat-value">10.2</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">40.1</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 54.8</span>
+      <span title="Stability">🏠 37.0</span>
+      <span title="Momentum">📈 22.3</span>
+      <span title="Vitality">⚡ 44.2</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -195,15 +222,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Echols County, Georgia, functions as a distinctively affordable buyer’s market, characterized by a median home value of $124,100, which sits 45.5% below the national average. The price-to-income ratio of 2.09 is significantly lower than the national benchmark of 3.20, indicating that local housing costs are well-aligned with the median household income of $59,489. This affordability is further underscored by a price-to-rent ratio of 10.2, compared to the national average of 18.7, suggesting that purchasing is a more financially efficient long-term strategy than renting. While the rent burden stands at 20.5% of income, slightly exceeding the national average of 17.2%, the overall cost of entry for homeownership remains exceptionally low relative to peer regions.
 
 The market has experienced volatile appreciation, with home values surging from $57,000 in 2017 to $124,100 in 2024. This trajectory was punctuated by an anomalous 47.7% year-over-year increase in 2022, followed by a mild 2.0% correction in 2023 and a 10.2% rebound in 2024. This pattern reveals a market catching up to broader economic trends after a period of stagnation. The divergence between rapid price growth and relatively stable rent levels highlights a shift in local dynamics, where asset values are rising faster than rental costs. This trend is partially supported by modest net migration of 66 filers in 2021-2022, though inflow and outflow averages remained nearly identical, suggesting limited demographic pressure on housing demand.
 
 Structural constraints limit supply elasticity, with only four single-family units authorized in 2025 and no multi-family construction. The local economy supports this limited demand base, featuring just 407 total jobs and an average weekly wage of $1,117. With a 75.9% owner-occupancy rate, the market is heavily skewed toward established homeownership rather than transient rental activity. The current 7.40% national mortgage rate introduces financing friction that may temper further price acceleration, despite the strong historical momentum. For prospective buyers, the combination of low absolute prices and high owner-occupancy rates suggests a stable, low-churn environment, whereas renters face a higher relative cost burden compared to national norms. The data indicates a market where affordability remains the primary driver, insulated from the higher price pressures seen in metropolitan areas, yet subject to the volatility of post-pandemic valuation adjustments.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -380,7 +408,7 @@ Structural constraints limit supply elasticity, with only four single-family uni
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

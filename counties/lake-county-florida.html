@@ -69,6 +69,33 @@
     <span class="stat-value">16.7</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">48.2</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 8.0</span>
+      <span title="Stability">🏠 76.3</span>
+      <span title="Momentum">📈 39.3</span>
+      <span title="Vitality">⚡ 84.6</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -402,15 +429,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Lake County, Florida, operates as a balanced market leaning toward affordability for renters, characterized by a price-to-rent ratio of 16.7, which sits below the national average of 18.7. This metric suggests that purchasing property is relatively more expensive compared to renting than in the typical U.S. county, yet the 77.6% owner-occupancy rate indicates a strong preference for homeownership. The market is not strictly a buyer’s or renter’s market but rather a stable environment where both segments find viable entry points, supported by a median household income of $73,161 that exceeds the national average by 7.6%.
 
 The multi-year trend reveals a period of significant appreciation, with home values rising from $155,100 in 2017 to $318,400 in 2024. This growth peaked at 17.7% in 2022 before moderating to 10.6% in 2024, indicating a cooling but still robust expansion. Recent FHFA data for 2025 shows a year-over-year increase of 2.25%, outperforming the Florida state average of 0.91% by 1.34 percentage points. This divergence highlights that Lake County is maintaining stronger price momentum than the broader state, likely driven by sustained demand. However, affordability concerns persist, as the price-to-income ratio stands at 4.35, significantly higher than the national benchmark of 3.20. Additionally, the rent burden consumes 26.0% of median income, well above the national average of 17.2%, placing considerable financial pressure on tenants.
 
 Regional context further explains these dynamics. Lake County home values are 12.0% above the Florida average and 39.8% above the national average, reflecting its premium status within the state. The local economy supports this valuation through 105,896 total jobs and an average weekly wage of $1,033. Housing supply remains robust, with 5,342 new units authorized in 2025, including 3,999 single-family homes, which helps mitigate supply shocks. Net migration of +14,228 filers between 2021 and 2022, with incoming households earning slightly higher incomes ($75,549) than outgoing ones ($74,692), suggests an influx of higher-earning residents that supports price stability. With mortgage rates hovering at 7.40%, the high price-to-income ratio makes entry challenging, yet the moderate recent price growth and strong employment base provide a foundation for sustained market resilience.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -587,7 +615,7 @@ Regional context further explains these dynamics. Lake County home values are 12
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

@@ -69,6 +69,33 @@
     <span class="stat-value">13.0</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">41.2</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 51.1</span>
+      <span title="Stability">🏠 29.0</span>
+      <span title="Momentum">📈 56.6</span>
+      <span title="Vitality">⚡ 22.6</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -236,15 +263,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Clarke County, Alabama, functions as a distinct buyer’s market, characterized by a price-to-income ratio of 2.47, significantly below the national average of 3.20. The median home value of $121,700 stands 46.6% below the national mean and 23.8% below the state average, underscoring deep affordability relative to broader markets. However, this affordability is tempered by a rent burden of 19.1%, which exceeds the national average of 17.2%, suggesting that while purchasing is financially accessible, renting imposes a heavier financial strain on households with a median income of $49,249. The price-to-rent ratio of 13.0, well below the national 18.7, further validates the economic advantage of homeownership over rental in this jurisdiction.
 
 Recent data reveals a decelerating market momentum. After peaking at +11.6% year-over-year growth in 2019, home values contracted by 3.7% in 2024. This downward trend is corroborated by the FHFA HPI, which indicates a 1.83% year-over-year decline in 2025, causing the county to underperform the state by 4.62 percentage points. A notable divergence exists between these declining home prices and rising rents, a pattern driven by constrained housing supply. With only 10 new single-family units authorized in 2025 and zero multi-family permits, the lack of new inventory likely supports rental demand even as the broader economic environment cools. The local economy, comprising 5,838 jobs and an average weekly wage of $1,015, provides limited upward pressure on housing values, while net migration of +230 filers suggests modest population growth that has not yet translated into significant price appreciation.
 
 The current 7.40% national mortgage rate further impacts purchasing power, making the low entry price point of $121,700 critical for affordability calculations. Prospective buyers benefit from a market where home values are adjusting downward, offering an opportunity to acquire assets at levels well below state and national norms. Conversely, renters face a market where limited new supply and rising costs create a less favorable environment compared to the purchase side. The combination of low price-to-income multiples and negative price momentum positions Clarke County as an affordable entry point, though the disparity between softening home values and persistent rental pressure indicates a bifurcated market dynamic. Economic indicators, including stable but modest wage growth and minimal new construction, suggest that value appreciation will remain subdued, prioritizing immediate affordability over long-term capital gain potential for stakeholders entering this rural Alabama market.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -421,7 +449,7 @@ The current 7.40% national mortgage rate further impacts purchasing power, makin
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

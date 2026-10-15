@@ -69,6 +69,33 @@
     <span class="stat-value">20.0</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">38.6</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 25.3</span>
+      <span title="Stability">🏠 18.8</span>
+      <span title="Momentum">📈 67.6</span>
+      <span title="Vitality">⚡ 47.1</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -404,15 +431,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Tuscaloosa County operates as a moderately affordable market that leans toward buyer-favorable conditions, characterized by a price-to-income ratio of 3.76 and a price-to-rent ratio of 20.0. These metrics exceed the national averages of 3.20 and 18.7, respectively, indicating that while housing costs are elevated relative to local incomes, the premium is not extreme. The median home value of $248,700 stands 55.8% above the Alabama state average, yet only 9.2% above the national mean. This divergence suggests the county benefits from specific local economic drivers rather than broad statewide trends. With a median household income of $66,231, which is 2.6% below the national average, the affordability gap is driven primarily by higher asset values rather than lower earnings power.
 
 Recent market dynamics reveal a significant acceleration in home prices following a period of steady growth. The 2022 year-over-year surge of 19.0% marked a peak, which has since moderated to 6.4% in 2024. Current FHFA data indicates a 3.28% year-over-year increase, outpacing the state’s 2.79% growth by 0.49 percentage points. This momentum is supported by strong in-migration, with 3,366 net new filers arriving between 2021 and 2022. These incoming residents report an average income of $77,088, significantly higher than the outflow average of $77,889, suggesting an influx of higher-earning households that sustains demand. Meanwhile, the construction sector authorized 603 new units in 2025, comprising 488 single-family and 115 multi-family homes, providing a moderate supply buffer against demand pressures.
 
 The primary challenge for residents is the rising cost of entry relative to local wages. The average weekly wage of $1,127 translates to an annual income that struggles against the 7.40% national mortgage rate, increasing monthly debt service costs. Although the rent burden sits at 18.8%, slightly above the national 17.2%, the faster appreciation of home values compared to rents signals a shifting market dynamic. Buyers face a competitive landscape where asset values are rising faster than rental alternatives, while renters encounter modest but persistent cost increases. The combination of robust employment, totaling 75,037 jobs, and sustained migration inflows creates a resilient demand base. However, the current supply pipeline of 603 units may not fully offset the strong demand from higher-income migrants, maintaining upward pressure on median home values despite the recent moderation in growth rates.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -588,7 +616,7 @@ The primary challenge for residents is the rising cost of entry relative to loca
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

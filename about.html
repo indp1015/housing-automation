@@ -61,7 +61,66 @@
   <li><strong>Migration Patterns</strong> — county-to-county population and income flows</li>
   <li><strong>Mortgage Rates</strong> — 30-year and 15-year fixed mortgage rate trends</li>
 </ul>
+<h2>Market Score Methodology</h2>
+<p>
+  Each U.S. county is assigned an editorial <strong>Market Score</strong> (0–100)
+  computed from four normalized axes. Scores are relative percentile ranks across
+  all U.S. counties, refreshed quarterly as new data becomes available.
+</p>
 
+<table class="data-table">
+  <thead>
+    <tr><th>Axis</th><th>Weight</th><th>Inputs</th><th>Interpretation</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Affordability</strong></td>
+      <td>30%</td>
+      <td>Price-to-Income Ratio, Rent Burden</td>
+      <td>Higher = more affordable relative to local incomes</td>
+    </tr>
+    <tr>
+      <td><strong>Stability</strong></td>
+      <td>25%</td>
+      <td>Owner Occupancy Rate, Price Volatility</td>
+      <td>Higher = less volatile, more owner-occupied</td>
+    </tr>
+    <tr>
+      <td><strong>Momentum</strong></td>
+      <td>25%</td>
+      <td>5-Year CAGR, FHFA YoY Change</td>
+      <td>Higher = steady, sustainable price growth</td>
+    </tr>
+    <tr>
+      <td><strong>Vitality</strong></td>
+      <td>20%</td>
+      <td>New Housing Permits, Net Migration, Wages</td>
+      <td>Higher = active local economy and demand</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Scores are computed using <strong>percentile-rank normalization</strong> rather than
+  z-scores, making them robust to outliers. Each axis is scaled 0–100 where 50 represents
+  the national median. The composite score is the weighted average of the four axes.
+</p>
+
+<p>
+  <strong>Tier thresholds:</strong>
+  <span class="tier-tag tier-excellent">Excellent</span> 80+ ·
+  <span class="tier-tag tier-strong">Strong</span> 70–79 ·
+  <span class="tier-tag tier-balanced">Balanced</span> 60–69 ·
+  <span class="tier-tag tier-challenging">Challenging</span> 50–59 ·
+  <span class="tier-tag tier-stressed">Stressed</span> below 50.
+</p>
+
+<div class="attribution-notice">
+  <strong>Disclaimer:</strong> The Market Score is an editorial rating based on
+  publicly available data from the U.S. Census Bureau, FHFA, BLS, IRS, and FRED.
+  It is not investment advice, a property valuation, or a prediction of future
+  performance. Users should conduct independent research before making housing decisions.
+</div>
 <h2>Data Sources</h2>
 <p>
   All data on US Housing Data comes from official, publicly available

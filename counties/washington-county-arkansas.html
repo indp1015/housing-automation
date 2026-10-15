@@ -69,6 +69,33 @@
     <span class="stat-value">23.2</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">40.5</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 23.7</span>
+      <span title="Stability">🏠 19.9</span>
+      <span title="Momentum">📈 52.4</span>
+      <span title="Vitality">⚡ 76.4</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -278,15 +305,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Washington County, Arkansas, functions as a distinctively buyer-leaning market despite elevated valuation metrics. The price-to-rent ratio of 23.2 exceeds the national average of 18.7, suggesting that purchasing offers better long-term value than renting, while the rent burden of 18.2% remains only marginally above the national benchmark of 17.2%. This classification is reinforced by a price-to-income ratio of 4.22, which, although higher than the national 3.20, remains accessible given the county’s median household income of $70,639. The market’s affordability is further supported by a robust local economy featuring 102,593 total jobs and an average weekly wage of $1,158, which provides the necessary income base to sustain current price levels.
 
 The multi-year trend reveals a period of aggressive appreciation that has recently moderated. Home values surged from $162,900 in 2017 to $298,400 in 2024, driven by peak annual gains of 16.7% in 2022 and 13.0% in 2023. However, recent FHFA HPI data indicates a deceleration to a 3.17% year-over-year increase, a figure that still outperforms the state average of 1.09% by 2.08 percentage points. This divergence highlights a market stabilizing after a rapid expansion phase. A notable pattern is the sustained outperformance of home prices relative to rents, with home values rising significantly faster than the median gross rent of $1,071, indicating structural demand for ownership rather than rental flexibility.
 
 Regional context underscores the county’s premium status, with home values 110.9% above the state average and 31.0% above the national mean. This premium is justified by strong demographic inflows, evidenced by a net migration gain of 5,579 filers between 2021 and 2022, where incoming residents reported an average income of $87,161. Supply dynamics remain balanced, with 2,632 new units authorized in 2025, split between 1,621 single-family and 1,011 multi-family homes. For potential buyers, the current 7.40% mortgage rate complicates entry costs, yet the market’s momentum suggests continued demand. Renters face a slightly higher burden than the national norm, but the significant gap between price and rent growth implies that waiting for price corrections may be less advantageous than securing purchase equity in a market where ownership rates stand at 55.6%. The combination of high migration, solid employment, and moderating but positive price growth creates a stable environment for long-term investment.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -462,7 +490,7 @@ Regional context underscores the county’s premium status, with home values 110
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

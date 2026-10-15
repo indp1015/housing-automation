@@ -69,6 +69,33 @@
     <span class="stat-value">21.5</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">33.2</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 11.2</span>
+      <span title="Stability">🏠 34.7</span>
+      <span title="Momentum">📈 54.9</span>
+      <span title="Vitality">⚡ 37.4</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -404,15 +431,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Tulare County presents a mixed housing landscape that leans toward a balanced market, characterized by significant affordability constraints for homeowners but relatively manageable rental costs. The price-to-income ratio stands at 4.63, substantially higher than the national average of 3.20, indicating that home ownership is less accessible relative to local earnings. Conversely, the rent burden is 21.5% of median income, exceeding the national average of 17.2% but remaining below the 30% threshold typically defined as severe cost burden. The price-to-rent ratio of 21.5, compared to the national 18.7, suggests that buying is slightly more expensive than renting in the long term, yet the gap is narrower than in many coastal California markets. This divergence implies that while entry into homeownership is difficult, the rental sector does not exhibit the extreme premium seen in high-cost urban centers.
 
 The market has experienced robust appreciation, with median home values rising from $180,200 in 2017 to $330,100 in 2024, representing an 83% increase over seven years. Growth peaked at 16.7% in 2022 before moderating to 8.9% in 2024. Recent FHFA data confirms this deceleration, showing a year-over-year increase of 3.80% in 2025, which outperforms the state’s 0.29% decline by 4.09 percentage points. This relative strength against a softening state market suggests localized demand drivers are sustaining price growth. Notably, home values are rising faster than rents, a pattern that can erode the affordability advantage of renting over time if wage growth does not keep pace. The county’s average weekly wage of $970 supports a median household income of $71,300, which is 4.9% above the national average, providing some foundational economic stability despite the high price-to-income ratio.
 
 Regional context highlights Tulare County’s position 45.8% below the state’s median home value, making it one of California’s more affordable regions, though 45.0% above the national average. Housing supply remains tight, with only 1,790 new units authorized in 2025, dominated by single-family homes (1,567 units) and limited multi-family construction (223 units). Net migration of 2,548 filers between 2021 and 2022 indicates modest population growth, with inflow and outflow incomes nearly identical at approximately $61,000. With 30-year mortgage rates at 7.40%, monthly debt service on a median-priced home becomes significant, further straining the 58.5% owner-occupancy rate. Potential buyers should note that while prices are stabilizing compared to the 2022 surge, the high interest rate environment and limited new supply keep barriers to entry elevated. Renters face a 21.5% income allocation, which, while high, remains a more viable short-term strategy than purchasing at current valuations without substantial down payments or income increases.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -588,7 +616,7 @@ Regional context highlights Tulare County’s position 45.8% below the state’s
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

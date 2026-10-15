@@ -69,6 +69,33 @@
     <span class="stat-value">12.9</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">46.8</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 61.6</span>
+      <span title="Stability">🏠 32.8</span>
+      <span title="Momentum">📈 53.7</span>
+      <span title="Vitality">⚡ 33.6</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -133,15 +160,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Dallas County, Arkansas, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 2.29, significantly below the national average of 3.20. The median home value of $97,300 sits 57.3% below the national benchmark and 31.2% below the Arkansas state average, reflecting a deep discount that persists despite recent price appreciation. This affordability is reinforced by a price-to-rent ratio of 12.9, well under the national 18.7, indicating that purchasing offers a superior value proposition relative to renting. The local economy supports this dynamic through modest employment figures of 2,353 jobs and an average weekly wage of $923, which aligns with the median household income of $42,500.
 
 The market exhibits a clear trajectory of rapid appreciation followed by stabilization. Home values surged from $64,500 in 2017 to a peak of $98,200 in 2023, driven by a notable 20.7% year-over-year increase in 2022. However, momentum has cooled, with the 2024 median value declining 0.9% to $97,300. This recent deceleration contrasts with the broader trend of home values rising faster than rents, suggesting a potential correction or plateau in asset pricing. Migration data from 2021-2022 shows a net inflow of 148 filers, with incoming residents averaging an income of $59,764, slightly lower than those leaving at $61,127. This demographic shift indicates that the county is attracting lower-income households, which may constrain further upward pressure on home prices.
 
 For prospective buyers, the current environment presents a low entry barrier, with the median gross rent of $627 representing only 17.7% of median income, comparable to the national average of 17.2%. The 72.6% owner-occupancy rate suggests a stable resident base, yet the small population of 6,242 limits local demand elasticity. With the 30-year fixed mortgage rate at 7.40%, the high interest rate environment serves as a significant headwind for new entrants, potentially offsetting the low absolute price points. The divergence between the sharp 2022 price spike and the subsequent 2024 decline highlights the market’s volatility relative to its small size. Ultimately, the combination of low relative pricing, stabilizing values, and modest wage growth positions Dallas County as a low-cost housing option, though the limited job market of 190 establishments may restrict long-term income growth for residents.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -318,7 +346,7 @@ For prospective buyers, the current environment presents a low entry barrier, wi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

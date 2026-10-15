@@ -118,25 +118,25 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
 .breadcrumb a:hover {
   text-decoration: underline;
 }
-/* AI Editor's Insight */
-.ai-insight {
+/* Market Analysis Notes */
+.market-notes {
   background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
   border-left: 4px solid #1a3d5c;
   padding: 20px 25px;
   margin: 30px 0;
   border-radius: 6px;
 }
-.ai-insight h2 {
+.market-notes h2 {
   margin-top: 0;
   border-bottom: none;
   color: #1a3d5c;
 }
-.ai-insight p {
+.market-notes p {
   line-height: 1.75;
   margin-bottom: 15px;
   font-size: 1.02em;
 }
-.insight-meta {
+.notes-source {
   font-size: 0.85em;
   color: #888;
   font-style: italic;
@@ -506,3 +506,39 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   .cross-link-box { padding: 18px 20px; }
   .cross-link-btn { display: block; text-align: center; }
 }
+.market-score-badge {
+  display: flex; align-items: center; gap: 20px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #f8f9fa, #eef2f5);
+  border-left: 5px solid #1a3d5c;
+  border-radius: 10px;
+  padding: 18px 24px; margin: 24px 0;
+}
+.market-score-badge.tier-excellent   { border-left-color: #27ae60; }
+.market-score-badge.tier-strong      { border-left-color: #2ecc71; }
+.market-score-badge.tier-balanced    { border-left-color: #f39c12; }
+.market-score-badge.tier-challenging { border-left-color: #e67e22; }
+.market-score-badge.tier-stressed    { border-left-color: #c0392b; }
+
+.score-number { font-size: 42px; font-weight: 800; color: #1a3d5c; }
+.score-denom  { font-size: 18px; color: #7f8c8d; }
+.score-tier-label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+.score-breakdown { display: flex; gap: 16px; font-size: 14px; color: #34495e; }
+.score-methodology { width: 100%; margin-top: 10px; font-size: 12px; color: #666; }
+.score-methodology summary { cursor: pointer; color: #1a3d5c; font-weight: 600; }
+/* ── Market Score 랭킹용 tier 태그 ── */
+.tier-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.tier-tag.tier-excellent  { background: #d4f5e0; color: #1e7e34; }
+.tier-tag.tier-strong     { background: #e0f5e8; color: #2e8b57; }
+.tier-tag.tier-balanced   { background: #fdf3d4; color: #b8860b; }
+.tier-tag.tier-challenging{ background: #fce5d4; color: #c05621; }
+.tier-tag.tier-stressed   { background: #f8d7da; color: #b02a37; }

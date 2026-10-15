@@ -69,6 +69,33 @@
     <span class="stat-value">47.1</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">27.2</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 5.2</span>
+      <span title="Stability">🏠 38.6</span>
+      <span title="Momentum">📈 39.3</span>
+      <span title="Vitality">⚡ 31.0</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -404,15 +431,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Marin County exhibits the defining characteristics of an extreme renter’s market, driven by severe affordability constraints and limited inventory. The price-to-income ratio stands at 10.11, more than three times the national average of 3.20, while the price-to-rent ratio of 47.1 significantly exceeds the national benchmark of 18.7. These metrics indicate that purchasing equity is disproportionately expensive relative to local earning power, which is $149,091 annually. Consequently, the market remains heavily skewed toward rental demand, with a gross rent burden of 21.5% compared to the 17.2% national average. The structural imbalance is further highlighted by the fact that home values are 561.9% above the national mean and 147.4% above the California state average, suggesting a persistent premium for the county’s geographic and environmental attributes.
 
 Historical data reveals a trajectory of aggressive appreciation that has recently cooled. From 2017 to 2024, median home values rose from $908,800 to $1,507,300, peaking with a 15.5% year-over-year increase in 2022 before moderating to 8.4% in 2024. However, recent FHFA HPI data for 2025 indicates a slight contraction, with a -0.83% year-over-year change that underperforms the state’s -0.29% trend by 0.54 percentage points. This recent softening contrasts with the long-term upward momentum and suggests a stabilization phase rather than a reversal. The divergence between the strong multi-year price gains and the current negative momentum highlights the sensitivity of this high-end market to macroeconomic factors, particularly the 7.40% national mortgage rate, which dampens buyer purchasing power.
 
 Supply constraints remain the primary driver of price rigidity. In 2025, only 149 new single-family units were authorized, with zero multi-family permits, indicating a negligible addition to the housing stock. This scarcity is exacerbated by robust net migration of +1,215 filers, whose average income of $314,376 far exceeds the median household income, injecting high-net-worth demand into a limited supply pool. Local employment supports this demand, with 94,533 jobs and an average weekly wage of $1,809. For prospective participants, the data suggests that entry barriers remain exceptionally high, with homeownership costs decoupled from median earnings. Renters face elevated costs relative to income, while buyers encounter a market where recent price softening has not yet translated into significant affordability relief, given the persistent supply deficit and high-income inflows.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -589,7 +617,7 @@ Supply constraints remain the primary driver of price rigidity. In 2025, only 14
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

@@ -69,6 +69,33 @@
     <span class="stat-value">20.7</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">43.7</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 21.0</span>
+      <span title="Stability">🏠 23.5</span>
+      <span title="Momentum">📈 67.0</span>
+      <span title="Vitality">⚡ 74.0</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -341,15 +368,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Lee County, Alabama, operates as a buyer’s market characterized by strong price appreciation outpacing rental growth. The price-to-rent ratio stands at 20.7, significantly above the national average of 18.7, suggesting that purchasing offers better long-term value than renting. However, this advantage is tempered by affordability constraints; the price-to-income ratio of 3.98 exceeds the national benchmark of 3.20, indicating that home prices have risen faster than local median household income of $65,824. While the rent burden of 19.3% is only marginally higher than the national average of 17.2%, the purchase side presents a steeper financial hurdle for median-income households.
 
 The multi-year trend reveals a dramatic acceleration in home values, with year-over-year growth spiking from 2.6% in 2020 to a peak of 20.3% in 2022 before moderating to 9.8% in 2024. Recent FHFA data confirms continued momentum, showing a 4.73% year-over-year increase in 2025, which outpaces the state average of 2.79% by 1.94 percentage points. This sustained appreciation has positioned Lee County home values 64.2% above the state average and 15.1% above the national mean, despite local income levels lagging the national average by 3.2%. A notable pattern is the divergence between asset values and local economic fundamentals, where home prices have surged significantly while median income remains relatively flat.
 
 Local economic drivers support this upward trajectory. Net migration of 4,863 filers between 2021 and 2022 injected demand, with incoming residents earning an average of $84,083, well above the county median. Housing supply remains tight, with 1,575 new units authorized in 2025, predominantly single-family homes, which may not be sufficient to cool prices rapidly. With 50,806 total jobs and an average weekly wage of $967, the labor market provides stability, yet the 7.40% national mortgage rate increases monthly payment burdens. Potential buyers face a market where values are rising faster than rents, but high interest rates and elevated price-to-income ratios limit immediate affordability for median earners. Renters, meanwhile, face a slightly higher cost burden than the national norm, making the transition to homeownership financially complex despite the favorable price-to-rent dynamic.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -525,7 +553,7 @@ Local economic drivers support this upward trajectory. Net migration of 4,863 fi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

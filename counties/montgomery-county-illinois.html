@@ -69,6 +69,33 @@
     <span class="stat-value">12.9</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-balanced">
+  <div class="score-main">
+    <span class="score-number">61.5</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Balanced</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 90.7</span>
+      <span title="Stability">🏠 68.4</span>
+      <span title="Momentum">📈 52.3</span>
+      <span title="Vitality">⚡ 20.6</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -236,15 +263,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Montgomery County, Illinois, functions as a distinctively affordable buyer’s market, characterized by a median home value of $112,300, which sits 50.7% below the national average. The market exhibits strong affordability metrics, with a price-to-income ratio of 1.77 compared to the national benchmark of 3.20, and a rent burden of 13.6% against the national average of 17.2%. These figures indicate that housing costs consume a significantly smaller portion of local household income, which averages $63,620, than in most other U.S. jurisdictions. The high owner-occupancy rate of 77.4% further underscores the stability and accessibility of homeownership in this region, where the price-to-rent ratio of 12.9 suggests that purchasing remains a more financially viable option than long-term renting.
 
 Recent data reveals a complex trend dynamic, marked by significant price appreciation followed by a sharp correction. Home values surged from $81,000 in 2017 to $112,300 in 2024, driven by double-digit growth in 2022 and 2024. However, the most recent FHFA House Price Index indicates a year-over-year decline of 3.24%, causing the county to underperform the state average by 8.78 percentage points. This divergence is notable because while home prices have recently corrected, the broader state market grew by 5.54%, highlighting a localized softening in demand. This price adjustment contrasts with the historical pattern of rising values outpacing rent growth, suggesting a potential rebalancing of the local real estate cycle.
 
 The economic context provides limited support for sustained price growth, as the local economy supports only 6,998 jobs with an average weekly wage of $888. Housing supply is extremely constrained, with only 11 new units authorized in 2025, all of which are single-family homes. Despite this scarcity, net migration of +382 filers suggests modest population growth, though incoming residents earn slightly less ($69,427) than those departing ($70,009). With national mortgage rates at 7.40%, the low absolute price point remains the primary driver of affordability, offsetting the high cost of borrowing. For potential buyers, the current 3.24% price decline presents a tactical entry point, while renters benefit from a low rent burden that preserves disposable income relative to the national average. The market’s trajectory is currently defined by this tension between tight supply and cooling price momentum.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -421,7 +449,7 @@ The economic context provides limited support for sustained price growth, as the
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

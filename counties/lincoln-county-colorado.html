@@ -69,6 +69,33 @@
     <span class="stat-value">23.7</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">35.3</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 35.4</span>
+      <span title="Stability">🏠 23.8</span>
+      <span title="Momentum">📈 30.2</span>
+      <span title="Vitality">⚡ 55.9</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -165,15 +192,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Lincoln County, Colorado, presents a mixed market profile characterized by strong historical price appreciation but current affordability constraints relative to local income levels. The market leans toward a buyer’s advantage in terms of relative value compared to the state, yet the price-to-income ratio of 3.92 exceeds the national average of 3.20, indicating that home prices are elevated relative to median household income of $62,861. Conversely, the rent burden sits at 16.6% of income, slightly below the national average of 17.2%, suggesting rental costs remain manageable for residents. The price-to-rent ratio of 23.7, significantly higher than the national benchmark of 18.7, implies that purchasing is more economically favorable than renting from a long-term cost perspective, despite the initial entry barrier.
 
 The multi-year trend reveals a dramatic shift in market dynamics. Home values surged from $132,100 in 2017 to a peak growth rate of 45.2% in 2022, reaching $238,000. This rapid escalation has since moderated, with a slight dip to $232,100 in 2023 followed by a 6.2% increase to $246,500 in 2024. Recent FHFA data for 2025 indicates a marginal year-over-year decline of 0.19%, outperforming the state’s 0.61% decline. This divergence suggests that while the broader Colorado market faces headwinds, Lincoln County’s values are holding relatively firm. The significant gap between the 2022 peak and current stabilization highlights a market adjusting to higher mortgage rates, currently at 7.40%, which dampens demand.
 
 Regional context further clarifies the market’s position. Home values are 42.3% below the state average, making Lincoln County an affordable entry point for those seeking to relocate within Colorado, despite being 8.3% above the national median. Economic fundamentals are modest, with only 1,131 total jobs and an average weekly wage of $974. Housing supply is extremely constrained, with only 10 new single-family units authorized in 2025 and zero multi-family units, limiting new inventory. Migration data shows a net inflow of 146 filers between 2021 and 2022, driven by an inflow of 1,867 individuals. This sustained population growth, combined with minimal new construction, supports the resilience of home values despite high interest rates. For potential buyers, the low supply and stable values offer a strategic opportunity, while renters benefit from a lower cost-of-living structure compared to urban centers.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -349,7 +377,7 @@ Regional context further clarifies the market’s position. Home values are 42.3
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

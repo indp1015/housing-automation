@@ -69,6 +69,33 @@
     <span class="stat-value">19.1</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-challenging">
+  <div class="score-main">
+    <span class="score-number">56.2</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Challenging</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 74.8</span>
+      <span title="Stability">🏠 82.4</span>
+      <span title="Momentum">📈 33.7</span>
+      <span title="Vitality">⚡ 23.9</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -257,15 +284,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Lawrence County, Alabama, presents a complex market dynamic characterized by significant affordability advantages relative to national standards, yet it exhibits recent price volatility that complicates the traditional classification of a stable buyer’s market. With a median home value of $172,300, the county sits 24.3% below the national average, while the price-to-income ratio of 2.61 remains substantially lower than the national benchmark of 3.20. This affordability is further reinforced by a rent burden of 13.7%, which is 3.5 percentage points below the national average of 17.2%. However, the market is not uniformly favorable for all participants; the price-to-rent ratio of 19.1 slightly exceeds the national average of 18.7, suggesting that while purchasing is accessible, the relative cost of buying versus renting has tightened compared to broader national trends. The high owner-occupancy rate of 81.7% indicates a stable residential base, but the recent acceleration in home values challenges the long-standing perception of this area as a purely low-cost housing market.
 
 The multi-year trend reveals a dramatic shift from modest growth to rapid appreciation, with home values increasing from $98,700 in 2017 to $172,300 in 2024. This period includes a notable acceleration in 2023 and 2024, where year-over-year growth surged to 12.3% and 14.3%, respectively. This sharp rise contrasts with the more muted rent growth, creating a divergence where home values are rising faster than rents. A critical data anomaly lies in the recent FHFA HPI data, which shows a 2.29% year-over-year decline in 2025, underperforming the state average by 5.08 percentage points. This recent contraction suggests that the rapid appreciation observed in the Census ACS data may be experiencing a correction or that the sample of mortgage transactions reflects different market segments than the broader valuation estimates. The limited housing supply, with only six new single-family units authorized in 2025, provides little buffer against such price fluctuations, as the market lacks the inventory depth to absorb shocks.
 
 Economic fundamentals provide mixed signals for sustained demand. Local employment stands at 4,038 jobs with an average weekly wage of $998, which supports the median household income of $66,071 but may not fully sustain the recent price spikes if wages do not grow commensurately. Migration data indicates a net inflow of 463 filers, with average incomes for both inflowing and outflowing populations hovering around $58,900, suggesting that demographic shifts are not driven by high-income professionals but rather by general population movement. With the 30-year fixed mortgage rate at 7.40%, the high interest environment further pressures buyer purchasing power. Consequently, while Lawrence County remains significantly more affordable than the national average, recent price volatility and limited new supply mean that potential buyers face a market where entry costs have risen sharply in the last two years, while current transaction data hints at a potential cooling or correction phase. Renters benefit from low burdens, but the narrowing gap between purchase and rental costs requires careful financial evaluation.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -442,7 +470,7 @@ Economic fundamentals provide mixed signals for sustained demand. Local employme
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

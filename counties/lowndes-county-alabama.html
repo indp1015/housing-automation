@@ -69,6 +69,33 @@
     <span class="stat-value">10.1</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">48.4</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 45.6</span>
+      <span title="Stability">🏠 51.0</span>
+      <span title="Momentum">📈 61.7</span>
+      <span title="Vitality">⚡ 32.8</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -145,15 +172,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Lowndes County, Alabama, functions primarily as a renter’s market, characterized by a price-to-rent ratio of 10.1, significantly below the national average of 18.7. This metric indicates that purchasing is comparatively less attractive than renting relative to income levels, despite a high owner-occupancy rate of 77.5%. The affordability profile is mixed; while the price-to-income ratio of 2.33 is well below the national benchmark of 3.20, suggesting strong purchase affordability, the rent burden stands at 23.0% of median household income, exceeding the national average of 17.2%. This divergence highlights that while housing assets are inexpensive, the cost of renting consumes a disproportionate share of local earnings.
 
 The market exhibits volatile yet generally upward momentum. Home values surged 16.8% in 2021 before moderating to 7.1% growth in 2024, reaching a median of $86,300. This trajectory contrasts with the national 30-year fixed mortgage rate of 7.40%, which remains elevated. Notably, the county’s home values are 45.9% below the state average and 62.1% below the national mean, reflecting its status as a low-cost region. The local economy supports this low-cost structure, with a median household income of $37,052, which is 45.5% below the national average. Employment data shows only 1,891 total jobs and an average weekly wage of $1,204, indicating a limited wage base that constrains further price appreciation.
 
 A significant data anomaly is the divergence between asset value growth and rental costs. While home values have risen steadily since 2017, the rent burden has increased relative to national norms, suggesting that rental supply may be tightening or rents are rising faster than incomes. Housing supply is extremely constrained, with only four new single-family units authorized in 2025 and zero multi-family units, creating a rigid market with minimal new inventory. Migration data shows a net inflow of 132 filers, with incoming residents earning an average of $47,723, slightly lower than the $47,976 average of outflowing residents, indicating that migration is not driving a significant income upgrade. For potential buyers, the low price-to-income ratio offers entry-level opportunities, but the limited local employment base and high rent burden suggest that long-term wealth accumulation may be hindered by stagnant wage growth and a lack of diversified economic drivers.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -330,7 +358,7 @@ A significant data anomaly is the divergence between asset value growth and rent
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

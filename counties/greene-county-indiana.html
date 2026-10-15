@@ -69,6 +69,33 @@
     <span class="stat-value">16.0</span>
   </div>
 </div>
+
+<div class="market-score-badge tier-stressed">
+  <div class="score-main">
+    <span class="score-number">49.7</span>
+    <span class="score-denom">/ 100</span>
+  </div>
+  <div class="score-meta">
+    <span class="score-tier-label">Market Score: Stressed</span>
+    <div class="score-breakdown">
+      <span title="Affordability">💰 70.4</span>
+      <span title="Stability">🏠 52.0</span>
+      <span title="Momentum">📈 43.5</span>
+      <span title="Vitality">⚡ 23.5</span>
+    </div>
+  </div>
+  <details class="score-methodology">
+    <summary>How is this calculated?</summary>
+    <p>
+      Composite of 4 axes: <strong>Affordability</strong> (30%),
+      <strong>Stability</strong> (25%), <strong>Momentum</strong> (25%),
+      <strong>Vitality</strong> (20%), each normalized as a percentile rank
+      across 3134 U.S. counties. Editorial rating only —
+      not investment advice or a property valuation.
+    </p>
+  </details>
+</div>
+
 <!-- 5년 추이 차트 -->
 
 <div class="chart-container">
@@ -266,15 +293,16 @@
 
 
 
-<div class="ai-insight">
-  <h2>📝 Local Market Notes</h2>
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
   <p>Greene County, Indiana, presents a complex housing landscape characterized by significant affordability advantages relative to national benchmarks, yet it exhibits divergent signals regarding market momentum. The county is classified as a buyer’s market, supported by a price-to-income ratio of 2.47, which is substantially lower than the national average of 3.20. Furthermore, the rent burden stands at 15.4% of income, below the national norm of 17.2%, and the price-to-rent ratio of 16.0 suggests that purchasing remains more cost-effective than renting compared to broader U.S. trends. These metrics indicate that housing costs are relatively manageable for local residents, with median home values sitting 32.7% below the national average and 20.2% below the state average.
 
 The multi-year trend reveals a sharp acceleration in home values, which rose from $95,900 in 2017 to $153,200 in 2024, representing a cumulative increase of approximately 59.7%. This growth trajectory peaked with a 17.9% year-over-year surge in 2024, a rate that significantly outpaces the 11.6% growth seen in 2023. However, this historical appreciation contrasts with recent momentum indicators. The FHFA House Price Index for 2025 shows a slight decline of 0.14% year-over-year, marking a 3.59 percentage point underperformance relative to the Indiana state average of 3.45%. This divergence suggests that the rapid price increases observed in the Census data may be stabilizing or correcting in the most recent transactional data. Meanwhile, median gross rent has remained relatively stable at $797, indicating that rental demand has not kept pace with the surge in property values.
 
 Local economic fundamentals provide context for these shifts. The county supports 4,422 jobs with an average weekly wage of $875, and net migration of 575 filers between 2021 and 2022 indicates modest population growth. Inflowing households report average incomes of $61,380, nearly identical to outflowing households, suggesting that migration is driven by lifestyle or cost factors rather than wage arbitrage. With the national 30-year fixed mortgage rate at 7.40%, the high interest cost may be contributing to the recent cooling in price growth. For potential buyers, the current environment offers entry points at prices well below national norms, while the recent HPI decline suggests a potential plateau in the rapid appreciation phase observed in prior years. Renters benefit from low cost burdens, but the widening gap between rising home values and static rents may limit long-term rental supply growth.</p>
-  <p class="insight-meta">
-    Based on U.S. Census ACS 2024 5-Year Estimates.
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
   </p>
 </div>
 
@@ -451,7 +479,7 @@ Local economic fundamentals provide context for these shifts. The county support
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-14. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
