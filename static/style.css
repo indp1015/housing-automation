@@ -899,3 +899,17 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   .ranking-table { font-size: 0.85em; }
   .ranking-table th, .ranking-table td { padding: 8px 6px; }
 }
+/* 랭킹 카드 CTA (See All) */
+.ranking-card-cta {
+  background: linear-gradient(135deg, #1a3d5c 0%, #2c5f8a 100%);
+  border-left-color: #f39c12;
+}
+.ranking-card-cta h3 {
+  color: white;
+}
+.ranking-card-cta .ranking-arrow {
+  color: #f39c12;
+}
+.ranking-card-cta:hover {
+  box-shadow: 0 6px 18px rgba(26, 61, 92, 0.25);
+}
