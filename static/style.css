@@ -757,3 +757,73 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   border: none; border-radius: 6px; cursor: pointer;
   font-weight: 600;
 }
+/* ═══════════════════════════════════════════
+   COMPARE BANNER (Homepage)
+   ═══════════════════════════════════════════ */
+.compare-banner {
+  margin: 24px 0 32px 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a3d5c 0%, #2c5f8a 100%);
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(26, 61, 92, 0.15);
+}
+.compare-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  flex-wrap: wrap;
+}
+.compare-banner-icon {
+  font-size: 2.5em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.compare-banner-text {
+  flex: 1;
+  min-width: 250px;
+}
+.compare-banner-text h2 {
+  margin: 0 0 6px 0;
+  font-size: 1.3em;
+  color: white;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.compare-banner-text p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+.compare-banner-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #f39c12;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95em;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+.compare-banner-btn:hover {
+  background: #e67e22;
+  transform: translateX(3px);
+  text-decoration: none;
+}
+@media (max-width: 700px) {
+  .compare-banner-content {
+    padding: 18px 20px;
+    gap: 14px;
+  }
+  .compare-banner-icon { font-size: 2em; }
+  .compare-banner-text h2 { font-size: 1.1em; }
+  .compare-banner-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
