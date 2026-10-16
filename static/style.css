@@ -663,3 +663,97 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
     white-space: normal;
   }
 }
+/* ═══════════════════════════════════════════
+   COMPARE PAGE
+   ═══════════════════════════════════════════ */
+.compare-page { max-width: 1200px; }
+.compare-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  margin: 24px 0;
+}
+@media (max-width: 900px) {
+  .compare-grid { grid-template-columns: 1fr; }
+}
+.compare-sidebar {
+  background: #f9fbfd;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e0e8f0;
+}
+.county-search { position: relative; margin-bottom: 16px; }
+.county-search label {
+  display: block; font-size: 0.8em; font-weight: 600;
+  color: #666; text-transform: uppercase; margin-bottom: 6px;
+}
+.county-search input {
+  width: 100%; padding: 10px 12px; border: 1px solid #ccd;
+  border-radius: 6px; font-size: 0.95em; box-sizing: border-box;
+}
+.search-results {
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: white; border: 1px solid #e0e8f0; border-radius: 6px;
+  max-height: 300px; overflow-y: auto; z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.search-result {
+  padding: 10px 12px; cursor: pointer; display: flex;
+  justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+.search-result:hover { background: #f0f5fa; }
+.sr-name { font-weight: 600; color: #1a3d5c; }
+.sr-state { color: #888; font-size: 0.85em; }
+.no-match { padding: 10px 12px; color: #888; font-style: italic; }
+.selected-counties { margin-bottom: 12px; }
+.selected-card {
+  display: flex; align-items: center; gap: 10px;
+  background: white; padding: 10px 12px;
+  border-left: 4px solid #1a3d5c; border-radius: 6px;
+  margin-bottom: 8px;
+}
+.sc-info { flex: 1; min-width: 0; }
+.sc-name { font-weight: 600; color: #1a3d5c; font-size: 0.9em; }
+.sc-meta { font-size: 0.78em; color: #888; }
+.sc-remove {
+  background: none; border: none; font-size: 1.4em;
+  color: #999; cursor: pointer; padding: 0 6px;
+}
+.sc-remove:hover { color: #c0392b; }
+.compare-clear-btn {
+  width: 100%; padding: 10px; border: 1px solid #ccd;
+  border-radius: 6px; background: white; color: #666;
+  cursor: pointer; font-weight: 600;
+}
+.compare-clear-btn:hover { background: #f0f5fa; }
+.compare-main {
+  background: white; border-radius: 8px;
+  padding: 24px; border: 1px solid #e0e8f0;
+}
+.compare-empty {
+  text-align: center; padding: 60px 20px; color: #888;
+}
+.compare-chart-wrapper {
+  position: relative; height: 450px; margin-bottom: 24px;
+}
+.compare-table-wrapper { margin-top: 24px; }
+.compare-table th { white-space: nowrap; }
+.compare-table td:first-child { font-weight: 600; }
+.compare-link-wrapper {
+  margin-top: 20px; padding: 14px 16px; background: #f0f9f4;
+  border-left: 4px solid #27ae60; border-radius: 6px;
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+}
+.compare-link-wrapper label {
+  font-size: 0.85em; font-weight: 600; color: #1a3d5c;
+}
+.compare-link-wrapper input {
+  flex: 1; min-width: 200px; padding: 8px 10px;
+  border: 1px solid #ccd; border-radius: 6px; font-size: 0.85em;
+}
+.compare-link-wrapper button {
+  padding: 8px 16px; background: #1a3d5c; color: white;
+  border: none; border-radius: 6px; cursor: pointer;
+  font-weight: 600;
+}

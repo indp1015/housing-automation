@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
+<title>Compare Counties — Side-by-Side Housing & Tax Comparison</title>
+<meta name="description" content="Compare up to 5 U.S. counties side-by-side. Radar chart of affordability, stability, momentum, tax friendliness, and rental yield. Shareable URL.">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850461542641038"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">US Housing Data</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/rankings/most-expensive-counties.html">Rankings</a>
+      <a href="/blog/">Blog</a>          <!-- ← 추가 -->
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 상단 광고 슬롯 -->
+<div class="container ad-slot ad-top">
+  <!-- AdSense 광고 코드 삽입 위치 (승인 후) -->
+</div>
+
+<main class="container">
+
+
+<article class="compare-page">
+<h1>Compare Counties</h1>
+<p class="lead">
+  Select 2–5 counties to compare affordability, market stability, momentum,
+  tax friendliness, and rental yield. Share your comparison via URL.
+</p>
+
+<div class="compare-grid">
+  <div class="compare-sidebar">
+    <div class="county-search">
+      <label for="countySearch">Add County</label>
+      <input type="text" id="countySearch" placeholder="Type county or state name..." autocomplete="off">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <div id="selectedCounties" class="selected-counties"></div>
+    <button id="clearBtn" class="compare-clear-btn">Clear All</button>
+  </div>
+
+  <div class="compare-main">
+    <div id="emptyState" class="compare-empty">
+      <p>📍 Select 2–5 counties to begin comparison</p>
+    </div>
+
+    <div id="chartWrapper" class="compare-chart-wrapper" style="display:none;">
+      <canvas id="compareRadar"></canvas>
+    </div>
+
+    <div id="tableWrapper" class="compare-table-wrapper" style="display:none;">
+      <h2>Side-by-Side Metrics</h2>
+      <div style="overflow-x:auto;">
+        <table class="data-table compare-table" id="compareTable"></table>
+      </div>
+    </div>
+
+    <div id="linkWrapper" class="compare-link-wrapper" style="display:none;">
+      <label>Share:</label>
+      <input type="text" id="shareUrl" readonly>
+      <button id="copyBtn">Copy</button>
+    </div>
+  </div>
+</div>
+
+<h2>How to Use</h2>
+<ol>
+  <li>Type a county name in the search box. Select up to 5 counties.</li>
+  <li>The radar chart updates in real-time comparing 6 normalized metrics.</li>
+  <li>Copy the share URL to send your comparison to others.</li>
+</ol>
+
+<p class="methodology">
+  <strong>Data Source:</strong> U.S. Census Bureau ACS 5-Year Estimates,
+  FHFA, BLS, IRS, FRED. Scores are percentile ranks across all U.S. counties.
+</p>
+</article>
+
+<script src="/static/compare.js"></script>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 US Housing Data. Data sourced from U.S. Census Bureau (ACS 2023 5-Year Estimates).</p>
+    <nav>
+      <a href="/about.html">About</a> ·
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/terms.html">Terms</a> ·
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+  <p class="disclaimer">
+  Housing data: U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates.<br>
+  Price index data: <strong>This product uses FHFA Data but is neither endorsed nor certified by FHFA.</strong>
+</p>
+</footer>
+</body>
+</html>
