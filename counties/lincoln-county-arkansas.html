@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2024
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Lincoln County
+    <strong class="down">
+      fell -5.0%
+    </strong>
+    year-over-year as of 2024.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -177,19 +197,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Lincoln County, Arkansas, operates as a distinct buyer’s market, characterized by a median home value of $108,000 and a price-to-income ratio of 2.09. This ratio is significantly lower than the national average of 3.20, indicating that local housing costs are substantially more accessible relative to the median household income of $51,778. The market structure further supports ownership, with an owner-occupancy rate of 76.1% and a price-to-rent ratio of 12.1, which is well below the national benchmark of 18.7. These metrics suggest that purchasing remains a more financially efficient strategy than renting for long-term residents, as the cost of entry is low relative to both income levels and rental expenses.
-
-Recent market dynamics reveal a pattern of high volatility followed by stabilization. Home values surged from $66,100 in 2017 to a peak of $112,500 in 2022, driven by a 22.5% year-over-year increase. However, the market corrected in 2023 with a 5.7% decline before stabilizing at $108,000 in 2024, reflecting a modest 1.8% recovery. This trajectory contrasts with the steady rise in median gross rent, which stands at $744 per month. The divergence between the sharp peak-and-correction cycle in home values and the consistent upward pressure on rents indicates that while asset prices have normalized, the underlying cost of housing services continues to climb. This suggests that the initial rapid appreciation was likely driven by temporary demand shocks rather than sustained structural economic growth.
-
-Regional context highlights Lincoln County’s affordability advantage, with home values sitting 52.6% below the national average and 23.7% below the Arkansas state average. The local economy, supported by 1,381 total jobs and an average weekly wage of $887, provides a stable but modest income base. Migration data from 2021-2022 shows a net inflow of 116 filers, with incoming residents earning an average of $54,657, slightly below the outflow average of $55,334. This modest net migration, combined with a low rent burden of 17.2%, suggests a balanced demand environment. For potential buyers, the current 7.40% mortgage rate remains a significant hurdle, but the low price-to-income ratio mitigates this cost. The market’s recent momentum, marked by the transition from double-digit growth to single-digit stability, signals a maturing market where affordability remains the primary driver of activity rather than speculative investment.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Lincoln County on Our Sister Sites</h3>
@@ -197,13 +204,17 @@ Regional context highlights Lincoln County’s affordability advantage, with hom
     Get the complete picture for <strong>Lincoln County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/lincoln-county-arkansas.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AR&county=05079&price=108000"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/lincoln-county-arkansas.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/lincoln-county-arkansas.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Lincoln County Compares</h2>
@@ -363,7 +374,7 @@ Regional context highlights Lincoln County’s affordability advantage, with hom
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -525,6 +536,47 @@ Regional context highlights Lincoln County’s affordability advantage, with hom
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2014": 124.86, "2015": 140.13, "2016": 136.84, "2017": 141.77, "2018": 145.06, "2019": 156.94, "2020": 153.97, "2021": 174.22, "2022": 193.97, "2024": 184.22};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Washington County
+    <strong class="up">
+      rose +1.8%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -177,6 +197,19 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Washington County, Alabama, operates as a distinct buyer’s market, characterized by high owner occupancy at 85.8% and a median home value of $159,700. This classification is reinforced by a price-to-income ratio of 2.62, which is significantly lower than the national average of 3.20, and a rent burden of 12.9%, well below the national 17.2% benchmark. The market exhibits strong affordability metrics, yet it faces structural challenges in economic vitality, evidenced by a composite vitality rating of 29.0/100.
+
+The multi-year trend reveals a dramatic acceleration in home values, which surged from $83,900 in 2017 to $159,700 in 2024, representing a cumulative increase of nearly 90%. However, recent momentum has decelerated sharply; while year-over-year growth peaked at 26.7% in 2021, it has moderated to 4.5% in 2024. This deceleration is corroborated by the FHFA House Price Index, which shows a recent 1.75% annual increase, underperforming the Alabama state average of 2.79% by 1.04 percentage points. This divergence suggests that the initial rapid appreciation phase is stabilizing, with price growth now lagging behind broader state trends.
+
+Regional context highlights that the county’s median home value aligns precisely with the state average but remains 29.9% below the national mean. Local economic fundamentals show limited support for sustained high growth, with total employment at 4,445 jobs and an average weekly wage of $1,989. Migration data indicates a modest net inflow of 188 filers, with incoming and outgoing residents earning nearly identical average incomes around $60,000, suggesting that demographic shifts are not driving significant income-based demand. The primary driver of the current market condition is affordability, which scores 76.9/100, contrasting with a low momentum score of 34.0/100. For prospective buyers, the combination of high affordability and slowing price appreciation creates a favorable entry point, while renters face minimal financial strain relative to their incomes. The 7.40% national mortgage rate further influences purchasing power, but the local price-to-rent ratio of 20.3 indicates that buying remains a more financially efficient long-term strategy than renting in this specific market.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Washington County on Our Sister Sites</h3>
@@ -184,13 +217,17 @@
     Get the complete picture for <strong>Washington County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/washington-county-alabama.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AL&county=01129&price=159700"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/washington-county-alabama.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/washington-county-alabama.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Washington County Compares</h2>
@@ -349,7 +386,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -511,6 +548,47 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2015": 107.04, "2016": 104.46, "2017": 106.34, "2018": 109.52, "2019": 116.21, "2020": 117.61, "2021": 115.14, "2022": 134.12, "2024": 163.12, "2025": 165.98};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

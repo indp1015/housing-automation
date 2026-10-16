@@ -87,7 +87,7 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 49.4</span>
       <span title="Stability">🏠 47.5</span>
@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Newton County
+    <strong class="up">
+      rose +2.6%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -189,19 +209,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Newton County, Arkansas, exhibits characteristics of a balanced market leaning slightly toward renters, driven by a price-to-rent ratio of 22.9 compared to the national average of 18.7. This metric suggests that purchasing is less immediately advantageous than renting relative to local income levels, despite a high owner-occupancy rate of 76.5%. The market’s affordability profile is mixed; while the price-to-income ratio of 3.46 slightly exceeds the national benchmark of 3.20, indicating mild overvaluation relative to earnings, the rent burden stands at just 15.1%, well below the national average of 17.2%. This disparity highlights that rental housing in the county remains exceptionally affordable for residents, whereas homeownership costs have outpaced local wage growth.
-
-The multi-year trend reveals significant volatility, with home values surging from $91,600 in 2017 to a peak of $178,800 in 2023, before retreating 5.3% to $169,300 in 2024. This recent correction follows a period of aggressive appreciation, peaking at 15.8% year-over-year in 2021. Notably, home values have risen much faster than rents, creating a divergence that widens the gap between buying and renting economics. In regional context, Newton County home values are 19.7% above the Arkansas state average, yet median household income is 28.0% below the national mean. This income disparity explains why the county, despite being a rural area with a population of only 7,112, commands premium pricing relative to its economic fundamentals.
-
-Economic fundamentals present a challenging backdrop for sustained growth. Local employment is limited to 640 jobs with an average weekly wage of $672, providing modest support for high home values. Housing supply is virtually non-existent, with only one new unit authorized in 2025, which typically supports price stability but limits new entry points for buyers. However, the current 7.40% mortgage rate significantly increases monthly carrying costs, further straining affordability for the median household earning $48,986. Migration data shows a net inflow of 210 filers, suggesting continued demographic interest despite the economic constraints. For potential buyers, the market offers a correction from peak prices but remains expensive relative to local wages. Renters, conversely, benefit from low cost burdens, making the rental sector a more financially efficient option in the near term given the high interest rate environment and limited new construction.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Newton County on Our Sister Sites</h3>
@@ -209,13 +216,17 @@ Economic fundamentals present a challenging backdrop for sustained growth. Local
     Get the complete picture for <strong>Newton County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/newton-county-arkansas.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AR&county=05101&price=169300"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/newton-county-arkansas.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/newton-county-arkansas.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Newton County Compares</h2>
@@ -374,7 +385,7 @@ Economic fundamentals present a challenging backdrop for sustained growth. Local
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -536,6 +547,47 @@ Economic fundamentals present a challenging backdrop for sustained growth. Local
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2015": 136.62, "2016": 127.08, "2017": 135.84, "2018": 155.83, "2019": 141.91, "2020": 160.46, "2021": 166.17, "2022": 219.89, "2023": 220.83, "2025": 226.56};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

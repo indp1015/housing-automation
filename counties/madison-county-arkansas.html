@@ -87,7 +87,7 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 53.7</span>
       <span title="Stability">🏠 54.6</span>
@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Madison County
+    <strong class="up">
+      rose +3.3%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -239,19 +259,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Madison County, Arkansas, exhibits characteristics of a balanced market with a slight tilt toward buyers, driven by affordability metrics that align closely with national averages. The price-to-income ratio stands at 3.14, marginally below the national benchmark of 3.20, while the rent burden is 15.4%, significantly lower than the national average of 17.2%. These figures suggest that both purchasing and renting remain financially accessible relative to local earning power. However, the price-to-rent ratio of 20.4 exceeds the national average of 18.7, indicating that ownership costs are becoming relatively more expensive compared to rental alternatives, a divergence that warrants attention for long-term financial planning.
-
-The market has experienced substantial appreciation, with median home values rising from $108,500 in 2017 to $178,100 in 2024. This trajectory includes a peak year-over-year increase of 22.1% in 2022, moderating to 12.9% in 2024. While home values have surged, median gross rent has remained comparatively stable, creating a widening gap between asset growth and rental costs. This divergence suggests that the primary driver of market activity is owner-occupancy demand rather than rental pressure. The county’s home values are 21.8% below the national average but 25.9% above the Arkansas state average, positioning Madison County as a premium market within its state despite its smaller economic scale.
-
-Economic fundamentals support this sustained growth. Local employment totals 2,957 jobs with an average weekly wage of $906, translating to an annualized wage that supports the median household income of $56,798. Migration data from 2021-2022 shows a net inflow of 517 filers, with incoming residents earning an average of $57,257, slightly above outgoing residents at $56,730, indicating a modest but positive demographic shift. Housing supply remains constrained, with only 22 new single-family units authorized in 2025 and zero multi-family permits, limiting new inventory. With the 30-year fixed mortgage rate at 7.40%, financing costs remain elevated, yet the low price-to-income ratio mitigates some of this pressure. Potential buyers should note that while current affordability is strong, the rapid appreciation trend and limited new construction suggest that entry-level pricing may continue to shift upward, while renters benefit from a low burden relative to income.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Madison County on Our Sister Sites</h3>
@@ -259,13 +266,17 @@ Economic fundamentals support this sustained growth. Local employment totals 2,9
     Get the complete picture for <strong>Madison County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/madison-county-arkansas.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AR&county=05087&price=178100"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/madison-county-arkansas.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/madison-county-arkansas.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Madison County Compares</h2>
@@ -424,7 +435,7 @@ Economic fundamentals support this sustained growth. Local employment totals 2,9
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -586,6 +597,47 @@ Economic fundamentals support this sustained growth. Local employment totals 2,9
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 126.03, "2017": 137.24, "2018": 146.3, "2019": 152.58, "2020": 158.12, "2021": 178.4, "2022": 220.24, "2023": 240.48, "2024": 251.42, "2025": 259.63};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Lowndes County
+    <strong class="up">
+      rose +1.7%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -191,11 +211,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Lowndes County, Alabama, functions primarily as a renter’s market, characterized by a price-to-rent ratio of 10.1, significantly below the national average of 18.7. This metric indicates that purchasing is comparatively less attractive than renting relative to income levels, despite a high owner-occupancy rate of 77.5%. The affordability profile is mixed; while the price-to-income ratio of 2.33 is well below the national benchmark of 3.20, suggesting strong purchase affordability, the rent burden stands at 23.0% of median household income, exceeding the national average of 17.2%. This divergence highlights that while housing assets are inexpensive, the cost of renting consumes a disproportionate share of local earnings.
+  <p>Lowndes County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a median home value of $86,300 that sits 62.1% below the national average. The price-to-income ratio of 2.33 is substantially lower than the national benchmark of 3.20, indicating strong purchasing power relative to asset prices. Conversely, the rent burden stands at 23.0% of income, exceeding the national average of 17.2%, which suggests that while homeownership is accessible, rental costs consume a disproportionate share of local earnings. This divergence highlights a market where the barrier to entry for ownership is low, yet the cost of renting remains comparatively high relative to local wages.
 
-The market exhibits volatile yet generally upward momentum. Home values surged 16.8% in 2021 before moderating to 7.1% growth in 2024, reaching a median of $86,300. This trajectory contrasts with the national 30-year fixed mortgage rate of 7.40%, which remains elevated. Notably, the county’s home values are 45.9% below the state average and 62.1% below the national mean, reflecting its status as a low-cost region. The local economy supports this low-cost structure, with a median household income of $37,052, which is 45.5% below the national average. Employment data shows only 1,891 total jobs and an average weekly wage of $1,204, indicating a limited wage base that constrains further price appreciation.
+Multi-year trends reveal significant volatility, with home values surging 16.8% in 2021 before moderating to a 7.1% increase in 2024. However, recent FHFA data indicates a slowdown, with the Home Price Index rising only 1.71% year-over-year, underperforming the state average by 1.08 percentage points. This deceleration contrasts with the county’s historical resilience, as values have recovered from a 2020 dip to reach new highs. The local economic foundation is fragile, supported by just 1,891 jobs and an average weekly wage of $1,204. Housing supply is extremely constrained, with only four new single-family units authorized in 2025, limiting new inventory. Despite this scarcity, net migration remains positive at 132 filers, though inflows and outflows are nearly balanced, suggesting limited demographic expansion.
 
-A significant data anomaly is the divergence between asset value growth and rental costs. While home values have risen steadily since 2017, the rent burden has increased relative to national norms, suggesting that rental supply may be tightening or rents are rising faster than incomes. Housing supply is extremely constrained, with only four new single-family units authorized in 2025 and zero multi-family units, creating a rigid market with minimal new inventory. Migration data shows a net inflow of 132 filers, with incoming residents earning an average of $47,723, slightly lower than the $47,976 average of outflowing residents, indicating that migration is not driving a significant income upgrade. For potential buyers, the low price-to-income ratio offers entry-level opportunities, but the limited local employment base and high rent burden suggest that long-term wealth accumulation may be hindered by stagnant wage growth and a lack of diversified economic drivers.</p>
+The composite assessment reflects a stressed environment driven by low vitality and affordability challenges, despite moderate momentum. The price-to-rent ratio of 10.1 is well below the national average of 18.7, reinforcing the financial logic of purchasing over renting. For potential buyers, the current 7.40% mortgage rate increases carrying costs, but the low entry price mitigates this impact. Renter’s face higher relative burdens, making the transition to ownership a financially strategic option. The market’s stability is compromised by its small economic base and limited job growth, yet the strong owner-occupancy rate of 77.5% provides a degree of structural resilience. Investors and residents should note that while price growth has cooled, the fundamental affordability gap between buying and renting remains a defining feature of this rural Alabama market.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -209,13 +229,17 @@ A significant data anomaly is the divergence between asset value growth and rent
     Get the complete picture for <strong>Lowndes County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/lowndes-county-alabama.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AL&county=01085&price=86300"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/lowndes-county-alabama.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/lowndes-county-alabama.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Lowndes County Compares</h2>
@@ -375,7 +399,7 @@ A significant data anomaly is the divergence between asset value growth and rent
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -537,6 +561,47 @@ A significant data anomaly is the divergence between asset value growth and rent
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2015": 107.29, "2016": 108.01, "2017": 107.57, "2018": 119.05, "2019": 119.34, "2020": 122.46, "2021": 129.54, "2022": 134.05, "2023": 152.34, "2025": 154.95};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

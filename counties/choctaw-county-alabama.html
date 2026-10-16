@@ -87,7 +87,7 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · 🔥 Boom Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 75.8</span>
       <span title="Stability">🏠 62.6</span>
@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Choctaw County
+    <strong class="up">
+      rose +12.0%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -179,11 +199,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Choctaw County, Alabama, exhibits characteristics of a balanced market with a distinct buyer’s advantage, driven by significantly lower entry costs relative to national standards. The median home value of $123,400 is 45.8% below the national average and 22.7% below the state average, while the median household income of $47,813 remains 29.7% below the national mean. This disparity results in a price-to-income ratio of 2.58, well below the national benchmark of 3.20, indicating that local purchasing power supports homeownership more effectively than in typical U.S. markets. Furthermore, the rent burden stands at 13.6% of income, compared to the national average of 17.2%, suggesting that rental housing is also highly accessible. The price-to-rent ratio of 18.9 aligns closely with the national average of 18.7, confirming that the relative value of owning versus renting remains structurally neutral despite the low absolute price points.
+  <p>Choctaw County, Alabama, operates as a distinctively affordable buyer’s market, characterized by a median home value of $123,400 and a median household income of $47,813. The price-to-income ratio stands at 2.58, significantly below the national average of 3.20, while the rent burden is only 13.6% of income compared to the 17.2% national benchmark. These metrics indicate that housing costs remain manageable relative to local earnings, creating a favorable environment for homeownership despite the broader economic constraints. The high owner-occupancy rate of 82.4% further reinforces the stability of the local housing stock, suggesting a community deeply rooted in property ownership rather than transient rental populations.
 
-The recent trend reveals a sharp acceleration in home values, with year-over-year growth moderating from a peak of 27.3% in 2022 to 10.4% in 2024. This surge contrasts with the relatively stable rent trajectory, where the median gross rent of $543 implies a much slower rate of appreciation. This divergence, where home values are rising faster than rents, signals a tightening supply of saleable inventory or a shift in demand toward ownership. The local economic context supports this demand, as net migration of 251 filers between 2021 and 2022 indicates population growth. However, the labor market remains small, with only 2,974 total jobs and an average weekly wage of $1,260, which limits the depth of the buyer pool. The high owner-occupancy rate of 82.4% suggests a stable, established housing stock, yet the limited employment base of 322 establishments may constrain long-term demand sustainability.
+Recent price appreciation has been substantial, with home values rising 10.4% in 2024 following a peak year-over-year increase of 27.3% in 2022. This trajectory is corroborated by the FHFA Home Price Index, which reflects an 11.97% year-over-year gain, outperforming the Alabama state average of 2.79% by 9.18 percentage points. However, this rapid price growth contrasts with the more moderate rent increase, where the median gross rent sits at $543. The resulting price-to-rent ratio of 18.9 aligns closely with the national average of 18.7, indicating that while home prices are climbing, rental costs have not surged to the same degree. This divergence suggests that the market is transitioning from a low-base effect to a more normalized growth phase, though the momentum remains strong relative to the state.
 
-For prospective buyers, the current environment offers exceptional affordability metrics, but the rapid price appreciation demands careful timing. The 30-year fixed mortgage rate of 7.40% significantly impacts monthly carrying costs, potentially offsetting some of the benefits of the low price-to-income ratio. Renter’s advantages are minimal given the low rent burden, but the accelerating home price trend suggests that waiting may result in higher entry barriers. The data indicates a market transitioning from a period of stagnation to rapid growth, driven by demographic inflows and limited local supply. Investors and buyers should note that while the price-to-rent ratio remains balanced, the velocity of price growth outpacing rent growth creates a narrowing window for affordable entry. The economic foundation, characterized by modest wages and limited job diversity, requires buyers to ensure their income stability can sustain the higher mortgage payments associated with the rising median home value.</p>
+The local economic context presents challenges that temper the affordability advantages. With only 2,974 jobs and an average weekly wage of $1,260, the labor market is limited, which may constrain long-term demand growth. Net migration of +251 filers between 2021 and 2022 shows modest population growth, with incoming residents averaging slightly lower incomes than those leaving. The national 30-year fixed mortgage rate of 7.40% adds financing pressure, potentially limiting buyer eligibility despite the low absolute price points. Consequently, while the county offers exceptional value compared to national and state averages—where home values are 45.8% and 22.7% lower, respectively—the limited economic vitality and slowing price momentum suggest a market that is stable but lacks the robust demand drivers seen in larger metropolitan areas. Buyers should note that while entry costs are low, the recent acceleration in prices requires careful assessment of personal financial capacity against the current interest rate environment.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -197,13 +217,17 @@ For prospective buyers, the current environment offers exceptional affordability
     Get the complete picture for <strong>Choctaw County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/choctaw-county-alabama.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AL&county=01023&price=123400"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/choctaw-county-alabama.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/choctaw-county-alabama.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Choctaw County Compares</h2>
@@ -363,7 +387,7 @@ For prospective buyers, the current environment offers exceptional affordability
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -525,6 +549,47 @@ For prospective buyers, the current environment offers exceptional affordability
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2015": 120.04, "2016": 128.63, "2017": 134.05, "2018": 135.23, "2019": 147.24, "2020": 142.44, "2021": 140.44, "2022": 174.45, "2023": 161.63, "2025": 180.97};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

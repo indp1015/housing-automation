@@ -87,7 +87,7 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · 🔥 Boom Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 23.5</span>
       <span title="Stability">🏠 38.1</span>
@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Stone County
+    <strong class="up">
+      rose +15.1%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -177,19 +197,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Stone County, Arkansas, functions as a moderately balanced market with distinct affordability pressures relative to local incomes. The price-to-income ratio stands at 4.19, significantly exceeding the national average of 3.20, indicating that home purchase costs are disproportionately high for residents. Conversely, the rent burden is 18.3% of income, only marginally above the national benchmark of 17.2%. This divergence suggests that while renting remains relatively accessible, homeownership is strained by elevated property values compared to earning potential. The market is not strictly a buyer’s or renter’s market but rather one where entry-level purchasing power is constrained by income levels rather than absolute price points.
-
-Recent trends reveal volatile price appreciation that has outpaced rental growth. Home values surged 26.4% in 2022 and continued rising 14.9% in 2024, reaching a median of $171,600. This trajectory contrasts sharply with the modest 18.3% rent burden, implying that equity accumulation is outstripping rental cost increases. The price-to-rent ratio of 22.8, well above the national average of 18.7, further highlights that owning is becoming more expensive relative to renting on a cash-flow basis. This pattern suggests a market adjusting to higher valuations without a corresponding surge in rental costs, potentially driven by limited local supply or external demand factors rather than broad-based local income growth.
-
-Regional context underscores Stone County’s unique position within Arkansas. Median home values are 21.3% above the state average, yet median household income is 39.8% below the national mean. This disparity creates a specific affordability gap not seen in more economically robust areas. Economic fundamentals show limited local job growth, with only 2,119 total jobs and an average weekly wage of $725. However, net migration of +476 filers between 2021 and 2022, with inflowing residents earning slightly more ($49,536) than outflowing residents ($48,978), indicates a modest influx of higher-income households potentially driving price appreciation. With 30-year mortgage rates at 7.40%, the high price-to-income ratio amplifies the cost of debt service. Potential buyers must account for the significant gap between local wages and home prices, while renters face stable but slightly above-average cost burdens. The market’s momentum is driven by migration and price appreciation rather than robust local employment expansion.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Stone County on Our Sister Sites</h3>
@@ -197,13 +204,17 @@ Regional context underscores Stone County’s unique position within Arkansas. M
     Get the complete picture for <strong>Stone County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/stone-county-arkansas.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AR&county=05137&price=171600"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/stone-county-arkansas.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/stone-county-arkansas.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Stone County Compares</h2>
@@ -362,7 +373,7 @@ Regional context underscores Stone County’s unique position within Arkansas. M
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -524,6 +535,47 @@ Regional context underscores Stone County’s unique position within Arkansas. M
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 122.82, "2017": 141.7, "2018": 144.9, "2019": 147.71, "2020": 158.65, "2021": 171.56, "2022": 195.25, "2023": 232.95, "2024": 225.7, "2025": 259.85};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

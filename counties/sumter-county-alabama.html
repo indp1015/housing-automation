@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2023
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Sumter County
+    <strong class="up">
+      rose +22.8%
+    </strong>
+    year-over-year as of 2023.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -191,11 +211,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Sumter County, Alabama, operates as a distinctively affordable buyer’s market, characterized by a median home value of $82,600 and a price-to-income ratio of 2.48, which is significantly below the national average of 3.20. The price-to-rent ratio of 8.9, less than half the national benchmark of 18.7, further underscores the relative economic advantage of homeownership over renting in this jurisdiction. Despite these favorable metrics, the market exhibits volatility, with home values spiking 26.1% in 2022 to $88,000 before moderating to a 1.8% decline in 2024. This recent stabilization follows a period of sharp correction from the 2020 low of $67,300, suggesting a market that has absorbed significant external shocks. The divergence between home value stagnation and the noted trend of rents rising faster than home values indicates a shifting dynamic where rental demand may be outpacing owner-occupancy growth, potentially driven by the high rent burden of 27.9% compared to the national average of 17.2%.
+  <p>Sumter County, Alabama, exhibits characteristics of a balanced market with a distinct lean toward renter advantage, driven by a price-to-rent ratio of 8.9, significantly below the national average of 18.7. This metric suggests that purchasing is comparatively less attractive than renting relative to income levels, despite a low price-to-income ratio of 2.48. The affordability profile is mixed; while home prices are 63.7% below the national average, the rent burden stands at 27.9% of median household income, nearly double the national benchmark of 17.2%. This divergence indicates that while homeownership is accessible, rental costs consume a disproportionate share of local earnings, creating a bifurcated housing landscape.
 
-The local economic foundation is modest, with total employment limited to 1,877 jobs and an average weekly wage of $906, which constrains broader purchasing power despite the low absolute cost of housing. New housing supply is extremely limited, with only four single-family units authorized in 2025, creating a tight inventory environment that may support price stability even amid declining values. Migration data reveals a net inflow of 131 filers, with incoming households earning an average of $44,481, slightly higher than those leaving, suggesting a slight demographic and economic strengthening. The county’s median household income of $33,310 is 51.0% below the national average, reinforcing that affordability is driven more by low asset prices than robust local earnings.
+Recent trends reveal significant volatility and structural shifts. Median home values surged 26.1% in 2022 to $88,000 before moderating to $82,600 in 2024, a 1.8% annual decline. Concurrently, the FHFA Home Price Index reported a 22.80% year-over-year increase in 2023, outperforming the state average by 20.01 percentage points. This sharp appreciation contrasts with the broader regional context, where home values remain 48.3% below the Alabama state average. The economic foundation is fragile, supported by only 1,877 total jobs and an average weekly wage of $906. Housing supply is critically constrained, with just four new single-family units authorized in 2025 and zero multi-family permits, limiting potential price stabilization through new construction.
 
-For prospective buyers, the current 7.40% mortgage rate poses a challenge to monthly payment affordability, yet the low entry price point mitigates this risk compared to higher-cost regions. The owner-occupancy rate of 66.8% reflects a community with strong residential ties, though the significant gap between home values and state averages—48.3% below the state median—positions Sumter County as a deep value market. The recent price correction from the 2022 peak suggests that the market has adjusted to higher interest rates, eliminating the speculative bubble that characterized the early 2020s. Consequently, the market presents a stable, low-cost entry point for buyers, while renters face a disproportionate cost burden relative to their incomes. The combination of minimal new supply and steady, albeit low, migration inflows suggests that while prices may not surge, they are unlikely to decline further, maintaining the status quo of extreme affordability relative to national benchmarks.</p>
+The market’s stability is undermined by low vitality and economic fragility, reflected in the low composite assessment of stability and vitality. Net migration remains positive at +131 filers, with inflows averaging $44,481 in income, slightly higher than outflows, suggesting a modest influx of higher-earning residents. However, the high national mortgage rate of 7.40% further pressures buyer demand. The primary driver of the market’s current standing is the tension between extreme affordability in nominal terms and high relative rental burdens. Buyers may find entry points attractive due to low price-to-income ratios, but renters face elevated cost pressures. The data suggests a market where ownership is financially feasible but rental costs are disproportionately high, creating a unique dynamic where the traditional renter’s advantage is complicated by acute rental expense relative to local wages. The recent price correction from the 2022 peak indicates a market adjusting to post-pandemic inflation and interest rate environments, with limited new supply to buffer further fluctuations.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -209,13 +229,17 @@ For prospective buyers, the current 7.40% mortgage rate poses a challenge to mon
     Get the complete picture for <strong>Sumter County</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/sumter-county-alabama.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AL&county=01119&price=82600"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/sumter-county-alabama.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/sumter-county-alabama.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Sumter County Compares</h2>
@@ -375,7 +399,7 @@ For prospective buyers, the current 7.40% mortgage rate poses a challenge to mon
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -537,6 +561,47 @@ For prospective buyers, the current 7.40% mortgage rate poses a challenge to mon
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2013": 131.87, "2014": 128.42, "2015": 139.32, "2016": 133.86, "2017": 135.74, "2018": 129.47, "2019": 135.46, "2020": 146.31, "2021": 152.23, "2023": 186.94};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

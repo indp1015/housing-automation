@@ -87,7 +87,7 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · 🔥 Boom Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 40.5</span>
       <span title="Stability">🏠 38.4</span>
@@ -125,8 +125,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2021
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Petersburg Borough
+    <strong class="up">
+      rose +8.2%
+    </strong>
+    year-over-year as of 2021.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -189,19 +209,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Petersburg Borough, Alaska, operates as a distinctively renter-favorable market, characterized by a price-to-rent ratio of 27.6, significantly exceeding the national average of 18.7. This metric indicates that purchasing a home is substantially more expensive relative to rental costs than in typical markets, suggesting that renting offers superior financial efficiency for many residents. The market’s affordability profile is mixed; while the price-to-income ratio stands at 4.19, well above the national benchmark of 3.20, the rent burden is only 15.2% of median household income, which is lower than the national average of 17.2%. This divergence highlights that while homeownership is stretched, rental housing remains relatively accessible within the local income structure.
-
-The multi-year trend reveals a period of intense price appreciation followed by recent stabilization. Median home values surged from $205,000 in 2017 to $315,100 in 2024, with peak year-over-year growth reaching 13.3% in 2022. This rapid escalation has moderated to a 4.6% increase in 2024, indicating a cooling phase in the market. Notably, home values are rising faster than rents, a pattern that typically signals increasing housing costs for owners without a corresponding spike in rental demand. The borough’s home values are 11.1% above the state average and 38.4% above the national average, reflecting its premium position relative to broader markets. This premium is supported by a median household income of $75,125, which is 10.5% higher than the national mean, providing some buffer against high home prices.
-
-Economic fundamentals present a constrained supply environment that supports current valuations. With only six new single-family units authorized in 2025 and zero multi-family permits, new construction is negligible compared to the 3,409 population. Local employment is limited to 792 jobs with an average weekly wage of $1,002, suggesting a reliance on external income sources or government funding. Migration data shows a net inflow of 158 filers, with incoming households earning an average of $81,572, slightly less than the $84,228 average of outflowing households. The current 30-year fixed mortgage rate of 7.40% further pressures buyer purchasing power, reinforcing the appeal of the rental sector. For potential buyers, the high entry cost and limited inventory suggest a competitive landscape, while renters benefit from manageable cost burdens relative to local incomes. The market’s trajectory is defined by supply constraints and high baseline values rather than speculative demand.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Petersburg Borough on Our Sister Sites</h3>
@@ -209,13 +216,17 @@ Economic fundamentals present a constrained supply environment that supports cur
     Get the complete picture for <strong>Petersburg Borough</strong> —
     financing options and ongoing ownership costs.
   </p>
-  <a href="https://mortgage.dataindp.com/counties/petersburg-borough-alaska.html"
+  <a href="https://mortgage.dataindp.com/calculator.html?state=AK&county=02195&price=315100"
      class="cross-link-btn">
-    💰 Mortgage Guide →
+    💵 Monthly Payment Calculator →
+  </a>
+  <a href="https://mortgage.dataindp.com/counties/petersburg-borough-alaska.html"
+     class="cross-link-btn" style="margin-left: 10px;">
+    💰 Loan Limits &amp; FHA/VA Guide →
   </a>
   <a href="https://propertytax.dataindp.com/counties/petersburg-borough-alaska.html"
      class="cross-link-btn" style="margin-left: 10px;">
-    🧾 Property Tax Data →
+    🧾 Property Tax Details →
   </a>
 </div>
 <h2>How Petersburg Borough Compares</h2>
@@ -375,7 +386,7 @@ Economic fundamentals present a constrained supply environment that supports cur
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-15. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-10-16. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -537,6 +548,47 @@ Economic fundamentals present a constrained supply environment that supports cur
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2011": 131.34, "2012": 139.31, "2013": 133.21, "2014": 140.42, "2015": 144.14, "2016": 151.37, "2017": 160.82, "2019": 170.54, "2020": 175.35, "2021": 189.82};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 
