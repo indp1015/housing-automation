@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
+<title>Buy vs Rent Calculator — Compare Homeownership vs Renting</title>
+<meta name="description" content="Compare the long-term financial outcome of buying a home vs renting in any U.S. county. Interactive chart, break-even analysis, and lifetime comparison.">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850461542641038"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">US Housing Data</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/buy-vs-rent.html">Buy vs Rent</a>
+      <a href="/rankings/most-expensive-counties.html">Rankings</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 상단 광고 슬롯 -->
+<div class="container ad-slot ad-top">
+  <!-- AdSense 광고 코드 삽입 위치 (승인 후) -->
+</div>
+
+<main class="container">
+
+
+<article class="bvr-page">
+<h1>Buy vs Rent Calculator</h1>
+<p class="lead">
+  Compare the long-term financial outcome of <strong>buying a home</strong> vs
+  <strong>renting</strong> in any U.S. county. Adjust assumptions and see the
+  break-even point and 30-year projection.
+</p>
+
+<div class="bvr-picker">
+  <label for="bvrSearch">Select a County</label>
+  <input type="text" id="bvrSearch" placeholder="Type county or state name..." autocomplete="off">
+  <div id="bvrSearchResults" class="bvr-search-results"></div>
+  <div id="bvrSelected" class="bvr-selected-card" style="display:none;"></div>
+</div>
+
+<div class="bvr-empty" id="bvrEmpty">
+  <p>📍 Select a county above to begin the comparison</p>
+</div>
+
+<div class="bvr-content" id="bvrContent" style="display:none;">
+  <div class="bvr-grid">
+
+    <!-- Left: Inputs -->
+    <div class="bvr-inputs">
+      <div class="bvr-section">
+        <h3>🏠 Buying</h3>
+        <div class="bvr-field">
+          <label for="bvrHomePrice">Home Price</label>
+          <div class="input-group">
+            <span class="prefix">$</span>
+            <input type="number" id="bvrHomePrice" step="5000">
+          </div>
+        </div>
+        <div class="bvr-field">
+          <label for="bvrDownPct">Down Payment (%)</label>
+          <div class="input-group">
+            <input type="number" id="bvrDownPct" value="20" min="0" max="100" step="1">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+        <div class="bvr-field">
+          <label for="bvrRate">Mortgage Rate</label>
+          <div class="input-group">
+            <input type="number" id="bvrRate" value="6.85" min="0.1" max="20" step="0.01">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+        <div class="bvr-field">
+          <label for="bvrTaxRate">Property Tax Rate</label>
+          <div class="input-group">
+            <input type="number" id="bvrTaxRate" value="1.1" min="0" max="5" step="0.01">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+        <div class="bvr-field">
+          <label for="bvrAppreciation">Home Appreciation (annual)</label>
+          <div class="input-group">
+            <input type="number" id="bvrAppreciation" value="3.0" min="-5" max="15" step="0.1">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bvr-section">
+        <h3>🏢 Renting</h3>
+        <div class="bvr-field">
+          <label for="bvrRent">Monthly Rent</label>
+          <div class="input-group">
+            <span class="prefix">$</span>
+            <input type="number" id="bvrRent" step="50">
+          </div>
+        </div>
+        <div class="bvr-field">
+          <label for="bvrRentInflation">Rent Inflation (annual)</label>
+          <div class="input-group">
+            <input type="number" id="bvrRentInflation" value="3.0" min="0" max="10" step="0.1">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+        <div class="bvr-field">
+          <label for="bvrInvestReturn">Investment Return (if renting)</label>
+          <div class="input-group">
+            <input type="number" id="bvrInvestReturn" value="5.0" min="0" max="15" step="0.1">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bvr-section">
+        <h3>⏱️ Timeline</h3>
+        <div class="bvr-field">
+          <label for="bvrYears">Years to Stay</label>
+          <input type="range" id="bvrYears" value="10" min="1" max="30" step="1" class="bvr-range">
+          <div class="bvr-range-labels">
+            <span>1</span>
+            <span class="bvr-range-current" id="bvrYearsDisplay">10 years</span>
+            <span>30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Results -->
+    <div class="bvr-results-panel">
+
+      <div class="bvr-verdict" id="bvrVerdict">
+        <div class="bvr-verdict-label">Result at <span id="bvrYearsLabel">10</span> years</div>
+        <div class="bvr-verdict-winner" id="bvrWinner">—</div>
+        <div class="bvr-verdict-diff" id="bvrDifference">—</div>
+      </div>
+
+      <div class="bvr-summary-grid">
+        <div class="bvr-summary-card bvr-summary-buy">
+          <span class="bvr-summary-label">🏠 Buy Net Worth</span>
+          <strong id="bvrBuyWorth">$0</strong>
+        </div>
+        <div class="bvr-summary-card bvr-summary-rent">
+          <span class="bvr-summary-label">🏢 Rent Net Worth</span>
+          <strong id="bvrRentWorth">$0</strong>
+        </div>
+      </div>
+
+      <div class="bvr-chart-wrapper">
+        <canvas id="bvrChart"></canvas>
+      </div>
+
+      <div class="bvr-detail">
+        <p id="bvrBreakEvenLine">—</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<h2>How This Calculator Works</h2>
+<p>
+  This calculator compares the <strong>net worth</strong> of two strategies over time:
+</p>
+<ul>
+  <li>
+    <strong>Buying:</strong> You pay a down payment, monthly mortgage (P&amp;I),
+    property tax, insurance, and maintenance. At year N, your net worth is
+    the home's value minus remaining mortgage and selling costs.
+  </li>
+  <li>
+    <strong>Renting:</strong> You invest the down payment you would have spent,
+    plus any monthly savings (when rent is lower than owning costs), at a
+    chosen investment return rate.
+  </li>
+</ul>
+<p>
+  The calculator uses standard assumptions: 1% annual maintenance on the home,
+  $1,500/year insurance, 3% closing costs when buying, and 6% selling costs.
+  Mortgage is a 30-year fixed-rate loan.
+</p>
+
+<p class="methodology">
+  <strong>Disclaimer:</strong> This calculator provides estimates for
+  illustration only. It does not constitute financial, tax, or investment
+  advice. Actual outcomes depend on market conditions, individual tax
+  situations, and personal circumstances. Consult a financial advisor before
+  making major decisions.
+</p>
+
+</article>
+
+<script src="/static/buy-vs-rent.js"></script>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 US Housing Data. Data sourced from U.S. Census Bureau (ACS 2023 5-Year Estimates).</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/rankings/most-expensive-counties.html">Rankings</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+  <p class="disclaimer">
+  Housing data: U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates.<br>
+  Price index data: <strong>This product uses FHFA Data but is neither endorsed nor certified by FHFA.</strong>
+</p>
+</footer>
+</body>
+</html>
