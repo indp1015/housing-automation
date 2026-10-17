@@ -342,12 +342,30 @@
           // 🆕 선택 연도 표시
           selectedYearLine: { year: selectedYears },
         },
+        // 🆕 애니메이션 시간 축소 (산만함 감소)
+        animation: { duration: 300 },
         scales: {
           y: {
             title: { display: true, text: 'Net Worth' },
             ticks: { callback: v => '$' + (v / 1000).toFixed(0) + 'k' },
           },
-          x: { grid: { display: false } },
+          x: {
+            grid: { display: false },
+            // 🆕 X축 라벨 명확화: 5년 단위 + 선택 연도
+            ticks: {
+              autoSkip: false,
+              maxRotation: 0,
+              minRotation: 0,
+              font: { size: 10 },
+              callback: function(value, index) {
+                const yearNum = index + 1;
+                if (yearNum === 1 || yearNum === selectedYears || yearNum % 5 === 0) {
+                  return 'Yr ' + yearNum;
+                }
+                return '';
+              }
+            }
+          },
         },
       },
       // 🆕 플러그인 등록
