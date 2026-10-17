@@ -4,6 +4,38 @@
  * - Uses counties_data.json for defaults
  */
 (function() {
+    // 🆕 선택 연도 세로선 플러그인
+  const selectedYearLinePlugin = {
+    id: 'selectedYearLine',
+    afterDatasetsDraw(chart, args, opts) {
+      const year = opts.year;
+      if (!year || year < 1) return;
+      
+      const xAxis = chart.scales.x;
+      const yAxis = chart.scales.y;
+      const idx = year - 1;
+      if (idx < 0 || idx >= xAxis.ticks.length) return;
+      
+      const xPos = xAxis.getPixelForTick(idx);
+      const ctx = chart.ctx;
+      
+      ctx.save();
+      ctx.strokeStyle = 'rgba(192, 57, 43, 0.7)';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 4]);
+      ctx.beginPath();
+      ctx.moveTo(xPos, yAxis.top);
+      ctx.lineTo(xPos, yAxis.bottom);
+      ctx.stroke();
+      
+      // 라벨
+      ctx.fillStyle = 'rgba(192, 57, 43, 0.9)';
+      ctx.font = 'bold 11px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Yr ' + year, xPos, yAxis.top - 4);
+      ctx.restore();
+    }
+  };
   'use strict';
 
   const MAX_YEARS = 30;
@@ -225,7 +257,7 @@
     }
 
     renderVerdict(buySeries[years - 1], rentSeries[years - 1], years);
-    renderChart(buySeries, rentSeries);
+    renderChart(buySeries, rentSeries, years);   // 🆕 years 전달
     renderBreakEven(breakEven, years);
   }
 
@@ -259,7 +291,7 @@
     }
   }
 
-  function renderChart(buyData, rentData) {
+  function renderChart(buyData, rentData, selectedYears) {
     const ctx = document.getElementById('bvrChart');
     if (!ctx) return;
 
@@ -307,6 +339,8 @@
               label: c => c.dataset.label + ': ' + fmt(c.parsed.y),
             },
           },
+          // 🆕 선택 연도 표시
+          selectedYearLine: { year: selectedYears },
         },
         scales: {
           y: {
@@ -316,6 +350,8 @@
           x: { grid: { display: false } },
         },
       },
+      // 🆕 플러그인 등록
+      plugins: [selectedYearLinePlugin],
     });
   }
 
