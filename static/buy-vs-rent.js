@@ -5,6 +5,7 @@
  */
 (function() {
     // 🆕 선택 연도 세로선 플러그인
+  // 🆕 선택 연도 세로선 + 데이터포인트 강조 플러그인
   const selectedYearLinePlugin = {
     id: 'selectedYearLine',
     afterDatasetsDraw(chart, args, opts) {
@@ -20,19 +21,65 @@
       const ctx = chart.ctx;
       
       ctx.save();
-      ctx.strokeStyle = 'rgba(192, 57, 43, 0.7)';
+      
+      // 1) 세로 점선
+      ctx.strokeStyle = 'rgba(192, 57, 43, 0.6)';
       ctx.lineWidth = 2;
       ctx.setLineDash([6, 4]);
       ctx.beginPath();
       ctx.moveTo(xPos, yAxis.top);
       ctx.lineTo(xPos, yAxis.bottom);
       ctx.stroke();
+      ctx.setLineDash([]);
       
-      // 라벨
-      ctx.fillStyle = 'rgba(192, 57, 43, 0.9)';
+      // 2) 상단 라벨 (배경 박스 + 텍스트)
+      const label = 'Yr ' + year;
       ctx.font = 'bold 11px sans-serif';
+      const labelWidth = ctx.measureText(label).width + 12;
+      const labelHeight = 18;
+      const labelX = xPos - labelWidth / 2;
+      const labelY = yAxis.top - labelHeight - 4;
+      
+      ctx.fillStyle = '#c0392b';
+      ctx.beginPath();
+      // 둥근 사각형
+      const r = 4;
+      ctx.moveTo(labelX + r, labelY);
+      ctx.lineTo(labelX + labelWidth - r, labelY);
+      ctx.quadraticCurveTo(labelX + labelWidth, labelY, labelX + labelWidth, labelY + r);
+      ctx.lineTo(labelX + labelWidth, labelY + labelHeight - r);
+      ctx.quadraticCurveTo(labelX + labelWidth, labelY + labelHeight, labelX + labelWidth - r, labelY + labelHeight);
+      ctx.lineTo(labelX + r, labelY + labelHeight);
+      ctx.quadraticCurveTo(labelX, labelY + labelHeight, labelX, labelY + labelHeight - r);
+      ctx.lineTo(labelX, labelY + r);
+      ctx.quadraticCurveTo(labelX, labelY, labelX + r, labelY);
+      ctx.fill();
+      
+      ctx.fillStyle = 'white';
       ctx.textAlign = 'center';
-      ctx.fillText('Yr ' + year, xPos, yAxis.top - 4);
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, xPos, labelY + labelHeight / 2 + 1);
+      
+      // 3) 🆕 각 데이터셋의 선택 연도 값에 점 표시
+      chart.data.datasets.forEach((dataset) => {
+        const value = dataset.data[idx];
+        if (value === null || value === undefined || isNaN(value)) return;
+        
+        const yPos = yAxis.getPixelForValue(value);
+        
+        // 외곽 흰 원 (테두리)
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.arc(xPos, yPos, 7, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // 내부 컬러 원
+        ctx.fillStyle = dataset.borderColor;
+        ctx.beginPath();
+        ctx.arc(xPos, yPos, 5, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      
       ctx.restore();
     }
   };
@@ -70,6 +117,9 @@
       }
     });
 
+    // 🆕 Debounce 타이머
+    let debounceTimer = null;
+
     // Input changes
     ['bvrHomePrice', 'bvrDownPct', 'bvrRate', 'bvrTaxRate', 'bvrAppreciation',
      'bvrRent', 'bvrRentInflation', 'bvrInvestReturn', 'bvrYears'].forEach(id => {
@@ -79,8 +129,14 @@
           if (id === 'bvrYears') {
             document.getElementById('bvrYearsDisplay').textContent = el.value + ' years';
             document.getElementById('bvrYearsLabel').textContent = el.value;
+            // 슬라이더는 더 빠른 반응 (50ms)
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(calculate, 50);
+          } else {
+            // 숫자 입력은 조금 더 여유 (200ms)
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(calculate, 200);
           }
-          calculate();
         });
       }
     });
@@ -351,7 +407,6 @@
           },
           x: {
             grid: { display: false },
-            // 🆕 X축 라벨 명확화: 5년 단위 + 선택 연도
             ticks: {
               autoSkip: false,
               maxRotation: 0,
@@ -359,9 +414,22 @@
               font: { size: 10 },
               callback: function(value, index) {
                 const yearNum = index + 1;
-                if (yearNum === 1 || yearNum === selectedYears || yearNum % 5 === 0) {
+                
+                // 🆕 선택 연도는 항상 표시
+                if (yearNum === selectedYears) return 'Yr ' + yearNum;
+                
+                // 🆕 선택 연도와 2년 이내면 5년 단위 라벨 스킵 (겹침 방지)
+                if (yearNum % 5 === 0) {
+                  if (Math.abs(yearNum - selectedYears) <= 2) return '';
                   return 'Yr ' + yearNum;
                 }
+                
+                // 🆕 1년차 표시 (선택 연도가 1이 아닐 때만)
+                if (yearNum === 1 && selectedYears !== 1) return 'Yr 1';
+                
+                // 🆕 마지막 30년차 표시 (선택 연도가 30이 아닐 때만)
+                if (yearNum === 30 && selectedYears !== 30) return 'Yr 30';
+                
                 return '';
               }
             }
