@@ -1265,3 +1265,19 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
     gap: 20px; /* 데스크톱에서 로고와 버튼 사이 간격 */
   }
 }
+/* OSM / CDC attribution footer */
+.footer-attribution {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+  color: #b8c4d0;
+  text-align: center;
+}
+.footer-attribution a {
+  color: #d6e2ee;
+  text-decoration: underline;
+}
+.footer-attribution a:hover {
+  color: #ffffff;
+}

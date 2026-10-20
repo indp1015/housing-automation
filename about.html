@@ -6,12 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
   <title>About US Housing Data - U.S. Housing Market Data</title>
-  <meta name="description" content="About US Housing Data: independent U.S. housing market data sourced from the Census Bureau (ACS), FHFA, BLS, IRS, and FRED. Learn about our methodology and mission.">
+  <meta name="description" content="About US Housing Data: independent U.S. housing market data sourced from the Census Bureau (ACS), FHFA, BLS, IRS, FRED, CDC PLACES, and OpenStreetMap. Learn about our methodology, licensing, and mission.">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="/static/style.css">
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850461542641038"
        crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPS0MR3SX5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RPS0MR3SX5');
+  </script>
 </head>
 <body>
 <header class="site-header">
@@ -67,6 +76,8 @@
   <li><strong>Housing Supply</strong> — new residential building permits authorized</li>
   <li><strong>Migration Patterns</strong> — county-to-county population and income flows</li>
   <li><strong>Mortgage Rates</strong> — 30-year and 15-year fixed mortgage rate trends</li>
+  <li><strong>Public Health Indicators</strong> — county-level chronic disease prevalence and health behaviors</li>
+  <li><strong>Local Amenities</strong> — access to schools, healthcare, groceries, parks, and other everyday services</li>
 </ul>
 <h2>Why Market Score?</h2>
 <p>
@@ -75,7 +86,7 @@
   buyers, renters, or curious citizens who need quick, actionable context.
 </p>
 <p>
-  Market Score condenses <strong>7 data sources and 10+ metrics</strong> into a single
+  Market Score condenses <strong>9 data sources and 12+ metrics</strong> into a single
   0–100 rating across four dimensions that matter most to housing decisions:
 </p>
 <ul>
@@ -128,8 +139,8 @@
     <tr>
       <td><strong>Vitality</strong></td>
       <td>20%</td>
-      <td>New Housing Permits, Net Migration, Wages</td>
-      <td>Higher = active local economy and demand</td>
+      <td>New Housing Permits, Net Migration, Wages, <strong>Health &amp; Amenity Access</strong></td>
+      <td>Higher = active local economy, healthy population, and convenient services</td>
     </tr>
   </tbody>
 </table>
@@ -151,15 +162,17 @@
 
 <div class="attribution-notice">
   <strong>Disclaimer:</strong> The Market Score is an editorial rating based on
-  publicly available data from the U.S. Census Bureau, FHFA, BLS, IRS, and FRED.
-  It is not investment advice, a property valuation, or a prediction of future
-  performance. Users should conduct independent research before making housing decisions.
+  publicly available data from the U.S. Census Bureau, FHFA, BLS, IRS, FRED,
+  CDC PLACES, and OpenStreetMap. It is not investment advice, a property valuation,
+  or a prediction of future performance. Users should conduct independent research
+  before making housing decisions.
 </div>
 <h2>Data Sources</h2>
 <p>
   All data on US Housing Data comes from official, publicly available
-  government sources. We do not generate or estimate housing values ourselves.
-  Each dataset is used under its original license terms.
+  government sources and open-data projects. We do not generate or estimate
+  housing values ourselves. Each dataset is used under its original license terms,
+  which are reproduced below.
 </p>
 
 <table class="data-table">
@@ -200,6 +213,16 @@
       <td>Mortgage Rate Series (MORTGAGE30US, MORTGAGE15US)</td>
       <td>FRED, Federal Reserve Bank of St. Louis</td>
       <td>Public Domain (U.S. Government Work)</td>
+    </tr>
+    <tr>
+      <td>PLACES: Local Data for Better Health (County Data)</td>
+      <td>Centers for Disease Control and Prevention (CDC)</td>
+      <td>Public Domain (CC0 1.0) / ODC-ODbL 1.0</td>
+    </tr>
+    <tr>
+      <td>OpenStreetMap Point-of-Interest Data (via Overpass API)</td>
+      <td>OpenStreetMap contributors</td>
+      <td>ODbL 1.0 (Open Database License)</td>
     </tr>
   </tbody>
 </table>
@@ -242,6 +265,20 @@
     Learn more at
     <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">fred.stlouisfed.org</a>.
   </li>
+  <li>
+    <strong>Centers for Disease Control and Prevention — PLACES: Local Data for Better Health</strong><br>
+    Provides model-based county-level estimates for chronic disease prevalence,
+    health behaviors, and preventive service use. Learn more at
+    <a href="https://www.cdc.gov/places/" target="_blank" rel="noopener">cdc.gov/places</a>.
+  </li>
+  <li>
+    <strong>OpenStreetMap — Point-of-Interest Data (via Overpass API)</strong><br>
+    Provides geographic data on schools, hospitals, pharmacies, grocery stores,
+    parks, and other local amenities. Learn more at
+    <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">openstreetmap.org</a>.
+    License details at
+    <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">openstreetmap.org/copyright</a>.
+  </li>
 </ul>
 
 <h2>Our Methodology</h2>
@@ -256,6 +293,59 @@
   to areas with sufficient mortgage transaction volume), we indicate this
   explicitly rather than substituting estimates.
 </p>
+
+<h2>Licensing and Attribution</h2>
+<p>
+  We take license compliance seriously. The following notices satisfy the
+  attribution requirements of each upstream data provider.
+</p>
+
+<h3>U.S. Government Data (Public Domain)</h3>
+<p>
+  Data from the U.S. Census Bureau (ACS, Building Permits Survey), the Bureau
+  of Labor Statistics (QCEW), the IRS (Migration Data), the Federal Housing
+  Finance Agency (HPI), and the Federal Reserve Bank of St. Louis (FRED) are
+  works of the U.S. Government and are generally in the public domain. Where
+  a specific dataset carries a CC0 1.0 dedication, we honor that dedication.
+</p>
+
+<h3>CDC PLACES</h3>
+<p>
+  County-level health estimates are derived from CDC PLACES: Local Data for
+  Better Health. PLACES data is made available by the Centers for Disease
+  Control and Prevention as a public-domain work of the U.S. Government and,
+  depending on the release, may also be distributed under the Open Data
+  Commons Attribution License (ODC-ODbL 1.0) or CC0 1.0. We credit the CDC
+  as the source and do not imply endorsement by the CDC or HHS.
+</p>
+<p class="attribution-notice">
+  <strong>Suggested citation:</strong> PLACES. Centers for Disease Control and
+  Prevention. Accessed 2026.
+  <a href="https://www.cdc.gov/places" target="_blank" rel="noopener">https://www.cdc.gov/places</a>
+</p>
+
+<h3>OpenStreetMap (ODbL 1.0)</h3>
+<p>
+  Amenity and point-of-interest counts are derived from OpenStreetMap data,
+  which is © OpenStreetMap contributors and available under the Open Database
+  License (ODbL) 1.0. We publish only <strong>aggregated county-level counts</strong>
+  (a “Produced Work” under the ODbL), not the underlying OSM database. Any
+  public use of these counts must retain the attribution below and make clear
+  that the data is available under the ODbL.
+</p>
+<p class="attribution-notice">
+  <strong>Required attribution:</strong> © OpenStreetMap contributors, licensed
+  under the Open Database License (ODbL 1.0).
+  <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">openstreetmap.org/copyright</a>
+</p>
+
+<div class="attribution-notice">
+  <strong>Disclaimer:</strong> The Market Score is an editorial rating based on
+  publicly available data from the U.S. Census Bureau, FHFA, BLS, IRS, FRED,
+  CDC PLACES, and OpenStreetMap. It is not investment advice, a property valuation,
+  or a prediction of future performance. Users should conduct independent research
+  before making housing decisions.
+</div>
 
 <h2>Editorial Standards</h2>
 <p>
@@ -307,9 +397,10 @@
   US Housing Data is an independently operated platform. We analyze publicly
   available open data provided by government agencies, including the U.S.
   Census Bureau, the Bureau of Labor Statistics, the IRS, the Federal Housing
-  Finance Agency, and the Federal Reserve Bank of St. Louis, to deliver
+  Finance Agency, the Federal Reserve Bank of St. Louis, the Centers for Disease
+  Control and Prevention, and the OpenStreetMap contributor community, to deliver
   accessible housing market insights. US Housing Data operates as an autonomous
-  entity and is not affiliated with or sponsored by these agencies.
+  entity and is not affiliated with or sponsored by these agencies or projects.
 </p>
 
 <h2>Contact</h2>
@@ -319,7 +410,7 @@
   We welcome feedback on data accuracy and site usability.
 </p>
 
-<h3>Attribution Notice</h3>
+<h3>Full Attribution Notice</h3>
 <p class="attribution-notice">
   Employment and wage data: Source: U.S. Bureau of Labor Statistics,
   Quarterly Census of Employment and Wages (QCEW). Public domain.<br>
@@ -327,8 +418,12 @@
   Public domain (CC0 1.0).<br>
   Migration data: Source: IRS Statistics of Income, County-to-County Migration
   Data. Public domain (U.S. Government Work).<br>
-  Interest rate data: Source: FRED, Federal Reserve Bank of St. Louis.
-  Public domain (U.S. Government Work).<br>
+  Interest rate data: Source: FRED, Federal Reserve Bank of St. Louis. Public
+  domain (U.S. Government Work).<br>
+  Health estimates: Source: CDC PLACES (Local Data for Better Health). Public
+  domain / ODC-ODbL 1.0. Not endorsed by CDC or HHS.<br>
+  Amenity and POI counts: © OpenStreetMap contributors, licensed under the
+  Open Database License (ODbL 1.0).<br>
   Housing price index: This product uses FHFA Data but is neither endorsed
   nor certified by FHFA.
 </p>
@@ -348,11 +443,21 @@
       <a href="/blog/">Blog</a> ·
       <a href="/about.html">About</a>
     </nav>
+
+    <p class="disclaimer">
+      Housing data: U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates.<br>
+      Health estimates: CDC PLACES (Local Data for Better Health). Public domain / ODC-ODbL 1.0. Not endorsed by CDC or HHS.<br>
+      Amenity data: © OpenStreetMap contributors, licensed under the Open Database License (ODbL 1.0).<br>
+      Price index data: <strong>This product uses FHFA Data but is neither endorsed nor certified by FHFA.</strong>
+    </p>
+
+    <p class="footer-attribution">
+      © OpenStreetMap contributors, ODbL 1.0 —
+      <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">openstreetmap.org/copyright</a>
+      · CDC PLACES —
+      <a href="https://www.cdc.gov/places/" target="_blank" rel="noopener">cdc.gov/places</a>
+    </p>
   </div>
-  <p class="disclaimer">
-  Housing data: U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates.<br>
-  Price index data: <strong>This product uses FHFA Data but is neither endorsed nor certified by FHFA.</strong>
-</p>
 </footer>
 </body>
 </html>
