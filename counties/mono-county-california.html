@@ -133,17 +133,15 @@
 
 <!-- 🆕 Livability Mini Widget -->
 
-<div class="livability-mini-card">
+<div class="livability-mini-card" data-fips="06051">
   <div class="lmc-header">
     <span class="lmc-title">🏘️ Livability Score</span>
     <a href="/livability.html" class="lmc-cta">Customize weights →</a>
   </div>
   <div class="lmc-score-row">
-    <span class="lmc-score">35.3</span>
+    <span class="lmc-score" id="lmc-score-value">35.3</span>
     <span class="lmc-denom">/ 100</span>
-        <span class="lmc-note" title="This widget shows the score with default weights. On the Livability page, scores reflect your own custom priorities.">
-      Default weights · <a href="/livability.html" style="color:#3498db;text-decoration:none;font-weight:600;">customize →</a>
-    </span>
+    <span class="lmc-note" id="lmc-weights-label" title="Score reflects your saved priorities (or default weights if you haven't customized)">Default weights</span>
   </div>
   <div class="lmc-axes">
     
@@ -212,6 +210,34 @@
     </span>
   </p>
 </div>
+<script>
+(function() {
+  // 🆕 사용자 weights(localStorage) 반영 → 두 페이지 점수 완전 일치
+  try {
+    const DEFAULT = {affordability:25, stability:15, momentum:15, safety:15, health:10, amenities:20};
+    const saved = JSON.parse(localStorage.getItem('livability_weights_v2') || 'null');
+    if (!saved) return;  // 저장값 없음 → 기본값 유지
+    
+    const isDefault = Object.keys(DEFAULT).every(k => saved[k] === DEFAULT[k]);
+    if (isDefault) return;  // 기본값과 같음 → 재계산 불필요
+    
+    const axes = {"affordability": 12.2, "amenities": 23.3, "health": 91.1, "momentum": 99.0, "safety": 20.6, "stability": 3.5};
+    let num = 0, den = 0;
+    Object.keys(DEFAULT).forEach(k => {
+      const v = axes[k], w = saved[k];
+      if (v != null && w > 0) { num += v * w; den += w; }
+    });
+    if (den > 0) {
+      const score = (num / den).toFixed(1);
+      document.getElementById('lmc-score-value').textContent = score;
+      const label = document.getElementById('lmc-weights-label');
+      label.textContent = 'Your custom weights';
+      label.style.color = '#3498db';
+      label.style.fontWeight = '600';
+    }
+  } catch (e) { /* ignore */ }
+})();
+</script>
 
 
 <!-- 5년 추이 차트 -->
