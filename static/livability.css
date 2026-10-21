@@ -230,3 +230,8 @@
   padding-top: 1rem;
   border-top: 1px dashed #ddd;
 }
+.preset.active { 
+  background: #1a3d5c; 
+  color: white; 
+  border-color: #1a3d5c; 
+}

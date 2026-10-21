@@ -259,29 +259,38 @@ function renderTable() {
         toggle.textContent = hidden ? 'Show Full 100' : 'Show Top 10';
         });
     }
-    // 👇👇👇 여기부터 새로 추가할 코드 👇👇👇
-    // 🆕 프리셋 버튼 클릭 이벤트
+    // 🆕 프리셋 버튼 클릭 이벤트 (이 부분을 통째로 교체하세요)
     document.querySelectorAll('.preset').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        const preset = PRESETS[btn.dataset.preset];
+        const presetKey = btn.dataset.preset;
+        const preset = PRESETS[presetKey];
+        
+        // 디버깅용 (F12 콘솔에서 확인 가능)
+        console.log('Clicked preset:', presetKey, preset);
+        
         if (!preset) return;
         
+        // 1. 가중치 상태 업데이트
         state.weights = Object.assign({}, preset);
         
+        // 2. 슬라이더 UI 업데이트
         AXES.forEach(function(k) {
           document.getElementById('w-' + k).value = state.weights[k];
           document.getElementById('val-' + k).textContent = state.weights[k];
         });
         
+        // 3. Total 업데이트 및 저장 후 표 다시 그리기
         updateTotal();
         saveWeights();
         renderTable();
         
-        document.querySelectorAll('.preset').forEach(b => b.classList.remove('active'));
+        // 4. 버튼 활성화 표시
+        document.querySelectorAll('.preset').forEach(function(b) { 
+          b.classList.remove('active'); 
+        });
         btn.classList.add('active');
       });
     });
-    // 👆👆👆 여기까지 👆👆👆
   }
 
   async function loadData() {
