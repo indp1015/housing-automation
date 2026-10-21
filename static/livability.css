@@ -104,3 +104,9 @@
   .livability-table .axis-bars { display: none; }
   .livability-table .axis-head { display: none; }
 }
+.axis-legend {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  margin-bottom: 1rem; font-size: 0.8rem; color: #555;
+}
+.axis-legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.axis-legend i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
