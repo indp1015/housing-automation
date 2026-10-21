@@ -29,6 +29,21 @@
     budget:   { affordability: 50, stability: 15, momentum: 5,  safety: 15, health: 5,  amenities: 10 },
     young:    { affordability: 25, stability: 5,  momentum: 15, safety: 15, health: 10, amenities: 30 },
     };
+      // 🆕 퍼센트 계산 헬퍼 함수
+  function formatPercent(axis) {
+    const total = AXES.reduce((s, k) => s + state.weights[k], 0);
+    if (total === 0) return '0%';
+    return (state.weights[axis] / total * 100).toFixed(1) + '%';
+  }
+
+  function updatePercentDisplays() {
+    AXES.forEach(function(k) {
+      const el = document.getElementById('val-' + k);
+      if (el) el.textContent = formatPercent(k);
+    });
+  }
+
+  function loadWeights() {
   function loadWeights() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
@@ -69,7 +84,7 @@
         +   '<label for="w-' + k + '">' + LABELS[k] + '</label>'
         +   '<input type="range" id="w-' + k + '" data-axis="' + k + '"'
         +          ' min="0" max="50" step="1" value="' + state.weights[k] + '">'
-        +   '<span class="weight-value" id="val-' + k + '">' + state.weights[k] + '</span>'
+        +   '<span class="weight-value" id="val-' + k + '">' + formatPercent(k) + '</span>'
         + '</div>';
     }).join('');
 
@@ -82,8 +97,15 @@
   function onWeightChange(e) {
     const k = e.target.dataset.axis;
     state.weights[k] = parseInt(e.target.value, 10) || 0;
-    document.getElementById('val-' + k).textContent = state.weights[k];
-    updateTotal();
+    
+    // 🆕 모든 슬라이더의 퍼센트 표시 업데이트
+    updatePercentDisplays();
+    
+    // 🆕 수동 조작 시 프리셋 버튼 하이라이트 해제
+    document.querySelectorAll('.preset').forEach(function(b) {
+      b.classList.remove('active');
+    });
+
     saveWeights();
 
     clearTimeout(state.debounceTimer);
@@ -241,9 +263,8 @@ function renderTable() {
         state.weights = Object.assign({}, DEFAULT_WEIGHTS);
         AXES.forEach(function (k) {
           document.getElementById('w-' + k).value = state.weights[k];
-          document.getElementById('val-' + k).textContent = state.weights[k];
         });
-        updateTotal();
+        updatePercentDisplays(); // 🆕 퍼센트 업데이트
         saveWeights();
         renderTable();
       });
@@ -276,11 +297,10 @@ function renderTable() {
         // 2. 슬라이더 UI 업데이트
         AXES.forEach(function(k) {
           document.getElementById('w-' + k).value = state.weights[k];
-          document.getElementById('val-' + k).textContent = state.weights[k];
         });
         
-        // 3. Total 업데이트 및 저장 후 표 다시 그리기
-        updateTotal();
+        // 3. 퍼센트 업데이트 및 저장 후 표 다시 그리기
+        updatePercentDisplays(); // 🆕 퍼센트 업데이트
         saveWeights();
         renderTable();
         
@@ -310,7 +330,7 @@ function renderTable() {
   function init() {
     loadWeights();
     renderSliders();
-    updateTotal();
+    updatePercentDisplays(); // 🆕 updateTotal() 대신 퍼센트 표시
     bindControls();
     loadData();
   }
