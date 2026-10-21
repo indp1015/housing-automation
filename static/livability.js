@@ -23,7 +23,12 @@
     sortBy: 'composite',
     debounceTimer: null
   };
-
+    const PRESETS = {
+    family:   { affordability: 25, stability: 20, momentum: 10, safety: 20, health: 15, amenities: 10 },
+    investor: { affordability: 15, stability: 10, momentum: 35, safety: 10, health: 5,  amenities: 25 },
+    budget:   { affordability: 50, stability: 15, momentum: 5,  safety: 15, health: 5,  amenities: 10 },
+    young:    { affordability: 25, stability: 5,  momentum: 15, safety: 15, health: 10, amenities: 30 },
+    };
   function loadWeights() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
@@ -92,64 +97,128 @@
     el.classList.toggle('warn', total !== 100);
   }
 
-  function renderTable() {
-    if (!state.counties) return;
-    const wrap = document.getElementById('results-table-wrap');
+  // 🆕 tier 계산
+function tierOf(score) {
+  if (score >= 80) return { cls: 'excellent', label: 'Excellent' };
+  if (score >= 70) return { cls: 'strong', label: 'Strong' };
+  if (score >= 60) return { cls: 'balanced', label: 'Balanced' };
+  if (score >= 50) return { cls: 'challenging', label: 'Challenging' };
+  return { cls: 'stressed', label: 'Stressed' };
+}
 
-    const rows = [];
-    Object.keys(state.counties).forEach(function (fips) {
-      const c = state.counties[fips];
-      const comp = composite(c.axes, state.weights);
-      if (comp == null) return;
-      rows.push({ fips: fips, c: c, comp: comp });
-    });
+const AXIS_COLORS = {
+  affordability: '#2e86ab',
+  stability: '#5a9e7c',
+  momentum: '#d4a72c',
+  safety: '#b8452c',
+  health: '#8e5aa8',
+  amenities: '#4a90d9',
+};
 
-    if (state.sortBy === 'composite') {
-      rows.sort(function (a, b) { return b.comp - a.comp; });
-    } else {
-      const key = state.sortBy;
-      rows.sort(function (a, b) {
-        const va = a.c.axes[key];
-        const vb = b.c.axes[key];
-        if (va == null && vb == null) return 0;
-        if (va == null) return 1;
-        if (vb == null) return -1;
-        return vb - va;
-      });
-    }
+function renderCards(rows) {
+  const wrap = document.getElementById('top-cards');
+  if (!wrap) return;
+  const top = rows.slice(0, 10);
 
-    const top = rows.slice(0, TOP_N);
-
-    let body = top.map(function (row, i) {
-      const c = row.c;
-      const axes = c.axes;
-      const bars = AXES.map(function (k) {
-        const v = axes[k];
-        const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
-        const title = LABELS[k] + ': ' + (v != null ? v : 'N/A');
-        return '<div class="bar-wrap" title="' + title + '">'
-             +   '<div class="bar bar-' + k + '" style="width:' + w + '%"></div>'
-             + '</div>';
-      }).join('');
+  wrap.innerHTML = top.map(function (row, i) {
+    const c = row.c;
+    const tier = tierOf(row.comp);
+    const bars = AXES.map(function (k) {
+      const v = c.axes[k];
+      const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
+      const disp = v != null ? Math.round(v) : '–';
       return ''
-        + '<tr>'
-        +   '<td class="rank">' + (i + 1) + '</td>'
-        +   '<td><strong>' + escapeHtml(c.county_name) + '</strong>'
-        +       ' <span class="state">' + (c.state_abbr || '') + '</span></td>'
-        +   '<td class="composite">' + row.comp.toFixed(1) + '</td>'
-        +   '<td class="axis-bars">' + bars + '</td>'
-        + '</tr>';
+        + '<div class="liv-card-bar-row">'
+        +   '<span class="lbl">' + LABELS[k] + '</span>'
+        +   '<div class="liv-card-bar-track">'
+        +     '<div class="liv-card-bar-fill" style="width:' + w + '%;background:' + AXIS_COLORS[k] + '"></div>'
+        +   '</div>'
+        +   '<span class="val">' + disp + '</span>'
+        + '</div>';
     }).join('');
 
-    wrap.innerHTML = ''
-      + '<table class="livability-table">'
-      +   '<thead><tr>'
-      +     '<th>#</th><th>County</th><th>Score</th>'
-      +     '<th class="axis-head">' + AXES.map(function (k) { return LABELS[k]; }).join(' · ') + '</th>'
-      +   '</tr></thead>'
-      +   '<tbody>' + body + '</tbody>'
-      + '</table>';
+    return ''
+      + '<div class="liv-card" style="border-left-color:' + tierColor(tier.cls) + '">'
+      +   '<div class="liv-card-rank">#' + (i + 1) + '</div>'
+      +   '<div class="liv-card-name">' + escapeHtml(c.county_name) + '</div>'
+      +   '<div class="liv-card-state">' + (c.state_abbr || '') + '</div>'
+      +   '<div class="liv-card-score-row">'
+      +     '<span class="liv-card-score">' + row.comp.toFixed(1) + '</span>'
+      +     '<span class="liv-card-badge badge-' + tier.cls + '">' + tier.label + '</span>'
+      +   '</div>'
+      +   '<div class="liv-card-bars">' + bars + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+function tierColor(cls) {
+  return {
+    excellent: '#2ecc71', strong: '#3498db', balanced: '#f1c40f',
+    challenging: '#e67e22', stressed: '#e74c3c'
+  }[cls] || '#2ecc71';
+}
+
+function renderTable() {
+  if (!state.counties) return;
+
+  const rows = [];
+  Object.keys(state.counties).forEach(function (fips) {
+    const c = state.counties[fips];
+    const comp = composite(c.axes, state.weights);
+    if (comp == null) return;
+    rows.push({ fips: fips, c: c, comp: comp });
+  });
+
+  // 정렬
+  if (state.sortBy === 'composite') {
+    rows.sort(function (a, b) { return b.comp - a.comp; });
+  } else {
+    const key = state.sortBy;
+    rows.sort(function (a, b) {
+      const va = a.c.axes[key], vb = b.c.axes[key];
+      if (va == null && vb == null) return 0;
+      if (va == null) return 1;
+      if (vb == null) return -1;
+      return vb - va;
+    });
   }
+
+  // 🆕 카드 렌더 (Top 10)
+  renderCards(rows);
+
+  // 표 렌더 (Top 100)
+  const wrap = document.getElementById('results-table-wrap');
+  const top = rows.slice(0, TOP_N);
+  let body = top.map(function (row, i) {
+    const c = row.c;
+    const axes = c.axes;
+    const bars = AXES.map(function (k) {
+      const v = axes[k];
+      const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
+      const title = LABELS[k] + ': ' + (v != null ? v : 'N/A');
+      return '<div class="bar-wrap" title="' + title + '">'
+           +   '<div class="bar bar-' + k + '" style="width:' + w + '%"></div>'
+           + '</div>';
+    }).join('');
+    return ''
+      + '<tr>'
+      +   '<td class="rank">' + (i + 1) + '</td>'
+      +   '<td><strong>' + escapeHtml(c.county_name) + '</strong>'
+      +       ' <span class="state">' + (c.state_abbr || '') + '</span></td>'
+      +   '<td class="composite">' + row.comp.toFixed(1) + '</td>'
+      +   '<td class="axis-bars">' + bars + '</td>'
+      + '</tr>';
+  }).join('');
+
+  wrap.innerHTML = ''
+    + '<table class="livability-table">'
+    +   '<thead><tr>'
+    +     '<th>#</th><th>County</th><th>Score</th>'
+    +     '<th class="axis-head">' + AXES.map(function (k) { return LABELS[k]; }).join(' · ') + '</th>'
+    +   '</tr></thead>'
+    +   '<tbody>' + body + '</tbody>'
+    + '</table>';
+}
 
   function escapeHtml(s) {
     if (!s) return '';
@@ -178,6 +247,17 @@
         saveWeights();
         renderTable();
       });
+    }
+    // 🆕 Show Full 100 토글
+    const toggle = document.getElementById('toggle-view');
+    if (toggle) {
+        toggle.addEventListener('click', function () {
+        const wrap = document.getElementById('results-table-wrap');
+        const cards = document.getElementById('top-cards');
+        const hidden = wrap.classList.toggle('is-hidden');
+        cards.classList.toggle('is-hidden', !hidden);
+        toggle.textContent = hidden ? 'Show Full 100' : 'Show Top 10';
+        });
     }
   }
 

@@ -61,6 +61,13 @@
 <section class="weights-panel">
   <div class="weights-header">
     <h2>Your Priorities</h2>
+    <!-- weights-header 안에 추가 -->
+    <div class="preset-buttons">
+    <button class="preset" data-preset="family">👨‍👩‍👧 Family</button>
+    <button class="preset" data-preset="investor">📈 Investor</button>
+    <button class="preset" data-preset="budget">💰 Budget</button>
+    <button class="preset" data-preset="young">🎓 Young Pro</button>
+    </div>
     <div class="weights-actions">
       <span class="weights-total">Total: <strong id="weight-total">100</strong></span>
       <button id="reset-weights" class="btn-secondary" type="button">Reset</button>
@@ -81,20 +88,28 @@
 </div>
 <section class="results-panel">
   <div class="results-header">
-    <h2>Top 100 Counties</h2>
-    <label for="sort-select">Sort by:
-      <select id="sort-select">
-        <option value="composite">Overall Score</option>
-        <option value="affordability">Affordability</option>
-        <option value="stability">Stability</option>
-        <option value="momentum">Momentum</option>
-        <option value="safety">Safety</option>
-        <option value="health">Health</option>
-        <option value="amenities">Amenities</option>
-      </select>
-    </label>
+    <h2>Top 10 Counties <span class="live-badge">LIVE</span></h2>
+    <div class="results-controls">
+      <label for="sort-select">Sort by:
+        <select id="sort-select">
+          <option value="composite">Overall Score</option>
+          <option value="affordability">Affordability</option>
+          <option value="stability">Stability</option>
+          <option value="momentum">Momentum</option>
+          <option value="safety">Safety</option>
+          <option value="health">Health</option>
+          <option value="amenities">Amenities</option>
+        </select>
+      </label>
+      <button id="toggle-view" class="btn-secondary" type="button">Show Full 100</button>
+    </div>
   </div>
-  <div id="results-table-wrap" class="results-table-wrap">
+
+  <!-- 🆕 카드 뷰 (Top 10) -->
+  <div id="top-cards" class="livability-cards"></div>
+
+  <!-- 표 뷰 (Full 100, 토글) -->
+  <div id="results-table-wrap" class="results-table-wrap is-hidden">
     <p class="loading">Loading county data&hellip;</p>
   </div>
 </section>

@@ -110,3 +110,116 @@
 }
 .axis-legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
 .axis-legend i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+/* Top 10 카드 그리드 */
+.livability-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.liv-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e1e6eb;
+  border-left: 4px solid #2ecc71;   /* tier 색상으로 동적 변경 */
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.liv-card:hover {
+  box-shadow: 0 4px 14px rgba(26, 61, 92, 0.12);
+  transform: translateY(-2px);
+}
+
+.liv-card-rank {
+  position: absolute;
+  top: 0.7rem; right: 0.9rem;
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 700;
+}
+
+.liv-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a3d5c;
+  margin: 0 0 0.1rem;
+  padding-right: 2.5rem; /* rank 자리 */
+  line-height: 1.25;
+}
+
+.liv-card-state {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.6rem;
+}
+
+.liv-card-score-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.liv-card-score {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a3d5c;
+  line-height: 1;
+}
+
+.liv-card-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-excellent  { background: #d4f5e0; color: #1e8449; }
+.badge-strong     { background: #d6ecfa; color: #1f618d; }
+.badge-balanced   { background: #fcf3d4; color: #9a7d0a; }
+.badge-challenging{ background: #fde2d0; color: #a04000; }
+.badge-stressed   { background: #f5d0d0; color: #922b21; }
+
+/* 축별 미니 바 (카드 안) */
+.liv-card-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 0.4rem;
+}
+.liv-card-bar-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 30px;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: #666;
+}
+.liv-card-bar-row .lbl { text-transform: capitalize; }
+.liv-card-bar-row .val { text-align: right; font-variant-numeric: tabular-nums; }
+.liv-card-bar-track {
+  height: 5px; background: #eef1f4; border-radius: 3px; overflow: hidden;
+}
+.liv-card-bar-fill { height: 100%; border-radius: 3px; }
+
+.is-hidden { display: none; }
+
+.live-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  background: #e74c3c;
+  color: #fff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
