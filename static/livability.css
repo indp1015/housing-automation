@@ -1,0 +1,106 @@
+/* Livability Score page */
+.livability-page { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.livability-page h1 { margin-bottom: 0.5rem; }
+.livability-page .lead { color: #555; margin-bottom: 2rem; }
+
+.weights-panel {
+  background: #f7f9fb;
+  border: 1px solid #e1e6eb;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.weights-header {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;
+}
+.weights-header h2 { margin: 0; font-size: 1.15rem; }
+.weights-actions { display: flex; align-items: center; gap: 1rem; }
+.weights-total { font-size: 0.95rem; color: #333; }
+.weights-total strong { color: #1a3d5c; }
+.weights-total strong.warn { color: #c0392b; }
+
+.weight-controls { display: grid; gap: 0.6rem; }
+.weight-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 40px;
+  align-items: center;
+  gap: 0.75rem;
+}
+.weight-row label { font-weight: 600; font-size: 0.9rem; color: #333; }
+.weight-row input[type=range] { width: 100%; accent-color: #1a3d5c; }
+.weight-value { text-align: right; font-variant-numeric: tabular-nums; color: #1a3d5c; font-weight: 600; }
+
+.weights-hint { font-size: 0.82rem; color: #777; margin: 0.9rem 0 0; }
+
+.results-panel { margin-bottom: 2rem; }
+.results-header {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;
+}
+.results-header h2 { margin: 0; font-size: 1.2rem; }
+.results-header select {
+  padding: 0.35rem 0.5rem; border: 1px solid #ccc; border-radius: 4px;
+  font-size: 0.9rem; background: #fff;
+}
+
+.results-table-wrap { overflow-x: auto; }
+
+.livability-table {
+  width: 100%; border-collapse: collapse; font-size: 0.9rem;
+}
+.livability-table thead th {
+  text-align: left; padding: 0.65rem 0.5rem;
+  border-bottom: 2px solid #1a3d5c; background: #f2f5f8;
+  font-weight: 700; color: #1a3d5c; white-space: nowrap;
+}
+.livability-table .axis-head { font-size: 0.78rem; color: #555; font-weight: 600; }
+.livability-table tbody tr:nth-child(even) { background: #fafbfc; }
+.livability-table tbody td {
+  padding: 0.55rem 0.5rem; border-bottom: 1px solid #e8ecf0; vertical-align: middle;
+}
+.livability-table .rank { color: #888; width: 36px; }
+.livability-table .state { color: #888; font-size: 0.82rem; }
+.livability-table .composite {
+  font-weight: 700; color: #1a3d5c; font-variant-numeric: tabular-nums;
+  width: 70px; text-align: right;
+}
+.livability-table .axis-bars {
+  display: flex; flex-direction: column; gap: 2px;
+  min-width: 200px;
+}
+.bar-wrap {
+  width: 100%; height: 6px; background: #eef1f4; border-radius: 3px; overflow: hidden;
+}
+.bar { height: 100%; border-radius: 3px; transition: width 0.25s ease; }
+.bar-affordability { background: #2e86ab; }
+.bar-stability    { background: #5a9e7c; }
+.bar-momentum     { background: #d4a72c; }
+.bar-safety       { background: #b8452c; }
+.bar-health       { background: #8e5aa8; }
+.bar-amenities    { background: #4a90d9; }
+
+.loading, .error { color: #888; padding: 1rem; text-align: center; }
+.error { color: #c0392b; }
+
+.btn-secondary {
+  padding: 0.35rem 0.8rem; border: 1px solid #ccc; background: #fff;
+  border-radius: 4px; font-size: 0.85rem; cursor: pointer;
+}
+.btn-secondary:hover { background: #f0f4f8; border-color: #1a3d5c; }
+
+.methodology-note {
+  background: #f7f9fb; border-left: 4px solid #1a3d5c;
+  padding: 1.25rem 1.5rem; border-radius: 6px;
+}
+.methodology-note h2 { font-size: 1.05rem; margin-top: 0; }
+.methodology-note p { font-size: 0.9rem; color: #444; }
+.methodology-note .attribution {
+  font-size: 0.78rem; color: #777; margin: 0.75rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .weight-row { grid-template-columns: 100px 1fr 36px; gap: 0.5rem; }
+  .livability-table .axis-bars { display: none; }
+  .livability-table .axis-head { display: none; }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a3d5c'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="mach6lnfa3pBwVHZieOD4_1wwS_s0kobDz9h4xyb7AE" />
+  <title>County Livability Score - US Housing Data</title>
+  <meta name="description" content="Find the best U.S. counties to live using our customizable 6-axis Livability Score. Adjust affordability, safety, health, amenities, and more to match your priorities.">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850461542641038"
+       crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPS0MR3SX5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RPS0MR3SX5');
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <!-- 🆕 로고와 허브 버튼을 감싸는 영역 추가 -->
+    <div class="header-top">
+      <a href="/" class="logo">US Housing Data</a>
+      <a href="https://dataindp.com" class="hub-btn">Go Data in DP ↗</a>
+    </div>
+    
+    <nav>
+      <a href="/">Home</a>
+      <a href="/compare.html">Compare</a>
+      <a href="/buy-vs-rent.html">Buy vs Rent</a>
+      <a href="/rankings/most-expensive-counties.html">Rankings</a>
+      <a href="/livability.html">Livability</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 상단 광고 슬롯 -->
+<div class="container ad-slot ad-top">
+  <!-- AdSense 광고 코드 삽입 위치 (승인 후) -->
+</div>
+
+<main class="container">
+
+
+<article class="livability-page">
+<h1>U.S. County Livability Score</h1>
+<p class="lead">
+  Adjust the weights below to match your priorities. Scores update instantly
+  across all 3,139 U.S. counties. Your preferences are saved locally in your browser.
+</p>
+
+<section class="weights-panel">
+  <div class="weights-header">
+    <h2>Your Priorities</h2>
+    <div class="weights-actions">
+      <span class="weights-total">Total: <strong id="weight-total">100</strong></span>
+      <button id="reset-weights" class="btn-secondary" type="button">Reset</button>
+    </div>
+  </div>
+  <div class="weight-controls" id="weight-controls"></div>
+  <p class="weights-hint">
+    Higher weight = more influence on the final score. Set any axis to 0 to exclude it.
+  </p>
+</section>
+
+<section class="results-panel">
+  <div class="results-header">
+    <h2>Top 100 Counties</h2>
+    <label for="sort-select">Sort by:
+      <select id="sort-select">
+        <option value="composite">Overall Score</option>
+        <option value="affordability">Affordability</option>
+        <option value="stability">Stability</option>
+        <option value="momentum">Momentum</option>
+        <option value="safety">Safety</option>
+        <option value="health">Health</option>
+        <option value="amenities">Amenities</option>
+      </select>
+    </label>
+  </div>
+  <div id="results-table-wrap" class="results-table-wrap">
+    <p class="loading">Loading county data&hellip;</p>
+  </div>
+</section>
+
+<section class="methodology-note">
+  <h2>How it works</h2>
+  <p>
+    Each axis is normalized to a percentile rank (0&ndash;100) across all
+    U.S. counties with valid data. Your weighted average across available
+    axes becomes the final Livability Score. If an axis has no data for a
+    county, it's excluded from that county's calculation.
+  </p>
+  <p class="attribution">
+    Sources: ACS 5-Year Estimates, FBI UCR (CDE), CDC PLACES,
+    OpenStreetMap (© OpenStreetMap contributors, ODbL 1.0).
+  </p>
+</section>
+</article>
+
+<link rel="stylesheet" href="/static/livability.css">
+<script src="/static/livability.js" defer></script>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 US Housing Data. Data sourced from U.S. Census Bureau (ACS 2023 5-Year Estimates).</p>
+    <nav>
+      <a href="/">Home</a> ·
+      <a href="/compare.html">Compare</a> ·
+      <a href="/buy-vs-rent.html">Buy vs Rent</a> ·
+      <a href="/rankings/most-expensive-counties.html">Rankings</a> ·
+      <a href="/livability.html">Livability</a> ·
+      <a href="/blog/">Blog</a> ·
+      <a href="/about.html">About</a>
+    </nav>
+
+    <p class="disclaimer">
+      Housing data: U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates.<br>
+      Health estimates: CDC PLACES (Local Data for Better Health). Public domain / ODC-ODbL 1.0. Not endorsed by CDC or HHS.<br>
+      Amenity data: © OpenStreetMap contributors, licensed under the Open Database License (ODbL 1.0).<br>
+      Price index data: <strong>This product uses FHFA Data but is neither endorsed nor certified by FHFA.</strong>
+    </p>
+
+    <p class="footer-attribution">
+      © OpenStreetMap contributors, ODbL 1.0 —
+      <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">openstreetmap.org/copyright</a>
+      · CDC PLACES —
+      <a href="https://www.cdc.gov/places/" target="_blank" rel="noopener">cdc.gov/places</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
