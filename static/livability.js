@@ -220,9 +220,9 @@
       const c = row.c;
       const tier = tierOf(row.comp);
       const bars = AXES.map(function (k) {
-        const v = c.axes[k];
-        const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
-        const disp = v != null ? Math.round(v) : '–';
+      const v = c.axes[k];
+      const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
+      const disp = v != null ? v.toFixed(1) : '–';   // 🆕 정수 → 소수 1자리
         return ''
           + '<div class="liv-card-bar-row">'
           +   '<span class="lbl">' + LABELS[k] + '</span>'
