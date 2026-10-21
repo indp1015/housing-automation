@@ -14,7 +14,7 @@
     affordability: 25, stability: 15, momentum: 15,
     safety: 15, health: 10, amenities: 20
   };
-  const STORAGE_KEY = 'livability_weights_v1';
+  const STORAGE_KEY = 'livability_weights_v2';  // 🆕 v2 (스키마 변경)
   const TOP_N = 100;
 
   const state = {
@@ -31,18 +31,69 @@
     young:    { affordability: 25, stability: 5,  momentum: 15, safety: 15, health: 10, amenities: 30 },
   };
 
-  // 🆕 퍼센트 계산 헬퍼 함수
-  function formatPercent(axis) {
-    const total = AXES.reduce((s, k) => s + state.weights[k], 0);
-    if (total === 0) return '0%';
-    return (state.weights[axis] / total * 100).toFixed(1) + '%';
+  // 🆕 합계 100 보장 유틸
+  function totalWeights() {
+    return AXES.reduce((s, k) => s + state.weights[k], 0);
   }
 
-  function updatePercentDisplays() {
-    AXES.forEach(function(k) {
-      const el = document.getElementById('val-' + k);
-      if (el) el.textContent = formatPercent(k);
+  function normalizeTo100() {
+    const total = totalWeights();
+    if (total === 0) {
+      // 모두 0이면 균등 분배
+      const each = Math.floor(100 / AXES.length);
+      AXES.forEach((k, i) => {
+        state.weights[k] = i === AXES.length - 1 ? 100 - each * (AXES.length - 1) : each;
+      });
+      return;
+    }
+    if (total === 100) return;
+
+    // 비례 조정
+    let allocated = 0;
+    AXES.forEach((k, i) => {
+      if (i === AXES.length - 1) {
+        state.weights[k] = Math.max(0, 100 - allocated);
+      } else {
+        const v = Math.round(state.weights[k] / total * 100);
+        state.weights[k] = Math.max(0, v);
+        allocated += state.weights[k];
+      }
     });
+  }
+
+  // 🆕 특정 축을 newVal로 바꾸고, 나머지를 비례 재분배해서 합계 100 유지
+  function setWeightAndRebalance(changedAxis, newVal) {
+    newVal = Math.max(0, Math.min(100, parseInt(newVal, 10) || 0));
+    const others = AXES.filter(a => a !== changedAxis);
+    const remaining = 100 - newVal;
+
+    const otherTotal = others.reduce((s, a) => s + state.weights[a], 0);
+    state.weights[changedAxis] = newVal;
+
+    if (remaining === 0) {
+      others.forEach(a => state.weights[a] = 0);
+    } else if (otherTotal === 0) {
+      // 나머지가 모두 0이면 균등 분배
+      const each = Math.floor(remaining / others.length);
+      others.forEach((a, i) => {
+        state.weights[a] = i === others.length - 1
+          ? remaining - each * (others.length - 1)
+          : each;
+      });
+    } else {
+      // 비례 재분배
+      let allocated = 0;
+      others.forEach((a, i) => {
+        if (i === others.length - 1) {
+          state.weights[a] = remaining - allocated;
+        } else {
+          const share = Math.round(state.weights[a] / otherTotal * remaining);
+          state.weights[a] = share;
+          allocated += share;
+        }
+      });
+    }
+    normalizeTo100();  // 반올림 오차 보정
   }
 
   function loadWeights() {
@@ -54,6 +105,7 @@
             state.weights[k] = saved[k];
           }
         });
+        normalizeTo100();
       }
     } catch (e) { /* ignore */ }
   }
@@ -84,8 +136,8 @@
         + '<div class="weight-row">'
         +   '<label for="w-' + k + '">' + LABELS[k] + '</label>'
         +   '<input type="range" id="w-' + k + '" data-axis="' + k + '"'
-        +          ' min="0" max="50" step="1" value="' + state.weights[k] + '">'
-        +   '<span class="weight-value" id="val-' + k + '">' + formatPercent(k) + '</span>'
+        +          ' min="0" max="100" step="1" value="' + state.weights[k] + '">'
+        +   '<span class="weight-value" id="val-' + k + '">' + state.weights[k] + '%</span>'
         + '</div>';
     }).join('');
 
@@ -95,25 +147,26 @@
     });
   }
 
+  function updateAllSliders() {
+    AXES.forEach(function (k) {
+      document.getElementById('w-' + k).value = state.weights[k];
+      document.getElementById('val-' + k).textContent = state.weights[k] + '%';
+    });
+    const totalEl = document.getElementById('weight-total');
+    if (totalEl) totalEl.textContent = '100';
+    document.querySelectorAll('.preset').forEach(b => b.classList.remove('active'));
+  }
+
   function onWeightChange(e) {
     const k = e.target.dataset.axis;
-    state.weights[k] = parseInt(e.target.value, 10) || 0;
-    
-    // 🆕 모든 슬라이더의 퍼센트 표시 업데이트
-    updatePercentDisplays();
-    
-    // 🆕 수동 조작 시 프리셋 버튼 하이라이트 해제
-    document.querySelectorAll('.preset').forEach(function(b) {
-      b.classList.remove('active');
-    });
-
+    const newVal = parseInt(e.target.value, 10) || 0;
+    setWeightAndRebalance(k, newVal);
+    updateAllSliders();
     saveWeights();
-
     clearTimeout(state.debounceTimer);
     state.debounceTimer = setTimeout(renderTable, 150);
   }
 
-  // 🆕 tier 계산
   function tierOf(score) {
     if (score >= 80) return { cls: 'excellent', label: 'Excellent' };
     if (score >= 70) return { cls: 'strong', label: 'Strong' };
@@ -185,7 +238,6 @@
       rows.push({ fips: fips, c: c, comp: comp });
     });
 
-    // 정렬
     if (state.sortBy === 'composite') {
       rows.sort(function (a, b) { return b.comp - a.comp; });
     } else {
@@ -199,10 +251,8 @@
       });
     }
 
-    // 🆕 카드 렌더 (Top 10)
     renderCards(rows);
 
-    // 표 렌더 (Top 100)
     const wrap = document.getElementById('results-table-wrap');
     const top = rows.slice(0, TOP_N);
     let body = top.map(function (row, i) {
@@ -255,50 +305,31 @@
     if (reset) {
       reset.addEventListener('click', function () {
         state.weights = Object.assign({}, DEFAULT_WEIGHTS);
-        AXES.forEach(function (k) {
-          document.getElementById('w-' + k).value = state.weights[k];
-        });
-        updatePercentDisplays(); // 🆕 퍼센트 업데이트
+        updateAllSliders();
         saveWeights();
         renderTable();
       });
     }
-    // 🆕 Show Full 100 토글
     const toggle = document.getElementById('toggle-view');
     if (toggle) {
-        toggle.addEventListener('click', function () {
+      toggle.addEventListener('click', function () {
         const wrap = document.getElementById('results-table-wrap');
         const cards = document.getElementById('top-cards');
         const hidden = wrap.classList.toggle('is-hidden');
         cards.classList.toggle('is-hidden', !hidden);
         toggle.textContent = hidden ? 'Show Full 100' : 'Show Top 10';
-        });
+      });
     }
-    // 🆕 프리셋 버튼 클릭 이벤트
     document.querySelectorAll('.preset').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        const presetKey = btn.dataset.preset;
-        const preset = PRESETS[presetKey];
+        const preset = PRESETS[btn.dataset.preset];
         if (!preset) return;
-        
-        // 1. 가중치 상태 업데이트
         state.weights = Object.assign({}, preset);
-        
-        // 2. 슬라이더 UI 업데이트
-        AXES.forEach(function(k) {
-          document.getElementById('w-' + k).value = state.weights[k];
-        });
-        
-        // 3. 퍼센트 업데이트 및 저장 후 표 다시 그리기
-        updatePercentDisplays(); // 🆕 퍼센트 업데이트
+        normalizeTo100();
+        updateAllSliders();
+        btn.classList.add('active');
         saveWeights();
         renderTable();
-        
-        // 4. 버튼 활성화 표시
-        document.querySelectorAll('.preset').forEach(function(b) { 
-          b.classList.remove('active'); 
-        });
-        btn.classList.add('active');
       });
     });
   }
@@ -319,8 +350,9 @@
 
   function init() {
     loadWeights();
+    normalizeTo100();
     renderSliders();
-    updatePercentDisplays(); // 🆕 updateTotal() 대신
+    updateAllSliders();
     bindControls();
     loadData();
   }
