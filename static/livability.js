@@ -96,7 +96,22 @@
     normalizeTo100();  // 반올림 오차 보정
   }
 
-  function loadWeights() {
+    function loadWeights() {
+    // 1순위: URL 파라미터 (?w=25,15,15,15,10,20)
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const wParam = urlParams.get('w');
+      if (wParam) {
+        const parts = wParam.split(',').map(v => parseInt(v, 10));
+        if (parts.length === AXES.length && parts.every(v => !isNaN(v) && v >= 0 && v <= 100)) {
+          AXES.forEach((k, i) => { state.weights[k] = parts[i]; });
+          normalizeTo100();
+          return;
+        }
+      }
+    } catch (e) { /* ignore */ }
+
+    // 2순위: localStorage
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
       if (saved && typeof saved === 'object') {
@@ -113,6 +128,16 @@
   function saveWeights() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.weights));
+    } catch (e) { /* ignore */ }
+  }
+
+  // 🆕 URL 자동 갱신 (히스토리 오염 없이 replaceState 사용)
+  function updateURL() {
+    try {
+      const parts = AXES.map(k => state.weights[k]).join(',');
+      const url = new URL(window.location.href);
+      url.searchParams.set('w', parts);
+      window.history.replaceState({}, '', url.toString());
     } catch (e) { /* ignore */ }
   }
 
@@ -163,6 +188,8 @@
     setWeightAndRebalance(k, newVal);
     updateAllSliders();
     saveWeights();
+    updateURL();
+
     clearTimeout(state.debounceTimer);
     state.debounceTimer = setTimeout(renderTable, 150);
   }
@@ -307,6 +334,7 @@
         state.weights = Object.assign({}, DEFAULT_WEIGHTS);
         updateAllSliders();
         saveWeights();
+        updateURL();
         renderTable();
       });
     }
@@ -320,6 +348,33 @@
         toggle.textContent = hidden ? 'Show Full 100' : 'Show Top 10';
       });
     }
+
+    // 🆕 Share 버튼
+    const shareBtn = document.getElementById('share-view');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async function () {
+        updateURL();
+        const shareUrl = window.location.href;
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: 'U.S. County Livability Score', url: shareUrl });
+          } else {
+            await navigator.clipboard.writeText(shareUrl);
+            shareBtn.textContent = '✅ Copied!';
+            setTimeout(() => { shareBtn.textContent = '🔗 Share'; }, 2000);
+          }
+        } catch (e) {
+          // 클립보드 권한 없을 때 폴백: prompt로 표시
+          window.prompt('Copy this link:', shareUrl);
+        }
+      });
+    }
+
+    // 🆕 CSV 다운로드 버튼
+    const csvBtn = document.getElementById('download-csv');
+    if (csvBtn) {
+      csvBtn.addEventListener('click', downloadCSV);
+    }
     document.querySelectorAll('.preset').forEach(function(btn) {
       btn.addEventListener('click', function() {
         const preset = PRESETS[btn.dataset.preset];
@@ -329,9 +384,63 @@
         updateAllSliders();
         btn.classList.add('active');
         saveWeights();
+        updateURL();
         renderTable();
       });
     });
+  }
+
+  // 🆕 CSV 다운로드 (BOM 포함 → Excel 한글/특수문자 대응)
+  function downloadCSV() {
+    if (!state.counties) return;
+
+    // 현재 가중치로 정렬된 Top 100 산출
+    const rows = [];
+    Object.keys(state.counties).forEach(function (fips) {
+      const c = state.counties[fips];
+      const comp = composite(c.axes, state.weights);
+      if (comp == null) return;
+      rows.push({ fips, c, comp });
+    });
+    rows.sort((a, b) => b.comp - a.comp);
+    const top = rows.slice(0, TOP_N);
+
+    const header = ['Rank', 'County', 'State', 'Overall Score']
+      .concat(AXES.map(k => LABELS[k]))
+      .concat(['FIPS']);
+    const lines = [header.join(',')];
+
+    top.forEach((row, i) => {
+      const c = row.c;
+      const ax = c.axes;
+      const rowData = [
+        i + 1,
+        '"' + (c.county_name || '').replace(/"/g, '""') + '"',
+        c.state_abbr || '',
+        row.comp.toFixed(1),
+      ].concat(AXES.map(k => (ax[k] != null ? ax[k].toFixed(1) : '')))
+       .concat([row.fips]);
+      lines.push(rowData.join(','));
+    });
+
+    // 메타 정보 (파일 상단 주석)
+    const meta = [
+      '# U.S. County Livability Score — Top ' + TOP_N,
+      '# Generated: ' + new Date().toISOString(),
+      '# Weights: ' + AXES.map(k => k + '=' + state.weights[k]).join('; '),
+      '# Source: ACS 5-Year, FBI UCR, CDC PLACES, OpenStreetMap (ODbL)',
+      '',
+    ];
+    const content = '\uFEFF' + meta.concat(lines).join('\n');
+    const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'livability_top100_' + new Date().toISOString().slice(0, 10) + '.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }
 
   async function loadData() {

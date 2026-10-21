@@ -50,6 +50,18 @@
   padding: 0.35rem 0.5rem; border: 1px solid #ccc; border-radius: 4px;
   font-size: 0.9rem; background: #fff;
 }
+.results-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.results-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
 
 .results-table-wrap { overflow-x: auto; }
 
