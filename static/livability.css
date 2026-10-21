@@ -23,9 +23,16 @@
 .weight-controls { display: grid; gap: 0.6rem; }
 .weight-row {
   display: grid;
-  grid-template-columns: 130px 1fr 65px; /* 🆕 40px -> 65px 확장 (퍼센트 글자 공간) */
+  grid-template-columns: 130px 1fr 65px;
   align-items: center;
   gap: 0.75rem;
+}
+.weight-value { 
+  text-align: right; 
+  font-variant-numeric: tabular-nums; 
+  color: #1a3d5c; 
+  font-weight: 600; 
+  font-size: 0.85rem; 
 }
 .weight-row label { font-weight: 600; font-size: 0.9rem; color: #333; }
 .weight-row input[type=range] { width: 100%; accent-color: #1a3d5c; }

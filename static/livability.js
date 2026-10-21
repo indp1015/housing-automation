@@ -23,13 +23,15 @@
     sortBy: 'composite',
     debounceTimer: null
   };
-    const PRESETS = {
+
+  const PRESETS = {
     family:   { affordability: 25, stability: 20, momentum: 10, safety: 20, health: 15, amenities: 10 },
     investor: { affordability: 15, stability: 10, momentum: 35, safety: 10, health: 5,  amenities: 25 },
     budget:   { affordability: 50, stability: 15, momentum: 5,  safety: 15, health: 5,  amenities: 10 },
     young:    { affordability: 25, stability: 5,  momentum: 15, safety: 15, health: 10, amenities: 30 },
-    };
-      // 🆕 퍼센트 계산 헬퍼 함수
+  };
+
+  // 🆕 퍼센트 계산 헬퍼 함수
   function formatPercent(axis) {
     const total = AXES.reduce((s, k) => s + state.weights[k], 0);
     if (total === 0) return '0%';
@@ -43,7 +45,6 @@
     });
   }
 
-  function loadWeights() {
   function loadWeights() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
@@ -112,135 +113,128 @@
     state.debounceTimer = setTimeout(renderTable, 150);
   }
 
-  function updateTotal() {
-    const total = AXES.reduce(function (s, k) { return s + state.weights[k]; }, 0);
-    const el = document.getElementById('weight-total');
-    el.textContent = total;
-    el.classList.toggle('warn', total !== 100);
+  // 🆕 tier 계산
+  function tierOf(score) {
+    if (score >= 80) return { cls: 'excellent', label: 'Excellent' };
+    if (score >= 70) return { cls: 'strong', label: 'Strong' };
+    if (score >= 60) return { cls: 'balanced', label: 'Balanced' };
+    if (score >= 50) return { cls: 'challenging', label: 'Challenging' };
+    return { cls: 'stressed', label: 'Stressed' };
   }
 
-  // 🆕 tier 계산
-function tierOf(score) {
-  if (score >= 80) return { cls: 'excellent', label: 'Excellent' };
-  if (score >= 70) return { cls: 'strong', label: 'Strong' };
-  if (score >= 60) return { cls: 'balanced', label: 'Balanced' };
-  if (score >= 50) return { cls: 'challenging', label: 'Challenging' };
-  return { cls: 'stressed', label: 'Stressed' };
-}
+  const AXIS_COLORS = {
+    affordability: '#2e86ab',
+    stability: '#5a9e7c',
+    momentum: '#d4a72c',
+    safety: '#b8452c',
+    health: '#8e5aa8',
+    amenities: '#4a90d9',
+  };
 
-const AXIS_COLORS = {
-  affordability: '#2e86ab',
-  stability: '#5a9e7c',
-  momentum: '#d4a72c',
-  safety: '#b8452c',
-  health: '#8e5aa8',
-  amenities: '#4a90d9',
-};
+  function renderCards(rows) {
+    const wrap = document.getElementById('top-cards');
+    if (!wrap) return;
+    const top = rows.slice(0, 10);
 
-function renderCards(rows) {
-  const wrap = document.getElementById('top-cards');
-  if (!wrap) return;
-  const top = rows.slice(0, 10);
+    wrap.innerHTML = top.map(function (row, i) {
+      const c = row.c;
+      const tier = tierOf(row.comp);
+      const bars = AXES.map(function (k) {
+        const v = c.axes[k];
+        const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
+        const disp = v != null ? Math.round(v) : '–';
+        return ''
+          + '<div class="liv-card-bar-row">'
+          +   '<span class="lbl">' + LABELS[k] + '</span>'
+          +   '<div class="liv-card-bar-track">'
+          +     '<div class="liv-card-bar-fill" style="width:' + w + '%;background:' + AXIS_COLORS[k] + '"></div>'
+          +   '</div>'
+          +   '<span class="val">' + disp + '</span>'
+          + '</div>';
+      }).join('');
 
-  wrap.innerHTML = top.map(function (row, i) {
-    const c = row.c;
-    const tier = tierOf(row.comp);
-    const bars = AXES.map(function (k) {
-      const v = c.axes[k];
-      const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
-      const disp = v != null ? Math.round(v) : '–';
       return ''
-        + '<div class="liv-card-bar-row">'
-        +   '<span class="lbl">' + LABELS[k] + '</span>'
-        +   '<div class="liv-card-bar-track">'
-        +     '<div class="liv-card-bar-fill" style="width:' + w + '%;background:' + AXIS_COLORS[k] + '"></div>'
+        + '<div class="liv-card" style="border-left-color:' + tierColor(tier.cls) + '">'
+        +   '<div class="liv-card-rank">#' + (i + 1) + '</div>'
+        +   '<div class="liv-card-name">' + escapeHtml(c.county_name) + '</div>'
+        +   '<div class="liv-card-state">' + (c.state_abbr || '') + '</div>'
+        +   '<div class="liv-card-score-row">'
+        +     '<span class="liv-card-score">' + row.comp.toFixed(1) + '</span>'
+        +     '<span class="liv-card-badge badge-' + tier.cls + '">' + tier.label + '</span>'
         +   '</div>'
-        +   '<span class="val">' + disp + '</span>'
+        +   '<div class="liv-card-bars">' + bars + '</div>'
         + '</div>';
     }).join('');
-
-    return ''
-      + '<div class="liv-card" style="border-left-color:' + tierColor(tier.cls) + '">'
-      +   '<div class="liv-card-rank">#' + (i + 1) + '</div>'
-      +   '<div class="liv-card-name">' + escapeHtml(c.county_name) + '</div>'
-      +   '<div class="liv-card-state">' + (c.state_abbr || '') + '</div>'
-      +   '<div class="liv-card-score-row">'
-      +     '<span class="liv-card-score">' + row.comp.toFixed(1) + '</span>'
-      +     '<span class="liv-card-badge badge-' + tier.cls + '">' + tier.label + '</span>'
-      +   '</div>'
-      +   '<div class="liv-card-bars">' + bars + '</div>'
-      + '</div>';
-  }).join('');
-}
-
-function tierColor(cls) {
-  return {
-    excellent: '#2ecc71', strong: '#3498db', balanced: '#f1c40f',
-    challenging: '#e67e22', stressed: '#e74c3c'
-  }[cls] || '#2ecc71';
-}
-
-function renderTable() {
-  if (!state.counties) return;
-
-  const rows = [];
-  Object.keys(state.counties).forEach(function (fips) {
-    const c = state.counties[fips];
-    const comp = composite(c.axes, state.weights);
-    if (comp == null) return;
-    rows.push({ fips: fips, c: c, comp: comp });
-  });
-
-  // 정렬
-  if (state.sortBy === 'composite') {
-    rows.sort(function (a, b) { return b.comp - a.comp; });
-  } else {
-    const key = state.sortBy;
-    rows.sort(function (a, b) {
-      const va = a.c.axes[key], vb = b.c.axes[key];
-      if (va == null && vb == null) return 0;
-      if (va == null) return 1;
-      if (vb == null) return -1;
-      return vb - va;
-    });
   }
 
-  // 🆕 카드 렌더 (Top 10)
-  renderCards(rows);
+  function tierColor(cls) {
+    return {
+      excellent: '#2ecc71', strong: '#3498db', balanced: '#f1c40f',
+      challenging: '#e67e22', stressed: '#e74c3c'
+    }[cls] || '#2ecc71';
+  }
 
-  // 표 렌더 (Top 100)
-  const wrap = document.getElementById('results-table-wrap');
-  const top = rows.slice(0, TOP_N);
-  let body = top.map(function (row, i) {
-    const c = row.c;
-    const axes = c.axes;
-    const bars = AXES.map(function (k) {
-      const v = axes[k];
-      const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
-      const title = LABELS[k] + ': ' + (v != null ? v : 'N/A');
-      return '<div class="bar-wrap" title="' + title + '">'
-           +   '<div class="bar bar-' + k + '" style="width:' + w + '%"></div>'
-           + '</div>';
+  function renderTable() {
+    if (!state.counties) return;
+
+    const rows = [];
+    Object.keys(state.counties).forEach(function (fips) {
+      const c = state.counties[fips];
+      const comp = composite(c.axes, state.weights);
+      if (comp == null) return;
+      rows.push({ fips: fips, c: c, comp: comp });
+    });
+
+    // 정렬
+    if (state.sortBy === 'composite') {
+      rows.sort(function (a, b) { return b.comp - a.comp; });
+    } else {
+      const key = state.sortBy;
+      rows.sort(function (a, b) {
+        const va = a.c.axes[key], vb = b.c.axes[key];
+        if (va == null && vb == null) return 0;
+        if (va == null) return 1;
+        if (vb == null) return -1;
+        return vb - va;
+      });
+    }
+
+    // 🆕 카드 렌더 (Top 10)
+    renderCards(rows);
+
+    // 표 렌더 (Top 100)
+    const wrap = document.getElementById('results-table-wrap');
+    const top = rows.slice(0, TOP_N);
+    let body = top.map(function (row, i) {
+      const c = row.c;
+      const axes = c.axes;
+      const bars = AXES.map(function (k) {
+        const v = axes[k];
+        const w = v != null ? Math.max(0, Math.min(100, Math.round(v))) : 0;
+        const title = LABELS[k] + ': ' + (v != null ? v : 'N/A');
+        return '<div class="bar-wrap" title="' + title + '">'
+             +   '<div class="bar bar-' + k + '" style="width:' + w + '%"></div>'
+             + '</div>';
+      }).join('');
+      return ''
+        + '<tr>'
+        +   '<td class="rank">' + (i + 1) + '</td>'
+        +   '<td><strong>' + escapeHtml(c.county_name) + '</strong>'
+        +       ' <span class="state">' + (c.state_abbr || '') + '</span></td>'
+        +   '<td class="composite">' + row.comp.toFixed(1) + '</td>'
+        +   '<td class="axis-bars">' + bars + '</td>'
+        + '</tr>';
     }).join('');
-    return ''
-      + '<tr>'
-      +   '<td class="rank">' + (i + 1) + '</td>'
-      +   '<td><strong>' + escapeHtml(c.county_name) + '</strong>'
-      +       ' <span class="state">' + (c.state_abbr || '') + '</span></td>'
-      +   '<td class="composite">' + row.comp.toFixed(1) + '</td>'
-      +   '<td class="axis-bars">' + bars + '</td>'
-      + '</tr>';
-  }).join('');
 
-  wrap.innerHTML = ''
-    + '<table class="livability-table">'
-    +   '<thead><tr>'
-    +     '<th>#</th><th>County</th><th>Score</th>'
-    +     '<th class="axis-head">' + AXES.map(function (k) { return LABELS[k]; }).join(' · ') + '</th>'
-    +   '</tr></thead>'
-    +   '<tbody>' + body + '</tbody>'
-    + '</table>';
-}
+    wrap.innerHTML = ''
+      + '<table class="livability-table">'
+      +   '<thead><tr>'
+      +     '<th>#</th><th>County</th><th>Score</th>'
+      +     '<th class="axis-head">' + AXES.map(function (k) { return LABELS[k]; }).join(' · ') + '</th>'
+      +   '</tr></thead>'
+      +   '<tbody>' + body + '</tbody>'
+      + '</table>';
+  }
 
   function escapeHtml(s) {
     if (!s) return '';
@@ -280,15 +274,11 @@ function renderTable() {
         toggle.textContent = hidden ? 'Show Full 100' : 'Show Top 10';
         });
     }
-    // 🆕 프리셋 버튼 클릭 이벤트 (이 부분을 통째로 교체하세요)
+    // 🆕 프리셋 버튼 클릭 이벤트
     document.querySelectorAll('.preset').forEach(function(btn) {
       btn.addEventListener('click', function() {
         const presetKey = btn.dataset.preset;
         const preset = PRESETS[presetKey];
-        
-        // 디버깅용 (F12 콘솔에서 확인 가능)
-        console.log('Clicked preset:', presetKey, preset);
-        
         if (!preset) return;
         
         // 1. 가중치 상태 업데이트
@@ -330,7 +320,7 @@ function renderTable() {
   function init() {
     loadWeights();
     renderSliders();
-    updatePercentDisplays(); // 🆕 updateTotal() 대신 퍼센트 표시
+    updatePercentDisplays(); // 🆕 updateTotal() 대신
     bindControls();
     loadData();
   }
