@@ -233,7 +233,8 @@
           + '</div>';
       }).join('');
 
-      return ''
+      const url = c.slug ? '/counties/' + c.slug + '.html' : '';
+      const cardHtml = ''
         + '<div class="liv-card" style="border-left-color:' + tierColor(tier.cls) + '">'
         +   '<div class="liv-card-rank">#' + (i + 1) + '</div>'
         +   '<div class="liv-card-name">' + escapeHtml(c.county_name) + '</div>'
@@ -244,6 +245,12 @@
         +   '</div>'
         +   '<div class="liv-card-bars">' + bars + '</div>'
         + '</div>';
+
+      // 🆕 slug가 있으면 클릭 가능한 링크로 감싸기
+      if (url) {
+        return '<a class="liv-card-link" href="' + url + '">' + cardHtml + '</a>';
+      }
+      return cardHtml;
     }).join('');
   }
 
@@ -293,8 +300,11 @@
              +   '<div class="bar bar-' + k + '" style="width:' + w + '%"></div>'
              + '</div>';
       }).join('');
+      const url = c.slug ? '/counties/' + c.slug + '.html' : '';
       return ''
-        + '<tr>'
+        + '<tr data-href="' + url + '"'
+        +     (url ? ' class="clickable-row"' : '')
+        +     '>'
         +   '<td class="rank">' + (i + 1) + '</td>'
         +   '<td><strong>' + escapeHtml(c.county_name) + '</strong>'
         +       ' <span class="state">' + (c.state_abbr || '') + '</span></td>'
@@ -443,6 +453,19 @@
     URL.revokeObjectURL(url);
   }
 
+  // 🆕 테이블 행 클릭 위임 (data-href 속성 사용)
+  function bindTableRowClicks() {
+    const wrap = document.getElementById('results-table-wrap');
+    if (!wrap || wrap.dataset.bound === '1') return;
+    wrap.addEventListener('click', function (e) {
+      const tr = e.target.closest('tr[data-href]');
+      if (!tr) return;
+      const href = tr.dataset.href;
+      if (href) window.location.href = href;
+    });
+    wrap.dataset.bound = '1';
+  }
+
   async function loadData() {
     const wrap = document.getElementById('results-table-wrap');
     try {
@@ -451,6 +474,7 @@
       const data = await resp.json();
       state.counties = data.counties || {};
       renderTable();
+      bindTableRowClicks();  // 🆕 테이블 행 클릭 위임
     } catch (err) {
       console.error(err);
       wrap.innerHTML = '<p class="error">Failed to load county data. Please refresh.</p>';

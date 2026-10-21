@@ -254,3 +254,33 @@
   color: white; 
   border-color: #1a3d5c; 
 }
+/* 카드 클릭 링크 */
+.liv-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+.liv-card-link:hover,
+.liv-card-link:focus {
+  text-decoration: none;
+  color: inherit;
+}
+.liv-card-link .liv-card {
+  cursor: pointer;
+}
+.liv-card-link:focus-visible .liv-card {
+  outline: 2px solid #1a3d5c;
+  outline-offset: 2px;
+}
+
+/* 테이블 행 클릭 */
+.clickable-row {
+  cursor: pointer;
+}
+.clickable-row:hover {
+  background: #eef4f9 !important;
+}
+.clickable-row:hover td .composite {
+  color: #0d2b45;
+}
