@@ -259,6 +259,29 @@ function renderTable() {
         toggle.textContent = hidden ? 'Show Full 100' : 'Show Top 10';
         });
     }
+    // 👇👇👇 여기부터 새로 추가할 코드 👇👇👇
+    // 🆕 프리셋 버튼 클릭 이벤트
+    document.querySelectorAll('.preset').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const preset = PRESETS[btn.dataset.preset];
+        if (!preset) return;
+        
+        state.weights = Object.assign({}, preset);
+        
+        AXES.forEach(function(k) {
+          document.getElementById('w-' + k).value = state.weights[k];
+          document.getElementById('val-' + k).textContent = state.weights[k];
+        });
+        
+        updateTotal();
+        saveWeights();
+        renderTable();
+        
+        document.querySelectorAll('.preset').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+    // 👆👆👆 여기까지 👆👆👆
   }
 
   async function loadData() {
