@@ -1281,3 +1281,125 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
 .footer-attribution a:hover {
   color: #ffffff;
 }
+/* 🆕 Livability Mini Widget (county.html) */
+.livability-mini-card {
+  background: #f7f9fb;
+  border: 1px solid #e1e6eb;
+  border-left: 4px solid #3498db;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.lmc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.lmc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a3d5c;
+}
+.lmc-cta {
+  font-size: 0.85rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+.lmc-cta:hover {
+  color: #1a3d5c;
+  text-decoration: underline;
+}
+.lmc-score-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.lmc-score {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a3d5c;
+  line-height: 1;
+}
+.lmc-denom {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 600;
+}
+.lmc-note {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: 0.5rem;
+}
+.lmc-axes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.lmc-axis-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 40px;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+.lmc-axis-label {
+  color: #555;
+  font-weight: 600;
+}
+.lmc-axis-track {
+  height: 6px;
+  background: #eef1f4;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.lmc-axis-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+.lmc-axis-val {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #1a3d5c;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.lmc-axis-fill.axis-affordability { background: #2e86ab; }
+.lmc-axis-fill.axis-stability     { background: #5a9e7c; }
+.lmc-axis-fill.axis-momentum      { background: #d4a72c; }
+.lmc-axis-fill.axis-safety        { background: #b8452c; }
+.lmc-axis-fill.axis-health        { background: #8e5aa8; }
+.lmc-axis-fill.axis-amenities     { background: #4a90d9; }
+
+.lmc-footer {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #d8dfe5;
+}
+.lmc-footer a {
+  color: #3498db;
+  text-decoration: none;
+}
+.lmc-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .lmc-axes {
+    grid-template-columns: 1fr;
+  }
+  .livability-mini-card {
+    padding: 1rem 1.1rem;
+  }
+  .lmc-score {
+    font-size: 1.8rem;
+  }
+}
