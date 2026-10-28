@@ -1403,3 +1403,157 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
     font-size: 1.8rem;
   }
 }
+/* ═══════════════════════════════════════════════════════════
+   HOME SEARCH BAR (county / state autocomplete)
+   ═══════════════════════════════════════════════════════════ */
+.home-search {
+  position: relative;
+  margin: 24px 0 28px;
+}
+.home-search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid #d4e8f0;
+  border-radius: 10px;
+  padding: 4px 8px 4px 16px;
+  max-width: 640px;
+  box-shadow: 0 2px 8px rgba(26, 61, 92, 0.06);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.home-search-box:focus-within {
+  border-color: #2c5f8a;
+  box-shadow: 0 0 0 3px rgba(44, 95, 138, 0.1);
+}
+.home-search-icon {
+  font-size: 1.1em;
+  color: #888;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+#search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 0;
+  font-size: 1em;
+  outline: none;
+  color: #222;
+  min-width: 0;
+}
+#search-input::placeholder {
+  color: #999;
+}
+.home-search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  max-width: 640px;
+  background: white;
+  border: 1px solid #e0e8f0;
+  border-radius: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  display: none;
+}
+.search-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #222;
+  transition: background 0.15s;
+}
+.search-item a:hover {
+  background: #f0f5fa;
+}
+.si-name {
+  font-weight: 500;
+  color: #1a3d5c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.si-badge {
+  font-size: 0.7em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.si-county { background: #e8f0f8; color: #1a3d5c; }
+.si-state  { background: #fdf3d4; color: #b8860b; }
+
+/* ═══════════════════════════════════════════════════════════
+   HOME ARTICLE (AdSense용 심층 콘텐츠)
+   ═══════════════════════════════════════════════════════════ */
+.home-article {
+  margin: 50px 0 20px;
+  padding: 32px 0 0;
+  border-top: 2px solid #eee;
+  max-width: 820px;
+}
+.home-article h2 {
+  font-size: 1.5em;
+  color: #1a3d5c;
+  margin-top: 1.8em;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.home-article h2:first-child {
+  margin-top: 0;
+}
+.home-article h3 {
+  font-size: 1.15em;
+  color: #1a3d5c;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+.home-article p {
+  font-size: 1.02em;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.1em;
+}
+.home-article ul {
+  padding-left: 22px;
+  margin-bottom: 1.2em;
+}
+.home-article li {
+  margin-bottom: 0.6em;
+  line-height: 1.7;
+  color: #333;
+}
+.home-article strong {
+  color: #1a3d5c;
+}
+.home-article .article-source {
+  font-size: 0.85em;
+  color: #888;
+  font-style: italic;
+  margin-top: 24px;
+  padding-top: 15px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  .home-article {
+    padding-top: 24px;
+    margin-top: 36px;
+  }
+  .home-article h2 { font-size: 1.3em; }
+  .home-article h3 { font-size: 1.05em; }
+  .home-article p { font-size: 0.98em; }
+  .home-search-box { padding: 4px 6px 4px 12px; }
+  #search-input { font-size: 0.95em; padding: 10px 0; }
+}

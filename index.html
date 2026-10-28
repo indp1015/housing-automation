@@ -60,11 +60,26 @@
   Community Survey (ACS 2023 5-Year Estimates).
 </p>
 
+<!-- 🔍 카운티/주 검색창 -->
+<div id="home-search" class="home-search"
+     data-search-url="/data/search_index.json"
+     data-base-url="">
+  <div class="home-search-box">
+    <span class="home-search-icon">🔍</span>
+    <input type="text" id="search-input"
+           placeholder="Search for a county or state (e.g., Los Angeles, CA)"
+           autocomplete="off" aria-label="Search counties or states">
+  </div>
+  <ul id="search-results" class="home-search-results"></ul>
+</div>
+
+
 <div class="rate-banner">
   🏠 <strong>Today's 30-Year Mortgage Rate:</strong>
   <span class="rate-value">7.32%</span>
   <span class="rate-date">(2026-10-22, source: FRED)</span>
 </div>
+
 
 <div class="ad-slot ad-in-article">
   <!-- AdSense 광고 코드 삽입 위치 -->
@@ -253,6 +268,7 @@
   </div>
 </section>
 
+
 <!-- 🆕 Compare Counties 배너 -->
 <section class="compare-banner">
   <div class="compare-banner-content">
@@ -270,6 +286,7 @@
     </a>
   </div>
 </section>
+
 <h2>Featured Rankings</h2>
 <ul class="ranking-list">
   <li><a href="/rankings/most-expensive-counties.html">100 Most Expensive Counties in the U.S.</a></li>
@@ -279,6 +296,7 @@
   <li><a href="/rankings/best-price-to-rent.html">Best Price-to-Rent Ratios (Buy vs Rent)</a></li>
   <li><a href="/rankings/highest-owner-occupancy.html">Highest Homeowner Occupancy Rates</a></li>
 </ul>
+
 <h2>Rankings by Priority</h2>
 <div class="ranking-index">
   <a href="/compare/best-first-time-buyers.html" class="ranking-card">
@@ -297,15 +315,16 @@
     <h3>👨‍👩‍👧 Best for Families</h3>
     <span class="ranking-arrow">→</span>
   </a>
-    <a href="/compare/best-value-markets.html" class="ranking-card">
-      <h3>⭐ Best Value Markets</h3>
-      <span class="ranking-arrow">→</span>
-    </a>
-    <a href="/compare/" class="ranking-card ranking-card-cta">
-      <h3>📊 See All Rankings</h3>
-      <span class="ranking-arrow">→</span>
-    </a>
-  </div>
+  <a href="/compare/best-value-markets.html" class="ranking-card">
+    <h3>⭐ Best Value Markets</h3>
+    <span class="ranking-arrow">→</span>
+  </a>
+  <a href="/compare/" class="ranking-card ranking-card-cta">
+    <h3>📊 See All Rankings</h3>
+    <span class="ranking-arrow">→</span>
+  </a>
+</div>
+
 <h2>Browse by State</h2>
 <ul class="state-grid">
   
@@ -412,6 +431,108 @@
   <li><a href="/states/wyoming.html">Wyoming</a></li>
   
 </ul>
+
+<!-- ═══════════════════════════════════════════════════════════
+     🆕 심층 콘텐츠 (AdSense 심사용 서술형 텍스트)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="home-article">
+  <h2>How to Read and Use This Housing Data</h2>
+  <p>
+    This platform aggregates <strong>median home values</strong>, <strong>median gross rent</strong>,
+    <strong>owner-occupancy rates</strong>, and <strong>price-to-rent ratios</strong> for every
+    county in the United States that has a published estimate from the Census Bureau's
+    American Community Survey (ACS). Rather than guessing which neighborhood is
+    "expensive" or which rental market is "hot," you can compare thousands of counties
+    using the same consistent, federally-published dataset. Homebuyers use the data to
+    benchmark a target county against its state and national averages; investors use the
+    price-to-rent ratio to screen for cash-flow-friendly markets; researchers and
+    journalists use the Market Score to identify which counties combine affordability
+    with long-term stability.
+  </p>
+  <p>
+    There are three ways to navigate the site. Use the <strong>search bar above</strong> to jump
+    directly to a specific county or state. Use <strong>Browse by State</strong> at the bottom
+    of this page if you already know your region. Or use the <strong>Compare tool</strong> to
+    overlay two to five counties on a single radar chart — handy when you are choosing
+    between a high-momentum Sun Belt county and a stable Midwest one. Every county
+    detail page also links to its ZIP-level sub-markets so you can drill down further.
+  </p>
+
+  <h3>Understanding the Market Score</h3>
+  <p>
+    The <strong>Market Score</strong> is a composite index we calculate for every county using
+    four independent axes, each normalized to a 0–100 scale:
+  </p>
+  <ul>
+    <li><strong>💰 Affordability</strong> — how far the local median income stretches against
+      the local median home price. Higher is better for would-be buyers.</li>
+    <li><strong>🏠 Stability</strong> — the share of owner-occupied households and the
+      volatility of home prices over the trailing five years. High stability means fewer
+      boom-bust swings.</li>
+    <li><strong>📈 Momentum</strong> — recent home-value appreciation and permit activity.
+      Momentum flags counties where demand is accelerating (or cooling) faster than the
+      national trend.</li>
+    <li><strong>⚡ Vitality</strong> — net migration, job postings, and business
+      establishments, capturing underlying economic demand.</li>
+  </ul>
+  <p>
+    The Market Score is intentionally <em>not</em> a buy/sell recommendation. It is a
+    screening tool: a county scoring 90 is worth a second look, while a county scoring
+    40 may still be an excellent fit for a specific buyer (e.g., remote workers seeking
+    low taxes). Always click into the county page to see the underlying numbers before
+    making any decision.
+  </p>
+
+  <h3>Data Sources and Methodology</h3>
+  <p>
+    Every number on this site traces back to a published government or open dataset.
+    Housing values, rent, and occupancy come from the <strong>U.S. Census Bureau's
+    American Community Survey 5-Year Estimates</strong>. Year-over-year price change
+    comes from the <strong>FHFA House Price Index</strong> (Federal Housing Finance
+    Agency). Employment and establishment counts come from the <strong>Bureau of Labor
+    Statistics (BLS) QCEW</strong>. Internal migration comes from <strong>IRS
+    Statistics of Income</strong> county-to-county migration files. Mortgage rates
+    come from <strong>FRED</strong> (Federal Reserve Bank of St. Louis).
+  </p>
+  <p>
+    The ACS is a survey, not a census, so small counties carry wider margins of error —
+    always treat single-year changes in low-population counties with caution. The FHFA
+    HPI is quarterly and lagged by roughly one quarter. Because our data pipeline
+    re-downloads each source and regenerates the site every month, the numbers you see
+    here reflect the most recent public release, and the "as of" date is shown on each
+    county detail page. If you need the raw files for your own analysis, they are freely
+    downloadable from the original agency websites.
+  </p>
+
+  <h3>The 2026 U.S. Housing Market at a Glance</h3>
+  <p>
+    As of the latest update, 30-year mortgage rates hover in the mid-to-high 7% range,
+    the highest sustained level since 2000. Higher financing costs have compressed
+    affordability in most coastal metros, but they have also created pockets of
+    opportunity in the Sun Belt and Midwest where prices have not kept pace with
+    incomes. Counties flagged as <strong>Best Value Markets</strong> in our Rankings
+    section currently include a mix of secondary metros in Texas, Tennessee, and the
+    Carolinas — areas that still combine strong in-migration with a reasonable
+    price-to-income ratio.
+  </p>
+  <p>
+    On the rental side, the past eighteen months have been a story of regional
+    divergence: rents are softening in Austin, Boise, and Phoenix, while holding firm in
+    the Northeast and Midwest. If you are evaluating a buy-vs-rent decision, run the
+    numbers on a specific county rather than relying on national averages — the gap
+    between the most and least affordable county in a single state is often larger than
+    the gap between the national average and a whole state.
+  </p>
+
+  <p class="article-source">
+    Last updated: 2026-10-28 · Data vintage: ACS 2024 5-Year Estimates ·
+    All data is provided for informational purposes only and does not constitute
+    financial, investment, or legal advice.
+  </p>
+</section>
+
+<!-- 🔍 검색 스크립트 로드 -->
+<script src="/static/search.js"></script>
 
 
 </main>
