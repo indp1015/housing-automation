@@ -60,17 +60,33 @@
   Community Survey (ACS 2023 5-Year Estimates).
 </p>
 
-<!-- 🔍 카운티/주 검색창 -->
-<div id="home-search" class="home-search"
-     data-search-url="/data/search_index.json"
-     data-base-url="">
-  <div class="home-search-box">
-    <span class="home-search-icon">🔍</span>
-    <input type="text" id="search-input"
-           placeholder="Search for a county or state (e.g., Los Angeles, CA)"
-           autocomplete="off" aria-label="Search counties or states">
+<!-- 🔍 카운티/주 검색창 (가운데 정렬 + 위치 기능) -->
+<div class="search-wrapper">
+  <div id="home-search" class="home-search"
+       data-search-url="/data/search_index.json"
+       data-base-url="">
+    <div class="home-search-box">
+      <span class="home-search-icon">🔍</span>
+      <input type="text" id="search-input"
+             placeholder="Enter ZIP, county, or state (e.g., Los Angeles, CA)"
+             autocomplete="off" aria-label="Search counties or states">
+      <button type="button" id="search-btn" class="search-btn">Find</button>
+    </div>
+    <ul id="search-results" class="home-search-results"></ul>
   </div>
-  <ul id="search-results" class="home-search-results"></ul>
+  
+  <div class="search-options">
+    <button type="button" id="use-location-btn" class="location-btn">
+      <span class="loc-icon">📍</span> Use my location
+    </button>
+    <span class="popular-links">
+      Popular: 
+      <a href="#" class="popular-query" data-query="Los Angeles, CA">Los Angeles</a>
+      <a href="#" class="popular-query" data-query="Houston, TX">Houston</a>
+      <a href="#" class="popular-query" data-query="Phoenix, AZ">Phoenix</a>
+      <a href="#" class="popular-query" data-query="New York, NY">NYC</a>
+    </span>
+  </div>
 </div>
 
 

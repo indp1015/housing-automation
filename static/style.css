@@ -1557,3 +1557,177 @@ h2 { font-size: 1.4em; margin-top: 1.8em; color: #1a3d5c; border-bottom: 2px sol
   .home-search-box { padding: 4px 6px 4px 12px; }
   #search-input { font-size: 0.95em; padding: 10px 0; }
 }
+/* ═══════════════════════════════════════════════════════════
+   HOME SEARCH BAR (Center Aligned + Buttons)
+   ═══════════════════════════════════════════════════════════ */
+.search-wrapper {
+  max-width: 680px;
+  margin: 30px auto 40px; /* 가운데 정렬 */
+  text-align: center;
+}
+
+.home-search {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.home-search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid #d4e8f0;
+  border-radius: 10px;
+  padding: 4px 4px 4px 16px; /* 우측 여백을 버튼 공간으로 활용 */
+  box-shadow: 0 4px 12px rgba(26, 61, 92, 0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.home-search-box:focus-within {
+  border-color: #2c5f8a;
+  box-shadow: 0 0 0 4px rgba(44, 95, 138, 0.15);
+}
+
+.home-search-icon {
+  font-size: 1.1em;
+  color: #888;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+#search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 0;
+  font-size: 1.05em;
+  outline: none;
+  color: #222;
+  min-width: 0;
+}
+#search-input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  background-color: #e67e22; /* 태양광 사이트와 유사한 오렌지색 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+.search-btn:hover {
+  background-color: #d35400;
+}
+
+/* 검색 결과 드롭다운 */
+.home-search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e8f0;
+  border-radius: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  display: none;
+  text-align: left;
+}
+.search-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #222;
+  transition: background 0.15s;
+}
+.search-item a:hover {
+  background: #f0f5fa;
+}
+.si-name {
+  font-weight: 500;
+  color: #1a3d5c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.si-badge {
+  font-size: 0.7em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.si-county { background: #e8f0f8; color: #1a3d5c; }
+.si-state  { background: #fdf3d4; color: #b8860b; }
+
+/* 하단 옵션 (위치, 인기 검색어) */
+.search-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.location-btn {
+  background: none;
+  border: none;
+  color: #1a3d5c;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.location-btn:hover {
+  text-decoration: underline;
+}
+.location-btn:disabled {
+  color: #aaa;
+  cursor: wait;
+}
+.loc-icon {
+  font-size: 1.1em;
+}
+
+.popular-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.popular-links a {
+  color: #2c5f8a;
+  text-decoration: none;
+  font-weight: 500;
+}
+.popular-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .search-wrapper { margin: 20px auto; }
+  .home-search-box { padding: 4px 4px 4px 12px; }
+  #search-input { font-size: 0.95em; padding: 10px 0; }
+  .search-btn { padding: 8px 16px; font-size: 0.9em; }
+  .search-options { flex-direction: column; gap: 12px; }
+  .popular-links { flex-wrap: wrap; justify-content: center; }
+}
