@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">66.9</span>
+    <span class="score-number">62.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 55.0</span>
       <span title="Stability">🏠 69.6</span>
-      <span title="Momentum">📈 92.2</span>
+      <span title="Momentum">📈 74.1</span>
       <span title="Vitality">⚡ 49.5</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Van Buren County
-    <strong class="up">
-      rose +10.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Van Buren County, Arkansas, functions as a balanced market with distinct affordability advantages relative to national benchmarks. The price-to-income ratio stands at 2.69, significantly below the national average of 3.20, while the rent burden remains exactly at the national mean of 17.2%. With a median home value of $135,700, the county is 40.4% below the national average and 4.1% below the state average, indicating a price point that remains accessible despite recent appreciation. The owner-occupancy rate of 77.9% further supports a stable residential base, though the low population of 15,998 constrains broad market liquidity.
+  <p>Van Buren County, Arkansas, functions as a balanced market leaning toward buyer advantage, characterized by a price-to-income ratio of 2.69, significantly below the national average of 3.20. The rent burden stands at 17.2%, precisely matching the national benchmark, while the price-to-rent ratio of 15.7 remains favorable compared to the national 18.7. These metrics indicate that homeownership is relatively accessible for local residents, though the market is not overwhelmingly cheap compared to national standards. The median home value of $135,700 sits 40.4% below the national average and 4.1% below the state average, reflecting a regional price floor supported by a median household income of $50,354.
 
-Recent momentum is the primary driver of the county’s current valuation, with home values rising 11.0% year-over-year in 2024 and the FHFA House Price Index showing a 10.40% increase in 2025. This outpaces the state’s 1.09% growth by 9.31 percentage points, signaling a localized surge rather than a statewide trend. This sharp appreciation contrasts with the relatively flat rent burden, suggesting that equity gains are outpacing rental costs. However, this rapid price increase occurs against a backdrop of minimal new supply, with only six single-family permits authorized in 2025 and zero multi-family units. The scarcity of new inventory, combined with a net positive migration of 669 filers, likely contributes to the upward pressure on existing home prices.
+Recent trend data reveals a sharp acceleration in home values, with year-over-year growth jumping from 3.7% in 2023 to 11.0% in 2024. This surge contrasts with the modest rent increase, creating a divergence where home equity is compounding faster than rental costs. This momentum is driven partly by net migration of +669 filers, indicating population growth that outpaces the minimal housing supply of only six new units authorized in 2025. The low construction activity, combined with positive in-migration, suggests tightening inventory constraints that may pressure prices upward despite the current affordability metrics.
 
-Economic fundamentals provide a mixed foundation for this growth. Total employment stands at 3,041 jobs with an average weekly wage of $897, which supports the median household income of $50,354. Yet, the local economy’s small scale limits its resilience compared to larger metropolitan areas. The current 30-year fixed mortgage rate of 7.32% adds financing friction, yet the low absolute price point mitigates this impact for qualified buyers. The market’s vitality is constrained by the small economic base, but its stability is reinforced by the long-term trend of consistent, if accelerating, price appreciation since 2017. For potential buyers, the data suggests a window of relative affordability is closing rapidly due to the 11% annual price growth, while renters face a stable cost structure that remains aligned with national norms. The divergence between strong price momentum and moderate economic vitality highlights a market driven more by supply constraints and migration than by robust local job creation.</p>
+The local economic context presents a mixed signal for long-term stability. While the average weekly wage of $897 supports current income levels, the total employment base of 3,041 jobs is modest, limiting broader economic vitality. The high momentum score is offset by lower vitality, as the small job market may not sustain the recent price spikes without external economic drivers. For potential buyers, the current 7.32% mortgage rate increases monthly payment obligations, making the low price-to-income ratio a critical buffer against rising interest costs. Renter’s are seeing stable costs, but the rapid appreciation of home values suggests that the window for entry at current price points may narrow if the 11.0% growth rate persists. The market’s stability is anchored by the 77.9% owner-occupancy rate, which provides a cushion against speculative volatility, yet the disparity between local and national income levels (-25.9%) remains a structural constraint on further price expansion.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ Economic fundamentals provide a mixed foundation for this growth. Total employme
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ Economic fundamentals provide a mixed foundation for this growth. Total employme
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 140.5, "2017": 139.76, "2018": 139.19, "2019": 142.12, "2020": 151.59, "2021": 163.06, "2022": 182.65, "2023": 215.6, "2024": 202.24, "2025": 223.28};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

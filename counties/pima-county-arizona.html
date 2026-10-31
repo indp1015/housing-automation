@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">32.3</span>
+    <span class="score-number">34.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 13.1</span>
       <span title="Stability">🏠 32.0</span>
-      <span title="Momentum">📈 37.3</span>
+      <span title="Momentum">📈 45.7</span>
       <span title="Vitality">⚡ 55.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Pima County
-    <strong class="up">
-      rose +1.1%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -573,6 +553,19 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Pima County operates as a distinctively stressed market, characterized by significant affordability constraints rather than a traditional buyer’s or renter’s equilibrium. The price-to-income ratio stands at 4.55, substantially exceeding the national average of 3.20, while the rent burden consumes 20.7% of median household income compared to the national 17.2%. These metrics indicate that both purchasing and leasing housing require disproportionate financial resources relative to local earnings. The composite assessment reflects this pressure, with affordability scoring only 13.1 out of 100, severely dragging down the overall valuation despite moderate vitality scores of 55.0. This structural imbalance suggests that housing costs are outpacing the economic capacity of the typical household, creating a persistent barrier to entry for both new and existing residents.
+
+The trend data reveals a period of intense, albeit moderating, appreciation. Home values surged from $166,300 in 2017 to $319,700 in 2024, with the peak year-over-year increase reaching 18.6% in 2022 before settling to 11.4% in 2024. This sustained growth has pushed the county’s median home value 40.4% above the national average and 20.3% above the state average, despite median household income being only 3.4% above the national mean. A notable divergence exists between asset values and rental costs; while home prices have risen sharply, the price-to-rent ratio of 22.0 exceeds the national 18.7, suggesting that ownership equity is accumulating faster than rental yields. This pattern is supported by net positive migration of 14,282 filers between 2021 and 2022, where inflow incomes averaged $80,557, slightly higher than outflow incomes, indicating an influx of relatively higher-earning households that may be sustaining demand.
+
+Local economic fundamentals provide partial support but face headwinds from supply and financing costs. With 314,789 total jobs and an average weekly wage of $1,199, the labor market offers stability, yet the 7.32% national mortgage rate significantly increases the monthly cost of ownership. Housing supply, with 4,658 new units authorized in 2025, remains insufficient to offset the rapid demand growth evidenced by the 65.2% owner-occupancy rate and rising values. The stability score of 32.0 reflects the volatility inherent in such rapid appreciation, while the momentum score of 37.3 acknowledges the continued, though slowing, upward trajectory. For prospective stakeholders, the data indicates a market where high entry costs are the primary risk factor, driven by a combination of strong demand from migration and limited supply relative to the pace of price increases.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Pima County on Our Sister Sites</h3>
@@ -749,7 +742,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -911,47 +904,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 510.32, "2017": 547.67, "2018": 581.67, "2019": 622.88, "2020": 657.12, "2021": 770.97, "2022": 925.41, "2023": 980.56, "2024": 1015.32, "2025": 1026.55};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

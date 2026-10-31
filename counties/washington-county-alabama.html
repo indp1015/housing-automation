@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">55.3</span>
+    <span class="score-number">56.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 76.9</span>
       <span title="Stability">🏠 65.4</span>
-      <span title="Momentum">📈 40.3</span>
+      <span title="Momentum">📈 46.5</span>
       <span title="Vitality">⚡ 29.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Washington County
-    <strong class="up">
-      rose +1.8%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -326,11 +306,7 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Washington County, Alabama, functions as a distinctively affordable buyer’s market, characterized by strong equity potential relative to national benchmarks. The median home value of $159,700 sits 29.9% below the national average, while the price-to-income ratio of 2.62 is significantly lower than the national mean of 3.20. This affordability is reinforced by a rent burden of just 12.9%, well below the 17.2% national standard. However, the market exhibits a notable divergence in asset classes. While home values surged from $83,900 in 2017 to $159,700 in 2024, representing a cumulative increase of nearly 90%, the median gross rent has remained relatively static at $655. This disparity drives the price-to-rent ratio to 20.3, exceeding the national average of 18.7, suggesting that owning is currently more financially advantageous than renting for long-term stability.
-
-The recent momentum indicates a cooling but stable environment. After experiencing peak year-over-year growth of 26.7% in 2021, appreciation has moderated to 4.5% in 2024 and further decelerated to 1.75% according to the latest FHFA HPI data. This recent 1.75% gain places the county 1.04 percentage points behind the state’s 2.79% growth, signaling a period of stabilization rather than aggressive expansion. The economic foundation supports this stability, with a high owner-occupancy rate of 85.8% and positive net migration of 188 filers in the 2021-2022 period. Although local employment is modest, totaling 4,445 jobs with an average weekly wage of $1,989, the low cost of living offsets lower income levels, maintaining resilience in the housing sector.
-
-The composite assessment reflects a market with high affordability and stability but limited vitality and momentum. The low vitality score correlates with the small population of 15,143 and limited commercial establishments, while the moderate momentum score mirrors the deceleration in price appreciation. For prospective buyers, the current 7.32% mortgage rate impacts monthly carrying costs, yet the low entry price point remains a significant buffer against interest rate volatility. Renter’s markets are less attractive due to the high price-to-rent ratio, which favors equity accumulation through ownership. The data suggests a market where the primary driver of value is relative affordability and historical price appreciation, rather than rapid current growth or robust local economic expansion.</p>
+  <p>Washington County presents a buyer-favorable market characterized by strong affordability metrics and decelerating price momentum. The price-to-income ratio of 2.62 sits well below the national 3.20 average, while rent burden at 12.9% of income compares favorably to the 17.2% national benchmark, indicating housing costs consume a relatively small share of local earnings. With an 85.8% owner-occupancy rate and a price-to-rent ratio of 20.3—modestly above the 18.7 national average—ownership remains the dominant tenure mode, though the slight premium for buying over renting suggests limited investor competition. Home values have risen 90% since 2017, from $83,900 to $159,700, driven by exceptional pandemic-era appreciation of 26.7% in 2021 and 23.7% in 2022 before moderating to 4.5% in 2024. This trajectory places</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -513,7 +489,7 @@ The composite assessment reflects a market with high affordability and stability
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -675,47 +651,6 @@ The composite assessment reflects a market with high affordability and stability
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2015": 107.04, "2016": 104.46, "2017": 106.34, "2018": 109.52, "2019": 116.21, "2020": 117.61, "2021": 115.14, "2022": 134.12, "2024": 163.12, "2025": 165.98};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

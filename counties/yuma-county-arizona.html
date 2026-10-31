@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">43.8</span>
+    <span class="score-number">45.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 28.7</span>
       <span title="Stability">🏠 44.7</span>
-      <span title="Momentum">📈 41.7</span>
+      <span title="Momentum">📈 48.5</span>
       <span title="Vitality">⚡ 67.9</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Yuma County
-    <strong class="up">
-      rose +1.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -470,19 +450,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Yuma County presents a balanced-to-buyer’s market characterized by significant affordability stress despite robust economic vitality. The price-to-income ratio stands at 3.46, exceeding the national average of 3.20, while the rent burden consumes 19.0% of median household income compared to the 17.2% national benchmark. Although the price-to-rent ratio of 18.3 is slightly below the national average of 18.7, indicating relatively cheaper ownership than renting, the absolute cost of entry remains high for local earners. This dynamic places the market in a category where ownership is theoretically favorable, yet financially constrained by income levels rather than relative valuation.
-
-The multi-year trajectory reveals a period of aggressive appreciation that is now moderating. Median home values surged from $117,000 in 2017 to $217,800 in 2024, with peak year-over-year growth of 16.5% in 2022 slowing to 11.3% in 2024. Recent FHFA data indicates a further deceleration to 1.64% year-over-year growth in 2025, outperforming the Arizona state average of 0.52% by 1.12 percentage points. This divergence suggests that while statewide momentum is stalling, Yuma County retains stronger underlying demand. However, this price strength contrasts with a median household income of $62,876, which lags the national average by 7.5%, creating a widening gap between asset value and local purchasing power.
-
-Regional context highlights Yuma’s position as a value outlier; home values are 18.0% below the Arizona state average but only 4.4% below the national mean. This discrepancy is driven by local economic fundamentals, including 55,955 total jobs and an average weekly wage of $1,035. Housing supply remains active with 1,155 new units authorized in 2025, split between 806 single-family and 349 multi-family homes, which may help stabilize future pricing. Positive net migration of 4,785 filers between 2021 and 2022 further supports demand, though the 7.32% national mortgage rate significantly impacts buyer leverage. The composite assessment reflects strong vitality due to job growth and migration, but this is offset by low affordability scores and moderate stability, as rapid historical price gains have outpaced income growth, leaving potential buyers facing high entry costs relative to local wages.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Yuma County on Our Sister Sites</h3>
@@ -660,7 +627,7 @@ Regional context highlights Yuma’s position as a value outlier; home values ar
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -822,47 +789,6 @@ Regional context highlights Yuma’s position as a value outlier; home values ar
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 313.07, "2017": 325.89, "2018": 338.6, "2019": 355.52, "2020": 377.72, "2021": 446.08, "2022": 538.41, "2023": 563.85, "2024": 587.79, "2025": 597.41};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

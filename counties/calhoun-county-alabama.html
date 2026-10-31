@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">51.8</span>
+    <span class="score-number">50.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 46.1</span>
       <span title="Stability">🏠 45.4</span>
-      <span title="Momentum">📈 75.6</span>
+      <span title="Momentum">📈 71.1</span>
       <span title="Vitality">⚡ 38.6</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Calhoun County
-    <strong class="up">
-      rose +4.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -577,11 +557,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Calhoun County, Alabama, functions as a relatively balanced market with distinct affordability advantages, evidenced by a price-to-income ratio of 2.85, which sits below the national average of 3.20. The median home value of $156,600 is 31.2% lower than the national benchmark, while the median household income of $55,029 remains 19.1% below the national mean. This structural gap supports a favorable price-to-rent ratio of 15.8, compared to the national standard of 18.7, indicating that ownership costs are proportionally lower than rental alternatives. Consequently, the market leans slightly toward buyers who can leverage low entry points, though the 7.32% national mortgage rate constrains monthly payment capacity for lower-income households.
+  <p>Calhoun County, Alabama, functions as a distinctly buyer’s market, characterized by home values that remain 31.2% below the national average and a price-to-income ratio of 2.85, which is notably lower than the national benchmark of 3.20. The affordability profile is further reinforced by a rent burden of 18.0%, only marginally above the national average of 17.2%, and a price-to-rent ratio of 15.8, indicating that purchasing remains a more financially efficient strategy than renting relative to national norms. This structural advantage is supported by a median home value of $156,600 against a median household income of $55,029, creating a favorable entry point for prospective homeowners compared to broader U.S. trends.
 
-Trend analysis reveals a significant acceleration in home values, with year-over-year growth surging to 14.0% in 2022 before moderating to 4.7% in 2024. Recent FHFA data confirms this momentum persists, showing a 4.36% year-over-year increase in 2025, which outpaces the state’s 2.79% growth by 1.57 percentage points. This divergence between rapid price appreciation and slower rent growth, where the rent burden stands at 18.0% of income versus the national 17.2%, suggests that housing costs are tightening relative to local earnings. The 70.3% owner-occupancy rate further stabilizes the inventory, limiting speculative volatility despite the recent price spike.
+The market exhibits strong recent momentum, driven by a 14.0% year-over-year appreciation in 2022 that has moderated to 4.7% in 2024, yet prices continue to outpace rent growth. This divergence suggests that while the initial surge in demand has cooled, underlying equity gains remain robust. Local economic fundamentals provide a moderate foundation, with total employment reaching 31,898 jobs and an average weekly wage of $952. Net migration of 2,094 filers in 2022 indicates sustained population growth, though the low number of new housing units authorized in 2025—just 144 total—suggests limited new supply to offset this demographic pressure. Consequently, the market’s vitality is constrained by economic scale, as evidenced by the composite assessment’s low vitality metric, while stability is tempered by the rapid recent price adjustments.
 
-Economic fundamentals provide mixed support for continued growth. Local employment totals 31,898 jobs with an average weekly wage of $952, which aligns with the moderate income levels observed in the data. Housing supply remains constrained, with only 144 new units authorized in 2025, predominantly single-family homes, potentially limiting future inventory expansion. However, positive net migration of 2,094 filers between 2021 and 2022 indicates sustained demographic inflow, supporting demand. The market’s primary weakness lies in its vitality and stability metrics, driven by the lag between wage growth and price increases. While momentum remains strong due to outperformance relative to the state, affordability pressures are mounting as prices rise faster than rents, requiring prospective buyers to carefully assess long-term carrying costs against the current 7.32% interest rate environment.</p>
+Practical implications for stakeholders center on the current 7.32% national mortgage rate, which partially offsets the county’s price advantages by increasing monthly carrying costs. The owner-occupancy rate of 70.3% reflects a traditional housing structure, but the recent acceleration in price growth relative to income growth may narrow the affordability gap over time. The market’s classification as challenging stems from this tension: while entry prices are low, the rapid appreciation trajectory and limited new construction create a competitive environment for affordable inventory. Investors and buyers should note that the price-to-rent ratio of 15.8 remains below the national average of 18.7, suggesting that rental yields are not yet maximized, which may limit investor-driven price inflation in the near term. Ultimately, the data points to a market where affordability remains a key differentiator, but the pace of recent appreciation requires careful consideration of long-term entry costs.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -765,7 +745,7 @@ Economic fundamentals provide mixed support for continued growth. Local employme
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -927,47 +907,6 @@ Economic fundamentals provide mixed support for continued growth. Local employme
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 274.1, "2017": 278.57, "2018": 289.43, "2019": 304.11, "2020": 313.37, "2021": 342.15, "2022": 397.44, "2023": 425.75, "2024": 450.4, "2025": 470.02};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

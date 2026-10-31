@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-challenging">
+<div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">50.4</span>
+    <span class="score-number">49.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 31.7</span>
       <span title="Stability">🏠 40.0</span>
-      <span title="Momentum">📈 79.3</span>
+      <span title="Momentum">📈 76.5</span>
       <span title="Vitality">⚡ 55.5</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Anchorage Municipality
-    <strong class="up">
-      rose +4.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -575,19 +555,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Anchorage Municipality operates as a challenging market for prospective homeowners, characterized by high entry costs relative to local earnings. The median home value of $395,900 sits 73.9% above the national average, while the median household income of $103,284 exceeds the national mean by 51.9%. This disparity results in a price-to-income ratio of 3.83, significantly higher than the national benchmark of 3.20, indicating substantial affordability pressure for buyers. Conversely, the rent burden stands at 17.3% of income, nearly identical to the national average of 17.2%, suggesting that renting remains a more financially accessible option than purchasing. The price-to-rent ratio of 22.2, compared to the national average of 18.7, further underscores the premium attached to ownership in this region.
-
-Price appreciation has accelerated recently, with year-over-year growth moderating from a peak of 11.1% in 2022 to 5.3% in 2024. Recent FHFA data indicates a 3.97% annual increase, which underperforms the broader Alaska state growth of 8.28% by 4.31 percentage points. This divergence suggests Anchorage is cooling relative to other parts of the state, possibly due to local supply constraints. Only 218 new units were authorized in 2025, a limited pipeline that fails to offset the net inflow of 6,721 tax filers observed between 2021 and 2022. While the average weekly wage of $1,472 supports local purchasing power, the 7.32% national mortgage rate continues to suppress buyer demand, keeping the owner-occupancy rate at 63.9%.
-
-The market’s vitality is driven by strong momentum and economic stability, evidenced by 122,542 total jobs and steady wage growth. However, these positive indicators are offset by poor affordability metrics, which drag down the overall market assessment. The stability score reflects the consistent, albeit slowing, price trajectory, while the momentum score highlights the sustained, albeit decelerating, appreciation. For potential entrants, the data suggests that waiting for significant price corrections is unlikely given the persistent net migration and limited new construction. Instead, the market favors renters who can leverage the relatively low rent burden, while buyers face a landscape where high interest rates and elevated price-to-income ratios create a significant barrier to entry. The underperformance relative to the state average signals a localized adjustment phase rather than a broader regional decline.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Anchorage Municipality on Our Sister Sites</h3>
@@ -764,7 +731,7 @@ The market’s vitality is driven by strong momentum and economic stability, evi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -926,47 +893,6 @@ The market’s vitality is driven by strong momentum and economic stability, evi
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 476.89, "2017": 477.44, "2018": 479.45, "2019": 490.47, "2020": 497.56, "2021": 525.27, "2022": 576.13, "2023": 607.43, "2024": 641.56, "2025": 667.01};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

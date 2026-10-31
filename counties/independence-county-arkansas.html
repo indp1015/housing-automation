@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">48.1</span>
+    <span class="score-number">49.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 55.3</span>
       <span title="Stability">🏠 22.1</span>
-      <span title="Momentum">📈 70.8</span>
+      <span title="Momentum">📈 74.4</span>
       <span title="Vitality">⚡ 41.6</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Independence County
-    <strong class="up">
-      rose +2.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -406,19 +386,6 @@
 </div>
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Independence County, Arkansas, functions as a balanced market with distinct affordability advantages, characterized by a median home value of $142,600 and a median gross rent of $845. The market is neither exclusively favorable to buyers nor renters, but the price-to-rent ratio of 14.1, significantly below the national average of 18.7, suggests that purchasing offers superior long-term value relative to renting. This classification is reinforced by a price-to-income ratio of 2.52, which is substantially lower than the national benchmark of 3.20, indicating that local wages support home ownership more effectively than in most U.S. counties. The rent burden stands at 17.9% of income, only marginally above the national average of 17.2%, further confirming that housing costs remain manageable for the typical household earning $56,609.
-
-The recent trajectory reveals a sharp acceleration in home values, with an 18.3% year-over-year increase in 2024 following an 11.2% jump in 2022. This rapid appreciation contrasts with the relatively stable rent environment, where growth rates mirror price increases, suggesting a synchronized shift in valuation rather than a divergence. The FHFA House Price Index confirms this momentum, showing a 2.40% year-over-year change in 2025, which outperforms the state average of 1.09% by 1.31 percentage points. This outperformance indicates that Independence County is experiencing stronger demand dynamics than the broader Arkansas housing landscape. However, the stability of the market is compromised by the volatility observed between 2019 and 2021, where values dipped before resuming their upward climb, reflecting sensitivity to external economic shocks.
-
-Local economic fundamentals provide a mixed backdrop for this growth. With only 15,658 total jobs and an average weekly wage of $1,000, the employment base is modest, yet the county has attracted 770 net new filers recently, driven by inflows of households with slightly higher incomes than those leaving. Housing supply remains constrained, with only 33 new units authorized in 2025, limiting the ability to absorb this population growth. Consequently, the high momentum score is counterbalanced by lower vitality and stability metrics, as the rapid price escalation outpaces wage growth and local economic expansion. Potential buyers benefit from the low entry price relative to national averages, but must account for the 7.32% mortgage rate, which reduces purchasing power despite the favorable price-to-income ratio. The market’s primary strength lies in its affordability relative to national standards, while its primary risk is the pace of recent appreciation relative to local income levels.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -597,7 +564,7 @@ Local economic fundamentals provide a mixed backdrop for this growth. With only 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -759,47 +726,6 @@ Local economic fundamentals provide a mixed backdrop for this growth. With only 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 190.37, "2017": 196.28, "2018": 195.14, "2019": 202.69, "2020": 204.01, "2021": 221.56, "2022": 256.64, "2023": 267.61, "2024": 293.48, "2025": 300.52};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

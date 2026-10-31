@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">54.1</span>
+    <span class="score-number">56.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 53.9</span>
       <span title="Stability">🏠 60.2</span>
-      <span title="Momentum">📈 55.8</span>
+      <span title="Momentum">📈 63.4</span>
       <span title="Vitality">⚡ 44.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Conway County
-    <strong class="up">
-      rose +1.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -406,6 +386,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Conway County, Arkansas, presents a balanced market leaning toward buyers, characterized by a price-to-income ratio of 2.84, which remains below the national average of 3.20. The median home value of $154,100 sits 32.3% below the national benchmark but commands a premium of 8.9% over the Arkansas state average. This relative strength is supported by a rent burden of 16.7%, slightly lower than the 17.2% national norm, indicating that rental costs remain manageable for the median household income of $54,187. The price-to-rent ratio of 17.0, compared to the national 18.7, further suggests that ownership is comparatively more attractive than renting in this rural jurisdiction.
+
+The market exhibits significant recent momentum, with home values surging 12.5% year-over-year to reach $154,100 in 2024. This sharp acceleration follows a period of moderate growth, where values rose from $98,700 in 2017 to $137,000 in 2023. A notable anomaly is the divergence between asset appreciation and rental income; while home prices have risen substantially, the median gross rent of $755 remains modest. This trend signals that equity accumulation is outpacing rental yield potential. The local economic foundation supports this stability, with 4,870 total jobs and an average weekly wage of $1,040. However, housing supply is constrained, with only 21 new single-family units authorized in 2025 and zero multi-family permits, limiting new inventory.
+
+Migration data reveals a net inflow of 422 filers in 2021-2022, with incoming residents averaging an income of $60,392, slightly higher than the $60,792 average of those leaving, suggesting a modest quality-of-life or cost-driven demographic shift. The high owner-occupancy rate of 74.1% reflects a stable, established community. Despite the favorable affordability metrics, the current 30-year fixed mortgage rate of 7.32% significantly impacts monthly carrying costs. The composite assessment of the market reflects strong stability and affordability, driven by below-national price ratios and consistent employment. Conversely, vitality is constrained by the small population of 21,054 and limited commercial establishments, totaling just 448. For potential buyers, the low entry price relative to income offers a compelling entry point, though the rapid 12.5% price jump in the most recent year necessitates careful budgeting against high interest rates. Renter prospects face stable costs, but the lack of new multi-family construction suggests limited future rental expansion.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -584,7 +577,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -746,47 +739,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 146.31, "2017": 144.86, "2018": 150.83, "2019": 165.6, "2020": 162.53, "2021": 176.66, "2022": 194.14, "2023": 220.56, "2024": 243.46, "2025": 246.9};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

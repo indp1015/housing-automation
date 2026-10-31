@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">40.0</span>
+    <span class="score-number">45.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 62.5</span>
       <span title="Stability">🏠 20.4</span>
-      <span title="Momentum">📈 50.2</span>
+      <span title="Momentum">📈 71.6</span>
       <span title="Vitality">⚡ 17.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2022
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Chicot County
-    <strong class="down">
-      fell -6.7%
-    </strong>
-    year-over-year as of 2022.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -323,6 +303,19 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Chicot County, Arkansas, functions primarily as a buyer’s market, characterized by a median home value of $89,100 and a price-to-income ratio of 2.28. This ratio is significantly lower than the national average of 3.20, indicating that local purchasing power supports ownership at a lower relative cost than the broader U.S. market. The price-to-rent ratio of 12.9, compared to the national benchmark of 18.7, further reinforces the financial advantage of ownership over renting. With a median household income of $39,045, the affordability profile remains robust despite the county’s economic constraints. The rent burden stands at 17.6% of income, nearly identical to the national average of 17.2%, suggesting that rental costs are not disproportionately high relative to local earnings.
+
+The multi-year trend reveals a volatile but ultimately stabilizing market. After a flat period in 2017-2018, home values surged 24.3% in 2022 to $88,100, likely driven by post-pandemic demand shifts. This spike moderated to a 2.7% increase in 2023 and reversed to a 1.5% decline in 2024, settling at $89,100. This recent deceleration contrasts with the historical volatility, signaling a maturation of the price correction. Notably, the divergence between price and rent growth, where home values have risen faster than rents recently, suggests that the ownership premium is narrowing. The local economy supports this stagnation, with only 1,866 total jobs and an average weekly wage of $866, which limits the ceiling for sustained price appreciation. Migration data shows a net inflow of 154 filers between 2021 and 2022, with incoming filers earning slightly less than those leaving, indicating that demographic shifts are not driving high-end growth.
+
+The market’s stability is compromised by low economic vitality, reflected in the small employment base and limited establishment count of 332. While the affordability metrics are strong, the lack of job diversity and high mortgage rates of 7.32% constrain buyer capacity. The composite assessment highlights that while affordability is a strength, the low stability and vitality scores reflect the structural fragility of a rural economy with a population of just 9,765. Potential buyers benefit from low entry costs and favorable price-to-income dynamics, but renters face a market where the savings potential of ownership is high due to the low price-to-rent ratio. The recent price correction suggests that the market has adjusted to local economic realities, offering a stable but low-growth environment for stakeholders.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -501,7 +494,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -663,47 +656,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2013": 108.26, "2014": 119.68, "2015": 118.71, "2016": 107.34, "2017": 120.2, "2018": 109.23, "2019": 122.07, "2020": 120.7, "2021": 133.8, "2022": 124.8};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">42.6</span>
+    <span class="score-number">47.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 42.1</span>
       <span title="Stability">🏠 35.0</span>
-      <span title="Momentum">📈 54.4</span>
+      <span title="Momentum">📈 74.2</span>
       <span title="Vitality">⚡ 38.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Monroe County
-    <strong class="down">
-      fell -3.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Monroe County, Alabama, functions as a distinct buyer’s market, characterized by a price-to-rent ratio of 15.1, significantly below the national average of 18.7. This metric indicates that purchasing offers superior long-term value compared to renting, supported by a median home value of $120,600 and a median gross rent of $666. The market exhibits strong affordability relative to national benchmarks, with a price-to-income ratio of 2.85 compared to the national average of 3.20. However, the rent burden stands at 18.9% of income, slightly exceeding the national average of 17.2%, suggesting that while homeownership is accessible, rental costs remain a modest financial strain for local households.
+  <p>Monroe County, Alabama, operates within a distinctively affordable segment of the national housing landscape, characterized by a median home value of $120,600, which sits 47.0% below the national average. The market leans toward a buyer’s advantage, evidenced by a price-to-income ratio of 2.85, comfortably below the national benchmark of 3.20, and a price-to-rent ratio of 15.1, indicating that purchasing is significantly more economical than long-term renting compared to broader U.S. trends. Despite these affordability metrics, the local economy presents structural challenges, with a median household income of $42,292 falling 37.8% below the national mean. This income disparity, combined with a limited employment base of only 4,704 total jobs, constrains purchasing power and contributes to a stability profile that remains below optimal levels for sustained economic growth.
 
-Price trends reveal a period of stabilization after a sharp 17.0% surge in 2018, followed by modest annual gains of approximately 5.0% from 2022 through 2024. This consistent appreciation contrasts with the recent FHFA HPI data, which shows a year-over-year decline of 2.95% in 2025, underperforming the state average by 5.74 percentage points. This divergence suggests that recent mortgage transaction data reflects a cooling or correction phase, even as broader census estimates continue to show nominal value increases. The local economy supports this mixed signal, with total employment at 4,704 jobs and an average weekly wage of $1,125. Housing supply remains constrained, with only 37 new units authorized in 2025, predominantly multi-family, which may limit entry-level inventory.
+Recent market dynamics reveal a steady acceleration in home values, with year-over-year appreciation moderating from a peak of 17.0% in 2018 to a consistent 5.0% in 2024. This trend suggests a stabilizing market that is no longer experiencing the volatile spikes seen in previous years, although the current 7.32% mortgage rate continues to pressure monthly carrying costs for prospective buyers. Housing supply remains constrained, with only 37 new units authorized in 2025, predominantly multi-family (35 units) versus single-family (2 units), which may limit entry-level ownership options. Migration data indicates a modest net inflow of 190 filers, with incoming residents earning slightly less than those departing, suggesting that demographic shifts are not currently driving significant premium pricing or high-end market expansion.
 
-Regional context places Monroe County 24.5% below the state median home value and 47.0% below the national average, aligning with its median household income of $42,292, which is 37.8% below the national mean. Migration patterns indicate a net inflow of 190 filers, with incoming residents earning an average of $66,972, slightly lower than the outflow average of $67,803. The composite assessment of the market reveals stress in stability and vitality, driven by the recent HPI decline and limited economic diversification, while momentum remains moderate due to the prior years of consistent appreciation. For potential buyers, the current environment offers entry points below state and national norms, though the recent price softening and high mortgage rates of 7.32% require careful consideration of carrying costs. Renters face a market where ownership is increasingly advantageous, given the low price-to-rent ratio, despite the slight increase in rental burden relative to income.</p>
+The composite assessment of this market reflects a tension between strong affordability and weaker economic vitality. While the momentum axis benefits from consistent price appreciation and positive net migration, the stability and vitality metrics are dampened by low wage levels and a small commercial footprint. The rent burden of 18.9% slightly exceeds the national average of 17.2%, signaling that while ownership is accessible, rental costs are becoming a heavier relative burden for local households. For stakeholders, the data indicates a market where entry barriers are low but long-term wealth accumulation potential is tied closely to the slow expansion of the local employment base and the sustainability of current price growth rates in the face of high interest costs.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ Regional context places Monroe County 24.5% below the state median home value an
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ Regional context places Monroe County 24.5% below the state median home value an
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 141.66, "2017": 140.88, "2018": 145.29, "2019": 152.7, "2020": 154.96, "2021": 167.15, "2022": 178.15, "2023": 194.06, "2024": 216.26, "2025": 209.88};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

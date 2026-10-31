@@ -104,11 +104,11 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 73.4</span>
       <span title="Stability">🏠 53.9</span>
-      <span title="Momentum">📈 70.0</span>
+      <span title="Momentum">📈 69.9</span>
       <span title="Vitality">⚡ 50.6</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Franklin County
-    <strong class="up">
-      rose +3.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -409,11 +389,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Franklin County, Arkansas, operates as a distinctly buyer’s market, characterized by significant affordability advantages relative to national benchmarks. The median home value of $130,800 sits 42.6% below the national average, while the price-to-income ratio stands at 2.34, substantially lower than the national norm of 3.20. This affordability is reinforced by a rent burden of 15.4%, which is below the national average of 17.2%, and a price-to-rent ratio of 15.2, indicating that purchasing remains more cost-effective than long-term renting. The high owner-occupancy rate of 78.0% further underscores the local preference for homeownership, supported by these favorable financial metrics.
+  <p>Franklin County, Arkansas, operates as a distinctively balanced market with strong affordability characteristics, evidenced by a price-to-income ratio of 2.34, significantly below the national average of 3.20. The median home value of $130,800 sits 42.6% below the national mean, while the median household income of $55,886 remains 17.8% below the national standard. This disparity creates a favorable entry point for buyers, supported by a low rent burden of 15.4% compared to the national 17.2% average. The price-to-rent ratio of 15.2 further underscores the relative value of homeownership over renting, as home values are rising faster than rents, signaling a shift in market dynamics that benefits equity accumulation for owners.
 
-Recent trends reveal a robust recovery and acceleration in home values following a dip in 2020. Home values surged 17.6% in 2022 and continued to rise 10.1% in 2024, reaching $130,800. This recent momentum is corroborated by the FHFA House Price Index, which shows a 3.37% year-over-year increase in 2025, outperforming the Arkansas state average of 1.09% by 2.28 percentage points. Notably, home values are rising faster than rents, creating a divergence that favors potential buyers over renters in terms of long-term equity accumulation. The composite assessment reflects this dynamic, with high momentum and affordability scores offsetting moderate stability and vitality ratings, driven by the county’s small economic base.
+Recent momentum is characterized by robust but moderating appreciation. After a peak year-over-year increase of 17.6% in 2022, growth slowed to 1.1% in 2023 before rebounding to 10.1% in 2024. This pattern suggests a market stabilizing after a rapid correction phase rather than entering a speculative bubble. The economic foundation supports this stability through positive net migration of 441 filers, indicating sustained demand. However, local economic vitality is constrained by a limited employment base of only 3,873 jobs and an average weekly wage of $871. Housing supply remains tight, with only 31 new units authorized in 2025, split between 11 single-family and 20 multi-family homes, which likely contributes to continued price pressure despite the high 7.32% national mortgage rate.
 
-The local economic context provides limited but stable support for this growth. Total employment stands at 3,873 jobs with an average weekly wage of $871, while new housing supply remains constrained with only 31 units authorized in 2025, comprising 11 single-family and 20 multi-family homes. This low supply, combined with positive net migration of 441 filers, suggests sustained demand pressure. However, the national 30-year fixed mortgage rate of 7.32% introduces external cost pressures that temper the local affordability advantage. For prospective buyers, the current environment offers a strong entry point given the low price-to-income ratio, while renters may find that rising home values relative to rents make purchasing an increasingly attractive alternative to long-term lease commitments. The data indicates a market where affordability drives demand, supported by modest but consistent price appreciation.</p>
+The market’s overall assessment reflects high affordability and momentum but lower stability and vitality. The stability metric is dampened by the small population of 17,326 and limited establishment count of 340, creating vulnerability to economic shocks. Conversely, the affordability axis drives the positive outlook, as the significant discount to state and national averages provides a cushion against rising interest rates. For potential buyers, the current environment offers a rare combination of below-market pricing and positive price appreciation, though the limited job market necessitates careful consideration of long-term income stability. Renters face a less attractive proposition, as the low rent burden suggests that transitioning to ownership may offer better financial leverage, provided local employment prospects remain consistent. The divergence between rapid price growth and slower rent increases highlights a market where asset value is outpacing immediate consumption costs, a hallmark of a developing, low-cost housing market.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -597,7 +577,7 @@ The local economic context provides limited but stable support for this growth. 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -759,47 +739,6 @@ The local economic context provides limited but stable support for this growth. 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 144.08, "2017": 145.63, "2018": 151.22, "2019": 155.81, "2020": 160.75, "2021": 174.6, "2022": 210.34, "2023": 237.36, "2024": 247.52, "2025": 255.86};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

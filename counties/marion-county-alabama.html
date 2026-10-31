@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">64.7</span>
+    <span class="score-number">60.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 79.6</span>
       <span title="Stability">🏠 47.9</span>
-      <span title="Momentum">📈 87.2</span>
+      <span title="Momentum">📈 71.5</span>
       <span title="Vitality">⚡ 35.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Marion County
-    <strong class="up">
-      rose +8.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Marion County, Alabama, operates as a distinctly buyer’s market, characterized by extreme affordability relative to national benchmarks. The price-to-income ratio stands at 2.13, significantly below the national average of 3.20, while the rent burden is only 15.1% of income compared to the national 17.2%. With a median home value of $106,600, properties are priced 53.2% below the national average and 33.2% below the state average. This deep discount is reinforced by a price-to-rent ratio of 14.1, well under the national 18.7, indicating that purchasing offers superior long-term value compared to renting. The market’s stability, however, is compromised by volatility, as evidenced by the 2022 spike of 17.1% followed by a flat 2023 and a modest 2.2% increase in 2024.
+  <p>Marion County, Alabama, presents a balanced market heavily skewed toward affordability, characterized by a median home value of $106,600 and a median gross rent of $630. The classification as a balanced market is supported by a price-to-rent ratio of 14.1, which sits below the national average of 18.7, indicating that renting is relatively inexpensive compared to buying. However, the high owner occupancy rate of 76.8% suggests a stable residential base rather than a speculative rental environment. The market’s affordability is further underscored by a price-to-income ratio of 2.13, significantly lower than the national benchmark of 3.20, and a rent burden of 15.1%, which is below the national average of 17.2%. These metrics confirm that both purchasing and renting remain accessible relative to the median household income of $50,088.
 
-Recent momentum is accelerating, with the FHFA Home Price Index showing an 8.19% year-over-year gain, outperforming the state by 5.40 percentage points. This divergence from the broader state trend suggests localized demand pressures, potentially driven by net migration of 578 filers between 2021 and 2022. However, the local economy provides limited support for sustained growth, with total employment at just 8,220 jobs and an average weekly wage of $954. Housing supply remains critically constrained, with only 12 new single-family units authorized in 2025 and zero multi-family permits. This scarcity, combined with a 7.32% national mortgage rate, creates a friction point where rising prices may soon outpace the purchasing power of households earning a median income of $50,088.
+Trend analysis reveals a period of significant volatility followed by stabilization. After a dip in 2020, home values surged 17.1% in 2022 to reach $104,300, before moderating to a 2.2% increase in 2024. This deceleration from peak momentum aligns with the broader national context where 30-year fixed mortgage rates stand at 7.32%, potentially tempering demand. Notably, home values and rents are rising at similar rates, preventing a divergence that might otherwise favor one side of the market. The county’s economic foundation is modest, with total employment at 8,220 jobs and an average weekly wage of $954. Housing supply remains constrained, with only 12 new single-family units authorized in 2025 and zero multi-family permits, suggesting limited new inventory to offset demand.
 
-The market’s vitality is low, reflecting a small population of 29,184 and limited economic diversification. While affordability remains the primary driver of appeal, the stability metric is weakened by the erratic price trajectory observed between 2019 and 2022. For potential buyers, the current environment offers entry points far below national norms, but the rapid recent appreciation signals that the window of extreme affordability may be narrowing. Renters face a less favorable outlook, as the low rent burden currently masks the risk of rising costs if the supply constraint persists. The juxtaposition of strong price momentum against a stagnant local job market and minimal new construction highlights a market in transition, where affordability is eroding faster than local economic fundamentals can support.</p>
+Regional context highlights that Marion County’s home values are 33.2% below the state average and 53.2% below the national mean, mirroring its income level which is 26.3% below the national average. This relative positioning indicates the market is not driven by high-income inflows but by local affordability. Migration data shows a net gain of 578 filers, with inflow incomes averaging $57,280, slightly lower than outflow incomes of $58,186, suggesting a demographic shift toward lower-income residents. The composite assessment reflects strong momentum and affordability, offset by lower vitality scores due to the small economic base of 675 establishments. For potential buyers, the low entry price and manageable debt-to-income ratios offer favorable conditions, while renters benefit from low cost burdens, though the lack of new multi-family construction may limit future rental options.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ The market’s vitality is low, reflecting a small population of 29,184 and limi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ The market’s vitality is low, reflecting a small population of 29,184 and limi
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 143.72, "2017": 147.83, "2018": 143.76, "2019": 151.54, "2020": 158.7, "2021": 166.93, "2022": 182.09, "2023": 193.15, "2024": 219.39, "2025": 237.35};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

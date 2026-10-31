@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">46.3</span>
+    <span class="score-number">43.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 26.4</span>
       <span title="Stability">🏠 32.9</span>
-      <span title="Momentum">📈 81.4</span>
+      <span title="Momentum">📈 69.9</span>
       <span title="Vitality">⚡ 48.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Pike County
-    <strong class="up">
-      rose +6.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,19 +315,6 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Pike County, Alabama, functions as a balanced market with distinct affordability constraints, evidenced by a price-to-income ratio of 3.24, which aligns closely with the national average of 3.20. However, the rent burden stands at 21.1% of household income, exceeding the national benchmark of 17.2%, suggesting that rental costs are disproportionately high relative to local earnings. The price-to-rent ratio of 15.3 remains below the national average of 18.7, indicating that purchasing is relatively more economical than renting compared to broader national trends. This dynamic is reinforced by a median home value of $157,600, which sits 30.8% below the national average but only 1.3% below the state average, positioning the county as a mid-tier market within Alabama while remaining significantly cheaper than the national baseline.
-
-The market exhibits strong momentum, with the FHFA House Price Index rising 6.18% year-over-year, outperforming the state’s 2.79% growth by 3.39 percentage points. This accelerated appreciation follows a volatile trajectory, including a 10.4% surge in 2022 and a 5.8% increase in 2024. Despite this price strength, the local economy shows limited capacity to support further growth, with total employment at 12,131 jobs and an average weekly wage of $1,012. Housing supply is extremely constrained, with only 27 new single-family units authorized in 2025 and zero multi-family permits, creating a supply-demand imbalance that likely sustains upward price pressure. Migration data reveals a net inflow of 816 filers between 2021 and 2022, though incoming residents have slightly lower average incomes ($71,480) than those leaving ($72,843), suggesting a shift toward lower-income demographics that may not fully support high-end price appreciation.
-
-Affordability remains the primary stressor, reflected in a low stability metric driven by the high rent burden and modest household income of $48,677. The divergence between robust price momentum and stagnant income growth creates a fragile equilibrium. With mortgage rates at 7.32%, the cost of entry is elevated, yet the low price-to-rent ratio continues to favor buyers over renters in the long term. The composite assessment highlights a market where vitality is moderate due to thin employment bases, while momentum is high due to supply constraints. Potential buyers face a market where prices are rising faster than local wages, necessitating careful budgeting, while renters encounter costs that consume a larger share of income than national norms. The lack of new multi-family construction further limits rental alternatives, concentrating market power in the existing single-family stock.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -526,7 +493,7 @@ Affordability remains the primary stressor, reflected in a low stability metric 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +655,6 @@ Affordability remains the primary stressor, reflected in a low stability metric 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 165.01, "2017": 165.88, "2018": 172.39, "2019": 174.61, "2020": 178.91, "2021": 190.06, "2022": 205.33, "2023": 228.97, "2024": 231.7, "2025": 246.03};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

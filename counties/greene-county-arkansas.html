@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">45.0</span>
+    <span class="score-number">47.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 40.4</span>
       <span title="Stability">🏠 34.9</span>
-      <span title="Momentum">📈 56.9</span>
+      <span title="Momentum">📈 64.8</span>
       <span title="Vitality">⚡ 49.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Greene County
-    <strong class="up">
-      rose +1.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Greene County, Arkansas, exhibits characteristics of a balanced market with a slight lean toward buyers, driven by a price-to-income ratio of 2.93, which sits comfortably below the national average of 3.20. The price-to-rent ratio of 15.6, significantly lower than the national benchmark of 18.7, indicates that purchasing remains more cost-effective than renting for long-term residents. This structural advantage is reinforced by a median home value of $169,300, which is 25.6% below the national average, providing an entry point that aligns with the local median household income of $57,839. The affordability profile is further supported by a rent burden of 18.8%, only marginally above the national average of 17.2%, suggesting that while rental costs are rising, they remain manageable relative to local earnings.
+  <p>Greene County, Arkansas, functions as a moderately balanced market with distinct affordability advantages relative to national standards, though local income constraints introduce complexity. The price-to-income ratio stands at 2.93, significantly below the national average of 3.20, indicating that home values remain accessible relative to the median household income of $57,839. However, the rent burden is slightly elevated at 18.8% of income compared to the 17.2% national benchmark, suggesting that while purchasing is comparatively more viable, rental costs are tightening against local earnings. The price-to-rent ratio of 15.6, well below the national average of 18.7, further supports the notion that ownership offers a stronger value proposition than renting in this specific geographic area.
 
-The multi-year trend reveals a period of rapid appreciation followed by stabilization. Home values surged 15.1% in 2022, peaking at $157,400, before moderating to 4.4% growth in 2024. This deceleration is corroborated by the FHFA HPI, which shows a recent year-over-year increase of just 1.25%, slightly outpacing the state average of 1.09%. This divergence from the earlier double-digit gains suggests the market is normalizing rather than correcting. A notable pattern is the consistent outperformance of home values relative to state averages, where Greene County sits 19.7% above the state median, despite incomes being 14.9% below the national mean. This disparity highlights a premium on local housing stock that is not fully matched by broader regional wage growth.
+The market exhibits strong recent momentum, driven by a 4.4% year-over-year increase in median home value to $169,300 in 2024, following a peak growth rate of 15.1% in 2022. This sustained appreciation outpaces rent growth, creating a divergence that favors buyers over time. Despite this upward trajectory, the county’s home values remain 25.6% below the national average, yet sit 19.7% above the Arkansas state average, positioning Greene County as a premium market within its state while remaining a bargain nationally. This relative strength is supported by positive net migration of 826 filers and a robust local economy with 13,253 jobs and an average weekly wage of $944. Housing supply remains constrained, with only 156 new units authorized in 2025, including 122 single-family homes, which likely contributes to continued price pressure.
 
-Economic fundamentals provide a mixed backdrop for this stability. With 13,253 total jobs and an average weekly wage of $944, the labor market supports current demand but lacks the high-income demographic influx seen in other growth corridors. Net migration of +826 filers indicates modest population growth, with incoming residents averaging $61,413 in income, slightly below the $62,541 average of those leaving. Housing supply remains constrained, with only 156 new units authorized in 2025, limiting the potential for price relief. The 7.32% mortgage rate further pressures buyer demand, yet the low price-to-income ratio buffers this impact. The overall market assessment reflects moderate vitality and momentum, tempered by stability concerns arising from the gap between rising asset values and stagnant local wage growth.</p>
+Stability metrics are somewhat weaker due to the high volatility observed in the 2022 price spike, which has since moderated. The current 7.32% mortgage rate adds financing friction, potentially slowing transaction volume despite favorable price-to-income dynamics. The composite assessment reflects a market where affordability and momentum are primary drivers, offset by moderate vitality and stability concerns. For potential buyers, the data suggests a window of relative affordability compared to national peers, while renters face a market where costs are rising faster than income. The combination of positive migration, limited new supply, and strong price momentum indicates a resilient local market, though the gap between local income levels and rising asset values requires careful consideration for long-term financial planning.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ Economic fundamentals provide a mixed backdrop for this stability. With 13,253 t
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ Economic fundamentals provide a mixed backdrop for this stability. With 13,253 t
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 184.46, "2017": 190.3, "2018": 199.97, "2019": 207.2, "2020": 211.19, "2021": 231.41, "2022": 261.49, "2023": 277.27, "2024": 287.3, "2025": 290.89};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

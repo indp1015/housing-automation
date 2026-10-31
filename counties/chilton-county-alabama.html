@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">51.2</span>
+    <span class="score-number">55.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 67.9</span>
       <span title="Stability">🏠 50.4</span>
-      <span title="Momentum">📈 40.9</span>
+      <span title="Momentum">📈 59.5</span>
       <span title="Vitality">⚡ 40.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Chilton County
-    <strong class="down">
-      fell -1.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -470,6 +450,19 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Chilton County presents a balanced market structure, characterized by strong affordability relative to national standards despite recent price acceleration. The price-to-income ratio stands at 2.46, significantly below the national average of 3.20, while the rent burden is 15.9% of income, lower than the 17.2% national benchmark. These metrics indicate that both purchasing and renting remain financially accessible for the median household earning $65,603. However, the market is not purely buyer-driven; the price-to-rent ratio of 15.4 is lower than the national 18.7, suggesting that renting remains a cost-effective alternative to ownership for many residents. This equilibrium is reinforced by a 76.9% owner-occupancy rate, which reflects a stable, established housing base rather than a speculative investor-driven environment.
+
+The most striking feature of the local trend is the divergence between home value appreciation and rental growth. Home values surged 13.4% year-over-year in 2024 to $161,300, following a 15.9% jump in 2022, while median gross rent remains modest at $871. This rapid appreciation outpaces the local economic fundamentals, as average weekly wages stand at $948 and total employment is limited to 7,426 jobs. The housing supply is tight, with only 72 new single-family units authorized in 2025 and zero multi-family permits, creating a scarcity that likely fuels the price surge. Meanwhile, net migration of +816 filers indicates modest population growth, but the inflow of residents with an average income of $62,182 suggests that new entrants are not necessarily high-income earners driving luxury demand.
+
+Regional context reveals that Chilton County’s home values are 29.2% below the national average but slightly above the Alabama state average, positioning it as a mid-tier market within the state. The recent momentum is driven more by supply constraints and post-pandemic adjustments than by robust local wage growth. With 30-year mortgage rates at 7.32%, the high interest cost further complicates affordability for buyers, even with low price-to-income ratios. The composite assessment reflects this tension: high affordability scores are offset by lower vitality and stability metrics due to the rapid, supply-driven price increases and limited economic breadth. For potential stakeholders, the data suggests a market where entry costs are low but recent appreciation has compressed the margin of safety for buyers, while renters benefit from relatively stable, low-cost housing options in a market with minimal new rental development.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Chilton County on Our Sister Sites</h3>
@@ -647,7 +640,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -809,47 +802,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 199.4, "2017": 208.38, "2018": 212.34, "2019": 223.03, "2020": 232.33, "2021": 255.03, "2022": 302.7, "2023": 322.92, "2024": 335.55, "2025": 330.83};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">46.5</span>
+    <span class="score-number">48.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 40.0</span>
       <span title="Stability">🏠 26.3</span>
-      <span title="Momentum">📈 46.9</span>
+      <span title="Momentum">📈 55.0</span>
       <span title="Vitality">⚡ 80.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Madison County
-    <strong class="up">
-      rose +1.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -577,11 +557,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Madison County, Alabama, exhibits characteristics of a balanced market leaning toward buyer advantage, driven by robust economic fundamentals despite elevated price levels. The county’s median home value of $299,200 sits 87.4% above the state average and 31.4% above the national mean, yet this premium is partially offset by a median household income of $86,499, which exceeds the national average by 27.2%. Consequently, the price-to-income ratio of 3.46 is only marginally higher than the national benchmark of 3.20, suggesting that local purchasing power remains relatively strong. However, the price-to-rent ratio of 20.6, compared to the national average of 18.7, indicates that ownership is currently less attractive relative to renting than in most other U.S. markets, signaling a tilt that may favor renters in the near term.
+  <p>Madison County, Alabama, operates as a distinctively balanced market with strong vitality, characterized by robust employment and migration patterns that offset moderate affordability constraints. The local economy supports 185,383 jobs with an average weekly wage of $1,475, underpinning a median household income of $86,499. This economic base attracts significant in-migration, evidenced by a net gain of 9,033 tax filers between 2021 and 2022, where incoming households reported an average income of $98,898. Such demographic inflow sustains demand, resulting in a price-to-income ratio of 3.46, slightly above the national average of 3.20. However, the rent burden remains at 16.8% of income, marginally below the national benchmark of 17.2%, suggesting that rental affordability remains relatively stable despite rising home values.
 
-The market’s trajectory reveals a significant acceleration in home values, with year-over-year growth surging from 2.2% in 2020 to a peak of 20.0% in 2022 before moderating to 11.7% in 2024. This rapid appreciation has outpaced rent growth, where the median gross rent of $1,209 results in a rent burden of 16.8%, slightly below the national average of 17.2%. This divergence highlights a structural shift where home equity gains are outstripping rental costs, potentially reducing the long-term financial incentive for renting. Recent FHFA data shows a county year-over-year change of +1.22%, which underperforms the state’s +2.79% by 1.57 percentage points, indicating that the initial surge in price appreciation has cooled relative to the broader Alabama market.
+The multi-year trend reveals a sharp acceleration in home values, which surged 20.0% year-over-year in 2022 before moderating to 11.7% in 2024, reaching a median of $299,200. This trajectory contrasts with the national 30-year fixed mortgage rate of 7.32%, which continues to pressure buyer purchasing power. A notable divergence exists between price and rent growth; while home values have risen significantly, the price-to-rent ratio stands at 20.6, exceeding the national average of 18.7. This indicates that ownership costs are escalating faster than rental alternatives, potentially shifting some demand toward the rental sector. Housing supply appears responsive, with 4,070 new units authorized in 2025, comprising 2,866 single-family and 1,204 multi-family homes, which may help alleviate future supply tightness.
 
-Economic vitality remains the primary driver of market health, supported by 185,383 total jobs and an average weekly wage of $1,475. Net migration of +9,033 filers between 2021 and 2022, with inflows averaging $98,898 in income, demonstrates sustained demand from higher-earning households. Housing supply, with 4,070 new units authorized in 2025, including 2,866 single-family homes, is attempting to keep pace with this demand. However, the current 30-year fixed mortgage rate of 7.32% introduces significant financing friction. The composite assessment reflects high vitality (80.8) due to strong employment and migration, but this is counterbalanced by lower stability (26.3) and affordability (40.0) scores, which stem from the rapid price escalation and high entry costs relative to income. Potential buyers face a competitive environment where strong local wages support demand, but high interest rates and premium pricing constrain immediate purchasing power.</p>
+Regional context highlights Madison County’s premium positioning, with home values 87.4% above the state average and 31.4% above the national mean. This premium is justified by the county’s superior income levels, which exceed the national average by 27.2%. The market’s stability is currently challenged by high volatility in price appreciation, reflected in the low stability component of the overall assessment, while vitality remains high due to strong job growth and population influx. For potential buyers, the combination of high mortgage rates and a price-to-income ratio above the national norm suggests a competitive entry point, whereas renters face a market where housing costs are becoming increasingly aligned with ownership expenses. The sustained momentum in home values, driven by economic vitality rather than speculative bubbles, indicates a fundamental strength in the local housing market, supported by consistent employment and migration data.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -764,7 +744,7 @@ Economic vitality remains the primary driver of market health, supported by 185,
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -926,47 +906,6 @@ Economic vitality remains the primary driver of market health, supported by 185,
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 402.28, "2017": 413.62, "2018": 433.44, "2019": 461.36, "2020": 494.82, "2021": 572.95, "2022": 687.78, "2023": 721.02, "2024": 747.93, "2025": 757.03};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

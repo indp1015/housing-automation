@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">54.7</span>
+    <span class="score-number">53.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 57.8</span>
       <span title="Stability">🏠 48.8</span>
-      <span title="Momentum">📈 65.4</span>
+      <span title="Momentum">📈 60.0</span>
       <span title="Vitality">⚡ 44.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Crawford County
-    <strong class="up">
-      rose +4.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -425,6 +405,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Crawford County, Arkansas, operates as a moderately balanced market that leans slightly toward buyers, characterized by a price-to-income ratio of 2.85, which is 10.9% below the national average of 3.20. The rent burden stands at 15.9% of income, also underperforming the national benchmark of 17.2%, indicating that rental housing remains relatively accessible. However, the market exhibits strong momentum, with home values rising faster than rents, a trend signal that suggests shifting dynamics in the property sector. The price-to-rent ratio of 17.9 is marginally below the national average of 18.7, further supporting the notion that purchasing is currently more cost-effective than renting over the long term, despite the recent surge in asset values.
+
+The multi-year trend reveals a period of accelerated appreciation, with median home values climbing from $112,500 in 2017 to $182,800 in 2024. This represents a compound annual growth rate that significantly outpaces the modest increase in median gross rent, which has stabilized around $851 per month. The peak year-over-year growth of 17.7% in 2022 has moderated to 7.5% in 2024, indicating a cooling but still positive trajectory. This divergence between rapid price appreciation and stable rents creates a notable anomaly, where the entry barrier for ownership is rising while rental costs remain flat, potentially widening the gap between owner and renter wealth accumulation. Regional context places the county’s median home value 29.2% above the Arkansas state average, yet 19.7% below the national mean, positioning it as a premium market within the state but affordable relative to the broader U.S.
+
+Economic fundamentals provide a mixed backdrop for this growth. Local employment supports 15,537 jobs with an average weekly wage of $974, aligning with a median household income of $64,132, which is 5.7% below the national average. Housing supply is constrained, with only 46 new units authorized in 2025, comprising 30 single-family and 16 multi-family homes, which is insufficient to offset the net inflow of 1,418 filers recorded between 2021 and 2022. This supply-demand imbalance, combined with a 7.32% national mortgage rate, contributes to the market’s challenging stability score, as high interest costs limit buyer purchasing power despite favorable local price-to-income metrics. The vitality of the market is further tempered by the low establishment count of 1,263, suggesting limited economic diversification. Consequently, while affordability remains a strength, the rapid appreciation and limited new construction create a tight market where potential buyers face increasing competition, while renters benefit from currently low cost burdens.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -603,7 +596,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -765,47 +758,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 290.83, "2017": 300.41, "2018": 314.61, "2019": 327.55, "2020": 332.06, "2021": 377.65, "2022": 448.75, "2023": 499.34, "2024": 515.3, "2025": 538.82};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

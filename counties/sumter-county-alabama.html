@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">41.6</span>
+    <span class="score-number">36.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 39.5</span>
       <span title="Stability">🏠 14.5</span>
-      <span title="Momentum">📈 90.9</span>
+      <span title="Momentum">📈 69.2</span>
       <span title="Vitality">⚡ 17.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2023
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Sumter County
-    <strong class="up">
-      rose +22.8%
-    </strong>
-    year-over-year as of 2023.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,6 +315,19 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Sumter County, Alabama, presents a distinctively affordable but economically constrained housing environment. With a median home value of $82,600, the market sits 63.7% below the national average and 48.3% below the state mean. This valuation is supported by a price-to-income ratio of 2.48, significantly lower than the national benchmark of 3.20, indicating high relative affordability for local residents. However, the market classification leans heavily toward a renter’s advantage due to a price-to-rent ratio of 8.9, less than half the national average of 18.7. This disparity suggests that renting is substantially more cost-effective than purchasing, a dynamic reinforced by the fact that median gross rent of $775 consumes 27.9% of the median household income of $33,310, well above the national rent burden average of 17.2%.
+
+Recent trends reveal significant volatility rather than steady growth. After a sharp 26.1% surge in 2022, home values have corrected by 4.4% in 2023 and 1.8% in 2024, stabilizing near $82,600. This moderation contrasts with the broader national mortgage rate of 7.32%, which continues to pressure buyer demand. The local economic foundation is fragile, characterized by only 1,877 total jobs and an average weekly wage of $906. Housing supply is nearly nonexistent, with just four single-family units authorized in 2025 and zero multi-family permits, limiting new inventory. Despite these constraints, net migration of +131 filers between 2021 and 2022 shows modest population growth, with incoming residents earning slightly higher average incomes than those leaving.
+
+The primary driver of the market’s stressed condition is low economic vitality and stability, evidenced by the weak employment base and high rent burden. While momentum appears strong on the surface due to recent price adjustments, the underlying fundamentals remain precarious. The divergence between rising rents and flatlining home values suggests that rental demand is outpacing ownership capacity, likely driven by the high cost of entry relative to local wages. For potential buyers, the low entry price offers value, but the high interest rates and limited local wage growth pose significant financial risks. Renters face a difficult trade-off, as while absolute rent costs are low, they represent a disproportionate share of local income. The market’s trajectory is less about speculative appreciation and more about balancing extreme affordability against limited economic resilience and stagnant supply.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -513,7 +506,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -675,47 +668,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2013": 131.87, "2014": 128.42, "2015": 139.32, "2016": 133.86, "2017": 135.74, "2018": 129.47, "2019": 135.46, "2020": 146.31, "2021": 152.23, "2023": 186.94};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

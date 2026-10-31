@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-challenging">
+<div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">56.6</span>
+    <span class="score-number">61.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 68.6</span>
       <span title="Stability">🏠 74.9</span>
-      <span title="Momentum">📈 52.8</span>
+      <span title="Momentum">📈 70.5</span>
       <span title="Vitality">⚡ 20.4</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Blount County
-    <strong class="down">
-      fell -0.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -575,11 +555,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Blount County exhibits characteristics of a balanced market with a slight tilt toward affordability, driven by a price-to-income ratio of 2.73, which sits below the national average of 3.20. The rent burden of 14.5% is also lower than the 17.2% national benchmark, indicating that both ownership and rental costs remain manageable relative to local incomes. However, the price-to-rent ratio of 18.8 aligns almost perfectly with the national average of 18.7, suggesting that the relative value of buying versus renting is standard, with no significant arbitrage opportunity for either side. This equilibrium is supported by a high owner-occupancy rate of 81.0%, reflecting deep local attachment to homeownership.
+  <p>Blount County, Alabama, functions as a moderately balanced market with distinct affordability advantages, though constrained by limited economic vitality. The price-to-income ratio of 2.73 sits comfortably below the national average of 3.20, while the rent burden of 14.5% remains under the national benchmark of 17.2%. These metrics indicate that housing costs are manageable relative to local earnings, which drive strong stability and affordability indicators. However, the market’s momentum is tempered by a vitality score of 20.4, reflecting a smaller economic base with only 6,946 total jobs and an average weekly wage of $913. The overall composite rating of 56.6 classifies the environment as challenging primarily due to this low economic dynamism, despite the favorable cost structure for residents.
 
-The multi-year trend reveals a period of rapid appreciation followed by stabilization. Home values surged 15.7% in 2022, nearly doubling the typical annual growth rate, before moderating to 3.2% in 2024. Recent FHFA data shows a slight 0.68% year-over-year decline in 2025, underperforming the state’s 2.79% growth by 3.47 percentage points. This divergence suggests that while the state market continues to expand, Blount County has entered a cooling phase. The primary driver of this stagnation appears to be limited economic vitality, evidenced by only 6,946 total jobs and an average weekly wage of $913. Furthermore, new housing supply is critically low, with only 20 units authorized in 2025, including just 16 single-family homes. Despite this supply constraint, the lack of price acceleration implies that demand is not strong enough to outpace the limited inventory, likely due to the 7.32% national mortgage rate suppressing buyer purchasing power.
+From 2017 to 2024, median home values increased from $122,200 to $175,200, representing a cumulative gain of 43.4%. This appreciation was punctuated by a sharp 15.7% surge in 2022, which has since moderated to a 3.2% year-over-year increase in 2024. This deceleration suggests the market is normalizing after a period of rapid inflationary pricing. Notably, home values have risen faster than rents, creating a divergence where ownership becomes increasingly attractive relative to leasing. The price-to-rent ratio of 18.8 aligns almost exactly with the national average of 18.7, indicating that the financial calculus of buying versus renting remains standard for this region.
 
-Affordability remains the county’s strongest attribute, with home values sitting 23.1% below the national average and 5.6% below the national income average. However, the local economy’s limited scale constrains long-term growth potential. Net migration of +791 filers indicates modest population growth, but the average income of incoming residents ($63,510) is nearly identical to those leaving ($63,821), suggesting that migration is not significantly upgrading the local income base. The composite assessment reflects high stability and affordability but low vitality, as the thin labor market and minimal construction activity limit upward pressure on prices. For potential buyers, the current environment offers entry points below national benchmarks, but the recent price dip and flat wage growth suggest that significant capital appreciation is unlikely in the immediate term without broader economic expansion.</p>
+Regional context reveals that Blount County home values are 9.7% above the state average but 23.1% below the national mean. This positioning highlights a market that is premium within Alabama yet significantly more accessible than the broader U.S. landscape. Economic fundamentals support this stability through positive net migration of 791 filers, although the local supply of new housing is restrictive, with only 20 units authorized in 2025. The high owner-occupancy rate of 81.0% further underscores the community’s preference for long-term stability over transient rental activity. With a 30-year fixed mortgage rate at 7.32%, the high interest rate environment continues to pressure monthly payments, yet the low baseline home price mitigates this impact. Potential buyers benefit from the county’s affordability metrics, while renters face a stable but slowly appreciating cost structure. The data indicates a mature, stable market where affordability is the primary driver of demand, offsetting the lack of robust job growth and new construction volume.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -763,7 +743,7 @@ Affordability remains the county’s strongest attribute, with home values sitti
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -925,47 +905,6 @@ Affordability remains the county’s strongest attribute, with home values sitti
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 173.5, "2017": 185.27, "2018": 188.73, "2019": 197.53, "2020": 204.68, "2021": 227.74, "2022": 264.09, "2023": 270.45, "2024": 297.48, "2025": 295.45};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

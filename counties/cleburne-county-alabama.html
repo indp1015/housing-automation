@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">52.1</span>
+    <span class="score-number">55.6</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 46.3</span>
       <span title="Stability">🏠 56.9</span>
-      <span title="Momentum">📈 53.7</span>
+      <span title="Momentum">📈 67.8</span>
       <span title="Vitality">⚡ 52.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Cleburne County
-    <strong class="down">
-      fell +0.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -388,11 +368,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Cleburne County, Alabama, functions as a balanced market where affordability metrics remain favorable relative to national standards, yet recent price acceleration complicates long-term stability. The price-to-income ratio stands at 2.99, slightly below the national average of 3.20, while the rent burden is 17.3%, nearly identical to the national benchmark of 17.2%. These figures suggest that housing costs are manageable for local earners, with a median household income of $55,345 supporting a median home value of $165,600. The price-to-rent ratio of 17.3 is also below the national average of 18.7, indicating that purchasing remains a more cost-effective strategy than renting for long-term residents. However, the market’s classification is nuanced by a sharp divergence in recent growth trajectories, where home values have surged significantly while rental rates have remained comparatively stable, creating a temporary compression in the buy-versus-rent calculus.
+  <p>Cleburne County, Alabama, functions as a balanced market with distinct affordability advantages, characterized by a median home value of $165,600 and a median gross rent of $798. The price-to-income ratio stands at 2.99, slightly below the national average of 3.20, while the rent burden is 17.3%, nearly identical to the national benchmark of 17.2%. These metrics indicate that housing costs remain manageable relative to the local median household income of $55,345. The price-to-rent ratio of 17.3 is also below the national average of 18.7, suggesting that purchasing offers a relatively favorable long-term cost structure compared to renting, though the immediate cash flow impact remains similar for both strategies.
 
-The multi-year trend reveals a period of stagnation followed by explosive appreciation. Home values remained flat between 2017 and 2021, hovering around $112,000 to $118,700, before experiencing a compound annual growth rate of approximately 12.4% from 2021 to 2024. The most recent year saw a 14.8% increase, pushing the median value to $165,600. This rapid appreciation contrasts with the FHFA House Price Index, which indicates a 0.00% year-over-year change for 2025, signaling a potential plateau or data lag in recent quarterly transactions. This divergence suggests that the initial surge may have been driven by limited inventory rather than sustained demand, as new construction remains negligible with only 11 single-family units authorized in 2025. The local economy supports this constraint, with total employment at 2,047 jobs and an average weekly wage of $1,144, which limits the pool of high-income buyers capable of sustaining further price increases.
+The market exhibits significant recent momentum, with home values rising 14.8% year-over-year to reach $165,600 in 2024, following a 9.3% increase in 2023. This sharp acceleration contrasts with the modest 4.0% growth observed in 2019 and the slight decline in 2021. This rapid appreciation has lifted the county’s median home value to 3.7% above the Alabama state average, although it remains 27.3% below the national mean. The divergence between the sustained high growth rates and the relatively stable income levels highlights a tightening affordability constraint, reflected in the lower affordability component of the broader market assessment. The stability metric remains moderate, supported by a 78.5% owner-occupancy rate, while vitality is constrained by limited new supply, with only 11 single-family units authorized in 2025 and zero multi-family permits.
 
-Regional context places Cleburne County 3.7% above the Alabama average but 27.3% below the national median, reflecting its status as a lower-cost rural market. Net migration of +375 filers indicates modest population growth, with inflows and outflows averaging similar incomes, suggesting a stable rather than booming demographic profile. The primary driver of the current market assessment is the tension between strong affordability and high momentum. While the low price-to-income ratio provides a solid foundation, the recent 14.8% price spike and the lack of new supply create volatility. Potential buyers face a market where entry costs have risen sharply in three years, while renters benefit from a stable rent burden. The economic backdrop, characterized by low employment density and a 7.32% mortgage rate, further constrains demand, suggesting that the recent price surge may not be easily sustained without significant new job creation or population influx.</p>
+Economic fundamentals present a mixed picture. Total employment stands at 2,047 jobs with an average weekly wage of $1,144, which supports the local income base but limits rapid wage growth. Net migration of +375 filers between 2021 and 2022 indicates sustained population inflow, with incoming filers earning an average of $62,206, slightly higher than the local median, potentially driving demand. The current 30-year fixed mortgage rate of 7.32% significantly impacts purchasing power, making the low price-to-income ratio less advantageous for leveraged buyers compared to lower-rate environments. Consequently, the market is driven by strong momentum and moderate stability, but affordability pressures are mounting as prices outpace income growth. Potential buyers should note that while the county remains cheaper than the national average, the recent 14.8% price surge suggests that entry costs are rising faster than local wages can absorb, requiring careful budgeting. Renters face a market where costs are stable relative to income, but limited new multi-family construction may restrict future options.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -576,7 +556,7 @@ Regional context places Cleburne County 3.7% above the Alabama average but 27.3%
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -738,47 +718,6 @@ Regional context places Cleburne County 3.7% above the Alabama average but 27.3%
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 143.73, "2017": 149.01, "2018": 148.54, "2019": 157.51, "2020": 165.74, "2021": 184.93, "2022": 208.21, "2023": 238.36, "2024": 279.24, "2025": 279.24};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-challenging">
+<div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">53.6</span>
+    <span class="score-number">48.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 43.7</span>
       <span title="Stability">🏠 56.1</span>
-      <span title="Momentum">📈 79.4</span>
+      <span title="Momentum">📈 58.9</span>
       <span title="Vitality">⚡ 33.2</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Scott County
-    <strong class="up">
-      rose +16.1%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -323,19 +303,6 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Scott County, Arkansas, exhibits characteristics of a buyer’s market, primarily driven by a price-to-rent ratio of 13.3, significantly below the national average of 18.7. This metric indicates that purchasing is substantially more cost-effective than renting, a position reinforced by a median home value of $115,000, which sits 49.5% below the national mean. The market’s affordability is further underscored by a price-to-income ratio of 2.66, well under the national benchmark of 3.20, suggesting that local incomes, despite being 36.4% below the national average, support homeownership more easily than in most other regions. However, the rent burden stands at 20.0% of income, slightly exceeding the national average of 17.2%, indicating that while buying is accessible, renting remains a heavier financial obligation for tenants.
-
-The trajectory of home values reveals a period of intense appreciation followed by stabilization. From 2017 to 2024, median home values increased from $69,800 to $115,000, with a peak year-over-year surge of 18.7% in 2022. Recent momentum remains robust, as the FHFA House Price Index shows a 16.05% year-over-year increase for 2025, outperforming the Arkansas state average of 1.09% by nearly 15 percentage points. This divergence suggests strong local demand relative to the broader state economy. Despite this rapid price growth, the market maintains relative stability, reflected in a 78.1% owner-occupancy rate and a net migration inflow of 267 filers between 2021 and 2022. The inflowing population, with an average income of $46,610, slightly exceeds the outflowing group, providing a modest demographic tailwind.
-
-Economic fundamentals present a mixed picture that drives the market’s challenging vitality score. With only 2,363 total jobs and an average weekly wage of $754, the local labor market is small and may limit long-term income growth. The current 30-year fixed mortgage rate of 7.32% adds financing costs, yet the low absolute price point mitigates this impact for qualified buyers. The high momentum score is driven by the recent price acceleration, while the lower vitality score reflects the limited job base and establishment count of 162. For potential buyers, the low entry price and favorable price-to-income dynamics offer significant value, whereas renters face a higher cost burden relative to their earnings. The data indicates a market where equity accumulation is rapid, but economic diversification remains limited.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -514,7 +481,7 @@ Economic fundamentals present a mixed picture that drives the market’s challen
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -676,47 +643,6 @@ Economic fundamentals present a mixed picture that drives the market’s challen
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 97.55, "2017": 120.88, "2018": 127.16, "2019": 143.1, "2020": 135.5, "2021": 150.22, "2022": 160.8, "2023": 171.13, "2024": 182.89, "2025": 212.25};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

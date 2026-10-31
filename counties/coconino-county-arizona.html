@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">32.7</span>
+    <span class="score-number">33.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 3.5</span>
       <span title="Stability">🏠 31.2</span>
-      <span title="Momentum">📈 44.7</span>
+      <span title="Momentum">📈 48.7</span>
       <span title="Vitality">⚡ 63.6</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Coconino County
-    <strong class="up">
-      rose +2.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -535,11 +515,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Coconino County operates as a distinctively stressed market, characterized by extreme affordability constraints that outweigh strong demographic vitality. The price-to-income ratio of 6.14 is nearly double the national average of 3.20, while the rent burden consumes 24.2% of median household income against a national benchmark of 17.2%. These metrics establish a clear barrier to entry for local residents, positioning the area as a seller’s market where pricing power remains firmly with property owners despite recent economic headwinds.
+  <p>Coconino County operates as a severely stressed buyer’s market, characterized by extreme affordability constraints that outweigh strong economic vitality. The market classification is driven primarily by a price-to-income ratio of 6.14, nearly double the national average of 3.20, and a rent burden of 24.2%, significantly exceeding the 17.2% national benchmark. These metrics indicate that housing costs consume a disproportionate share of household resources, limiting purchasing power for local residents despite a median household income of $72,966. The composite assessment reflects this imbalance, where vitality scores are high due to robust migration and employment, but affordability and stability metrics remain critically low, creating a structural tension in the housing ecosystem.
 
-Multi-year data reveals a pattern of accelerating appreciation that has recently moderated but remains robust. Home values surged 18.4% in 2022 before settling into a consistent 8-9% annual growth rate through 2024. This trajectory contrasts with the FHFA House Price Index, which shows a more recent year-over-year increase of only 2.30% in 2025, significantly outpacing the Arizona state average of 0.52%. This divergence suggests that while long-term appreciation has been steep, short-term transactional momentum is cooling relative to the broader state. The price-to-rent ratio of 25.3, well above the national 18.7, further indicates that purchasing equity is currently less attractive than renting from a pure yield perspective, yet the sustained outperformance of home values over rents signals persistent demand for ownership.
+Trend analysis reveals a period of accelerated appreciation that has only recently begun to moderate. Home values surged 18.4% year-over-year in 2022 before decelerating to 8.4% in 2024, yet prices remain 96.7% above the national average and 68.6% above the state average. A notable divergence exists between price and rent growth, with home values rising faster than rents, pushing the price-to-rent ratio to 25.3 compared to the national 18.7. This suggests that ownership costs are escalating more rapidly than rental alternatives, further straining affordability. The 2021-2022 migration data shows a net inflow of 3,161 filers, with incoming households earning an average of $82,212, slightly higher than those leaving, indicating that wealthier migrants are fueling demand in a market where local wages average $1,020 weekly.
 
-Regional context highlights Coconino’s premium status, with median home values sitting 68.6% above the state average and 96.7% above the national mean. This premium is supported by net migration gains of 3,161 filers between 2021 and 2022, driven by inflows with average incomes of $82,212. However, local economic fundamentals present a constraint; with average weekly wages at $1,020 and total employment at 52,025, the labor market may not fully support the current price levels. Housing supply, with 634 new units authorized in 2025, appears insufficient to offset demand, particularly given the 59.7% owner-occupancy rate. The 7.32% national mortgage rate further suppresses buyer purchasing power, compounding the affordability crisis. Consequently, the market’s vitality is driven by external migration and asset appreciation rather than local wage growth, creating a fragile equilibrium where high prices clash with moderate income levels.</p>
+Economic context highlights a supply-demand mismatch exacerbated by limited new construction. With only 634 new units authorized in 2025, including 421 single-family homes, the supply pipeline is insufficient to offset the persistent demand driven by migration. The current 30-year fixed mortgage rate of 7.32% compounds the affordability crisis, making monthly payments on the $448,000 median home value prohibitively high for the median household. Consequently, the market exhibits high momentum and vitality but lacks stability, as the gap between local income levels and housing costs continues to widen. Potential buyers face a landscape where entry barriers are significantly higher than national norms, while renters experience above-average cost burdens, reflecting a market where external demand outpaces local economic capacity to support housing costs.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -723,7 +703,7 @@ Regional context highlights Coconino’s premium status, with median home values
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -885,47 +865,6 @@ Regional context highlights Coconino’s premium status, with median home values
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 625.63, "2017": 669.34, "2018": 714.12, "2019": 750.79, "2020": 787.13, "2021": 928.51, "2022": 1133.51, "2023": 1193.31, "2024": 1245.86, "2025": 1274.46};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

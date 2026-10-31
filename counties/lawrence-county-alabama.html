@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-challenging">
+<div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">56.5</span>
+    <span class="score-number">61.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 74.8</span>
       <span title="Stability">🏠 82.5</span>
-      <span title="Momentum">📈 34.7</span>
+      <span title="Momentum">📈 54.0</span>
       <span title="Vitality">⚡ 23.9</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Lawrence County
-    <strong class="down">
-      fell -2.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -430,11 +410,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Lawrence County, Alabama, presents a distinctively affordable housing environment characterized by strong owner-occupancy and limited new supply. With a median home value of $172,300 and a median household income of $66,071, the price-to-income ratio stands at 2.61, significantly below the national average of 3.20. This affordability is reinforced by a rent burden of 13.7%, well under the national benchmark of 17.2%. Consequently, the market leans heavily toward buyers who prioritize low entry costs over rapid appreciation, supported by an owner-occupancy rate of 81.7%. The price-to-rent ratio of 19.1, slightly above the national average of 18.7, suggests that while renting is cheap, buying remains the more financially efficient long-term strategy for qualified purchasers.
+  <p>Lawrence County, Alabama, functions as a balanced market with distinct affordability advantages, characterized by a median home value of $172,300 and a median household income of $66,071. The price-to-income ratio of 2.61 sits well below the national average of 3.20, indicating strong purchasing power relative to asset costs. Furthermore, the rent burden of 13.7% is significantly lower than the national benchmark of 17.2%, suggesting that rental costs remain manageable for local residents. These metrics support a classification where both buyers and renters face reasonable entry barriers, though the 81.7% owner-occupancy rate highlights a preference for homeownership within the 33,276-person population.
 
-The multi-year trend reveals a period of robust price acceleration, with home values increasing from $98,700 in 2017 to $172,300 in 2024, representing a compound annual growth rate of approximately 7.3%. However, this momentum has recently decelerated. The FHFA House Price Index indicates a year-over-year decline of 2.29% in 2025, marking a 5.08 percentage point underperformance relative to the state’s 2.79% growth. This divergence highlights a cooling phase following the 14.3% surge in 2024. Meanwhile, median gross rent remains modest at $753, indicating that rental demand has not kept pace with the earlier housing price spike. The stability of the local economy is reflected in a high stability metric, driven by consistent income levels and low volatility in occupancy rates, despite the recent price correction.
+The market exhibits a pronounced upward trajectory in home values, which have appreciated from $98,700 in 2017 to $172,300 in 2024, representing a cumulative gain of approximately 74.6%. Recent momentum is particularly sharp, with year-over-year growth accelerating to 12.3% in 2023 and 14.3% in 2024. This rapid appreciation outpaces rental growth, creating a divergence where the price-to-rent ratio of 19.1 slightly exceeds the national average of 18.7. Such dynamics suggest that while initial affordability remains high, the pace of value realization is compressing the long-term cost advantage for new entrants compared to previous years.
 
-Economic fundamentals provide a mixed backdrop for future activity. Local employment totals 4,038 jobs with an average weekly wage of $998, which aligns with the county’s income profile but offers limited upward pressure on housing demand. Housing supply is extremely constrained, with only six new single-family units authorized in 2025 and zero multi-family permits, which historically supports price floors even during corrections. Net migration of +463 filers between 2021 and 2022 demonstrates modest population growth, though the average income of incoming filers ($58,849) is lower than the county median, suggesting an influx of cost-conscious residents rather than high-income earners. The current 30-year mortgage rate of 7.32% further dampens demand, making the low price-to-income ratio the primary driver of market vitality. Ultimately, the market’s strength is rooted in affordability and stability, while its weakness lies in stalling momentum and limited economic expansion.</p>
+Regional context reveals that Lawrence County home values are 24.3% below the national average but 7.9% above the state average, positioning it as a relatively premium market within Alabama. The local economic foundation is modest, with 4,038 total jobs and an average weekly wage of $998, yet the area attracts net positive migration of 463 filers between 2021 and 2022. Housing supply remains constrained, with only six new units authorized in 2025, all single-family, which likely contributes to sustained price pressure despite the high 7.32% mortgage rate. The composite assessment reflects high stability and affordability, driven by low cost-of-living metrics, but is tempered by low vitality scores due to limited employment base and minimal new construction. Potential buyers benefit from below-national price-to-income ratios, but must account for the accelerating appreciation trend and tight inventory, while renters enjoy a favorable burden ratio that remains well below national norms.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -618,7 +598,7 @@ Economic fundamentals provide a mixed backdrop for future activity. Local employ
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -780,47 +760,6 @@ Economic fundamentals provide a mixed backdrop for future activity. Local employ
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 189.63, "2017": 204.99, "2018": 201.25, "2019": 205.34, "2020": 215.72, "2021": 249.75, "2022": 295.79, "2023": 315.11, "2024": 344.31, "2025": 336.41};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

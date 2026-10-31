@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">52.3</span>
+    <span class="score-number">52.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 20.6</span>
       <span title="Stability">🏠 64.6</span>
-      <span title="Momentum">📈 70.1</span>
+      <span title="Momentum">📈 72.2</span>
       <span title="Vitality">⚡ 62.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Baxter County
-    <strong class="up">
-      rose +2.8%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -385,19 +365,6 @@
 </div>
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Baxter County, Arkansas, presents a complex housing environment characterized by strong price momentum but persistent affordability constraints. The market leans toward a buyer’s disadvantage in terms of entry barriers, evidenced by a price-to-income ratio of 3.60, which exceeds the national average of 3.20. Despite this, the price-to-rent ratio of 17.2 remains below the national benchmark of 18.7, suggesting that renting offers relatively better value than purchasing for many households. This dynamic is reinforced by a rent burden of 21.0% of income, significantly higher than the national average of 17.2%, indicating that rental costs are becoming a heavier financial load for residents. The composite assessment reflects this tension, with affordability scoring low at 20.6 out of 100, while momentum scores higher at 70.1, driven by consistent appreciation.
-
-The multi-year trend reveals a sharp acceleration in home values, particularly in 2022 when prices surged 12.3% year-over-year, followed by continued growth of 6.3% in 2023 and 5.6% in 2024. This trajectory contrasts with the state’s broader performance, as Baxter County home values are 23.4% above the Arkansas average, though they remain 23.3% below the national median. Recent FHFA data confirms this outperformance, showing a 2.82% year-over-year increase in the Home Price Index, which is 1.73 percentage points higher than the state’s 1.09% growth. This divergence suggests localized demand pressures that are decoupling Baxter County from the slower statewide pace. Notably, home values are rising faster than rents, a pattern that typically signals tightening supply or shifting demand toward ownership despite high interest rates.
-
-Economic fundamentals provide context for these trends. Local employment stands at 14,728 jobs with an average weekly wage of $903, supporting a median household income of $48,452, which is 28.7% below the national average. Housing supply remains limited, with only 80 new units authorized in 2025, predominantly single-family homes, which may constrain future inventory. Migration data indicates a net inflow of 1,876 filers, with incoming residents earning slightly higher incomes ($64,316) than those leaving ($63,205), suggesting an influx of relatively higher-earning households. For potential buyers, the 7.32% national mortgage rate exacerbates the affordability gap, making entry difficult despite the county’s lower absolute price points. Renter’s face increasing costs relative to their income, while buyers must navigate a market where prices are appreciating faster than local wage growth can sustainably support.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -576,7 +543,7 @@ Economic fundamentals provide context for these trends. Local employment stands 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -738,47 +705,6 @@ Economic fundamentals provide context for these trends. Local employment stands 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 206.13, "2017": 204.98, "2018": 216.66, "2019": 222.63, "2020": 230.07, "2021": 257.78, "2022": 304.39, "2023": 334.4, "2024": 356.1, "2025": 366.14};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

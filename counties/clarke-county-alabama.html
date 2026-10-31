@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">41.5</span>
+    <span class="score-number">46.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 51.1</span>
       <span title="Stability">🏠 29.0</span>
-      <span title="Momentum">📈 57.6</span>
+      <span title="Momentum">📈 76.6</span>
       <span title="Vitality">⚡ 22.6</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Clarke County
-    <strong class="down">
-      fell -1.8%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -409,11 +389,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Clarke County, Alabama, operates as a distinctly buyer’s market, characterized by a price-to-income ratio of 2.47, significantly below the national average of 3.20. The median home value of $121,700 sits 46.6% below the national mean and 23.8% below the state average, offering substantial entry-level value. This affordability is reinforced by a price-to-rent ratio of 13.0, well under the national benchmark of 18.7, suggesting that ownership remains a more financially efficient long-term strategy than renting for qualified buyers. However, the market’s stability is compromised by recent price corrections. After peaking at $126,400 in 2023, the median home value declined by 3.7% to $121,700 in 2024. This downward trajectory is corroborated by the FHFA House Price Index, which recorded a 1.82% year-over-year decrease in 2025, contrasting sharply with the state’s 2.79% growth and indicating a 4.61 percentage point relative underperformance.
+  <p>Clarke County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 2.47, significantly below the national average of 3.20. The median home value of $121,700 sits 46.6% below the national mean and 23.8% below the state average, creating substantial entry barriers for investors but favorable conditions for local residents. This affordability is reinforced by a price-to-rent ratio of 13.0, well under the national benchmark of 18.7, suggesting that purchasing remains a more financially efficient strategy than renting for qualified buyers. Despite these favorable valuation metrics, the market exhibits signs of moderate stress, with a composite assessment reflecting lower stability and vitality scores driven by limited economic expansion and constrained housing supply.
 
-The local economic landscape provides limited support for sustained housing demand. Total employment stands at just 5,838 jobs, with an average weekly wage of $1,015, reflecting a modest income base that constrains purchasing power. Housing supply is extremely tight, with only 10 new single-family units authorized in 2025 and zero multi-family construction, yet this scarcity has not prevented price softening. Migration data shows a net inflow of 230 filers, but the average income of incoming residents ($57,935) does not significantly exceed that of outflowing residents ($58,281), suggesting demographic shifts are not driving premium pricing. Furthermore, the current 30-year fixed mortgage rate of 7.32% continues to pressure monthly carrying costs, limiting buyer leverage despite low home prices.
+The multi-year trend reveals a volatile trajectory, with home values peaking at $126,400 in 2023 before retreating to $121,700 in 2024, a 3.7% year-over-year decline. This recent correction follows a period of robust growth, including an 11.6% surge in 2019 and an 11.0% increase in 2022. A notable divergence exists between housing segments: while home values have softened, rents are rising faster than prices, pushing the rent burden to 19.1% of income, slightly above the national average of 17.2%. This dynamic suggests that rental demand is outpacing new supply, which is critically limited to just ten new single-family units authorized in 2025, with zero multi-family construction. The lack of new inventory complicates the rental market, potentially driving up costs for the 29.2% of the population that rents.
 
-A notable divergence exists between home values and rental costs. While home prices have declined, rents are rising faster than values, pushing the rent burden to 19.1% of income, slightly above the national average of 17.2%. This dynamic suggests that the rental segment is absorbing some of the economic pressure that has stalled the ownership market. The composite assessment of the market reflects strong affordability metrics but weak vitality and stability. The low vitality score is driven by the minimal job base and negligible new construction, while the stability score suffers from the recent price volatility and negative momentum. For potential buyers, the current environment offers a favorable entry point with negotiating power, whereas renters face increasing relative costs against a stagnant or declining home value landscape. The market remains accessible but lacks the economic momentum necessary for robust appreciation.</p>
+Economic fundamentals provide a mixed backdrop for this housing landscape. Local employment stands at 5,838 jobs with an average weekly wage of $1,015, supporting a median household income of $49,249, which is 27.6% below the national average. Migration patterns indicate a modest net inflow of 230 tax filers, with incoming residents earning slightly less than those departing ($57,935 versus $58,281), suggesting limited demographic pressure to inflate prices. The current 30-year fixed mortgage rate of 7.32% adds financing friction, yet the low absolute price point mitigates this impact for local buyers. Consequently, the market’s momentum is driven less by speculative investment and more by intrinsic affordability and stable local demand, offering a resilient, albeit slow-moving, environment for homeownership.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -597,7 +577,7 @@ A notable divergence exists between home values and rental costs. While home pri
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -759,47 +739,6 @@ A notable divergence exists between home values and rental costs. While home pri
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 202.46, "2017": 208.11, "2018": 206.24, "2019": 211.33, "2020": 218.48, "2021": 229.47, "2022": 248.06, "2023": 266.99, "2024": 265.34, "2025": 260.5};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">52.3</span>
+    <span class="score-number">54.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 69.6</span>
       <span title="Stability">🏠 52.2</span>
-      <span title="Momentum">📈 55.0</span>
+      <span title="Momentum">📈 63.8</span>
       <span title="Vitality">⚡ 23.3</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Franklin County
-    <strong class="up">
-      rose +1.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,19 +315,6 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Franklin County, Alabama, operates as a distinct buyer’s market, characterized by significant affordability advantages relative to national benchmarks. The median home value of $136,000 stands 40.3% below the national average, while the price-to-income ratio of 2.55 is notably lower than the national mean of 3.20. This affordability is reinforced by a rent burden of 15.2%, which is well below the national average of 17.2%, and a price-to-rent ratio of 16.8, indicating that purchasing remains a more cost-effective strategy than renting compared to broader market norms. The 72.4% owner-occupancy rate further solidifies the residential stability of the area, though the recent FHFA Home Price Index increase of only 0.96% in 2025 suggests a sharp deceleration from the 13.4% peak growth recorded in 2022. This moderation places the county 1.83 percentage points below the state’s 2.79% annual growth rate, signaling a cooling momentum that contrasts with the earlier rapid appreciation cycle.
-
-The economic foundation supporting this housing environment is modest but stable. With total employment at 9,012 jobs and an average weekly wage of $952, the local labor market provides sufficient income support for the median household earning $53,338. However, the housing supply is constrained, with only 27 new units authorized in 2025, split between 15 single-family and 12 multi-family structures. This limited new construction, combined with net positive migration of 344 filers, creates a tight supply-demand dynamic that historically supported price gains. The divergence between the slowing price growth and the relatively stable rental market indicates a shift in market dynamics, where the initial surge in home values is normalizing. The low vitality score, driven by limited job growth and small population size, underscores the challenges facing the local economy, even as affordability metrics remain attractive.
-
-For potential buyers, the current environment offers an entry point significantly below national cost structures, with mortgage rates at 7.32% still making the low median price manageable. The data suggests that while the rapid appreciation phase has ended, the fundamental affordability gap between Franklin County and national averages remains substantial. The market is transitioning from a momentum-driven phase to a stability-focused one, where value is derived from low entry costs rather than capital appreciation. Renter’s perspectives are less favorable due to the lower price-to-rent ratio, which favors long-term ownership. The combination of low price-to-income ratios and moderating price trends creates a resilient, albeit slow-moving, market that prioritizes cost efficiency over growth potential.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -526,7 +493,7 @@ For potential buyers, the current environment offers an entry point significantl
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +655,6 @@ For potential buyers, the current environment offers an entry point significantl
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 127.83, "2017": 134.48, "2018": 141.05, "2019": 147.93, "2020": 151.33, "2021": 163.61, "2022": 188.79, "2023": 217.4, "2024": 223.47, "2025": 225.62};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

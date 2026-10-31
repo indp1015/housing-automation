@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-strong">
+<div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">71.2</span>
+    <span class="score-number">65.6</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 86.6</span>
       <span title="Stability">🏠 69.7</span>
-      <span title="Momentum">📈 99.5</span>
+      <span title="Momentum">📈 77.1</span>
       <span title="Vitality">⚡ 14.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Coosa County
-    <strong class="up">
-      rose +50.5%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -415,6 +395,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Coosa County, Alabama, functions as a distinctly buyer’s market, characterized by extreme affordability and robust price momentum. The price-to-income ratio stands at 2.01, significantly below the national average of 3.20, while the rent burden is only 13.9% of income compared to the national 17.2%. These metrics indicate that housing costs are exceptionally low relative to local earnings, creating a favorable environment for homeownership. The price-to-rent ratio of 14.5, well under the national benchmark of 18.7, further suggests that purchasing is more financially advantageous than renting for those with sufficient capital. This structural affordability drives the high momentum observed in the market, where home values have appreciated consistently despite a small population base of 10,300 residents.
+
+The multi-year trend reveals a sharp acceleration in home values, peaking at +14.2% year-over-year in 2022 before moderating to +3.3% in 2024. However, a notable divergence exists between asset appreciation and rental income, as median gross rent remains stagnant at $665 while home values have risen from $87,300 in 2017 to $115,500 in 2024. This widening gap signals that equity growth is outpacing rental yield potential, a pattern typical of rural markets experiencing demographic shifts rather than broad-based economic expansion. The county’s home values remain 49.3% below the national average and 27.7% below the Alabama state average, reflecting its position as a low-cost outlier within the region.
+
+Economic context complicates the narrative of vitality, as the Bureau of Labor Statistics reports zero total employment and an average weekly wage of $0, indicating a lack of formal sector data or a very small, informal labor market. Despite this, net migration of +160 filers between 2021 and 2022 suggests sustained population inflow, likely driven by the low cost of living rather than job opportunities. The current 30-year fixed mortgage rate of 7.32% poses a challenge for affordability, yet the low entry price mitigates this impact. The overall market strength is driven primarily by affordability and momentum, offsetting a very low vitality score of 14.8. For potential buyers, the data supports a favorable entry point with strong historical appreciation, though the lack of robust local employment data necessitates caution regarding long-term economic stability. Renter’s options remain limited and inexpensive, but the high owner-occupancy rate of 81.6% suggests a stable, non-speculative housing stock.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -593,7 +586,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -755,47 +748,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 100.0, "2017": 105.55, "2018": 111.86, "2019": 122.6, "2020": 127.57, "2021": 138.14, "2022": 151.16, "2024": 147.75, "2025": 222.39};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

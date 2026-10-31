@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-challenging">
+<div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">51.0</span>
+    <span class="score-number">48.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 40.6</span>
       <span title="Stability">🏠 47.8</span>
-      <span title="Momentum">📈 76.1</span>
+      <span title="Momentum">📈 65.7</span>
       <span title="Vitality">⚡ 39.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Jackson County
-    <strong class="up">
-      rose +5.8%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -430,11 +410,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Jackson County, Alabama, presents a mixed market profile characterized by strong price momentum but constrained economic vitality. The county operates as a moderately balanced market, leaning slightly toward buyers due to a price-to-rent ratio of 17.0, which is below the national average of 18.7. However, this is offset by a high owner-occupancy rate of 75.1% and limited new supply, with only 49 single-family permits authorized in 2025 and zero multi-family units. This scarcity contributes to the market’s classification, as the lack of rental alternatives forces more residents into homeownership, potentially inflating demand for existing stock.
+  <p>Jackson County, Alabama, presents a complex market dynamic characterized by strong price momentum but constrained economic fundamentals. With a median home value of $159,500 and a median gross rent of $780, the price-to-rent ratio stands at 17.0, slightly below the national average of 18.7. This metric, combined with a 75.1% owner-occupancy rate, suggests a balanced-to-buyer’s market structure, though the affordability score of 40.6 indicates significant pressure on potential purchasers. The price-to-income ratio of 3.07 is marginally better than the national benchmark of 3.20, yet the rent burden of 18.0% exceeds the national average of 17.2%, creating a dual challenge for both buyers and tenants.
 
-Recent trends reveal a significant acceleration in home values, rising from $105,000 in 2017 to $159,500 in 2024. The peak year-over-year growth of 14.9% in 2023 has moderated to 9.4% in 2024, yet the FHFA House Price Index indicates continued outperformance relative to the state, with a 2025 year-over-year change of +5.83% compared to the state’s +2.79%. This divergence suggests local demand is outpacing broader regional trends. Affordability remains a critical constraint; the price-to-income ratio stands at 3.07, slightly better than the national average of 3.20, but the median household income of $51,908 lags behind the national mean by 23.7%. Consequently, while the county is 30.0% below the national median home value, the gap between income and asset prices creates a challenging entry point for first-time buyers.
+The most striking data point is the rapid appreciation trajectory, where home values surged from $105,000 in 2017 to $159,500 in 2024. This represents a cumulative increase of approximately 52% over seven years, with peak year-over-year growth reaching 14.9% in 2023 before moderating to 9.4% in 2024. This aggressive price momentum, reflected in a high momentum score of 76.1, contrasts sharply with the local economic reality. Average weekly wages of $1,003 translate to an annual income of roughly $52,156, aligning closely with the median household income of $51,908. However, total employment stands at only 11,868 jobs, limiting the labor pool’s capacity to sustain further price increases. Housing supply remains tight, with only 49 new single-family units authorized in 2025 and zero multi-family permits, exacerbating scarcity.
 
-The economic context further complicates the outlook. Local employment is modest, with 11,868 total jobs and an average weekly wage of $1,003, which limits purchasing power. Migration data shows a net inflow of 969 filers, with incoming residents earning slightly less ($60,314) than those leaving ($62,182), suggesting an influx of lower-income households that may not sustain high price growth. The national 30-year fixed mortgage rate of 7.32% exacerbates these affordability pressures. These factors drive the composite assessment, where high momentum scores are counterbalanced by low vitality and affordability metrics. The primary risk lies in the disconnect between rapidly appreciating home values and stagnant wage growth, creating a fragile equilibrium where external economic shocks could disproportionately impact local stability.</p>
+Regional context further complicates the outlook. While home values are 30.0% below the national average, they are nearly identical to the state average, suggesting Jackson County has reached parity with broader Alabama trends despite a lower income base that is 23.7% below the national mean. A notable anomaly is the divergence between price and rent growth; while home values have risen sharply, the rent burden has only slightly exceeded national norms, indicating that rental demand has not kept pace with the surge in ownership prices. Migration data shows a net inflow of 969 filers, with incoming residents earning slightly less ($60,314) than those leaving ($62,182), suggesting a shift toward lower-income demographics. With 30-year mortgage rates at 7.32%, the high cost of borrowing amplifies the affordability gap. Consequently, the market’s vitality score of 39.0 reflects weak local job growth and limited supply, while the stability score of 47.8 underscores the risk of volatility in a market where prices have outpaced income growth significantly. Potential participants must weigh the low entry price against the rising cost of debt and stagnant wage growth.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -618,7 +598,7 @@ The economic context further complicates the outlook. Local employment is modest
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -780,47 +760,6 @@ The economic context further complicates the outlook. Local employment is modest
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 201.72, "2017": 212.5, "2018": 218.22, "2019": 224.31, "2020": 232.59, "2021": 265.45, "2022": 308.64, "2023": 334.49, "2024": 362.18, "2025": 383.3};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

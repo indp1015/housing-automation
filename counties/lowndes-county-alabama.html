@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-stressed">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">49.9</span>
+    <span class="score-number">51.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 45.6</span>
       <span title="Stability">🏠 51.0</span>
-      <span title="Momentum">📈 67.8</span>
+      <span title="Momentum">📈 74.2</span>
       <span title="Vitality">⚡ 32.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Lowndes County
-    <strong class="up">
-      rose +1.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,6 +315,49 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>The user wants a 280-320 word analysis of Lowndes County, Alabama housing market based on provided data. I need to cover 9 specific points in 2-3 paragraphs, professional tone, third person, data-driven, no predictions, no headers/bullets. Let me analyze the data first.
+
+Key metrics:
+- Median home value: $86,300 (2024)
+- Median gross rent: $710/month
+- Median household income: $37,052
+- Population: 9,833
+- Owner occupancy: 77.5%
+- Price-to-income: 2.33 (national 3.20)
+- Rent burden: 23.0% (national 17.2%)
+- Price-to-rent: 10.1 (national 18.7)
+- Home value vs national: -62.1%, vs state: -45.9%
+- Income vs national: -45.5%
+- Trend: 2017 $63k → 2024 $86.3k, with volatility (2020 dip, 2021 spike +16.8%, 2023 dip -3.4%, 2024 +7.1%)
+- Employment: 1,891 jobs, avg weekly wage $1,204 ($62,608 annual)
+- Building permits: 4 single-family, 0 multi-family
+- Migration: net +132 filers, inflow avg income $47,723, outflow $47,976
+- Mortgage rate: 7.32%
+- Composite scores: Overall 49.9 (Stressed), Affordability 45.6, Stability 51.0, Momentum 67.8, Vitality 32.8
+
+Now I need to classify market: Price-to-rent 10.1 vs national 18.7 suggests buying is relatively cheap vs renting. But rent burden 23% > 17.2% national. Owner occupancy high at 77.5%. Low inventory (4 permits). Could be buyer's market due to low prices but high mortgage rates.
+
+Trend interpretation: Volatile but overall upward. 2021 spike likely pandemic-related. 2023 dip then 2024 recovery.
+
+Affordability: Price-to-income 2.33 well below national 3.20, so homes affordable relative to income. But rent burden high at 23% vs 17.2% national, indicating renters strained.
+
+Regional context: Home values 62% below national, 46% below state. Income 46% below national.
+
+Anomaly: Price-to-rent ratio very low (10.1 vs 18.7) suggesting buying much cheaper than renting, yet rent burden high. Also home values rising faster than rents per note.
+
+Practical implication: Buyers find low entry prices but face high mortgage rates (7.32%). Renters face high burden relative to income.
+
+Recent momentum: FHFA HPI not provided but trend shows +7.1% YoY 2024. Momentum score 67.8 high.
+
+Economic context: Low employment (1,891 jobs), modest wages ($62.6k avg), minimal new supply (</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -513,7 +536,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -675,47 +698,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2015": 107.29, "2016": 108.01, "2017": 107.57, "2018": 119.05, "2019": 119.34, "2020": 122.46, "2021": 129.54, "2022": 134.05, "2023": 152.34, "2025": 154.95};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

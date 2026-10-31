@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">57.9</span>
+    <span class="score-number">52.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 65.3</span>
       <span title="Stability">🏠 52.6</span>
-      <span title="Momentum">📈 81.6</span>
+      <span title="Momentum">📈 61.2</span>
       <span title="Vitality">⚡ 23.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Randolph County
-    <strong class="up">
-      rose +15.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -373,19 +353,6 @@
 </div>
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Randolph County, Arkansas, functions as a buyer’s market characterized by exceptional affordability metrics, despite accelerating price momentum. The price-to-income ratio stands at 2.57, significantly below the national average of 3.20, while the rent burden is only 15.9% compared to the national 17.2%. These figures indicate that housing costs remain manageable relative to local earnings, with a median household income of $50,911 supporting a median home value of $130,600. The price-to-rent ratio of 16.1 is also lower than the national benchmark of 18.7, suggesting that purchasing remains a financially superior option to renting for long-term stability. This affordability profile drives the high score on the affordability axis, which contrasts sharply with the low vitality score of 23.8, reflecting the limited local job base of only 5,313 positions and an average weekly wage of $807.
-
-The market exhibits a distinct divergence between price and rent growth, signaling a shift in asset valuation. While median gross rent has remained relatively stable, home values have surged, rising from $81,500 in 2017 to $130,600 in 2024. This trajectory includes a notable 14.7% jump in 2022 and a 10.6% increase in 2024. Recent FHFA data confirms this momentum, showing a 15.58% year-over-year price increase, which outpaces the state’s 1.09% growth by 14.49 percentage points. This rapid appreciation outstrips local income growth, creating a tension between high momentum and moderate stability. The positive net migration of 371 filers between 2021 and 2022, with incoming residents earning an average of $51,601, suggests that external demand is fueling price increases rather than local economic expansion.
-
-Regional context further clarifies the market’s position. Home values are 42.6% below the national average and 7.7% below the state average, yet the county is currently outperforming the state in price velocity. The high momentum score of 81.6 reflects this rapid appreciation, while the stability score of 52.6 highlights the risk associated with prices rising faster than rents and wages. For potential buyers, the 7.32% national mortgage rate increases carrying costs, but the low entry price mitigates this impact compared to national peers. Renter’s burdens remain low, providing a cushion against potential price corrections. The combination of strong price momentum and robust affordability suggests a market driven by external demand and asset revaluation rather than local economic vitality, requiring buyers to weigh the benefits of low entry costs against the risks of rapid, income-disconnected price growth.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -564,7 +531,7 @@ Regional context further clarifies the market’s position. Home values are 42.6
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -726,47 +693,6 @@ Regional context further clarifies the market’s position. Home values are 42.6
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 144.86, "2017": 151.08, "2018": 153.14, "2019": 153.85, "2020": 155.03, "2021": 172.5, "2022": 207.69, "2023": 213.29, "2024": 215.09, "2025": 248.61};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

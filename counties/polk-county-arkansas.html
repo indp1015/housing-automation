@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">61.3</span>
+    <span class="score-number">57.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 51.0</span>
       <span title="Stability">🏠 71.2</span>
-      <span title="Momentum">📈 78.3</span>
+      <span title="Momentum">📈 61.9</span>
       <span title="Vitality">⚡ 43.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Polk County
-    <strong class="up">
-      rose +8.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -385,6 +365,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Polk County, Arkansas, functions as a balanced market with distinct affordability advantages for homeowners. The price-to-income ratio stands at 2.81, significantly below the national average of 3.20, while the rent burden is 17.3%, nearly identical to the national benchmark of 17.2%. This parity suggests that both buying and renting remain financially accessible relative to local earnings. However, the market leans slightly toward buyers due to a price-to-rent ratio of 16.2, which is lower than the national average of 18.7, indicating that purchasing is comparatively more economical than long-term renting. The owner-occupancy rate of 78.9% further reinforces the stability of the housing stock, supporting a steady demand base for single-family homes.
+
+Recent trends reveal a period of accelerated appreciation, with median home values rising 12.9% year-over-year to $138,400 in 2024. This surge follows a multi-year upward trajectory that began in 2017 at $87,100, representing a cumulative increase of approximately 58.8% over seven years. Notably, home values are rising faster than rents, a divergence that typically signals strengthening equity for owners but potential pressure on rental affordability. The momentum is driven partly by net migration of 680 filers between 2021 and 2022, where inflows slightly outpaced outflows, introducing new demand into a small market with only 19,361 residents. This demographic shift, combined with limited new construction—just four units authorized in 2025—creates a supply-constrained environment that supports price resilience.
+
+Economic fundamentals provide a mixed backdrop. While the average weekly wage of $810 translates to an annual income of approximately $42,120, which is below the median household income of $49,191, the overall affordability remains robust compared to national standards. The county’s home values are 39.2% below the national average and slightly 2.2% below the state average, positioning it as an affordable entry point within Arkansas. High momentum is evident in the rapid price appreciation, yet vitality is constrained by a small employment base of 4,438 jobs and minimal new housing supply. The current 7.32% mortgage rate adds financing costs, but the low price-to-income ratio mitigates this impact. For potential buyers, the market offers strong value and equity growth potential, while renters face stable but potentially rising costs due to supply constraints and shifting demographic preferences.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -563,7 +556,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -725,47 +718,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 141.64, "2017": 146.52, "2018": 155.67, "2019": 168.38, "2020": 163.85, "2021": 187.29, "2022": 223.75, "2023": 245.24, "2024": 266.37, "2025": 289.52};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

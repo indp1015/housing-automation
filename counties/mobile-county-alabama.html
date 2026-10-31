@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">41.5</span>
+    <span class="score-number">42.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 25.9</span>
       <span title="Stability">🏠 37.5</span>
-      <span title="Momentum">📈 60.5</span>
+      <span title="Momentum">📈 65.0</span>
       <span title="Vitality">⚡ 46.4</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Mobile County
-    <strong class="up">
-      rose +2.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -575,11 +555,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Mobile County operates as a distinctively renter-favorable market, characterized by a price-to-rent ratio of 15.1, significantly below the national average of 18.7. This metric indicates that purchasing is relatively less attractive compared to renting when adjusted for income, despite the county’s median home value of $190,700 being 19.4% higher than the Alabama state average. The affordability profile remains strained, with a price-to-income ratio of 3.24, slightly above the national benchmark of 3.20, and a rent burden of 21.4% of median household income, which exceeds the national average of 17.2%. These figures suggest that while entry-level housing is accessible relative to national peers, the cost of living pressures remain elevated for both buyers and tenants.
+  <p>Mobile County, Alabama, functions as a distinctively balanced market with a slight tilt toward buyers, driven by a price-to-rent ratio of 15.1, which sits well below the national average of 18.7. This metric suggests that purchasing is currently more cost-effective than renting for long-term residents. The market’s momentum is robust, evidenced by a compound annual growth rate of approximately 9.8% in median home values from 2017 to 2024, rising from $124,500 to $190,700. This appreciation outpaces the national trend, indicating strong local demand relative to supply constraints.
 
-Recent momentum shows a clear deceleration in price appreciation, with the FHFA Home Price Index rising just 2.21% year-over-year in 2025, underperforming the state average of 2.79%. This slowdown follows a period of rapid expansion, where home values surged 14.2% in 2022 before moderating to 8.0% in 2024. A notable divergence exists between asset values and rental costs; home values have risen faster than rents, indicating a potential correction or stabilization phase in the sale market. This trend is supported by robust housing supply, with 1,102 new units authorized in 2025, predominantly single-family homes. Meanwhile, the local economy sustains this activity through 147,879 total jobs and an average weekly wage of $1,217, though net migration of +4,871 filers suggests moderate population growth rather than explosive demand.
+Affordability remains the primary stressor for the region. The price-to-income ratio of 3.24 aligns closely with the national average of 3.20, yet the rent burden stands at 21.4% of median household income, significantly higher than the national benchmark of 17.2%. This divergence highlights that while homeownership is statistically average in cost relative to earnings, rental housing imposes a heavier financial load on tenants. The economic context supports this tension; with an average weekly wage of $1,217 and a median household income of $58,880, local purchasing power lags behind the national average by 13.4%. Consequently, the county’s home values are 16.3% below the national mean, reflecting a market adjusted to local income levels rather than speculative premiums.
 
-The market’s overall stability is compromised by high affordability stress and slowing price growth, resulting in a composite assessment that highlights vulnerability despite positive momentum. Vitality is supported by consistent employment levels and positive net migration, yet the high rent burden and above-average price-to-income ratio weigh heavily on the affordability axis. With a 30-year fixed mortgage rate at 7.32%, borrowing costs remain a significant barrier for prospective buyers, further cementing the county’s status as a market where renting offers better immediate financial leverage than purchasing. The combination of slowing price appreciation and high entry costs suggests that the market is transitioning from a high-growth phase to a more balanced, albeit still expensive, equilibrium.</p>
+Supply dynamics and migration patterns further shape the trajectory. With 1,102 new units authorized in 2025, predominantly single-family homes, the supply pipeline is modest relative to the 412,590 population. Net migration of +4,871 filers between 2021 and 2022, accompanied by inflowing residents earning an average of $70,850, suggests an influx of higher-income households that may sustain price appreciation. However, the current 30-year mortgage rate of 7.32% acts as a significant headwind, potentially tempering further acceleration in home values. The stability of the market is compromised by these affordability pressures, whereas momentum remains strong due to consistent price growth. For potential buyers, the current environment offers value relative to national peers, but renters face elevated costs that may incentivize a shift toward ownership if income levels continue to rise with the incoming migration demographic. The overall assessment reflects a market where strong momentum is counterbalanced by tight affordability metrics, creating a complex landscape for residential investment.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -763,7 +743,7 @@ The market’s overall stability is compromised by high affordability stress and
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -925,47 +905,6 @@ The market’s overall stability is compromised by high affordability stress and
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 376.69, "2017": 389.17, "2018": 410.16, "2019": 429.0, "2020": 449.13, "2021": 506.76, "2022": 580.3, "2023": 631.26, "2024": 648.38, "2025": 662.69};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

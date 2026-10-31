@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">52.2</span>
+    <span class="score-number">56.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 56.7</span>
       <span title="Stability">🏠 51.4</span>
-      <span title="Momentum">📈 41.3</span>
+      <span title="Momentum">📈 58.5</span>
       <span title="Vitality">⚡ 60.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Morgan County
-    <strong class="down">
-      fell -0.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -427,6 +407,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Morgan County, Alabama, presents a balanced market leaning toward buyer advantage, characterized by a price-to-income ratio of 3.08, which undercuts the national average of 3.20. The rent burden stands at 15.1% of household income, significantly lower than the 17.2% national benchmark, indicating that rental costs remain manageable relative to local earnings. With a median home value of $212,000 and a median household income of $68,845, the county maintains affordability metrics that are competitive on a national scale, despite the elevated 7.32% 30-year fixed mortgage rate. The owner-occupancy rate of 72.7% further supports a stable residential base, while the price-to-rent ratio of 20.4 suggests equity accumulation is slightly more favorable than renting, though the gap is narrowing.
+
+The market exhibits a pronounced upward trajectory, with home values increasing from $128,200 in 2017 to $212,000 in 2024. This represents a cumulative gain of approximately 65.4% over seven years, driven by a peak year-over-year growth of 14.7% in 2022. Recent momentum has moderated slightly but remains robust, with 9.8% growth recorded in 2024. This rapid appreciation contrasts with the relatively stable median gross rent of $864, revealing a significant divergence where asset values are rising faster than rental yields. This pattern suggests that the local economy, supported by 46,803 jobs and an average weekly wage of $1,219, is absorbing demand effectively. Net migration of +2,256 filers between 2021 and 2022, with inflowing households earning an average of $76,424, indicates that incoming residents possess higher purchasing power than those departing, further fueling price appreciation.
+
+Regional context highlights Morgan County’s premium positioning, with home values sitting 32.8% above the state average while remaining 6.9% below the national mean. Housing supply, with 400 new units authorized in 2025, appears insufficient to offset the strong demand signals from migration and wage growth. The editorial assessment of the market reflects this tension: vitality is strong due to economic fundamentals, yet momentum is constrained by the pace of price acceleration relative to income growth. For potential buyers, the current environment offers entry into a market with proven historical appreciation, though the widening gap between home prices and rents may limit long-term rental income potential. Renter affordability remains high, but the rising price-to-rent ratio suggests that the window for equity acquisition at current income levels may be narrowing as values continue to outpace wage adjustments.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -604,7 +597,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -766,47 +759,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 297.51, "2017": 314.91, "2018": 323.26, "2019": 339.93, "2020": 359.74, "2021": 413.14, "2022": 494.07, "2023": 527.1, "2024": 552.7, "2025": 550.26};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

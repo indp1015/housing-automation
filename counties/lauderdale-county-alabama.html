@@ -104,11 +104,11 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 49.0</span>
       <span title="Stability">🏠 48.9</span>
-      <span title="Momentum">📈 62.1</span>
+      <span title="Momentum">📈 62.4</span>
       <span title="Vitality">⚡ 50.6</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Lauderdale County
-    <strong class="up">
-      rose +3.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -493,11 +473,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Lauderdale County, Alabama, presents a balanced market profile characterized by strong momentum but constrained affordability. The price-to-income ratio of 3.20 aligns precisely with the national average, while the rent burden of 16.1% remains below the national benchmark of 17.2%, suggesting that rental costs are currently more manageable than purchase costs relative to local earnings. However, the price-to-rent ratio of 19.9 exceeds the national average of 18.7, indicating that ownership is becoming relatively more expensive compared to renting. This dynamic supports a classification as a balanced market, where neither buyers nor renters hold a decisive structural advantage, though the slight edge in rental affordability tempers the pressure on potential homeowners.
+  <p>Lauderdale County, Alabama, operates within a balanced market framework, characterized by a price-to-income ratio of 3.20, which aligns precisely with the national average. The area’s affordability profile is further supported by a rent burden of 16.1%, slightly below the national benchmark of 17.2%, indicating that rental costs remain manageable relative to the median household income of $62,649. However, the price-to-rent ratio of 19.9 exceeds the national average of 18.7, suggesting that homeownership offers a marginally better value proposition than renting for those with sufficient capital. This equilibrium is reinforced by a 68.9% owner-occupancy rate, reflecting a stable, established housing stock rather than a transient rental-heavy demographic.
 
-The market exhibits a notable divergence between asset appreciation and income growth. Home values have surged from $126,800 in 2017 to $200,300 in 2024, representing a cumulative increase of approximately 58% over seven years. This trajectory includes a peak year-over-year gain of 12.9% in 2022, which has since moderated to 7.8% in 2024. Recent FHFA data confirms this cooling but persistent upward trend, with a 2025 year-over-year change of 3.27%, slightly outpacing the state average of 2.79%. This sustained appreciation contrasts with the median household income of $62,649, which trails the national average by 7.9%. Consequently, while the county’s home values are 25.5% above the state average, they remain 12.0% below the national mean, positioning Lauderdale as a premium market within Alabama but a discount option nationally.
+Recent trends reveal a period of accelerated appreciation, with median home values rising from $126,800 in 2017 to $200,300 in 2024. The market experienced a peak year-over-year increase of 12.9% in 2022, a surge that has since moderated to 7.8% in 2024. This deceleration indicates a cooling but still positive momentum, distinct from the stagnation seen in many other secondary markets. A notable anomaly exists in the divergence between asset classes; while home values have compounded significantly, the median gross rent of $838 remains relatively low, implying that equity accumulation through ownership is currently outpacing the cost of tenancy. This dynamic is partially driven by net migration of 1,861 filers between 2021 and 2022, where inflows with an average income of $76,886 slightly exceeded outflows, injecting higher-earning households into the local economy.
 
-Local economic fundamentals provide mixed signals for future stability. The county supports 25,540 jobs with an average weekly wage of $904, a figure that lags behind the high average income of incoming migrants ($76,886). This disparity suggests that inflows are driven by higher-earning professionals, yet the local wage base may not fully support the current price points. Housing supply is active, with 316 new units authorized in 2025, including 203 multi-family units, which may help alleviate rental pressures. The 7.32% national mortgage rate further complicates entry for buyers, extending the gap between income and required payments. Ultimately, the market’s vitality is driven by positive migration and robust price momentum, but stability is challenged by affordability metrics that sit near the lower end of the scale, reflecting a market where price growth has outpaced local wage expansion.</p>
+The regional context places Lauderdale County at a premium compared to the state, with home values 25.5% above the Alabama average, yet 12.0% below the national mean. This positioning is supported by a local average weekly wage of $904, which generates an annualized income level that sustains the current price points. Housing supply remains constrained, with only 316 new units authorized in 2025, including 113 single-family homes, which limits the potential for rapid price correction. The current 30-year fixed mortgage rate of 7.32% adds financing friction, making the lower price-to-income ratio a critical buffer for buyers. Consequently, the market’s vitality is driven less by speculative momentum and more by steady demographic inflows and stable employment, with 25,540 total jobs providing a foundational economic base that supports continued, albeit moderating, price appreciation.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -681,7 +661,7 @@ Local economic fundamentals provide mixed signals for future stability. The coun
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -843,47 +823,6 @@ Local economic fundamentals provide mixed signals for future stability. The coun
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 222.55, "2017": 225.3, "2018": 230.95, "2019": 241.3, "2020": 249.12, "2021": 278.25, "2022": 329.71, "2023": 361.56, "2024": 387.32, "2025": 399.99};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

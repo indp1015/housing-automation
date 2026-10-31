@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">49.1</span>
+    <span class="score-number">49.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 42.9</span>
       <span title="Stability">🏠 36.8</span>
-      <span title="Momentum">📈 74.7</span>
+      <span title="Momentum">📈 75.5</span>
       <span title="Vitality">⚡ 42.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Pope County
-    <strong class="up">
-      rose +3.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -446,19 +426,6 @@
 </div>
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Pope County, Arkansas, functions as a balanced market leaning slightly toward buyers, characterized by a price-to-rent ratio of 16.5, which is significantly below the national average of 18.7. This metric suggests that purchasing remains more financially efficient than renting for long-term residents. The median home value of $170,100 stands 25.3% below the national average, yet it is 20.2% higher than the state median, indicating a localized premium driven by specific regional demand rather than broad state-wide trends. The market’s recent trajectory reveals a sharp acceleration in 2022 with a 14.8% year-over-year increase, which has since moderated to 5.2% in 2024. Current FHFA HPI data confirms this stabilization, showing a 3.18% annual gain that outpaces the state’s 1.09% growth by 2.09 percentage points. This sustained momentum contrasts with the broader national cooling, highlighting Pope County’s relative resilience.
-
-Affordability remains the primary constraint, with a price-to-income ratio of 2.97 that is slightly better than the national norm of 3.20. However, the rent burden stands at 18.0% of household income, exceeding the national average of 17.2%, signaling that rental costs are becoming a heavier financial load for tenants. The median household income of $57,344 is 15.7% below the national average, creating a structural gap between local earnings and housing costs. This dynamic is exacerbated by a low owner occupancy rate of 70.4% and limited new supply, with only 55 units authorized in 2025. The local economy supports this demand through 23,040 total jobs and an average weekly wage of $1,000, while positive net migration of 1,313 filers adds persistent pressure on the housing stock.
-
-The composite assessment reflects a market with high momentum but low stability and vitality. The strong price appreciation rates drive the momentum component, whereas the affordability and stability metrics lag due to income stagnation relative to price growth. The divergence between the 5.2% price growth and the similar rent growth rate indicates that both segments are tightening simultaneously. For potential buyers, the 7.32% national mortgage rate significantly impacts purchasing power, making the lower entry price of $170,100 a critical advantage. Renter’s should note that while the price-to-rent ratio favors buying, the immediate rent burden is above national norms. The market’s strength is derived from outperforming state trends and consistent migration inflows, despite the broader economic headwinds affecting affordability.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -637,7 +604,7 @@ The composite assessment reflects a market with high momentum but low stability 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -799,47 +766,6 @@ The composite assessment reflects a market with high momentum but low stability 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 224.71, "2017": 229.6, "2018": 238.07, "2019": 246.89, "2020": 253.69, "2021": 276.46, "2022": 314.21, "2023": 335.81, "2024": 351.28, "2025": 362.44};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

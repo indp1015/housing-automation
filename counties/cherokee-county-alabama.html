@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">55.2</span>
+    <span class="score-number">56.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 40.8</span>
       <span title="Stability">🏠 75.9</span>
-      <span title="Momentum">📈 59.2</span>
+      <span title="Momentum">📈 64.2</span>
       <span title="Vitality">⚡ 46.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Cherokee County
-    <strong class="up">
-      rose +2.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -491,6 +471,19 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Cherokee County, Alabama, functions as a moderately balanced market with distinct affordability constraints, characterized by a price-to-income ratio of 3.34, slightly above the national average of 3.20. While the median home value of $179,700 sits 21.1% below the national mean, it commands a 12.6% premium over the state average, indicating localized strength despite broader regional affordability challenges. The rent burden of 17.0% aligns closely with the national benchmark of 17.2%, suggesting that rental costs remain proportionate to the median household income of $53,863. However, the price-to-rent ratio of 19.7 exceeds the national average of 18.7, implying that ownership costs are escalating faster than rental alternatives, a divergence that complicates the traditional rent-versus-buy calculus for local residents.
+
+The multi-year trend reveals a period of accelerated appreciation, with home values rising from $116,300 in 2017 to $179,700 in 2024, representing a cumulative increase of approximately 54.5%. Growth was particularly pronounced in 2020 and 2022, with year-over-year gains of 12.2% and 12.6%, respectively. This momentum is supported by positive net migration of 710 filers between 2021 and 2022, driven by inflows averaging $58,903 in income, which slightly exceeds the outflow average of $58,321. Despite this demand, housing supply remains constrained, with only 21 new single-family units authorized in 2025 and zero multi-family permits, limiting the potential for rapid inventory expansion. The local economy supports this demand through 4,164 jobs and an average weekly wage of $887, though the high 30-year mortgage rate of 7.32% significantly increases monthly carrying costs for prospective buyers.
+
+Stability within the market is high, as evidenced by the 81.1% owner-occupancy rate, which provides a foundation of equity and reduces volatility associated with high turnover. However, vitality indicators are mixed due to the limited number of establishments, totaling 480, which suggests a narrower local economic base. The affordability axis presents the primary challenge, with price growth outpacing income levels, while momentum remains positive due to consistent year-over-year appreciation. For potential buyers, the current environment requires careful consideration of the elevated mortgage rates and the modest supply pipeline, whereas renters face stable but relatively high price-to-rent dynamics. The data indicates a market where ownership is attainable but increasingly sensitive to interest rate fluctuations and local wage growth, necessitating a strategic approach to entry timing and financing.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Cherokee County on Our Sister Sites</h3>
@@ -668,7 +661,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -830,47 +823,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 139.75, "2017": 141.76, "2018": 149.35, "2019": 157.74, "2020": 164.46, "2021": 184.2, "2022": 222.04, "2023": 229.53, "2024": 263.38, "2025": 268.77};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

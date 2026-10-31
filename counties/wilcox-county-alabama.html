@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">43.6</span>
+    <span class="score-number">48.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 44.8</span>
       <span title="Stability">🏠 45.1</span>
-      <span title="Momentum">📈 51.2</span>
+      <span title="Momentum">📈 70.7</span>
       <span title="Vitality">⚡ 30.3</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Wilcox County
-    <strong class="down">
-      fell -2.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -323,19 +303,6 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Wilcox County, Alabama, operates as a distinctively affordable buyer’s market, characterized by a median home value of $98,800, which is 56.6% below the national average and 38.1% below the state mean. The local price-to-income ratio stands at 2.43, significantly lower than the national benchmark of 3.20, indicating high purchasing power relative to asset prices for the median household earning $40,640. Conversely, the rental sector exhibits tighter constraints, with a rent burden of 22.0% of income compared to the national average of 17.2%. This divergence highlights a market where ownership remains accessible while rental costs strain household budgets, supported by a price-to-rent ratio of 11.1, well below the national figure of 18.7.
-
-The multi-year trend reveals significant volatility, with home values dipping to $67,200 in 2020 before rebounding 17.3% in 2024 to reach $98,800. However, recent FHFA HPI data for 2025 shows a 2.59% year-over-year decline, underperforming the state’s 2.79% growth by 5.38 percentage points. This suggests that the sharp 2024 recovery has stalled, creating a divergence where rents are rising faster than home values. The economic foundation remains fragile, with only 2,012 total jobs and an average weekly wage of $1,236, limiting broader demand. While net migration was positive at 153 filers, the small population of 10,172 and 77.4% owner occupancy rate indicate limited liquidity and inventory turnover. The current 7.32% mortgage rate further pressures affordability, though the low absolute price point mitigates some of this impact for qualified buyers.
-
-The overall market assessment reflects a stressed environment driven primarily by low vitality and moderate stability. The vitality score of 30.3/100 underscores the constrained local economy and limited job growth, which dampens long-term demand drivers. Stability remains moderate at 45.1/100, reflecting the historical price volatility seen between 2019 and 2022. Momentum is slightly stronger at 51.2/100, capturing the recent price surge, but this is offset by the current negative HPI trend. Affordability scores of 44.8/100 confirm that while entry-level costs are low, the burden on renters and the high interest rate environment create friction. For potential buyers, the low price-to-income ratio offers a favorable entry point, but the declining HPI and weak employment base suggest limited appreciation potential in the near term. Renters face a challenging landscape where cost-of-living pressures are outpacing income growth, making the transition to ownership a financially prudent, albeit risky, strategy given the current market conditions.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -514,7 +481,7 @@ The overall market assessment reflects a stressed environment driven primarily b
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -676,47 +643,6 @@ The overall market assessment reflects a stressed environment driven primarily b
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2015": 111.24, "2016": 131.31, "2017": 135.75, "2018": 117.21, "2019": 126.14, "2020": 128.62, "2021": 137.99, "2022": 137.34, "2023": 159.45, "2025": 155.32};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

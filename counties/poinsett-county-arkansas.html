@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-stressed">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">49.2</span>
+    <span class="score-number">53.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 73.7</span>
       <span title="Stability">🏠 22.7</span>
-      <span title="Momentum">📈 58.6</span>
+      <span title="Momentum">📈 77.4</span>
       <span title="Vitality">⚡ 33.6</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Poinsett County
-    <strong class="down">
-      fell -1.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -385,6 +365,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Poinsett County, Arkansas, functions as a distinctively affordable market, characterized by a price-to-income ratio of 2.21, significantly below the national average of 3.20. The median home value of $103,000 sits 54.8% below the national benchmark and 27.2% below the state average, reinforcing the county’s status as a low-cost housing region. This affordability is mirrored in the rental sector, where the rent burden stands at 15.9% of income, slightly lower than the national 17.2% average. Consequently, the market leans toward a buyer’s environment, supported by a price-to-rent ratio of 13.9 compared to the national 18.7, suggesting that ownership remains financially advantageous relative to long-term renting. The composite assessment reflects this dynamic, with high affordability metrics offsetting lower vitality scores, indicating a stable but economically constrained environment rather than a high-growth hub.
+
+Trend analysis reveals a recent acceleration in home values, with year-over-year growth peaking at 14.5% in 2022 before moderating to 7.8% in 2023 and 1.8% in 2024. This trajectory contrasts with the relatively flat rent environment, where the median gross rent is $619, indicating that home values are rising faster than rents. This divergence suggests a shift in local demand dynamics, potentially driven by net migration of +227 filers between 2021 and 2022. However, economic fundamentals remain modest, with total employment at 4,262 jobs and an average weekly wage of $1,011. The low construction activity, evidenced by only 44 new units authorized in 2025, limits supply-side pressure, while the 7.32% national mortgage rate introduces financing friction for potential purchasers.
+
+The market’s stability is undermined by low vitality, as indicated by the small employment base and limited establishment count of 431. While the owner-occupancy rate of 64.4% provides a degree of structural stability, the recent price appreciation has outpaced income growth, which remains 31.3% below the national average. This creates a narrowing affordability gap, even within an already inexpensive market. For prospective buyers, the current entry price is low, but the rapid recent appreciation suggests that the historical low-cost window may be closing. Renters face minimal burden, but the rising price-to-rent differential indicates that long-term rental costs may not keep pace with asset value increases. The data points to a market transitioning from stagnant lows to moderate growth, driven more by supply constraints and migration than by robust local wage expansion.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -563,7 +556,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -725,47 +718,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 148.41, "2017": 156.8, "2018": 161.81, "2019": 168.62, "2020": 176.98, "2021": 193.21, "2022": 202.58, "2023": 243.03, "2024": 262.56, "2025": 258.24};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">56.4</span>
+    <span class="score-number">59.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 63.0</span>
       <span title="Stability">🏠 72.6</span>
-      <span title="Momentum">📈 66.0</span>
+      <span title="Momentum">📈 77.4</span>
       <span title="Vitality">⚡ 14.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Perry County
-    <strong class="up">
-      rose +0.1%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -323,6 +303,19 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Perry County, Arkansas, exhibits characteristics of a buyer’s market, primarily driven by a price-to-income ratio of 2.33, which is significantly lower than the national average of 3.20. This affordability is reinforced by a price-to-rent ratio of 13.5, well below the national benchmark of 18.7, indicating that purchasing is comparatively more economical than renting. The market’s stability is underscored by an owner-occupancy rate of 80.4% and a rent burden of 17.3%, aligning closely with the national average of 17.2%. However, the market’s vitality is constrained by a small economic base, with only 702 total jobs and 146 establishments, resulting in an average weekly wage of $891. This limited employment ecosystem contributes to a low vitality metric, despite the county’s strong affordability and stability scores.
+
+The multi-year trend reveals a period of significant appreciation followed by recent stagnation. Home values surged from $99,100 in 2017 to a peak growth rate of 11.4% in 2019, reaching $130,200 by 2024. However, the most recent year-over-year change of just 0.7% signals a sharp deceleration in momentum. This plateau contrasts with the earlier rapid appreciation, suggesting that the initial post-2018 recovery has matured. The divergence between price and rent growth is notable; while home values have risen steadily, the rent burden remains stable, implying that rental demand is not outpacing housing supply. This balance supports the classification of the market as stable rather than volatile, with home values rising faster than rents in the broader trend but currently leveling off.
+
+Regional context highlights that Perry County’s median home value is 42.8% below the national average and 8.0% below the Arkansas state average, while median household income is 18.0% below the national mean. This suggests the county is a value-oriented market within a broader low-cost region. Migration data shows a net inflow of 133 filers between 2021 and 2022, with average incomes of incoming and outgoing filers being nearly identical ($56,106 and $56,653, respectively), indicating no significant demographic shift in economic status. The current 30-year fixed mortgage rate of 7.32% poses a challenge for affordability, yet the low entry price of $130,200 mitigates this impact. For potential buyers, the low price-to-income ratio offers a favorable entry point, while renters benefit from a balanced market where housing costs do not disproportionately consume income. The overall market dynamics are driven by high affordability and stability, offset by limited economic vitality and slowing price momentum.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -501,7 +494,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -663,47 +656,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 120.62, "2017": 111.75, "2018": 129.13, "2019": 128.26, "2020": 128.09, "2021": 143.46, "2022": 152.93, "2023": 159.84, "2024": 193.13, "2025": 193.27};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

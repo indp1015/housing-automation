@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-stressed">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">48.7</span>
+    <span class="score-number">53.6</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 46.6</span>
       <span title="Stability">🏠 29.6</span>
-      <span title="Momentum">📈 57.1</span>
+      <span title="Momentum">📈 76.7</span>
       <span title="Vitality">⚡ 65.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Dale County
-    <strong class="down">
-      fell -2.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -409,11 +389,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Dale County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 2.61, significantly below the national average of 3.20. The median home value of $143,500 sits 37.0% below the national mean and 10.1% below the state average, reinforcing its status as a low-cost alternative to broader Alabama markets. This affordability is further underscored by a price-to-rent ratio of 13.5, well under the national benchmark of 18.7, suggesting that homeownership remains a financially accessible option relative to rental costs. However, the market’s stability metrics are notably weak, driven by recent volatility in price appreciation. While the county experienced a sharp 11.2% year-over-year increase in median home values in 2024, the most recent FHFA HPI data indicates a 2.69% decline, underperforming the state’s 2.79% growth by 5.48 percentage points. This divergence highlights a potential cooling or correction following the rapid gains of 2022 and 2024, which saw increases of 9.7% and 11.2% respectively.
+  <p>Dale County, Alabama, operates as a distinct buyer’s market, characterized by a price-to-rent ratio of 13.5, significantly below the national average of 18.7. This metric indicates that purchasing is substantially more cost-effective than renting, reinforced by a median home value of $143,500 against a median gross rent of $889. The affordability profile remains favorable relative to national benchmarks, with a price-to-income ratio of 2.61 compared to the national standard of 3.20. Although the rent burden sits at 19.4%, slightly above the national average of 17.2%, the overall cost of entry for homeowners remains low due to values that are 37.0% below the national mean and 10.1% below the state average.
 
-The local economic landscape provides limited support for sustained price growth, with total employment standing at 13,019 jobs and an average weekly wage of $1,301. Housing supply is extremely constrained, with only 29 new single-family units authorized in 2025 and zero multi-family permits, which typically exerts upward pressure on prices despite the recent HPI dip. Migration patterns show a net inflow of 2,082 filers, with incoming residents earning an average of $56,869, slightly less than the $57,412 average of those leaving, suggesting that demographic shifts are not currently driving significant income-based demand spikes. The rent burden is 19.4% of income, slightly above the national average of 17.2%, indicating that while home values are low, rental costs remain a tangible financial strain for households with a median income of $54,963.
+Recent market dynamics reveal a sharp acceleration in asset appreciation, diverging from the modest 1.6% to 1.9% annual growth observed between 2017 and 2020. After a slight 0.8% dip in 2021, home values surged 9.7% in 2022 and 11.2% in 2024, signaling strong momentum. This rapid appreciation contrasts with the relatively stable income levels, where the median household income stands at $54,963, 19.2% below the national average. The local economic base supports this trend through positive net migration of 2,082 filers in 2021-2022, despite a modest total employment figure of 13,019 jobs and an average weekly wage of $1,301. Housing supply remains constrained, with only 29 new single-family units authorized in 2025 and zero multi-family permits, limiting the ability to meet rising demand.
 
-The overall market assessment reflects a tension between strong vitality and affordability against a backdrop of low stability. The high vitality score is supported by positive net migration and the historical momentum of price appreciation, yet the stability score remains depressed due to the recent negative HPI trajectory and the small, volatile nature of the local transaction base. For prospective buyers, the current environment offers entry points well below national norms, but the recent price correction and minimal new construction suggest a market that is sensitive to local economic shifts rather than broad national trends. Renter’s market dynamics are less pronounced given the low price-to-rent ratio, but the rising rent burden suggests that long-term rental costs may not offer the same safety net as homeownership in this specific geographic context.</p>
+The composite market assessment reflects a tension between high vitality and low stability. While momentum and vitality scores are bolstered by robust price growth and population inflows, stability is compromised by the volatility of the recent price spikes and the high 7.32% mortgage rate, which increases monthly carrying costs for buyers. The market’s classification as "stressed" stems primarily from the affordability axis, where the rapid price escalation is outpacing income growth. For potential buyers, the low price-to-rent ratio offers a long-term financial advantage, yet the immediate entry cost is rising faster than local wages. Renters face a market where ownership is increasingly accessible relative to rental costs, but the limited new construction pipeline suggests that inventory scarcity will continue to influence pricing power. The data indicates a market in transition, where strong demographic inflows and tight supply are driving values upward in a region historically priced below both state and national averages.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -597,7 +577,7 @@ The overall market assessment reflects a tension between strong vitality and aff
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -759,47 +739,6 @@ The overall market assessment reflects a tension between strong vitality and aff
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 150.38, "2017": 155.59, "2018": 162.98, "2019": 166.38, "2020": 166.33, "2021": 177.67, "2022": 207.91, "2023": 226.92, "2024": 248.88, "2025": 242.18};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

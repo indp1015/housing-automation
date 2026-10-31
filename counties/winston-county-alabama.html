@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">54.4</span>
+    <span class="score-number">55.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 71.0</span>
       <span title="Stability">🏠 43.1</span>
-      <span title="Momentum">📈 64.6</span>
+      <span title="Momentum">📈 70.4</span>
       <span title="Vitality">⚡ 30.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Winston County
-    <strong class="up">
-      rose +1.8%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Winston County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a median home value of $118,900 and a price-to-income ratio of 2.08, significantly below the national average of 3.20. The market exhibits strong affordability metrics, with a rent burden of 16.8% and a price-to-rent ratio of 12.3, both favoring homeownership over renting. However, this affordability is offset by limited economic vitality, evidenced by a low vitality rating and a small employment base of only 6,907 jobs. The county’s home values are 25.5% below the state average and 47.8% below the national mean, reflecting a rural economy where median household income stands at $57,256.
+  <p>Winston County, Alabama, functions as a distinctly affordable buyer’s market, characterized by a price-to-income ratio of 2.08, significantly below the national average of 3.20. The median home value of $118,900 stands 47.8% below the national mean and 25.5% below the state average, creating substantial entry barriers for out-of-region capital but strong local purchasing power. This affordability is reinforced by a rent burden of 16.8%, slightly under the national 17.2% benchmark, and a price-to-rent ratio of 12.3 compared to the national 18.7, suggesting that ownership costs remain manageable relative to rental alternatives. The market’s stability is, however, compromised by extreme supply constraints, with only two new housing units authorized in 2025, resulting in a low vitality metric that reflects limited new construction activity and a static housing stock.
 
-The multi-year trend reveals a sharp appreciation spike in 2021, where home values surged 20.3% year-over-year to $105,000, followed by a stabilization period with a 1.0% dip in 2023 and a 7.6% recovery in 2024. Recent FHFA data indicates a modest 1.83% year-over-year increase in 2025, underperforming the state’s 2.79% growth rate by 0.96 percentage points. This divergence suggests that while the county is gaining value, it is lagging behind broader Alabama trends. A notable pattern is the near-simultaneous rise in home values and rents, indicating that affordability pressures are affecting both segments, though the low rent burden remains a buffer for tenants.
+The multi-year trend reveals a sharp acceleration in home values, peaking at a 20.3% year-over-year increase in 2021 before moderating to 7.6% in 2024. This recent momentum is supported by positive net migration of 395 filers, with inflows averaging $69,132 in income, slightly higher than outflows. Despite this demographic inflow, the local economy remains modest, with total employment at 6,907 jobs and an average weekly wage of $1,047. The divergence between the high affordability score and the lower stability rating underscores the tension between accessible pricing and limited market depth. The 7.32% national mortgage rate further pressures buyers, yet the low baseline home values mitigate the impact of elevated financing costs compared to higher-priced markets.
 
-Economic constraints shape the local landscape, with only two single-family units authorized in 2025, signaling negligible new supply. Despite this scarcity, net migration of +395 filers and an average inflow income of $69,132 suggest inbound demand from higher-earning households, potentially supporting price stability. The current 7.32% mortgage rate further restricts purchasing power, yet the low entry price mitigates this impact. The overall market assessment is driven by high affordability scores balanced against low stability and vitality, resulting in a challenging environment for long-term growth. Potential buyers face a market with low entry barriers but limited local job growth, while renters benefit from low costs but face rising prices that track closely with home values. The combination of stagnant supply and modest income levels creates a market where affordability is the primary advantage, though economic momentum remains weak relative to state and national benchmarks.</p>
+Practical implications for stakeholders highlight a market where entry is financially accessible but liquidity may be constrained by the lack of new supply. The 75.8% owner-occupancy rate indicates a stable, long-term resident base, while the similar growth rates of home values and rents suggest a balanced adjustment rather than a speculative bubble. The composite assessment, driven by high affordability but low vitality and stability, paints a picture of a rural market that is financially attractive for local buyers but lacks the dynamic growth engines of urban centers. The primary risk lies not in price volatility, but in the structural stagnation of housing supply, which may limit long-term appreciation potential despite the current upward price trajectory.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ Economic constraints shape the local landscape, with only two single-family unit
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ Economic constraints shape the local landscape, with only two single-family unit
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 174.16, "2017": 177.98, "2018": 191.76, "2019": 193.66, "2020": 202.78, "2021": 228.61, "2022": 274.65, "2023": 289.41, "2024": 309.45, "2025": 315.11};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

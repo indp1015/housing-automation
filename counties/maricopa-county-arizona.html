@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">28.0</span>
+    <span class="score-number">30.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 7.2</span>
       <span title="Stability">🏠 27.0</span>
-      <span title="Momentum">📈 31.9</span>
+      <span title="Momentum">📈 41.7</span>
       <span title="Vitality">⚡ 55.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Maricopa County
-    <strong class="up">
-      rose +0.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -573,11 +553,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Maricopa County functions as a distinctively renter-favorable market, characterized by significant affordability constraints that deter buyer entry while sustaining rental demand. The price-to-income ratio stands at 5.07, substantially exceeding the national average of 3.20, while the rent burden consumes 23.0% of median household income compared to the 17.2% national norm. These metrics indicate that purchasing equity is disproportionately difficult relative to local earnings, pushing households toward the rental sector. The price-to-rent ratio of 22.1 further underscores that owning is currently less cost-effective than renting, reinforcing the market’s classification as a renter’s environment despite a 65.2% owner occupancy rate.
+  <p>Maricopa County presents a distinctly renter-favorable environment, characterized by a price-to-rent ratio of 22.1, significantly exceeding the national average of 18.7. This structural imbalance suggests that purchasing equity is currently less cost-effective than renting for many households, particularly given the median gross rent of $1,708. The market’s affordability profile is strained, with a price-to-income ratio of 5.07 compared to the national benchmark of 3.20. Consequently, the median home value of $452,800 represents a substantial financial hurdle relative to the median household income of $89,300, resulting in an affordability metric that ranks poorly against broader U.S. standards.
 
-The trajectory of home values reveals a period of extreme volatility followed by stabilization. Prices surged from $225,000 in 2017 to $452,800 in 2024, with a peak year-over-year increase of 21.9% in 2022. This rapid appreciation has now moderated to 9.2% in 2024, aligning with the recent FHFA House Price Index showing a minimal 0.65% year-over-year change in 2025. This deceleration suggests the market is digesting previous gains rather than entering a new expansion phase. Notably, home values are rising faster than rents, creating a divergence that widens the gap between asset appreciation and immediate housing costs. Regionally, the county’s median home value is 70.4% above the state average and 98.9% above the national mean, while median income trails the national figure by only 31.3%, highlighting a structural cost-of-living premium.
+The multi-year trajectory reveals a market undergoing rapid appreciation, with home values increasing from $225,000 in 2017 to $452,800 in 2024. This period includes a peak year-over-year gain of 21.9% in 2022, which has since moderated to 9.2% in 2024. While growth has decelerated, the cumulative effect has positioned home values at 98.9% above the national average and 70.4% above the Arizona state average. This outperformance contrasts with the local income advantage, which stands at only 31.3% above the national mean. The divergence between high asset values and moderate income growth highlights a widening gap that pressures household budgets, evidenced by a rent burden of 23.0% of income versus the 17.2% national norm.
 
-Economic fundamentals provide a mixed backdrop for this valuation. Local employment supports 2,070,496 jobs with an average weekly wage of $1,467, yet the high 7.32% mortgage rate significantly restricts purchasing power. Housing supply remains robust, with 31,651 new units authorized in 2025, including 14,407 multi-family units, which may help alleviate rental pressure. Net migration of +25,203 filers indicates sustained demographic inflow, though the average income of incoming residents ($103,316) only modestly exceeds the median household income. The overall market assessment reflects severe affordability stress, driven by the high price-to-income ratio, rather than a lack of economic vitality, as evidenced by strong job growth and construction activity.</p>
+Economic fundamentals provide partial support for the high valuations. The county supports 2,070,496 jobs with an average weekly wage of $1,467, and net migration added 25,203 filers between 2021 and 2022, indicating sustained demand. However, the current 7.32% mortgage rate further constrains purchasing power, reinforcing the appeal of the rental sector. Housing supply remains robust, with 31,651 new units authorized in 2025, split nearly evenly between single-family and multi-family structures. This supply pipeline, combined with a 65.2% owner-occupancy rate, suggests a market attempting to balance high demand with increased inventory. The overall market assessment reflects significant stress on affordability and stability, driven by the disconnect between soaring asset prices and the capacity of local incomes to support them, despite strong economic vitality and employment depth.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -760,7 +740,7 @@ Economic fundamentals provide a mixed backdrop for this valuation. Local employm
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -922,47 +902,6 @@ Economic fundamentals provide a mixed backdrop for this valuation. Local employm
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 583.06, "2017": 628.33, "2018": 678.74, "2019": 725.64, "2020": 777.93, "2021": 933.38, "2022": 1145.64, "2023": 1157.39, "2024": 1206.28, "2025": 1214.17};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

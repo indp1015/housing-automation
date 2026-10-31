@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-stressed">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">46.5</span>
+    <span class="score-number">50.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 60.6</span>
       <span title="Stability">🏠 31.7</span>
-      <span title="Momentum">📈 48.9</span>
+      <span title="Momentum">📈 66.0</span>
       <span title="Vitality">⚡ 40.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Union County
-    <strong class="down">
-      fell -0.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -388,11 +368,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Union County, Arkansas, functions as a distinct buyer’s market characterized by significant affordability advantages relative to national benchmarks. The median home value of $120,900 is 46.9% below the national average, resulting in a price-to-income ratio of 2.19, substantially lower than the national mean of 3.20. This affordability is reinforced by a price-to-rent ratio of 11.9, well below the national standard of 18.7, indicating that purchasing equity is financially more accessible than long-term renting. While the rent burden sits at 18.4% of income, slightly above the national 17.2% average, the overall cost structure strongly favors homeownership. The market’s stability is compromised by recent volatility, reflected in a low stability metric, yet the affordability axis remains the primary driver of the county’s favorable positioning for entry-level buyers.
+  <p>Union County, Arkansas, operates as a distinctively buyer-friendly market, characterized by a price-to-income ratio of 2.19, significantly below the national average of 3.20. This affordability advantage is reinforced by a price-to-rent ratio of 11.9, well under the national benchmark of 18.7, indicating that ownership costs remain low relative to rental alternatives. However, the market’s stability is compromised by a volatility index of 31.7, reflecting recent price turbulence rather than structural weakness. The 2022 surge of 24.3% in home values, which moderated to 5.4% by 2024, suggests a post-pandemic correction that has not yet fully stabilized, creating an environment where momentum is present but unpredictable.
 
-Trend analysis reveals a sharp acceleration in home values following a period of stagnation. After a slight decline in 2021, prices surged 24.3% in 2022 to $110,900, moderating to 5.4% growth in 2024. This rapid appreciation contrasts with the current FHFA HPI data, which shows a recent year-over-year decline of 0.35%, underperforming the Arkansas state average of +1.09% by 1.44 percentage points. This divergence suggests that the initial post-2021 price spike has normalized, with recent transaction data indicating a slight cooling effect. The local economic foundation supports this stabilization, with 13,940 total jobs and an average weekly wage of $1,245. However, housing supply remains extremely constrained, with only 19 new single-family units authorized in 2025 and zero multi-family permits, limiting new inventory despite positive net migration of 637 filers between 2021 and 2022.
+Affordability metrics remain robust, with a rent burden of 18.4% only slightly exceeding the national average of 17.2%, while median home values sit 46.9% below the national mean and 14.5% below the Arkansas state average. This regional discount is partially offset by local economic constraints; with a median household income of $55,259, residents earn 18.7% less than the national average. The local economy supports this lower price point through modest employment figures, totaling 13,940 jobs with an average weekly wage of $1,245. Housing supply remains extremely tight, with only 19 new single-family units authorized in 2025 and zero multi-family permits, which likely contributes to the sustained upward pressure on prices despite high national mortgage rates of 7.32%.
 
-The broader economic context presents a mixed outlook for market vitality. Although the national 30-year fixed mortgage rate stands at 7.32%, Union County’s low entry price mitigates the impact of high interest rates on monthly payments compared to higher-cost regions. The owner-occupancy rate of 72.7% indicates a stable residential base, but the low total employment count suggests limited local economic diversification. The inflow of residents with an average income of $71,415 exceeds the outflow average of $72,003, hinting at a slight demographic shift toward higher-earning households. Ultimately, while the market exhibits strong affordability and a clear advantage for buyers, the recent negative momentum in the HPI and minimal new construction signal a market in transition. Potential buyers benefit from the current price-to-income disparity, but must account for the recent price correction and limited supply pipeline when evaluating long-term equity potential.</p>
+Migration data reveals a net inflow of 637 tax filers between 2021 and 2022, with incoming residents earning an average of $71,415, slightly less than those who left. This demographic shift introduces higher-income households into a low-cost housing stock, potentially driving the recent price appreciation. The divergence between the strong affordability score of 60.6 and the weak stability score of 31.7 highlights a market in transition. For potential buyers, the low entry price offers significant leverage, but the limited new construction and recent price spikes suggest that negotiating power may be diminishing. Renters face a balanced landscape where costs are manageable, but the trajectory of home values indicates that the window for affordable entry is narrowing as supply constraints persist and migration continues to reshape the local demographic profile.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -576,7 +556,7 @@ The broader economic context presents a mixed outlook for market vitality. Altho
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -738,47 +718,6 @@ The broader economic context presents a mixed outlook for market vitality. Altho
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 173.35, "2017": 172.72, "2018": 180.37, "2019": 179.61, "2020": 185.35, "2021": 196.91, "2022": 210.39, "2023": 222.88, "2024": 227.9, "2025": 227.11};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

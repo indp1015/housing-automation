@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">67.2</span>
+    <span class="score-number">64.6</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 28.3</span>
       <span title="Stability">🏠 89.2</span>
-      <span title="Momentum">📈 83.3</span>
+      <span title="Momentum">📈 72.9</span>
       <span title="Vitality">⚡ 78.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Marion County
-    <strong class="up">
-      rose +5.8%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,19 +315,6 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Marion County, Arkansas, exhibits a balanced market structure, characterized by a price-to-rent ratio of 17.1, which sits below the national average of 18.7, suggesting that renting remains a relatively competitive option against buying. The median home value of $163,300 is 28.3% below the national average, yet it commands a 15.4% premium over the state average, indicating localized strength within Arkansas. This positioning is reinforced by a high owner-occupancy rate of 81.3%, reflecting a stable residential base. Recent momentum, as captured by the FHFA House Price Index, shows a 5.84% year-over-year increase, significantly outperforming the state’s 1.09% growth. This divergence highlights that Marion County is experiencing stronger price appreciation than the broader state, driven by specific local demand factors rather than statewide trends.
-
-Affordability remains the primary constraint in this market. The price-to-income ratio stands at 3.36, slightly above the national benchmark of 3.20, while the median household income of $48,619 trails the national average by 28.5%. Consequently, the rent burden is 19.6% of income, exceeding the national average of 17.2%. Despite these affordability pressures, the market demonstrates robust stability and vitality, with a composite stability rating of 89.2 and vitality of 78.1. These high scores are underpinned by consistent price appreciation and positive net migration of 716 filers between 2021 and 2022. The inflow of residents with an average income of $53,965, which exceeds the median household income, suggests that incoming population is somewhat wealthier than the existing base, potentially supporting continued price resilience.
-
-Economic fundamentals provide a mixed backdrop for housing demand. Local employment is limited, with only 2,534 jobs and an average weekly wage of $841, which may cap long-term income growth. However, housing supply is constrained, with 190 new single-family units authorized in 2025 and zero multi-family permits, indicating a lack of rental inventory expansion. This supply tightness, combined with a 7.32% national mortgage rate, creates a complex environment where high borrowing costs are offset by limited new construction. The moderation of price growth from a peak of 9.5% in 2020 to 3.1% in 2024 suggests the market is normalizing after the pandemic-era surge. For stakeholders, the data indicates a market where entry barriers are rising due to price appreciation, yet the lack of new supply and positive migration trends continue to support asset values despite modest local wage growth.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -526,7 +493,7 @@ Economic fundamentals provide a mixed backdrop for housing demand. Local employm
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +655,6 @@ Economic fundamentals provide a mixed backdrop for housing demand. Local employm
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 148.61, "2017": 152.17, "2018": 152.68, "2019": 153.93, "2020": 164.0, "2021": 180.99, "2022": 214.8, "2023": 228.36, "2024": 260.3, "2025": 275.51};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

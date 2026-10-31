@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-challenging">
+<div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">53.3</span>
+    <span class="score-number">48.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 69.1</span>
       <span title="Stability">🏠 35.0</span>
-      <span title="Momentum">📈 81.0</span>
+      <span title="Momentum">📈 63.4</span>
       <span title="Vitality">⚡ 18.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Sevier County
-    <strong class="up">
-      rose +9.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Sevier County, Arkansas, operates as a distinct buyer’s market, characterized by significant affordability advantages relative to national benchmarks. The median home value of $117,600 stands 48.4% below the national average, while the price-to-income ratio of 2.20 is substantially lower than the national mean of 3.20. This structural affordability is reinforced by a price-to-rent ratio of 13.0, well below the national 18.7, indicating that purchasing remains a more financially efficient strategy than renting for many households. The rent burden of 16.8% is also slightly below the national average of 17.2%, further supporting the economic viability of homeownership in this low-cost environment.
+  <p>Sevier County, Arkansas, exhibits characteristics of a buyer’s market, driven by a price-to-income ratio of 2.20, significantly below the national average of 3.20. The median home value of $117,600 sits 48.4% below the national mean and 16.9% below the Arkansas state average. While the market has experienced robust momentum, with home values rising from $75,400 in 2017 to $117,600 in 2024, the recent annual growth rate has moderated to 5.3%, down from a peak of 12.7% in 2020. This stabilization suggests a maturing market rather than a speculative bubble. The price-to-rent ratio of 13.0, compared to the national benchmark of 18.7, further indicates that purchasing is financially more favorable than renting, as the median gross rent of $751 represents only 16.8% of the median household income, slightly under the national rent burden average of 17.2%.
 
-Recent momentum suggests a robust appreciation cycle, with the FHFA House Price Index showing a 9.69% year-over-year increase, outperforming the Arkansas state average of 1.09% by 8.60 percentage points. This strong upward trajectory follows a period of volatile growth, including a 12.7% surge in 2020 and a 12.6% jump in 2023, though the 2024 growth moderated to 5.3%. Despite the high national mortgage rate of 7.32%, which typically suppresses demand, local prices continue to rise, suggesting underlying demand resilience. However, the market’s stability is compromised by limited housing supply, with only six new units authorized in 2025, all single-family, and a narrow local economy supporting just 3,874 jobs with an average weekly wage of $886.
+A notable divergence exists between strong price momentum and weak local economic vitality. The county’s total employment stands at just 3,874 jobs, with an average weekly wage of $886, reflecting a labor market that lags behind national standards. Housing supply is critically constrained, with only six new single-family units authorized in 2025 and zero multi-family permits, which likely supports price appreciation despite limited local job growth. Migration data shows a net inflow of 192 filers, with average incomes for both inflows and outflows hovering near $50,000, suggesting demographic stability rather than high-income growth. The current 7.32% mortgage rate poses a challenge for affordability, yet the low entry price point mitigates this impact for qualified buyers.
 
-The primary tension in this market lies between high momentum and low economic vitality. While price appreciation is accelerating, the small job base and minimal new construction constrain long-term demographic expansion. Net migration of 192 filers indicates modest population growth, but the average income of incoming residents ($49,970) remains below the county’s median household income of $53,527. This divergence highlights a market where asset values are rising faster than local earning power, potentially widening the gap between affordability and actual purchasing capacity. For prospective buyers, the current environment offers entry at historically low price-to-income multiples, yet the lack of new supply and modest employment growth suggest that future appreciation will rely heavily on external demand rather than local economic expansion. The combination of strong price momentum and constrained supply creates a competitive landscape for affordable inventory, despite the county’s overall low cost of living.</p>
+The overall market assessment reflects high momentum and affordability but is weighed down by low stability and vitality scores. The stability metric is depressed by the small population of 15,712 and limited economic diversification, while the vitality score reflects the narrow employment base. For potential buyers, the low price-to-income ratio offers significant equity potential, provided they can secure financing in the current high-rate environment. Renters may find limited leverage, as the low price-to-rent ratio suggests that long-term rental costs are unlikely to offer substantial savings compared to ownership. The market’s trajectory is defined by supply scarcity and steady, moderate price appreciation, rather than rapid economic expansion.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ The primary tension in this market lies between high momentum and low economic v
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ The primary tension in this market lies between high momentum and low economic v
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 141.41, "2017": 138.53, "2018": 155.06, "2019": 155.87, "2020": 159.62, "2021": 182.81, "2022": 206.19, "2023": 217.85, "2024": 233.11, "2025": 255.7};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

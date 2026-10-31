@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">36.2</span>
+    <span class="score-number">40.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 24.6</span>
       <span title="Stability">🏠 29.9</span>
-      <span title="Momentum">📈 39.3</span>
+      <span title="Momentum">📈 57.0</span>
       <span title="Vitality">⚡ 57.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Santa Cruz County
-    <strong class="down">
-      fell -0.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -406,6 +386,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Santa Cruz County, Arizona, operates as a balanced market with distinct affordability constraints, characterized by a price-to-income ratio of 4.22 compared to the national average of 3.20. The market classification is further defined by a price-to-rent ratio of 23.4, significantly exceeding the national benchmark of 18.7, indicating that purchasing is relatively more expensive than renting when adjusted for income. Despite these headwinds, the rent burden stands at 18.0% of median household income, only slightly above the national average of 17.2%, suggesting that rental costs remain manageable relative to local earnings. This divergence highlights a market where entry barriers for homeownership are high, yet rental costs have not yet fully decoupled from local wage levels.
+
+Trend analysis reveals a period of rapid appreciation followed by moderation, with home values increasing from $138,400 in 2017 to $233,000 in 2024. The peak year-over-year growth of 18.9% in 2022 has since cooled to 7.8% in 2024, signaling a stabilization phase after a volatile expansion. This price trajectory contrasts with the slower growth in median gross rent, which reached $829 per month, creating a widening gap between asset values and rental income potential. The county’s economic foundation supports this moderate growth through positive net migration of 827 filers and a total employment base of 10,428 jobs, although the average weekly wage of $971 remains below national norms. Housing supply remains constrained by an all-single-family permit profile of 353 units in 2025, with zero multi-family authorizations, limiting density options and potentially sustaining price pressure.
+
+Regional context places Santa Cruz County 12.3% below the state average for home values, while its median household income of $55,217 trails the national average by 18.8%. This income disparity drives the low affordability component of the market’s overall assessment, which is weighed down by stability concerns due to the high price-to-rent ratio. Conversely, vitality indicators are supported by consistent population inflows and steady employment, contributing to a moderate momentum score. The current 7.32% mortgage rate further strains purchasing power, reinforcing the appeal of rental alternatives for those unable to qualify for financing. Consequently, the market exhibits strong underlying demand driven by migration and limited supply, yet remains fundamentally stressed by the disconnect between rising asset values and stagnant local income growth.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -583,7 +576,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -745,47 +738,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 148.93, "2017": 156.4, "2018": 162.73, "2019": 179.38, "2020": 188.26, "2021": 219.6, "2022": 263.24, "2023": 269.87, "2024": 288.25, "2025": 286.33};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

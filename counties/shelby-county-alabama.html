@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">60.1</span>
+    <span class="score-number">59.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 39.8</span>
       <span title="Stability">🏠 74.5</span>
-      <span title="Momentum">📈 62.4</span>
+      <span title="Momentum">📈 59.5</span>
       <span title="Vitality">⚡ 69.9</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Shelby County
-    <strong class="up">
-      rose +4.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -533,11 +513,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Shelby County, Alabama, functions as a balanced market characterized by robust economic fundamentals and moderate affordability constraints. The price-to-income ratio stands at 3.33, slightly above the national average of 3.20, while the rent burden remains precisely at the national benchmark of 17.2%. This equilibrium is supported by a median household income of $97,961, which exceeds the national average by 44.1%, providing a strong income base that offsets the county’s premium home values. The owner-occupancy rate of 81.4% further indicates a stable residential base, though the price-to-rent ratio of 19.4 suggests that purchasing offers a marginally better long-term value proposition than renting compared to the national standard of 18.7.
+  <p>Shelby County, Alabama, functions as a balanced market leaning slightly toward buyer advantage, characterized by robust economic fundamentals and sustained demand. The price-to-income ratio stands at 3.33, marginally above the national average of 3.20, while the rent burden aligns precisely with the national benchmark at 17.2% of income. This equilibrium suggests that while home prices have escalated, income growth and rental costs have remained proportionate, preventing severe affordability distress for either segment. The owner-occupancy rate of 81.4% further indicates a stable residential base, supported by a median household income of $97,961, which exceeds the national average by 44.1%.
 
-The market exhibits significant momentum, with home values rising faster than rents, a divergence that signals sustained demand for ownership. Between 2017 and 2024, median home values increased from $199,500 to $326,100, reflecting a compound growth trajectory that peaked at 17.4% year-over-year in 2022 before moderating to 9.2% in 2024. Recent FHFA data confirms this continued strength, showing a 4.01% year-over-year increase in 2025, which outpaces the state average of 2.79% by 1.22 percentage points. This outperformance is driven by positive net migration of 4,325 filers and a local economy supported by 75,336 jobs and an average weekly wage of $1,367. However, the current 7.32% mortgage rate introduces friction, limiting buyer purchasing power despite strong income levels.
+The market exhibits strong momentum, driven by a seven-year appreciation of 63.5% in median home values, from $199,500 in 2017 to $326,100 in 2024. Although the peak year-over-year growth of 17.4% in 2022 has moderated to 9.2% in 2024, the consistent upward trajectory signals enduring demand. This growth outpaces rental increases, resulting in a price-to-rent ratio of 19.4, slightly above the national mean of 18.7, which may incentivize ownership over renting for qualified buyers. The county’s economic vitality is underpinned by 75,336 total jobs and an average weekly wage of $1,367, while net migration of +4,325 filers between 2021 and 2022 demonstrates sustained demographic inflow.
 
-Affordability remains the primary constraint, with the county’s median home value of $326,100 sitting 43.2% above the national average and 104.2% above the state average. This premium is justified by the county’s superior economic vitality, including 1,308 new housing units authorized in 2025, with single-family construction dominating at 1,008 units. The stability of the market is evident in the consistent, albeit slowing, price appreciation, which contrasts with the sharper volatility seen in other regions. For potential buyers, the high price-to-income ratio necessitates careful budgeting, while renters face a median gross rent of $1,401 that consumes a standard portion of local income. The overall market dynamic is defined by high stability and vitality, where strong employment and migration sustain demand, but affordability metrics remain tight due to the county’s status as a high-income outlier within its state.</p>
+Regional context highlights Shelby County’s premium position, with home values 104.2% above the Alabama state average and 43.2% above the national average. However, this premium is justified by superior income levels and employment density. Housing supply remains constrained relative to demand, with 1,308 new units authorized in 2025, predominantly single-family (1,008 units), which may limit inventory flexibility. The current 30-year fixed mortgage rate of 7.32% adds financing friction, yet the market’s stability score of 74.5 reflects resilience against volatility. Affordability remains the primary constraint, scoring 39.8, due to high entry costs, but vitality and momentum scores of 69.9 and 62.4, respectively, confirm a dynamic, high-performing market. Potential buyers should note that while prices are elevated, the income-to-price ratio remains manageable compared to national peers, whereas renters face standard national-level burdens. The divergence between rapid price appreciation and steady rent growth suggests that ownership costs are rising faster than rental alternatives, a pattern consistent with high-growth suburban markets.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -721,7 +701,7 @@ Affordability remains the primary constraint, with the county’s median home va
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -883,47 +863,6 @@ Affordability remains the primary constraint, with the county’s median home va
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 344.03, "2017": 353.15, "2018": 374.18, "2019": 389.76, "2020": 409.45, "2021": 452.39, "2022": 530.65, "2023": 570.46, "2024": 583.88, "2025": 607.29};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

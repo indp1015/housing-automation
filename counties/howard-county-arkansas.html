@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">43.6</span>
+    <span class="score-number">38.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 33.7</span>
       <span title="Stability">🏠 37.4</span>
-      <span title="Momentum">📈 78.7</span>
+      <span title="Momentum">📈 59.5</span>
       <span title="Vitality">⚡ 22.4</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Howard County
-    <strong class="up">
-      rose +12.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -326,11 +306,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Howard County, Arkansas, exhibits a distinct buyer’s market profile, characterized by a price-to-rent ratio of 18.6, which aligns closely with the national average of 18.7, and a median home value of $153,900 that sits 32.4% below the national mean. The market’s affordability remains constrained relative to local earnings, with a price-to-income ratio of 3.37 exceeding the national benchmark of 3.20. Despite this, the rent burden stands at 18.2% of median household income, slightly above the national average of 17.2%, indicating that while ownership costs are elevated relative to local wages, rental costs are proportionally high. This dual pressure suggests that neither segment enjoys significant leverage, though the lower absolute price point favors buyers with fixed incomes over long-term holders of rental agreements.
+  <p>Howard County, Arkansas, presents a complex market dynamic characterized by strong price momentum but constrained economic vitality. With a median home value of $153,900 and a median household income of $45,603, the price-to-income ratio stands at 3.37, slightly above the national average of 3.20. This metric, combined with a rent burden of 18.2% against a national benchmark of 17.2%, suggests a market that is tightening for both buyers and renters, leaning slightly toward a seller’s environment for inventory despite the low absolute price points. The owner-occupancy rate of 72.5% indicates a stable residential base, yet the affordability axis remains under pressure relative to local earning power.
 
-The multi-year trend reveals a period of aggressive appreciation, with home values surging 13.7% in 2024 following a 16.4% jump in 2022. This momentum is further corroborated by the FHFA HPI, which shows a 12.19% year-over-year increase, significantly outperforming the Arkansas state average of 1.09% by 11.10 percentage points. This divergence highlights a localized surge in demand or supply constraints that is decoupling Howard County from broader state-level trends. The economic context supports this volatility, as the county’s total employment of 4,934 jobs and average weekly wage of $913 provide a modest but stable base. Net migration of +216 filers between 2021 and 2022 indicates a slight population gain, with inflow incomes averaging $53,224, suggesting an influx of higher-earning residents that may be driving price appreciation faster than local wage growth.
+The most striking feature of this market is the rapid acceleration in home values, which have risen 64.1% since 2017, including a 13.7% jump in 2024 alone. This surge significantly outpaces the modest median gross rent of $690, creating a divergence where asset values are decoupling from local wage growth. The average weekly wage of $913 translates to an annual income well below the national norm, highlighting a structural mismatch between housing costs and local employment capacity. While the county’s home values are 32.4% below the national average and 8.8% above the state average, the local economy supports only 4,934 total jobs across 302 establishments. This limited economic base fails to fully support the current valuation trajectory, suggesting that external factors or speculative demand may be driving prices rather than intrinsic local demand.
 
-The composite assessment reflects strong momentum, driven by the rapid price increases, but is tempered by low vitality and stability scores. The 22.4 vitality score reflects the limited economic scale, with only 302 establishments supporting the workforce. Meanwhile, the 33.7 affordability score underscores the strain on households, particularly given that median household income of $45,603 lags the national average by 32.9%. For potential participants, the 7.32% national mortgage rate further complicates entry, as high interest costs amplify the already elevated price-to-income ratio. The data indicates a market where rapid price growth is outpacing fundamental economic indicators, creating a scenario where short-term momentum is strong but long-term affordability risks remain significant.</p>
+Migration data reveals a net inflow of 216 filers, with incoming residents earning an average of $53,224, slightly higher than those leaving. This modest demographic shift contributes to the market’s momentum, which is the strongest driver of the county’s overall composite rating. However, this momentum is counterbalanced by low vitality scores, reflecting the thin employment landscape and limited commercial depth. The 7.32% mortgage rate further complicates entry, as high financing costs interact with rising home prices to squeeze purchasing power. For potential buyers, the risk lies in overpaying relative to local income ceilings, while renters face a stable but non-expansive rental sector. The market’s stability is compromised by the rapid price appreciation outstripping wage growth, indicating a fragile equilibrium where any slowdown in external demand could lead to significant correction. Ultimately, Howard County offers below-average entry prices but carries elevated risk due to the disconnect between housing values and the local economic engine.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -514,7 +494,7 @@ The composite assessment reflects strong momentum, driven by the rapid price inc
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -676,47 +656,6 @@ The composite assessment reflects strong momentum, driven by the rapid price inc
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 140.32, "2017": 143.69, "2018": 148.69, "2019": 158.18, "2020": 158.68, "2021": 181.98, "2022": 179.29, "2023": 243.09, "2024": 217.82, "2025": 244.38};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

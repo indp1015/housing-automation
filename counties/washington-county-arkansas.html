@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">39.7</span>
+    <span class="score-number">39.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 23.7</span>
       <span title="Stability">🏠 20.0</span>
-      <span title="Momentum">📈 49.1</span>
+      <span title="Momentum">📈 49.8</span>
       <span title="Vitality">⚡ 76.4</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Washington County
-    <strong class="up">
-      rose +3.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -448,6 +428,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Washington County, Arkansas, functions as a distinctively strong buyer’s market, characterized by robust demand fundamentals that have outpaced local income growth. The market classification is driven by a price-to-income ratio of 4.22, significantly exceeding the national average of 3.20, which indicates that home values have decoupled from local purchasing power. Despite this affordability strain, the area exhibits high vitality, evidenced by a home value premium of 110.9% over the state average and 31.0% over the national mean. This premium is sustained by a median household income of $70,639, which is only 3.9% above the national benchmark, suggesting that external demand rather than local wage growth is the primary engine for price appreciation.
+
+The multi-year trend reveals a period of accelerated appreciation, with median home values rising from $162,900 in 2017 to $298,400 in 2024. This trajectory includes a sharp 16.7% year-over-year increase in 2022 and a continued 12.2% gain in 2024. A notable anomaly exists in the divergence between asset values and rental costs; while home prices have surged, the median gross rent remains modest at $1,071 per month. Consequently, the price-to-rent ratio stands at 23.2, well above the national average of 18.7. This disparity suggests that the rental sector has not fully adjusted to the explosive growth in the ownership market, potentially signaling a lag in rental supply response or a shift in demographic preferences toward ownership.
+
+Economic context further illuminates these dynamics. Net migration of 5,579 filers between 2021 and 2022, with inflows averaging $87,161 in income, indicates that higher-earning households are entering the market, fueling demand despite a local average weekly wage of $1,158. Housing supply is attempting to keep pace, with 2,632 new units authorized in 2025, including 1,621 single-family homes. However, the high mortgage rate of 7.32% compounds affordability challenges, as the rent burden sits at 18.2% of income, slightly above the national 17.2%. The composite assessment reflects this tension: high vitality scores are offset by low affordability and stability metrics, driven by the rapid price escalation relative to static income levels. For prospective buyers, the data indicates a market where entry costs are high relative to local earnings, while renters may find temporary relief in lower immediate costs compared to the soaring ownership threshold.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -625,7 +618,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -787,47 +780,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 432.25, "2017": 459.86, "2018": 495.5, "2019": 519.27, "2020": 534.11, "2021": 612.87, "2022": 748.1, "2023": 821.32, "2024": 861.76, "2025": 889.07};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

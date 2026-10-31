@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">62.6</span>
+    <span class="score-number">63.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 60.2</span>
       <span title="Stability">🏠 66.2</span>
-      <span title="Momentum">📈 62.3</span>
+      <span title="Momentum">📈 66.7</span>
       <span title="Vitality">⚡ 62.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Saline County
-    <strong class="up">
-      rose +2.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -409,38 +389,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>The user wants a 280-320 word analysis of the Saline County, Arkansas housing market based on the provided data. I need to cover 9 specific points in 2-3 paragraphs, professional tone, third person, data-driven, no predictions, no headers/bullets. Let me draft.
+  <p>Saline County, Arkansas, operates as a balanced housing market, characterized by metrics that hover near national averages without extreme skew toward either buyers or renters. The price-to-income ratio stands at 2.80, which is notably lower than the national benchmark of 3.20, indicating relative affordability for homeowners. Concurrently, the rent burden is 15.7% of median income, slightly below the national average of 17.2%, suggesting that rental costs remain manageable for residents. The price-to-rent ratio of 17.8 is also marginally below the national average of 18.7, reinforcing the equilibrium between purchasing and renting. This stability is further supported by a high owner-occupancy rate of 78.2%, reflecting a settled residential base rather than a transient population.
 
-Key data points to incorporate:
-- Median home value: $221,200 (2024)
-- Median rent: $1,033
-- Median income: $79,046
-- Owner occupancy: 78.2%
-- Price trends: 2017 $147,400 to 2024 $221,200, peak YoY +15.6% in 2022, moderating to +4.5% in 2024
-- FHFA HPI 2025: 319.49, YoY +2.24% (state +1.09%), outperforming by 1.15pp
-- Employment: 24,366 jobs, avg weekly wage $918
-- Building permits 2025: 477 single-family, 0 multi-family
-- Migration: net +3,251 filers, inflow avg income $80,460
-- Mortgage rate: 7.32%
-- Price-to-income: 2.80 (natl 3.20)
-- Rent burden: 15.7% (natl 17.2%)
-- Price-to-rent: 17.8 (natl 18.7)
-- Home value vs national: -2.9%, vs state: +56.4%
-- Income vs national: +16.2%
-- Trend: home values rising faster than rents
-- Composite scores: Overall 62.6, Affordability 60.2, Stability 66.2, Momentum 62.3, Vitality 62.0
+The multi-year trend reveals a significant acceleration in home values, peaking at 15.6% year-over-year growth in 2022 before moderating to 4.5% in 2024. This trajectory indicates that the initial surge has stabilized, moving from a hot market to a more sustainable pace. A notable pattern emerges in the divergence between asset classes, as home values are rising faster than rents, which may signal shifting dynamics in the rental sector. The local economy supports this stability, with a median household income of $79,046, which is 16.2% higher than the national average. However, the average weekly wage of $918 suggests that while household income is robust, individual earning power may vary, potentially influencing household composition and purchasing power.
 
-Need to classify market: balanced? Price-to-income below national, rent burden below national, owner occupancy high (78.2%), price-to-rent below national. Suggests balanced but leaning buyer? Actually price-to-income 2.8 vs 3.2 national means more affordable. Rent burden low. But home values rising faster than rents. FHFA shows +2.24% YoY. Market classification: balanced with affordability advantage.
-
-Trend interpretation: steady appreciation 2017-2021, sharp spike 2022 (+15.6%), moderation 2023-2024. CAGR roughly? From 147.4 to 221.2 over 7 years = ~6.5% annualized.
-
-Affordability: price-to-income 2.8 vs 3.2 national, rent burden 15.7% vs 17.2% national. Good affordability.
-
-Regional context: home values 56.4% above state average but 2.9% below national. Income 16.2% above national. So high relative to state, but affordable nationally.
-
-Anomaly: home values rising faster than rents (price-to-rent 17.8 vs 18.7 national, but trend signal says home values rising faster than rents). Also zero multi-family permits.
-
-</p>
+Regional context highlights Saline County’s premium position within Arkansas, where home values are 56.4% above the state average, while remaining 2.9% below the national mean. This disparity underscores the county’s role as a high-income enclave within a lower-cost state. Economic vitality is bolstered by positive net migration of 3,251 filers and a steady supply of 477 new single-family units authorized in 2025, which helps mitigate potential price shocks from demand surges. The current 30-year fixed mortgage rate of 7.32% imposes a higher carrying cost for new buyers, yet the county’s strong income levels provide a buffer against interest rate volatility. Overall, the market exhibits strong stability and vitality, driven by robust employment and consistent migration, while affordability remains a key advantage compared to national standards.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -624,7 +577,7 @@ Anomaly: home values rising faster than rents (price-to-rent 17.8 vs 18.7 nation
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -786,47 +739,6 @@ Anomaly: home values rising faster than rents (price-to-rent 17.8 vs 18.7 nation
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 198.82, "2017": 206.62, "2018": 211.95, "2019": 217.73, "2020": 223.92, "2021": 244.13, "2022": 279.91, "2023": 302.72, "2024": 312.48, "2025": 319.49};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

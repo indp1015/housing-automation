@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">35.9</span>
+    <span class="score-number">41.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 52.6</span>
       <span title="Stability">🏠 14.9</span>
-      <span title="Momentum">📈 52.7</span>
+      <span title="Momentum">📈 75.0</span>
       <span title="Vitality">⚡ 16.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2023
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Bradley County
-    <strong class="down">
-      fell -14.5%
-    </strong>
-    year-over-year as of 2023.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,6 +315,19 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Bradley County, Arkansas, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 2.29, significantly below the national average of 3.20. The median home value of $94,800 stands 58.4% lower than the national benchmark and 33.0% below the Arkansas state average, reflecting deep economic divergence. While the price-to-rent ratio of 11.5 is well below the national norm of 18.7, suggesting that purchasing is financially superior to renting in the long term, the rent burden of 19.9% slightly exceeds the national average of 17.2%, indicating that rental costs remain a moderate strain on local incomes. This dynamic classifies the area as a buyer’s market, driven by low entry costs rather than high demand pressure.
+
+The multi-year trend reveals significant volatility rather than steady growth. Home values surged 15.4% in 2019 before contracting 10.3% in 2021, followed by a recovery to $97,000 in 2023. The most recent 2.3% decline to $94,800 in 2024 signals a stabilization phase after a period of erratic fluctuations. This instability is reflected in the low stability metric of 14.9, which, alongside a vitality score of 16.1, highlights the market’s fragility. The primary drivers of the overall assessment are the weak economic fundamentals and limited market depth, despite reasonable momentum scores of 52.7. The recent negative price adjustment suggests that the initial post-pandemic spike was unsustainable, leading to a correction that aligns prices more closely with local income levels.
+
+Economic context further constrains market vitality. With only 2,606 total jobs and an average weekly wage of $900, the local labor market offers limited purchasing power. Housing supply is nearly nonexistent, with just one new unit authorized in 2025, forcing the market to rely entirely on existing inventory. Although net migration is positive at +127 filers, the average income of incoming residents ($50,071) is only marginally higher than those leaving ($50,725), indicating that migration does not significantly boost local demand or price appreciation. Consequently, the market remains highly sensitive to external shocks, such as the current 7.32% mortgage rate, which further dampens buyer interest in an already low-income environment. Potential buyers face a market with high affordability but low liquidity and economic resilience, while renters encounter costs that are proportionally higher relative to local wages than the national average.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -513,7 +506,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -675,47 +668,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2014": 115.98, "2015": 104.67, "2016": 124.9, "2017": 114.37, "2018": 129.48, "2019": 114.23, "2020": 131.87, "2021": 150.97, "2022": 180.49, "2023": 154.29};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

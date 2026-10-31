@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">49.7</span>
+    <span class="score-number">47.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 27.3</span>
       <span title="Stability">🏠 31.7</span>
-      <span title="Momentum">📈 83.3</span>
+      <span title="Momentum">📈 76.1</span>
       <span title="Vitality">⚡ 63.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Fairbanks North Star Borough
-    <strong class="up">
-      rose +5.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -451,11 +431,40 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Fairbanks North Star Borough functions as a balanced market with distinct affordability constraints, characterized by a price-to-income ratio of 3.38, slightly above the national average of 3.20. The market exhibits strong momentum, evidenced by a composite vitality index of 63.8 and a recent FHFA Housing Price Index increase of 5.01% year-over-year. However, this growth is moderating from the peak 12.7% surge observed in 2022, suggesting a stabilization phase rather than a speculative bubble. The home value of $298,200 sits 31.0% above the national average, yet this premium is largely offset by household incomes that are 29.8% higher than the national mean, creating a relative parity in purchasing power despite absolute price levels.
+  <p>The user wants a 280-320 word analysis of the Fairbanks North Star Borough housing market based on provided data. I need to cover 9 specific points in 2-3 cohesive paragraphs, professional tone, third person, data-driven, no predictions, no headers/bullets. Let me draft.
 
-Affordability remains the primary structural weakness, with an affordability index of only 27.3. Renter burden stands at 19.8% of income, exceeding the national benchmark of 17.2%, while the price-to-rent ratio of 17.0 is below the national average of 18.7, indicating that ownership costs are proportionally lower relative to rental expenses. This divergence suggests that while entry barriers for buyers are high, the long-term cost of ownership may be more favorable than renting. The local economy supports this dynamic through robust employment, with 27,605 jobs and an average weekly wage of $1,347. Migration data reinforces demand, showing a net inflow of 4,453 filers in the 2021-2022 period, driven by an inflow of 40,574 individuals.
+Key data points to incorporate:
+- Median home value $298,200, up 5.6% YoY 2024, 12.7% peak in 2022
+- Median rent $1,459, rent burden 19.8% vs natl 17.2%
+- Median income $88,267
+- Price-to-income 3.38 vs natl 3.20
+- Price-to-rent 17.0 vs natl 18.7
+- Owner occupancy 61.7%
+- Population 95,460
+- Employment 27,605, avg weekly wage $1,347
+- Building permits: 31 total (13 SF, 18 MF)
+- Net migration +4,453 filers
+- Mortgage rate 7.32%
+- Composite scores: Affordability 27.3, Stability 31.7, Momentum 83.3, Vitality 63.8, Overall 49.7
+- Home value vs national +31%, vs state +5.2%
+- Income vs national +29.8%
+- Trend: home values rising faster than rents
 
-Supply constraints significantly influence market stability, which scores low at 31.7 due to limited new construction. Only 31 new units were authorized in 2025, comprising 13 single-family and 18 multi-family homes, a negligible addition relative to the population of 95,460. This scarcity, combined with a 7.32% national mortgage rate, keeps demand elevated but restricts buyer pool expansion. The county currently underperforms the state average by 3.27 percentage points in price growth, yet its home values remain 5.2% above the state median. For potential buyers, the high momentum and strong economic fundamentals suggest a resilient market, though the low affordability score indicates that financial qualification remains the primary barrier to entry. The combination of high income levels and constrained supply creates a market where pricing power remains with sellers, despite the recent deceleration in year-over-year appreciation.</p>
+Need to classify market: buyer's, renter's, or balanced? Price-to-rent 17.0 < 18.7 national suggests buying relatively more attractive than renting, but high mortgage rates (7.32%) and affordability challenges (price-to-income 3.38 > 3.20, rent burden 19.8% > 17.2%) complicate. Low supply (31 permits) and positive migration suggest seller's market for buying, but renter's market? Rent burden high, but price-to-rent low. Probably balanced to slightly buyer-favorable for purchasing vs renting, but affordability stressed.
+
+Trend: sharp 2022 spike (12.7%), moderating to 5.6% in 2024. Values rising faster than rents (price-to-rent below national).
+
+Affordability: price-to-income 3.38 > 3.20 national, rent burden 19.8% > 17.2%. Income 29.8% above national but home values 31% above national.
+
+Regional: home values +31% vs national, +5.2% vs state. Income +29.8% vs national.
+
+Anomaly: divergence between price and rent growth (price-to-rent 17 vs 18.7 national). Also 2022 spike.
+
+Practical implication: buyers face high rates and prices but relatively better buy-vs-rent math; renters face high burden.
+
+Momentum: FHFA HPI not given but trend shows strong momentum (score 83.3). 2024 +5.6% YoY.
+
+Economic context: low supply (31 permits), positive net migration (+4,453), employment 27,605, wages $1,347/</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -639,7 +648,7 @@ Supply constraints significantly influence market stability, which scores low at
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -801,47 +810,6 @@ Supply constraints significantly influence market stability, which scores low at
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 344.1, "2017": 357.42, "2018": 366.66, "2019": 369.97, "2020": 382.75, "2021": 410.8, "2022": 453.44, "2023": 478.92, "2024": 494.99, "2025": 519.79};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

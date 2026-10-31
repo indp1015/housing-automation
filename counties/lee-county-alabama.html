@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">43.0</span>
+    <span class="score-number">41.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 21.0</span>
       <span title="Stability">🏠 23.5</span>
-      <span title="Momentum">📈 64.0</span>
+      <span title="Momentum">📈 57.8</span>
       <span title="Vitality">⚡ 74.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Lee County
-    <strong class="up">
-      rose +4.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -512,6 +492,49 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>The user wants a 280-320 word analysis of the Lee County, Alabama housing market based on provided data. I need to cover 9 specific points in 2-3 paragraphs, professional tone, third person, data-driven, no predictions, no headers/bullets. Let me structure this.
+
+Key data points to incorporate:
+- Median home value: $262,200 (2024), up from $157,100 (2017) - 66.9% increase over 7 years
+- YoY growth: peaked at 20.3% in 2022, moderated to 9.8% in 2024
+- Median gross rent: $1,058/month
+- Median household income: $65,824
+- Price-to-income: 3.98 vs national 3.20
+- Rent burden: 19.3% vs national 17.2%
+- Price-to-rent: 20.7 vs national 18.7
+- Home value vs national: +15.1%, vs state: +64.2%
+- Income vs national: -3.2%
+- Owner occupancy: 66.3%
+- Population: 181,134
+- Employment: 50,806 jobs, avg weekly wage $967
+- Building permits: 1,575 (mostly single-family)
+- Net migration: +4,863 filers
+- Mortgage rate: 7.32%
+- Composite scores: Affordability 21, Stability 23.5, Momentum 64, Vitality 74
+
+Market classification: Price-to-income 3.98 > 3.20 national, price-to-rent 20.7 > 18.7 national, rent burden 19.3% > 17.2% national. Suggests seller's market / buyer's market stressed. High price-to-rent favors renting.
+
+Trend: Rapid appreciation 2017-2024, especially 2022 spike. Moderating but still 9.8% YoY in 2024. Home values rising faster than rents (price-to-rent above national).
+
+Affordability: Poor - price-to-income 3.98 vs 3.20, rent burden 19.3% vs 17.2%. Income below national (-3.2%) but home values above national (+15.1%) and state (+64.2%).
+
+Regional context: Significantly above state average (+64.2%), moderately above national (+15.1%). Auburn/Opelika university influence likely.
+
+Anomaly: Price-to-rent ratio 20.7 vs 18.7 national, and "trend signal: home values rising faster than rents" - divergence.
+
+Practical implication: Buyers face affordability challenges, high mortgage rates (7.32%), high price-to-income. Renters relatively better positioned but rent burden above national.
+
+Recent momentum: FHFA HPI not explicitly given but we have ACS trends showing 9.8% YoY 2024. Momentum score 64.
+
+Economic context: Net positive migration (+4,863), inflow income $84k > local median $65.8k. Employment 50</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Lee County on Our Sister Sites</h3>
@@ -688,7 +711,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -850,47 +873,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 357.83, "2017": 376.17, "2018": 395.45, "2019": 414.89, "2020": 427.06, "2021": 469.8, "2022": 534.51, "2023": 591.97, "2024": 612.64, "2025": 641.59};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

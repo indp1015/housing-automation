@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">56.1</span>
+    <span class="score-number">55.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 68.8</span>
       <span title="Stability">🏠 39.2</span>
-      <span title="Momentum">📈 63.6</span>
+      <span title="Momentum">📈 60.0</span>
       <span title="Vitality">⚡ 48.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Izard County
-    <strong class="up">
-      rose +4.1%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Izard County, Arkansas, functions as a distinctly buyer’s market, characterized by a price-to-income ratio of 2.61, which sits well below the national average of 3.20. This affordability is reinforced by a rent burden of 15.1%, lower than the national 17.2%, and a price-to-rent ratio of 17.3, indicating that purchasing offers superior value relative to leasing. The market’s momentum is driven by a significant appreciation cycle, where median home values surged from $79,400 in 2017 to $129,100 in 2024. This trajectory includes a peak year-over-year increase of 25.8% in 2022, moderating to 5.7% in 2024. Recent FHFA data confirms this sustained strength, showing a 4.13% year-over-year gain in 2025, which outpaces the state’s 1.09% growth by 3.04 percentage points.
+  <p>Izard County, Arkansas, functions as a distinct buyer’s market, characterized by a price-to-rent ratio of 17.3, which sits below the national average of 18.7. This metric, combined with a rent burden of just 15.1% compared to the national 17.2%, indicates that renting is relatively less expensive relative to local incomes than purchasing. However, the market exhibits significant volatility, evidenced by a sharp 25.8% year-over-year home value increase in 2022, which has since moderated to 5.7% in 2024. This rapid appreciation has outpaced rent growth, creating a divergence where home values have risen faster than rental costs, suggesting a shift in asset valuation dynamics rather than a simple supply-demand adjustment.
 
-Despite this price appreciation, the market exhibits structural constraints that limit broader vitality. The local economy supports only 2,018 jobs with an average weekly wage of $854, resulting in a median household income of $49,405, which is 27.3% below the national mean. Housing supply remains extremely tight, with only nine new single-family units authorized in 2025 and zero multi-family permits, creating a scarcity that likely supports current price levels. Migration data from 2021-2022 shows a net inflow of 510 filers, with incoming households averaging $51,327 in income, slightly higher than those leaving. This demographic shift, combined with the low supply, suggests that demand is outpacing the capacity of the local labor market to support further rapid expansion.
+Affordability remains a primary strength, with a price-to-income ratio of 2.61, well below the national benchmark of 3.20. Despite this relative affordability, the county’s median home value of $129,100 is 43.3% below the national average and 8.7% below the Arkansas state average. The local economic foundation is modest, supported by only 2,018 total jobs and an average weekly wage of $854. Housing supply is exceedingly constrained, with only nine new single-family units authorized in 2025 and zero multi-family units, limiting new entry-level options. This scarcity, coupled with a net positive migration of 510 filers between 2021 and 2022, has likely contributed to the recent price acceleration. The current 30-year mortgage rate of 7.32% further complicates entry for buyers, as high borrowing costs offset the lower absolute price points.
 
-The divergence between strong price momentum and moderate economic fundamentals creates a challenging stability profile. While the 75.4% owner-occupancy rate indicates a stable residential base, the rapid price escalation relative to income growth poses risks for long-term affordability. The current 7.32% mortgage rate further complicates entry for prospective buyers, as high borrowing costs offset the relative low price point. Consequently, the market is defined by high affordability metrics but low economic vitality, driven by constrained supply and modest employment growth. Potential buyers benefit from below-average price-to-income ratios, but renters and first-time buyers must navigate a market where price growth has historically outpaced wage increases, limiting the buffer against future economic shifts. The data indicates a market that is attractive for purchase due to low entry costs but lacks the robust economic engine typically associated with sustained, high-volume growth.</p>
+The overall market assessment reflects a tension between strong momentum and limited vitality. While the 75.4% owner-occupancy rate suggests stability, the low employment base and minimal new construction constrain long-term economic vitality. The recent deceleration in price growth from 25.8% to 5.7% indicates a normalization rather than a correction, aligning with broader national trends. For potential buyers, the low price-to-income ratio offers entry-level advantages, but the lack of new supply and high mortgage rates create friction. Renters benefit from low burdens, yet the rising home values suggest that the rental market may face upward pressure as the owner-occupant segment expands. The data underscores a market where affordability is high relative to income, but structural constraints in supply and employment limit broader economic resilience.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ The divergence between strong price momentum and moderate economic fundamentals 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ The divergence between strong price momentum and moderate economic fundamentals 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 128.25, "2017": 124.74, "2018": 128.27, "2019": 134.02, "2020": 144.35, "2021": 166.72, "2022": 188.41, "2023": 226.12, "2024": 219.8, "2025": 228.88};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">38.8</span>
+    <span class="score-number">40.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 8.1</span>
       <span title="Stability">🏠 48.0</span>
-      <span title="Momentum">📈 32.4</span>
+      <span title="Momentum">📈 41.1</span>
       <span title="Vitality">⚡ 81.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Mohave County
-    <strong class="up">
-      rose +1.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -577,11 +557,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Mohave County, Arizona, functions as a stressed buyer’s market characterized by significant affordability constraints despite robust economic vitality. The price-to-income ratio of 4.87 exceeds the national average of 3.20 by nearly 52%, while the rent burden stands at 22.7% compared to the national norm of 17.2%. These metrics indicate that housing costs consume a disproportionate share of local household income, which averages $57,684, well below the national mean. Consequently, the market exhibits low stability and affordability scores, reflecting a structural disconnect between asset values and local earning power. The price-to-rent ratio of 21.5, also above the national average of 18.7, further suggests that ownership costs are elevated relative to rental alternatives, pressuring both segments of the housing stock.
+  <p>Mohave County, Arizona, operates as a distinctively stressed buyer’s market, characterized by significant affordability constraints despite robust economic vitality. The market classification is driven by a price-to-income ratio of 4.87, substantially exceeding the national average of 3.20, and a rent burden of 22.7% compared to the 17.2% national norm. These metrics indicate that local purchasing power is insufficient to support current asset values, creating a structural barrier for entry-level buyers. Consequently, the affordability dimension heavily penalizes the overall market assessment, resulting in a composite rating of 38.8 out of 100. This low score reflects the tension between high vitality, evidenced by an 81.1 vitality sub-score, and poor affordability, which stands at only 8.1. The stability metric, at 48.0, suggests moderate consistency, while momentum trails at 32.4, indicating that while prices remain elevated, the pace of appreciation is no longer explosive.
 
-Recent momentum reveals a complex trajectory where historical appreciation has recently cooled. While home values surged 21.5% in 2022 and 11.0% in 2024, the latest FHFA HPI data indicates a mere 0.96% year-over-year increase, outpacing the state’s 0.52% growth by 0.44 percentage points. This deceleration from peak growth rates suggests the market is stabilizing after a period of rapid expansion. A notable divergence exists between price and rent trends, with home values rising faster than rents, potentially widening the gap between ownership and rental affordability. The county’s home values are 5.8% higher than the state average, yet local incomes lag 15.2% behind the national average, creating a persistent affordability deficit.
+Trend analysis reveals a period of rapid appreciation followed by a moderate cooling phase. Median home values surged from $138,700 in 2017 to $281,000 in 2024, with a peak annual growth rate of 21.5% in 2022. Although growth moderated to 11.0% in 2024, the cumulative increase remains substantial. A notable divergence exists between price and rent dynamics; home values are rising faster than rents, pushing the price-to-rent ratio to 21.5, above the national average of 18.7. This suggests that the equity accumulation for owners is outpacing the cost of living for renters, potentially incentivizing ownership among those with sufficient capital while straining the rental sector. The inflow of 7,762 net migrants, with an average income of $65,326, further complicates affordability, as incoming residents possess higher earning potential than the local median household income of $57,684, yet still face the high cost of entry.
 
-Economic fundamentals provide partial support for the market, driven by strong vitality indicators. Net migration of 7,762 filers and 1,817 new housing units authorized in 2025 demonstrate sustained demand and supply responsiveness. However, the national 30-year fixed mortgage rate of 7.32% significantly impacts purchasing power, exacerbating the affordability challenge. The high vitality score is underpinned by steady employment growth and inbound migration, with average inflow incomes of $65,326 slightly exceeding outflow incomes. For potential buyers, the current environment offers a plateau in price appreciation but remains financially demanding due to high interest rates and low local wages. Renters face a moderate burden, but the rising price-to-rent ratio suggests that long-term affordability may continue to erode without significant wage growth or supply expansion. The market remains resilient due to demographic inflows, yet the high cost of entry relative to local income levels defines its current stressed status.</p>
+Regional context highlights that Mohave County home values are 23.4% above the national average and 5.8% above the state average, while local incomes lag 15.2% below the national mean. This disparity underscores the premium placed on local housing relative to local earnings. Economic fundamentals show 47,644 total jobs and an average weekly wage of $1,003, supporting a baseline of demand. However, the 7.32% national mortgage rate exacerbates monthly payment burdens, further suppressing buyer velocity. Housing supply, with 1,817 new units authorized in 2025, primarily single-family, may not sufficiently offset the demand surge driven by migration. For stakeholders, the data indicates a market where asset values are decoupled from local income levels, requiring careful financial planning for both buyers and investors navigating this high-cost, high-vitality environment.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -764,7 +744,7 @@ Economic fundamentals provide partial support for the market, driven by strong v
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -926,47 +906,6 @@ Economic fundamentals provide partial support for the market, driven by strong v
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 402.9, "2017": 433.78, "2018": 479.8, "2019": 517.1, "2020": 553.32, "2021": 665.82, "2022": 794.38, "2023": 793.01, "2024": 815.04, "2025": 822.9};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">38.0</span>
+    <span class="score-number">33.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 27.5</span>
       <span title="Stability">🏠 18.4</span>
-      <span title="Momentum">📈 84.0</span>
+      <span title="Momentum">📈 66.1</span>
       <span title="Vitality">⚡ 20.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Drew County
-    <strong class="up">
-      rose +10.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -385,19 +365,6 @@
 </div>
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Drew County, Arkansas, operates as a distinctively balanced market with strong momentum, characterized by a price-to-rent ratio of 16.2, which sits below the national average of 18.7. This metric suggests that ownership costs are relatively favorable compared to rental expenses, despite the county’s median home value of $140,800 being 38.2% below the national mean. The market is currently experiencing significant upward pressure, evidenced by a 10.27% year-over-year increase in the FHFA House Price Index, a performance that outpaces the state average by 9.18 percentage points. This rapid appreciation follows a historic 19.2% surge in 2022, indicating that recent price growth has remained robust rather than moderating to historical norms.
-
-Affordability remains a critical constraint, with a price-to-income ratio of 3.29 slightly exceeding the national benchmark of 3.20. Although the median household income of $42,824 is 37.0% lower than the national average, it aligns closely with the state average, suggesting local wages are competitive within Arkansas. However, the rent burden stands at 20.3% of income, higher than the national 17.2%, reflecting tighter constraints for tenants. The economic foundation is fragile, supported by only 4,904 total jobs and an average weekly wage of $848. Housing supply is extremely limited, with just four new units authorized in 2025, all single-family, which likely contributes to the sustained price appreciation despite the high 7.32% mortgage rate.
-
-The primary driver of the market’s current standing is its exceptional momentum, which contrasts sharply with low stability and vitality scores. This divergence is highlighted by a net migration inflow of 262 filers, where incoming residents earn an average of $63,199, slightly less than the outflow average of $64,383. This demographic shift introduces higher-income households that can absorb rising prices, further decoupling local trends from broader state patterns. For potential buyers, the data indicates a market where entry costs are rising faster than local income growth, necessitating careful financial planning. The combination of scarce new construction and strong in-migration suggests that current pricing reflects a tight supply environment rather than broad-based economic expansion, requiring stakeholders to weigh immediate affordability against the risk of continued price escalation driven by limited inventory.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -576,7 +543,7 @@ The primary driver of the market’s current standing is its exceptional momentu
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -738,47 +705,6 @@ The primary driver of the market’s current standing is its exceptional momentu
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 185.25, "2017": 182.62, "2018": 189.11, "2019": 195.99, "2020": 201.07, "2021": 215.4, "2022": 230.49, "2023": 253.63, "2024": 252.7, "2025": 278.65};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

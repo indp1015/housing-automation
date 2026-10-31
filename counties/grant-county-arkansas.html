@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">75.1</span>
+    <span class="score-number">72.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Strong · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 84.6</span>
       <span title="Stability">🏠 69.1</span>
-      <span title="Momentum">📈 88.8</span>
+      <span title="Momentum">📈 77.1</span>
       <span title="Vitality">⚡ 51.3</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Grant County
-    <strong class="up">
-      rose +6.2%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -451,11 +431,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Grant County, Arkansas, functions as a distinctively affordable buyer’s market, characterized by a median home value of $161,700 and a robust 80.7% owner-occupancy rate. The market exhibits strong momentum, evidenced by a 4.7% year-over-year price increase in 2024 and a recent FHFA HPI growth of 6.23%, which significantly outpaces the state’s 1.09% average. This performance is driven by a price-to-income ratio of 2.26, well below the national benchmark of 3.20, and a rent burden of 13.2%, compared to the national 17.2%. These metrics indicate that housing costs remain manageable relative to the median household income of $71,549, which is 5.2% above the national average. While home values are 29.0% below the national mean, they sit 14.3% above the state average, suggesting local economic strength that diverges from broader Arkansas trends.
+  <p>Grant County, Arkansas, exhibits characteristics of a balanced market leaning toward affordability, driven by a price-to-income ratio of 2.26, significantly below the national average of 3.20. The rent burden stands at 13.2% of income, well under the national 17.2% benchmark, indicating low housing cost pressure for residents. With a median home value of $161,700 and a median gross rent of $788, the price-to-rent ratio of 17.1 suggests that purchasing remains a more financially stable option than renting, though the gap is narrowing. This affordability profile supports the high owner-occupancy rate of 80.7%, reflecting a stable, settled community structure rather than a transient rental market.
 
-The multi-year trend reveals a sharp acceleration in equity growth, with prices rising from $123,500 in 2017 to $161,700 in 2024. Notably, the market experienced a peak year-over-year increase of 13.2% in 2022, followed by a 9.3% gain in 2023, before moderating to 4.7% in 2024. This pattern suggests a market transitioning from rapid appreciation to a more sustainable growth phase. A notable divergence exists between price and rent dynamics; while home values have surged, the median gross rent remains modest at $788, resulting in a price-to-rent ratio of 17.1, slightly below the national 18.7. This implies that ownership offers a favorable entry point compared to long-term renting, particularly given the low new construction activity, with only 33 single-family units authorized in 2025 and zero multi-family permits.
+The multi-year trend reveals a distinct acceleration in home values following a period of stagnation. After fluctuating between $122,600 and $127,100 from 2017 to 2021, home prices surged 13.2% in 2022 and 9.3% in 2023, moderating to 4.7% in 2024. This recent momentum contrasts with the relatively flat rent trajectory, creating a divergence where asset values are rising faster than rental costs. Such a pattern often signals increasing demand for ownership or an adjustment in local valuation standards, though the current 7.32% mortgage rate may temper further rapid appreciation. The local economic context supports this stability, with total employment at 3,821 jobs and an average weekly wage of $1,055, which aligns closely with the median household income of $71,549.
 
-Economic fundamentals support this stability, though local employment remains constrained with 3,821 total jobs and an average weekly wage of $1,055. Positive net migration of 366 filers between 2021 and 2022, with inflow incomes averaging $71,064, indicates a steady influx of residents capable of sustaining demand. The high affordability score of 84.6 and momentum score of 88.8 drive the overall assessment, while the lower vitality score of 51.3 reflects limited job growth and construction activity. With mortgage rates at 7.32%, the low price-to-income ratio continues to mitigate financing costs. Potential buyers benefit from significant equity potential and low entry barriers, while renters face limited multi-family supply, reinforcing the market’s tilt toward ownership. The data collectively points to a resilient, value-driven market where affordability remains the primary competitive advantage.</p>
+Regional positioning highlights Grant County’s premium status within Arkansas, where home values are 14.3% above the state average, despite being 29.0% below the national mean. This relative strength is bolstered by positive net migration of 366 filers, indicating sustained demographic inflow. However, housing supply remains constrained, with only 33 new single-family units authorized in 2025 and zero multi-family permits, limiting new inventory. The composite assessment reflects strong momentum and affordability, scoring 88.8 and 84.6 respectively, while vitality lags at 51.3 due to the small economic base of 350 establishments. For potential buyers, the combination of low entry costs and positive migration trends suggests a resilient market, whereas renters face minimal cost pressure but limited new housing options. The data indicates a market defined by affordability and steady appreciation rather than speculative volatility.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -639,7 +619,7 @@ Economic fundamentals support this stability, though local employment remains co
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -801,47 +781,6 @@ Economic fundamentals support this stability, though local employment remains co
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 148.59, "2017": 151.37, "2018": 153.2, "2019": 157.7, "2020": 161.46, "2021": 179.82, "2022": 211.64, "2023": 234.94, "2024": 235.41, "2025": 250.07};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

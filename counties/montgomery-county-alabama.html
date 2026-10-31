@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">44.2</span>
+    <span class="score-number">46.1</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 32.7</span>
       <span title="Stability">🏠 30.5</span>
-      <span title="Momentum">📈 65.9</span>
+      <span title="Momentum">📈 73.3</span>
       <span title="Vitality">⚡ 51.5</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Montgomery County
-    <strong class="up">
-      rose +1.4%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -552,9 +532,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Montgomery County, Alabama, functions as a distinctly renter-favorable market, characterized by a price-to-rent ratio of 13.1, which sits well below the national average of 18.7. This structural advantage is reinforced by a median home value of $171,900, positioned 24.5% below the national mean. The market exhibits strong momentum, driven by a 7.4% year-over-year appreciation in 2024 following a 12.3% surge in 2022. However, recent FHFA HPI data indicates a deceleration to +1.42% YoY, underperforming the state’s +2.79% growth rate by 1.37 percentage points. This divergence suggests that while long-term equity gains have been robust, current transactional pricing is stabilizing relative to broader Alabama trends. The affordability profile remains mixed; the price-to-income ratio of 2.89 is favorable compared to the national 3.20, yet the rent burden stands at 22.1% of household income, significantly exceeding the national average of 17.2%. This indicates that while purchasing entry-level homes is relatively accessible, the rental sector imposes a heavier financial strain on residents earning the median $59,386.
+  <p>Montgomery County, Alabama, operates as a distinctively balanced market with a strong lean toward buyer advantage, characterized by a price-to-rent ratio of 13.1, significantly below the national average of 18.7. This metric indicates that purchasing remains substantially more economical than long-term renting, despite a median home value of $171,900. The affordability profile is reinforced by a price-to-income ratio of 2.89, which is favorable compared to the national benchmark of 3.20, suggesting that local income levels, averaging $59,386, support home ownership relative to asset prices. However, rental affordability is strained, with a rent burden of 22.1% of income exceeding the national average of 17.2%, implying that fixed costs for renters are disproportionately high relative to their earnings.
 
-Regional context reveals a county outperforming its state peers in asset value, sitting 7.7% above the Alabama average, despite incomes running 12.7% below the national norm. A notable anomaly exists in the migration data, where net inflows of 3,246 filers demonstrate no significant income premium, with incoming and outgoing filers averaging nearly identical incomes of $72,340 and $72,646, respectively. This lack of high-income demographic shift limits upward pressure on luxury segments. Economic fundamentals support moderate vitality, with 96,037 total jobs and an average weekly wage of $1,161. Housing supply remains adequate, with 729 new units authorized in 2025, split between 465 single-family and 264 multi-family structures. The high 7.32% national mortgage rate further constrains demand, likely contributing to the recent slowdown in price appreciation. Consequently, the market’s stability is compromised by high rental costs, while momentum is tempered by macroeconomic interest rate headwinds. For potential buyers, the lower price-to-income ratio offers a competitive entry point compared to national benchmarks, whereas renters face above-average cost burdens that may incentivize a transition to homeownership despite elevated financing costs.</p>
+The multi-year trend reveals a sharp acceleration in housing values, with median prices surging 12.3% in 2022 and continuing to rise 7.4% in 2024 to reach $171,900. This momentum contrasts with the relatively stable income growth, creating a divergence where asset appreciation is outpacing wage increases. While the county’s home values are 24.5% below the national average, they sit 7.7% above the state average, positioning Montgomery as a premium market within Alabama. The local economic context supports this growth through positive net migration of 3,246 filers and a robust employment base of 96,037 jobs. However, the supply of new housing units, totaling 729 in 2025, may not fully offset demand pressures, particularly with a national mortgage rate of 7.32% increasing the cost of leverage for prospective buyers.
+
+The market’s vitality is driven by strong momentum, evidenced by the consistent year-over-year price increases since 2021, yet stability indicators remain moderate due to the widening gap between income and asset values. The composite assessment reflects a market where the low price-to-rent ratio and favorable price-to-income ratio provide structural support for buyers, while the high rent burden signals stress for the rental sector. The significant outperformance of home value growth compared to rent growth suggests that equity accumulation is becoming the primary driver of household wealth in the region. For potential buyers, the data supports entry at a price point that remains historically accessible relative to national standards, whereas renters face limited relief as income growth lags behind the rapid appreciation of local real estate assets. The reliance on external migration and steady employment provides a foundation for sustained demand, though the pace of new construction will be critical in moderating future price volatility.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -738,7 +720,7 @@ Regional context reveals a county outperforming its state peers in asset value, 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -900,47 +882,6 @@ Regional context reveals a county outperforming its state peers in asset value, 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 244.43, "2017": 245.27, "2018": 245.95, "2019": 253.07, "2020": 263.46, "2021": 284.13, "2022": 321.36, "2023": 338.74, "2024": 352.28, "2025": 357.29};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

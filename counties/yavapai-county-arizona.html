@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">42.3</span>
+    <span class="score-number">43.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 4.2</span>
       <span title="Stability">🏠 58.6</span>
-      <span title="Momentum">📈 40.4</span>
+      <span title="Momentum">📈 43.2</span>
       <span title="Vitality">⚡ 81.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Yavapai County
-    <strong class="up">
-      rose +2.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -575,6 +555,19 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Yavapai County presents a distinctively stressed housing environment where high vitality collides with severe affordability constraints. The market is neither purely a buyer’s nor a renter’s market but rather an exclusionary zone for local income earners, evidenced by a price-to-income ratio of 6.11, nearly double the national average of 3.20. While the owner-occupancy rate sits at a healthy 75.1%, the median home value of $425,200 stands 86.7% above the national mean and 60.0% above the Arizona state average. This disparity is exacerbated by a median household income of $69,613, which is only 2.4% above the national norm, creating a fundamental mismatch between local earning power and asset prices. The rent burden of 23.3% also exceeds the national benchmark of 17.2%, indicating that even the rental segment offers limited relief for median-income households.
+
+The trajectory of home values reveals a period of aggressive appreciation, with prices doubling from $215,000 in 2017 to $425,200 in 2024. The peak year-over-year surge of 19.9% in 2022 has moderated to 8.2% in 2024, yet values continue to rise faster than rents, driving the price-to-rent ratio to 26.2 compared to the national 18.7. This divergence suggests that ownership costs are escalating disproportionately to rental costs, a pattern often associated with speculative investment or supply constraints. The local economic foundation supports this demand through robust vitality metrics, including a net migration inflow of 8,630 filers and an average weekly wage of $1,042. However, housing supply remains tight, with only 1,718 new units authorized in 2025, insufficient to offset the influx of higher-income migrants whose average income of $81,788 significantly outpaces local averages.
+
+The current 7.32% mortgage rate further dampens purchasing power, reinforcing the market's stress indicators. Although stability metrics remain moderate at 58.6, the affordability dimension is critically low at 4.2, reflecting the severe gap between income and asset prices. Momentum is decelerating as the growth rate cools from its 2022 peak, yet the underlying demand drivers—migration and wage growth—remain strong. For potential buyers, the data indicates that local income levels are insufficient to support current price points without substantial external capital, while renters face above-average cost burdens. The market’s high vitality score of 81.7 is driven by economic activity and population growth, but this does not translate to accessibility for the median resident, resulting in a composite assessment that highlights significant structural imbalance.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Yavapai County on Our Sister Sites</h3>
@@ -752,7 +745,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -914,47 +907,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 378.46, "2017": 412.32, "2018": 450.1, "2019": 478.77, "2020": 503.36, "2021": 594.36, "2022": 709.82, "2023": 732.79, "2024": 760.61, "2025": 780.66};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

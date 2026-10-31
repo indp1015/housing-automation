@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">60.4</span>
+    <span class="score-number">59.1</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 28.4</span>
       <span title="Stability">🏠 64.0</span>
-      <span title="Momentum">📈 79.1</span>
+      <span title="Momentum">📈 73.8</span>
       <span title="Vitality">⚡ 80.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Kenai Peninsula Borough
-    <strong class="up">
-      rose +4.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -448,6 +428,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Kenai Peninsula Borough presents a balanced but increasingly strained housing landscape, characterized by strong momentum and vitality offset by significant affordability challenges. The market is neither strictly a buyer’s nor a renter’s domain; rather, it exhibits a price-to-income ratio of 4.01, which exceeds the national average of 3.20, indicating that homeownership costs have outpaced local earning power. Conversely, the rent burden sits at 17.6% of income, marginally above the national norm of 17.2%, suggesting that rental affordability remains relatively stable despite rising asset values. This divergence highlights a structural shift where equity accumulation for owners is accelerating faster than the cost of living for tenants.
+
+Trend data reveals a pronounced acceleration in home values, with year-over-year growth surging from 1.5% in 2021 to 12.8% in 2022 and sustaining at 8.6% in 2024. This recent momentum contrasts sharply with the modest 1.0% to 2.2% annual increases observed between 2017 and 2019. The rapid appreciation is partially driven by net migration inflows of 2,290 filers in the 2021-2022 period, where incoming residents reported average incomes of $91,492, slightly lower than the $92,113 average of those departing. This demographic shift, combined with limited new supply—only 222 units authorized in 2025, predominantly single-family—creates persistent demand pressure. The local economy supports this demand through an average weekly wage of $1,207 and a median household income of $80,538, which is 18.4% higher than the national average.
+
+Regional context further underscores the market’s unique positioning. Home values are 14.0% above the Alaska state average and 41.9% above the national mean, reflecting the premium associated with the borough’s proximity to Anchorage and its energy sector employment, which totals 16,658 jobs. The high vitality and momentum indicators are driven by this robust employment base and sustained price appreciation, while the low affordability score reflects the widening gap between asset prices and income growth. With a 30-year fixed mortgage rate at 7.32%, the cost of leverage remains high, amplifying the affordability constraint for prospective buyers. The price-to-rent ratio of 22.7, significantly above the national 18.7, suggests that buying is currently less attractive relative to renting than in most other U.S. markets. Consequently, the market’s stability is maintained by high owner occupancy at 77.0%, but the trajectory indicates that affordability will remain the primary friction point for new market entrants.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -625,7 +618,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -787,47 +780,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 194.77, "2017": 197.68, "2018": 206.46, "2019": 207.26, "2020": 214.37, "2021": 229.73, "2022": 270.59, "2023": 297.78, "2024": 313.97, "2025": 328.3};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

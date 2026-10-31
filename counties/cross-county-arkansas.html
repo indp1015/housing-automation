@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">42.0</span>
+    <span class="score-number">47.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 59.6</span>
       <span title="Stability">🏠 25.8</span>
-      <span title="Momentum">📈 46.5</span>
+      <span title="Momentum">📈 67.8</span>
       <span title="Vitality">⚡ 30.2</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Cross County
-    <strong class="down">
-      fell -6.5%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -388,11 +368,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Cross County, Arkansas, presents a complex housing landscape characterized by extreme affordability relative to national standards but significant recent volatility. The market leans toward a buyer’s environment, evidenced by a price-to-income ratio of 2.31, substantially below the national average of 3.20, and a price-to-rent ratio of 12.8 compared to the national 18.7. These metrics suggest that purchasing is significantly more financially accessible than renting, with a rent burden of 18.0% only slightly exceeding the national norm of 17.2%. However, this affordability is undercut by a sharp recent correction; the FHFA House Price Index indicates a year-over-year decline of 6.51% in 2025, a performance that underperforms the Arkansas state average of +1.09% by 7.60 percentage points. This recent downturn contrasts with the strong appreciation seen in 2022 and 2024, where home values surged 14.3% and 13.0% respectively, suggesting a market prone to high volatility rather than steady growth.
+  <p>Cross County, Arkansas, functions as a distinctively affordable market, characterized by a price-to-income ratio of 2.31, significantly below the national average of 3.20. This affordability is reinforced by a price-to-rent ratio of 12.8, well under the national benchmark of 18.7, indicating that purchasing remains a more financially efficient strategy than renting for qualified buyers. The rent burden stands at 18.0% of median household income, slightly above the national average of 17.2%, yet the overall cost structure remains accessible relative to local earnings. With a median home value of $117,500, the market sits 48.4% below the national average and 16.9% below the Arkansas state average, reflecting a deep discount driven by a median household income of $50,863, which is 25.2% lower than the national norm.
 
-The economic fundamentals reveal a fragile support structure for the housing sector. With a total employment base of only 3,619 jobs and an average weekly wage of $818, the local economy lacks the depth to sustain the rapid price increases observed in the early 2020s. Housing supply is minimal, with only 28 new single-family units authorized in 2025 and zero multi-family construction, indicating a tight inventory that may have contributed to the earlier price spikes. Migration data shows a modest net inflow of 239 filers, with incoming households earning slightly less ($53,661) than those leaving ($54,084), suggesting that demographic shifts are not driving premium demand. The current 30-year mortgage rate of 7.32% further pressures affordability, making the low median home value of $117,500 a critical factor for entry-level buyers.
+Recent price appreciation has been volatile yet robust, accelerating from a 1.8% increase in 2021 to 14.3% in 2022 and 13.0% in 2024. This surge contrasts with the relatively stable median gross rent of $764, creating a divergence where asset values are rising faster than rental costs. Such momentum is not supported by substantial new supply, as only 28 single-family units were authorized in 2025, with zero multi-family construction. This supply constraint, combined with positive net migration of 239 tax filers, suggests underlying demand pressure despite the small population of 16,543. The local economy supports this modest growth, with 3,619 total jobs and an average weekly wage of $818, though the low establishment count of 420 limits economic diversification.
 
-The composite assessment of this market reflects a "stressed" condition, driven primarily by low stability and vitality scores. While the affordability axis remains strong at 59.6, the stability score of 25.8 highlights the risk associated with the recent price correction and thin economic base. The momentum score of 46.5 captures the shift from rapid appreciation to decline, while the vitality score of 30.2 underscores the limited job market and construction activity. For potential buyers, the current price adjustment offers a more favorable entry point than the 2024 peak, but the lack of robust local employment growth and minimal new supply suggests that long-term value appreciation may remain sluggish. Renters, meanwhile, face a market where the cost of living is low, but the transition to homeownership is increasingly attractive due to the widening gap between purchase costs and rental expenses.</p>
+The market’s stability is compromised by the sharpness of recent price corrections and gains, such as the 2.7% decline in 2020 followed by double-digit increases. This volatility, coupled with a high owner-occupancy rate of 67.5%, indicates a community where housing equity is a primary asset, but liquidity may be constrained. For potential buyers, the current 7.32% mortgage rate poses a significant headwind, increasing monthly debt service relative to local incomes. However, the low entry price point mitigates this risk compared to higher-cost regions. The overall market profile is defined by high affordability but low vitality, driven by limited economic scale and supply constraints that amplify price sensitivity to small shifts in demand.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -576,7 +556,7 @@ The composite assessment of this market reflects a "stressed" condition, driven 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -738,47 +718,6 @@ The composite assessment of this market reflects a "stressed" condition, driven 
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 180.06, "2017": 183.05, "2018": 184.28, "2019": 186.11, "2020": 194.24, "2021": 219.63, "2022": 258.82, "2023": 267.94, "2024": 298.26, "2025": 278.83};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

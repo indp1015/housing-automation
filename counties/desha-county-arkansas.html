@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">40.1</span>
+    <span class="score-number">35.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 44.0</span>
       <span title="Stability">🏠 14.1</span>
-      <span title="Momentum">📈 81.5</span>
+      <span title="Momentum">📈 61.1</span>
       <span title="Vitality">⚡ 14.9</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2024
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Desha County
-    <strong class="up">
-      rose +15.4%
-    </strong>
-    year-over-year as of 2024.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,19 +315,6 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Desha County, Arkansas, functions as a distinctively affordable buyer’s market, characterized by extreme value relative to national benchmarks. The median home value of $90,900 sits 60.1% below the national average and 35.7% below the state average, driven by a median household income of $37,662. This economic baseline results in a price-to-income ratio of 2.41, significantly lower than the national average of 3.20, indicating high purchasing power relative to asset prices. However, this affordability is counterbalanced by a rent burden of 22.9%, which exceeds the national average of 17.2%, suggesting that while homeownership is accessible, rental costs consume a disproportionate share of local earnings. The price-to-rent ratio of 10.6, well below the national 18.7, further underscores the financial advantage of ownership over renting in this rural economy.
-
-The market exhibits strong recent momentum despite a small, stagnant supply base. Only two new single-family units were authorized in 2025, creating a tight inventory environment that likely supports price appreciation. This scarcity aligns with the FHFA HPI, which shows a 15.45% year-over-year increase, vastly outperforming the Arkansas state average of 1.09%. This divergence highlights a localized surge in transaction-based values, potentially driven by the net inflow of 91 filers between 2021 and 2022. Although the local economy is small, with only 3,142 total jobs and an average weekly wage of $935, the recent price acceleration suggests demand is outpacing the limited housing stock. The long-term trend reveals a shift from rapid 2020 growth of 17.4% to a stabilized 2.0% increase in 2024, indicating a maturing market phase rather than a speculative bubble.
-
-Affordability remains the primary driver of the county’s favorable positioning, while stability and vitality remain constrained by the small economic base. The low price-to-income ratio and high price-to-rent spread make Desha County an attractive option for buyers seeking equity growth, particularly given the 7.32% national mortgage rate which makes low absolute prices critical for qualification. Renter’s face higher relative costs, but the overall low price point limits total monthly obligations. The data indicates a market where supply constraints and modest population growth are fueling price appreciation that far exceeds state trends, creating a unique dynamic where affordability persists despite accelerating values.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -526,7 +493,7 @@ Affordability remains the primary driver of the county’s favorable positioning
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +655,6 @@ Affordability remains the primary driver of the county’s favorable positioning
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2014": 125.49, "2015": 132.32, "2016": 135.76, "2017": 135.77, "2018": 153.29, "2019": 152.58, "2020": 162.83, "2021": 163.72, "2022": 150.41, "2024": 173.65};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

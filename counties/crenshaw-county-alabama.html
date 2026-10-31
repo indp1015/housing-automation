@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">59.7</span>
+    <span class="score-number">54.1</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 68.7</span>
       <span title="Stability">🏠 43.8</span>
-      <span title="Momentum">📈 89.9</span>
+      <span title="Momentum">📈 67.5</span>
       <span title="Vitality">⚡ 28.2</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Crenshaw County
-    <strong class="up">
-      rose +47.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Crenshaw County, Alabama, functions as a distinctively affordable buyer’s market, characterized by significant price-to-income advantages relative to national benchmarks. The median home value of $114,000 against a median household income of $48,560 yields a price-to-income ratio of 2.35, substantially below the national average of 3.20. Similarly, the rent burden stands at 16.3% of income, slightly under the national norm of 17.2%, indicating that both ownership and rental costs remain accessible for local residents. This affordability profile is reinforced by a price-to-rent ratio of 14.4, which suggests that purchasing is financially more favorable than renting compared to the national average of 18.7. Consequently, the market leans heavily toward buyers who can leverage low entry costs, despite the broader economic constraints typical of rural Alabama.
+  <p>Crenshaw County, Alabama, functions as a distinctly buyer’s market, characterized by a price-to-income ratio of 2.35, significantly below the national average of 3.20. This affordability is further evidenced by a rent burden of 16.3%, slightly lower than the national benchmark of 17.2%. The market exhibits strong momentum, with home values rising from $76,800 in 2017 to $114,000 in 2024, representing a cumulative increase of approximately 48.4%. While the peak year-over-year growth occurred in 2022 at 17.0%, the rate has moderated to 5.2% in 2024, indicating a stabilization of the rapid appreciation phase. This trajectory contrasts sharply with the local economic vitality, which remains constrained by a total employment base of only 2,794 jobs and an average weekly wage of $979.
 
-The most striking data anomaly is the extreme divergence between recent price momentum and local economic fundamentals. While the FHFA House Price Index reports a recent year-over-year change of 47.26%, a figure that vastly outpaces the state’s 2.79% growth, this surge appears disproportionate to the county’s limited economic base. The local economy supports only 2,794 jobs with an average weekly wage of $979, and new housing supply is negligible, with just four single-family units authorized in 2025. This scarcity of new construction, combined with a net migration inflow of 212 filers, likely contributed to the sharp 2022 price spike of 17.0% and subsequent moderation to 5.2% in 2024. The high momentum score of 89.9 reflects this rapid appreciation, yet it contrasts sharply with a vitality score of 28.2, highlighting a market with strong price growth but weak underlying demographic and economic expansion.
+The primary anomaly in this market is the divergence between asset appreciation and local income growth. Home values are 49.9% below the national average and 28.6% below the state average, yet they are rising faster than rents, as indicated by the trend signal. This suggests that value gains are driven more by external demand or investment interest rather than robust local wage expansion. Net migration of +212 filers between 2021 and 2022, with inflow incomes averaging $53,696, provides a modest tailwind, but the housing supply remains critically low, with only four new single-family units authorized in 2025. This scarcity supports price resilience despite the challenging economic environment, where the high mortgage rate of 7.32% further limits local purchasing power.
 
-For potential participants, the primary implication is that while entry prices are low, the recent volatility suggests limited stability. The stability score of 43.8 underscores this risk, as the market has experienced rapid revaluation without corresponding infrastructure or job growth to sustain it. Buyers should note that the 7.32% national mortgage rate significantly increases carrying costs, potentially eroding the affordability advantage if local incomes do not rise commensurately. Rents, meanwhile, have lagged behind home price appreciation, with median gross rent at $661, creating a widening gap between ownership and rental costs. Ultimately, Crenshaw County offers a low-cost entry point into homeownership, but the disparity between its exceptional price momentum and modest economic vitality requires careful consideration of long-term financial sustainability.</p>
+The market’s stability is compromised by its small size and limited economic diversification, reflected in the low vitality metrics. However, the high momentum score is justified by the consistent, albeit slowing, price appreciation. For potential buyers, the low entry price relative to national standards offers significant equity potential, provided they can secure financing at current rates. Renters benefit from a favorable price-to-rent ratio of 14.4, well below the national average of 18.7, making renting a financially efficient alternative to buying in the short term. The combination of low affordability barriers and moderate price growth creates a niche environment where external capital may be more influential than local income dynamics, necessitating careful assessment of long-term economic sustainability.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ For potential participants, the primary implication is that while entry prices a
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ For potential participants, the primary implication is that while entry prices a
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 149.01, "2017": 142.36, "2018": 148.86, "2019": 158.09, "2020": 154.93, "2021": 166.18, "2022": 180.98, "2023": 221.8, "2024": 179.24, "2025": 263.95};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

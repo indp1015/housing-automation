@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-challenging">
+<div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">58.5</span>
+    <span class="score-number">60.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 56.7</span>
       <span title="Stability">🏠 78.2</span>
-      <span title="Momentum">📈 57.4</span>
+      <span title="Momentum">📈 67.3</span>
       <span title="Vitality">⚡ 37.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Geneva County
-    <strong class="up">
-      rose +0.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -406,6 +386,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Geneva County, Alabama, functions as a distinctively affordable market characterized by a strong owner-occupancy rate of 78.1% and a price-to-income ratio of 2.48, significantly below the national average of 3.20. This affordability profile positions the area as a buyer’s market for those with local purchasing power, further supported by a price-to-rent ratio of 13.9 compared to the national benchmark of 18.7. The low rent burden of 17.8% aligns closely with national norms, indicating that while housing costs are accessible, the primary advantage lies in equity accumulation rather than rental savings. The market’s stability is reinforced by a seven-year compound annual growth rate of home values that has outpaced inflation, despite a minor contraction in 2023.
+
+The multi-year trend reveals a robust recovery and expansion phase, with home values increasing from $87,800 in 2017 to $130,700 in 2024. This 48.9% cumulative gain reflects consistent momentum, punctuated by a notable 8.7% year-over-year surge in 2024 following a 0.4% dip in 2023. This recent acceleration suggests renewed demand, potentially driven by net migration of 615 filers between 2021 and 2022. However, the local economic engine remains modest, with only 4,254 jobs and an average weekly wage of $819, which limits broader income growth. The housing supply is extremely tight, with only 20 new units authorized in 2025, all single-family, creating a structural constraint that likely supports current price levels despite the high 7.32% national mortgage rate.
+
+Regional context highlights Geneva County’s position 42.6% below the national median home value and 18.1% below the Alabama average. This discount correlates with the county’s income level, which sits 22.4% below the national mean. The divergence between strong price momentum and limited local employment vitality creates a market where external buyers may find value, but local affordability remains the primary driver. The high stability metric is offset by lower vitality scores, reflecting the small population of 26,887 and limited commercial expansion. For potential buyers, the low entry price relative to income offers a favorable equity position, while renters face a stable but unremarkable cost structure. The data indicates a market defined by affordability and steady appreciation rather than rapid economic expansion, making it suitable for long-term holders seeking below-market entry costs in a stable, low-churn environment.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -584,7 +577,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -746,47 +739,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 150.07, "2017": 147.81, "2018": 158.64, "2019": 160.97, "2020": 165.99, "2021": 174.09, "2022": 186.43, "2023": 216.47, "2024": 229.83, "2025": 231.26};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

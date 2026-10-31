@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">58.0</span>
+    <span class="score-number">53.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 57.8</span>
       <span title="Stability">🏠 55.3</span>
-      <span title="Momentum">📈 93.8</span>
+      <span title="Momentum">📈 75.4</span>
       <span title="Vitality">⚡ 17.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Pickens County
-    <strong class="up">
-      rose +10.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -335,19 +315,6 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
-
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Pickens County exhibits characteristics of a balanced market with a distinct lean toward affordability, driven by a price-to-income ratio of 2.68, which sits well below the national average of 3.20. The median home value of $123,900 is 45.6% lower than the national benchmark and 22.4% below the Alabama state average, reflecting the county’s position as a lower-cost region. This affordability is reinforced by a rent burden of 16.8%, slightly under the national 17.2% average, and a price-to-rent ratio of 15.9 compared to the national 18.7. These metrics suggest that entry barriers for both buyers and renters remain relatively low, supporting a stable occupancy rate of 75.8% for homeowners. However, the market dynamics are shifting, as indicated by the recent FHFA HPI showing a 10.70% year-over-year increase, significantly outperforming the state average of 2.79%. This sharp acceleration follows a period of moderate growth, where prices rose from $91,800 in 2017 to $123,900 in 2024, with the steepest single-year jump of 14.0% occurring in 2022.
-
-A notable divergence exists between the recent surge in home prices and the broader economic fundamentals. While home values have accelerated, the local economy remains constrained, with only 2,669 total jobs and an average weekly wage of $950. Housing supply is extremely tight, with just four new units authorized in 2025, all single-family, which likely contributes to the upward pressure on prices despite the low mortgage rate environment of 7.32%. Migration data shows a net gain of 189 filers, with incoming residents earning an average of $57,112, slightly less than those leaving at $57,189, suggesting that population growth is not driven by high-income influxes. This scarcity of new inventory, combined with rising rents that are outpacing home value growth in recent trends, creates a complex environment where affordability is eroding from both the purchase and rental sides.
-
-The overall market assessment is driven by high momentum but low vitality, reflecting the disconnect between rapid price appreciation and limited economic expansion. The stability of the market is challenged by the sharp recent price increases, which may outpace local income growth, while the affordability metrics remain favorable relative to national standards. For prospective participants, the data indicates a window of relative affordability that is narrowing due to supply constraints and recent price spikes, requiring careful consideration of long-term affordability against the backdrop of a small, static local employment base.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -526,7 +493,7 @@ The overall market assessment is driven by high momentum but low vitality, refle
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +655,6 @@ The overall market assessment is driven by high momentum but low vitality, refle
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 128.18, "2017": 131.74, "2018": 134.22, "2019": 131.06, "2020": 141.28, "2021": 148.84, "2022": 193.4, "2023": 188.79, "2024": 196.6, "2025": 217.63};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

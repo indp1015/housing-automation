@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">60.3</span>
+    <span class="score-number">54.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 69.6</span>
       <span title="Stability">🏠 63.2</span>
-      <span title="Momentum">📈 75.4</span>
+      <span title="Momentum">📈 53.5</span>
       <span title="Vitality">⚡ 23.9</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Clay County
-    <strong class="up">
-      rose +26.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -406,6 +386,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Clay County, Alabama, presents a balanced housing market characterized by strong affordability relative to national standards, despite a small and stagnant local economy. The price-to-income ratio stands at 2.84, significantly below the national average of 3.20, while the median rent burden is only 13.4% of household income compared to the 17.2% national benchmark. These metrics indicate that both buyers and renters face lower financial hurdles than in most U.S. counties. However, the market’s vitality is constrained by limited economic activity, with only 3,345 total jobs and an average weekly wage of $915, which lags behind broader regional trends. The low vitality score reflects this narrow employment base, which limits income growth potential and long-term demand expansion.
+
+The trend data reveals a period of rapid appreciation followed by stabilization. Home values surged 17.7% in 2022, peaking at $144,100, before moderating to an 8.3% increase in 2024 to reach $156,700. This recent momentum suggests the market is cooling from its peak but remains upwardly trending. A notable divergence exists between price and rent growth; while home values have risen substantially, the price-to-rent ratio of 21.1 exceeds the national average of 18.7. This indicates that housing costs are becoming less attractive relative to rental alternatives, a pattern often seen when supply constraints or speculative activity outpace fundamental income growth. The median gross rent of $619 remains low in absolute terms, but the widening gap between asset value and rental yield suggests shifting dynamics in the local housing stock.
+
+Regional context places Clay County slightly below the state average for home values at -1.9%, while remaining 31.2% below the national average. This positioning highlights the county’s status as an affordable outlier within Alabama. The local housing supply is extremely tight, with only eight new single-family units authorized in 2025 and no multi-family construction, which likely contributes to the sustained price appreciation despite modest population growth of +200 net migrants. With a 30-year fixed mortgage rate at 7.32%, high borrowing costs further suppress demand, yet the low entry price point of $156,700 maintains accessibility for qualified buyers. The overall market assessment is driven by high momentum and affordability scores, offsetting low vitality and moderate stability. Potential investors should note that the lack of new supply and the widening price-to-rent gap suggest limited upside for rental income relative to purchase price, making this market primarily suitable for owner-occupants seeking low entry costs rather than yield-focused investors.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -583,7 +576,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -745,47 +738,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 142.33, "2017": 136.02, "2018": 154.01, "2019": 149.91, "2020": 153.19, "2021": 156.26, "2022": 184.28, "2023": 208.17, "2024": 242.18, "2025": 306.49};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">44.8</span>
+    <span class="score-number">39.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 23.5</span>
       <span title="Stability">🏠 38.1</span>
-      <span title="Momentum">📈 81.6</span>
+      <span title="Momentum">📈 61.3</span>
       <span title="Vitality">⚡ 39.3</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Stone County
-    <strong class="up">
-      rose +15.1%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -326,11 +306,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Stone County, Arkansas, exhibits characteristics of a buyer’s market, primarily driven by a high owner-occupancy rate of 75.9% and a price-to-rent ratio of 22.8, which exceeds the national average of 18.7. This ratio suggests that purchasing is more financially efficient than renting, a dynamic reinforced by the median home value of $171,600 against a median gross rent of $626. The market is currently experiencing significant momentum, with the FHFA House Price Index showing a 15.13% year-over-year increase in 2025, substantially outperforming the state average of 1.09%. This rapid appreciation follows a volatile trajectory, including a 26.4% surge in 2022 and a 14.9% rise in 2024, indicating strong underlying demand despite recent national mortgage rates holding at 7.32%.
+  <p>Stone County, Arkansas, exhibits a complex market dynamic characterized by strong price momentum but severe affordability constraints. With a median home value of $171,600 and a median household income of $40,943, the price-to-income ratio stands at 4.19, significantly exceeding the national average of 3.20. This disparity indicates that while the market is not strictly a buyer’s market in terms of inventory pressure, it is heavily skewed against local income earners, creating a stressed environment for potential homeowners. The price-to-rent ratio of 22.8, compared to the national average of 18.7, further suggests that purchasing is structurally more expensive relative to renting than in most other U.S. regions, despite the low median gross rent of $626.
 
-Affordability remains a critical constraint, as the price-to-income ratio stands at 4.19, well above the national benchmark of 3.20. With a median household income of $40,943, residents face a 39.8% income deficit relative to the national average, limiting purchasing power. The rent burden is 18.3% of income, slightly higher than the national 17.2%, further straining lower-income households. Regional context highlights a divergence: while home values are 24.6% below the national average, they are 21.3% above the Arkansas state average, suggesting localized premium pricing compared to neighboring counties. This premium is supported by positive net migration of 476 filers between 2021 and 2022, where inflowing residents earned an average of $49,536, slightly exceeding the outflow average of $48,978.
+The multi-year trend reveals high volatility, with home values surging 26.4% in 2022 and continuing to rise 14.9% in 2024, reaching $171,600. This rapid appreciation contrasts sharply with the modest rent growth, signaling a divergence where asset values are outpacing rental income potential. Such volatility undermines market stability, as evidenced by the sharp 10.5% decline in 2021, which suggests the market is sensitive to external shocks rather than driven by steady local demand. The recent momentum is robust, yet the underlying stability remains fragile due to these historical swings.
 
-The local economic base is small, with only 2,119 total jobs and an average weekly wage of $725, which may limit long-term income growth to support current price levels. The composite assessment reflects a "Stressed" condition, driven by low affordability scores of 23.5 and stability scores of 38.1. However, the momentum score of 81.6 underscores the current strength in price appreciation. The notable pattern is the divergence between rapid price growth and slower rent increases, signaling that the market is adjusting to new demand levels rather than experiencing broad-based inflation across all housing costs. For potential buyers, the high price-to-income ratio and elevated mortgage rates create significant entry barriers, while renters face a market where ownership costs are rising faster than rental alternatives, potentially narrowing the gap between the two housing options over time.</p>
+Regional context highlights that Stone County’s home values are 21.3% above the Arkansas state average, yet local incomes lag 39.8% behind the national mean. This gap is exacerbated by limited local economic vitality, with only 2,119 total jobs and an average weekly wage of $725. Although net migration of 476 filers indicates population growth, the average income of incoming residents ($49,536) does not sufficiently bridge the affordability gap. The high composite momentum score is driven by price appreciation, but this is counterbalanced by low affordability and vitality scores. For prospective buyers, the 7.32% mortgage rate compounds the cost burden, making entry difficult despite the county’s lower absolute price point. Renter burden at 18.3% of income is only slightly above the national average, suggesting that renting remains the more financially accessible option for the majority of the population in this economically constrained region.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -513,7 +493,7 @@ The local economic base is small, with only 2,119 total jobs and an average week
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -675,47 +655,6 @@ The local economic base is small, with only 2,119 total jobs and an average week
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 122.82, "2017": 141.7, "2018": 144.9, "2019": 147.71, "2020": 158.65, "2021": 171.56, "2022": 195.25, "2023": 232.95, "2024": 225.7, "2025": 259.85};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

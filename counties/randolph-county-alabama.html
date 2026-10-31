@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">46.1</span>
+    <span class="score-number">40.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 43.3</span>
       <span title="Stability">🏠 44.3</span>
-      <span title="Momentum">📈 58.1</span>
+      <span title="Momentum">📈 36.7</span>
       <span title="Vitality">⚡ 37.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Randolph County
-    <strong class="up">
-      rose +20.8%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -376,11 +356,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Randolph County, Alabama, presents a complex housing dynamic characterized by a strong buyer’s orientation despite significant affordability constraints. The market is classified as buyer-friendly primarily due to a price-to-rent ratio of 21.4, which exceeds the national average of 18.7, suggesting that purchasing is currently more economical than long-term renting. This assessment is reinforced by a low rent burden of 16.2% of median income, well below the national benchmark of 17.2%. However, the price-to-income ratio stands at 3.47, slightly above the national average of 3.20, indicating that while entry costs are manageable, the total cost of ownership remains a barrier for households earning the median income of $52,338. The owner-occupancy rate of 77.2% further supports the dominance of homeownership in the local structure.
+  <p>Randolph County, Alabama, exhibits characteristics of a balanced market leaning toward buyer advantage, driven by a price-to-income ratio of 3.47, which exceeds the national average of 3.20, yet remains moderate relative to the county’s median household income of $52,338. The median home value of $181,600 sits 20.2% below the national average, while the 77.2% owner-occupancy rate suggests a stable residential base. Although the price-to-rent ratio of 21.4 is higher than the national benchmark of 18.7, the low rent burden of 16.2% indicates that rental housing remains relatively accessible compared to the national norm of 17.2%. This dynamic creates a bifurcated market where ownership costs are rising faster than rental costs, potentially incentivizing long-term investment over short-term leasing.
 
-The multi-year trend reveals a period of aggressive appreciation followed by recent stabilization. Home values surged from $85,200 in 2017 to $181,600 in 2024, driven by peak year-over-year gains of 24.8% in 2022. Although the 2024 census data indicates a slight 1.3% decline, the FHFA HPI reports a robust 20.76% year-over-year increase for 2025, significantly outperforming the Alabama state average of 2.79%. This divergence between the slight dip in census estimates and the sharp rise in mortgage-based index data suggests a potential lag in valuation methodologies or a rapid acceleration in transaction prices. The county’s home values are 13.7% above the state average but remain 20.2% below the national mean, reflecting a regional premium driven by local demand rather than national trends.
+The multi-year trend reveals a period of aggressive appreciation followed by recent stabilization. Home values surged from $85,200 in 2017 to $184,000 in 2023, with peak year-over-year growth of 24.8% in 2022. However, the 2024 decline of 1.3% to $181,600 signals a correction or plateau. This price trajectory contrasts with the slower rent growth, resulting in a widening price-to-rent gap. The divergence suggests that while asset values have expanded significantly, rental demand has not kept pace with the same velocity, potentially indicating a supply response or a shift in demographic preferences. The high owner-occupancy rate supports this interpretation, as a larger share of the population is locked into ownership rather than the rental market.
 
-Economic fundamentals provide mixed support for this growth. Local employment is limited to 3,818 jobs with an average weekly wage of $843, which aligns with the below-average household income. Nevertheless, net migration added 700 filers between 2021 and 2022, with inflow earners averaging $56,854, slightly higher than outflow earners. This demographic shift, combined with a high owner-occupancy rate, creates a tight supply environment that supports price resilience. The primary drivers of the market’s current standing are strong momentum, evidenced by the outperformance relative to the state, and moderate stability, whereas vitality is constrained by the small economic base. For potential buyers, the high mortgage rate of 7.32% increases monthly payment burdens, making the low rent burden a critical comparison point. Renter’s rights are less pronounced, as the financial incentive strongly favors purchasing due to the favorable price-to-rent spread, despite the rising cost of entry.</p>
+Regional context further complicates the affordability narrative. While home values are 13.7% above the Alabama state average, local incomes are 23.0% below the national average, creating a structural affordability challenge. The local economy, supported by 3,818 jobs and an average weekly wage of $843, provides a modest foundation but lacks the high-wage industrial base seen in larger metros. Net migration of +700 filers between 2021 and 2022, with inflows averaging $56,854 in income, suggests an influx of slightly higher-earning residents, which may have contributed to the earlier price surge. With the 30-year fixed mortgage rate at 7.32%, carrying costs remain elevated, dampening purchasing power. The composite assessment reflects this tension: momentum is strong due to recent price gains, but vitality and stability are constrained by economic fundamentals and the high cost of borrowing relative to local wages.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -563,7 +543,7 @@ Economic fundamentals provide mixed support for this growth. Local employment is
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -725,47 +705,6 @@ Economic fundamentals provide mixed support for this growth. Local employment is
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 161.81, "2017": 171.63, "2018": 171.86, "2019": 179.86, "2020": 189.4, "2021": 209.8, "2022": 245.85, "2023": 300.61, "2024": 270.11, "2025": 326.19};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

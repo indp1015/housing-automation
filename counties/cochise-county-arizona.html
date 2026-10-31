@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">46.6</span>
+    <span class="score-number">46.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 22.5</span>
       <span title="Stability">🏠 34.6</span>
-      <span title="Momentum">📈 65.1</span>
+      <span title="Momentum">📈 66.1</span>
       <span title="Vitality">⚡ 74.4</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Cochise County
-    <strong class="up">
-      rose +3.1%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -552,19 +532,6 @@
 
 
 
-<div class="market-notes">
-  <h2>📝 Local Market Analysis</h2>
-  <p>Cochise County functions as a renter-favorable market, characterized by a price-to-rent ratio of 18.3, which sits slightly below the national average of 18.7. This metric indicates that purchasing is not significantly cheaper than renting, a dynamic reinforced by a 71.0% owner-occupancy rate that leaves a substantial 29.0% of households as tenants. The local economy supports this structure through an average weekly wage of $1,049 and total employment of 24,238 jobs, providing a stable baseline for rental demand. However, the market’s affordability remains constrained, with a price-to-income ratio of 3.65 exceeding the national benchmark of 3.20. Consequently, the median household income of $59,742 fails to keep pace with the median home value of $218,300, resulting in a 20.0% rent burden for tenants, compared to the 17.2% national average.
-
-Price trends reveal a period of rapid appreciation followed by stabilization. Home values surged 14.7% in 2022 and 13.3% in 2023, driven largely by net migration gains of 4,260 filers between 2021 and 2022. This inflow, averaging $60,379 in income, outpaced outflow, injecting demand into a market with limited new supply; only 463 units were authorized in 2025, predominantly single-family. Recent FHFA data shows this momentum moderating, with a 3.13% year-over-year price increase in 2025, significantly outperforming the Arizona state average of 0.52%. This divergence suggests Cochise County retains stronger underlying demand than the broader state, likely due to its specific migration patterns and lower baseline costs.
-
-The county’s relative position highlights a distinct value proposition. Home values are 17.8% below the state average and 4.1% below the national mean, yet income levels are 12.1% below the national norm. This gap explains the stress on affordability metrics, yet the market’s vitality remains robust, evidenced by the strong migration inflows and consistent price growth. For potential buyers, the 7.32% mortgage rate compounds the affordability challenge, making the 3.65 price-to-income ratio a critical barrier. Conversely, renters face a 20.0% income allocation to housing, which is higher than national norms but potentially offset by the lower absolute rent of $995. The data indicates a market where entry costs are rising faster than local wages, creating a persistent tension between high demand and limited purchasing power.</p>
-  <p class="notes-source">
-    Compiled from U.S. Census ACS 2024 5-Year Estimates,
-    FHFA House Price Index, BLS QCEW, and IRS migration data.
-  </p>
-</div>
-
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Cochise County on Our Sister Sites</h3>
@@ -742,7 +709,7 @@ The county’s relative position highlights a distinct value proposition. Home v
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -904,47 +871,6 @@ The county’s relative position highlights a distinct value proposition. Home v
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 334.78, "2017": 347.88, "2018": 367.56, "2019": 396.63, "2020": 418.39, "2021": 482.32, "2022": 567.61, "2023": 601.54, "2024": 628.25, "2025": 647.93};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

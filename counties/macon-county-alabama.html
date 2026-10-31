@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">46.8</span>
+    <span class="score-number">46.6</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 50.9</span>
       <span title="Stability">🏠 36.2</span>
-      <span title="Momentum">📈 78.0</span>
+      <span title="Momentum">📈 77.1</span>
       <span title="Vitality">⚡ 15.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Macon County
-    <strong class="up">
-      rose +3.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -338,11 +318,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Macon County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 2.33, significantly below the national average of 3.20. The price-to-rent ratio of 11.6, compared to the national benchmark of 18.7, further underscores the relative value of ownership over leasing. This affordability is reinforced by a median home value of $102,000, which sits 55.2% below the national mean and 36.1% below the state average. Despite these low entry points, the market exhibits robust momentum. The FHFA House Price Index recorded a year-over-year increase of 3.61% in 2025, outperforming the Alabama state average of 2.79% by 0.82 percentage points. This recent strength follows a volatile multi-year trajectory where home values surged 11.4% in 2022 before moderating to 1.9% in 2023 and accelerating again to 6.6% in 2024. The divergence between this sharp appreciation and the relatively stable median gross rent of $734 suggests that equity gains are outpacing rental cost inflation, favoring current homeowners.
+  <p>Macon County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a median home value of $102,000 that sits 55.2% below the national average. The price-to-income ratio of 2.33 is significantly lower than the national benchmark of 3.20, indicating that housing costs remain accessible relative to the median household income of $43,707. Although the rent burden stands at 20.2%, slightly above the national average of 17.2%, the price-to-rent ratio of 11.6 is well below the national norm of 18.7, suggesting that purchasing offers superior value compared to renting. This structural affordability is the primary driver of the market’s high momentum, which contrasts sharply with its low vitality score, reflecting limited local economic expansion.
 
-The local economic foundation remains constrained, limiting broader market vitality. With only 2,344 total jobs and an average weekly wage of $874, the labor market offers limited upward mobility for residents. Housing supply is exceptionally tight, with just six new single-family units authorized in 2025 and zero multi-family permits, indicating minimal new inventory to offset demand. Although net migration added 194 filers between 2021 and 2022, the average income of incoming residents ($46,136) only marginally exceeds that of outflowing residents ($46,053), suggesting demographic shifts are driven more by lifestyle preferences than economic opportunity. The high 7.32% national mortgage rate exacerbates purchasing challenges, yet the low absolute price point keeps monthly debt service manageable for local income levels.
+The multi-year trend reveals a period of accelerating price appreciation, with home values rising 6.6% year-over-year in 2024 and 11.4% in 2022. This upward trajectory occurs despite a stagnant housing supply, evidenced by only six new single-family units authorized in 2025. The divergence between robust price growth and modest rent increases suggests that demand is outpacing new construction, a dynamic exacerbated by the current 7.32% mortgage rate, which may deter some buyers but does not appear to have suppressed price growth. Local economic indicators remain weak, with total employment at 2,344 jobs and an average weekly wage of $874, contributing to the low vitality metric. However, positive net migration of 194 filers provides a modest inflow of demand, helping to sustain price momentum even in the absence of significant job growth.
 
-The market’s overall stress is driven primarily by low vitality and stability, despite strong momentum. The owner-occupancy rate of 61.5% and a rent burden of 20.2%—higher than the national average of 17.2%—indicate that while buying is accessible, renting remains a significant financial strain. The disparity between the county’s strong price momentum and its weak economic indicators creates a fragile equilibrium. For potential buyers, the low price-to-rent ratio offers a compelling long-term investment case, provided they can secure financing amidst high interest rates. However, the lack of new construction and modest wage growth limit the immediate upside for rental investors, who must navigate a market where housing costs are rising faster than local earnings.</p>
+Regional context further underscores the county’s outlier status, as home values are 36.1% below the Alabama state average, while incomes are 35.7% below the national mean. This alignment between low prices and low incomes creates a stable, albeit constrained, market environment. The high momentum score is driven by the consistent year-over-year price increases, while the low stability score likely reflects the thin housing inventory and limited economic diversification. For potential buyers, the data indicates a market where entry costs are low, but the rapid price appreciation relative to income growth may erode affordability over time. Renters face a higher cost burden compared to national norms, making homeownership a more financially viable long-term strategy despite the high mortgage rates. The combination of low supply, positive migration, and strong price momentum suggests that the market remains tight for buyers, with limited new inventory to moderate the upward pressure on existing home values.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -526,7 +506,7 @@ The market’s overall stress is driven primarily by low vitality and stability,
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -688,47 +668,6 @@ The market’s overall stress is driven primarily by low vitality and stability,
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 114.73, "2017": 111.94, "2018": 108.31, "2019": 129.34, "2020": 130.46, "2021": 141.36, "2022": 161.52, "2023": 177.66, "2024": 174.38, "2025": 180.68};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

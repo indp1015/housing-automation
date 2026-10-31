@@ -104,11 +104,11 @@
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 53.7</span>
       <span title="Stability">🏠 54.6</span>
-      <span title="Momentum">📈 58.8</span>
+      <span title="Momentum">📈 59.1</span>
       <span title="Vitality">⚡ 52.0</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Madison County
-    <strong class="up">
-      rose +3.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -388,11 +368,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Madison County, Arkansas, presents a mixed market profile where affordability remains accessible relative to national standards, yet momentum is accelerating. The price-to-income ratio of 3.14 sits slightly below the national average of 3.20, and the rent burden of 15.4% is lower than the national 17.2%, suggesting decent entry-level affordability. However, the price-to-rent ratio of 20.4 exceeds the national average of 18.7, indicating that purchasing is becoming relatively more expensive compared to renting. This divergence highlights a shifting dynamic where home values are rising faster than rents, a trend confirmed by the recent FHFA HPI showing a 3.27% year-over-year increase, significantly outpacing the state’s 1.09% growth.
+  <p>Madison County, Arkansas, functions as a balanced market with a distinct tilt toward affordability, characterized by a price-to-income ratio of 3.14, slightly below the national average of 3.20. The rent burden stands at 15.4% of income, significantly lower than the national benchmark of 17.2%, indicating manageable housing costs for residents. However, the price-to-rent ratio of 20.4 exceeds the national average of 18.7, suggesting that purchasing offers a more favorable long-term value proposition than renting, despite the modest median gross rent of $729. This structural dynamic supports the high owner-occupancy rate of 79.5%, reflecting a community where homeownership remains the dominant housing strategy rather than a transient rental environment.
 
-The multi-year trend reveals a volatile but upward trajectory, with median home values surging from $108,500 in 2017 to $178,100 in 2024. This represents a cumulative gain of approximately 64% over seven years, driven by sharp increases in 2022 (+22.1%) and 2024 (+12.9%). Despite this rapid appreciation, the median home value remains 21.8% below the national average, though it commands a 25.9% premium over the Arkansas state average. This regional context suggests Madison County is experiencing localized demand pressures that exceed broader state trends. The local economy supports this activity with a median household income of $56,798 and positive net migration of 517 filers between 2021 and 2022, indicating sustained population growth.
+The market exhibits strong recent momentum, with median home values rising from $108,500 in 2017 to $178,100 in 2024. This trajectory includes a peak year-over-year increase of 22.1% in 2022, moderating to 12.9% in 2024. This price appreciation outpaces rent growth, creating a divergence that favors equity accumulation for owners. The stability of this trend is reinforced by positive net migration of 517 filers between 2021 and 2022, with inflow incomes averaging $57,257, slightly higher than the outflow average of $56,730. This demographic shift supports sustained demand. Conversely, housing supply remains constrained, with only 22 new single-family units authorized in 2025 and zero multi-family construction, limiting potential price relief.
 
-Conversely, housing supply is severely constrained, with only 22 new single-family units authorized in 2025 and zero multi-family permits. This limited inventory, combined with a 7.32% national mortgage rate, creates friction for buyers. The composite assessment reflects these tensions: while momentum is strong due to price appreciation and outperformance relative to the state, stability and vitality scores are moderated by the small employment base of 2,957 jobs and the low average weekly wage of $906. The market is neither a clear buyer’s nor renter’s paradise; rather, it is a high-growth, low-supply environment where affordability is eroding for buyers despite remaining favorable for renters. Potential stakeholders must weigh the rapid price escalation against the stagnant rental market, noting that the premium paid for local housing is justified by positive migration and income trends that exceed state benchmarks.</p>
+Economic fundamentals present a mixed picture that drives the market’s moderate vitality assessment. The local economy supports 2,957 jobs with an average weekly wage of $906, yet the median household income of $56,798 is 16.5% below the national average. This income disparity, combined with home values that are 21.8% below the national mean but 25.9% above the state average, positions Madison County as a premium market within Arkansas. The current 30-year fixed mortgage rate of 7.32% adds financing pressure, potentially tempering buyer enthusiasm despite the favorable price-to-income metrics. Consequently, the market’s overall assessment is shaped by strong momentum and affordability relative to national standards, offset by limited local economic vitality and tight supply constraints. Potential buyers should note that while entry costs are low, the rapid appreciation rate and low inventory suggest a competitive environment where timing and financing terms are critical factors in securing property.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -575,7 +555,7 @@ Conversely, housing supply is severely constrained, with only 22 new single-fami
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -737,47 +717,6 @@ Conversely, housing supply is severely constrained, with only 22 new single-fami
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 126.03, "2017": 137.24, "2018": 146.3, "2019": 152.58, "2020": 158.12, "2021": 178.4, "2022": 220.24, "2023": 240.48, "2024": 251.42, "2025": 259.63};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

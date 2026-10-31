@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">42.3</span>
+    <span class="score-number">47.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 24.8</span>
       <span title="Stability">🏠 39.5</span>
-      <span title="Momentum">📈 49.6</span>
+      <span title="Momentum">📈 69.8</span>
       <span title="Vitality">⚡ 62.7</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Russell County
-    <strong class="down">
-      fell -3.6%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -409,11 +389,41 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Russell County, Alabama, presents a complex housing landscape characterized by a distinct divergence between long-term appreciation and current affordability pressures. The market leans toward a renter’s advantage structurally, evidenced by a price-to-rent ratio of 14.7, significantly below the national average of 18.7, suggesting that renting remains a more financially efficient option than purchasing for many households. However, this structural advantage is complicated by severe affordability constraints. The median home value of $165,700 against a median household income of $51,197 yields a price-to-income ratio of 3.24, marginally exceeding the national benchmark of 3.20. More critically, the rent burden stands at 22.0% of income, substantially higher than the national average of 17.2%, indicating that rental costs are disproportionately squeezing household budgets despite lower absolute dollar amounts.
+  <p>The user wants a 280-320 word analysis of Russell County, Alabama's housing market based on provided data. I need to cover 9 specific points in 2-3 paragraphs, professional tone, third person, data-driven, no predictions, no bullet points.
 
-The trend data reveals a period of accelerated price appreciation that has recently stalled. From 2017 to 2024, median home values rose from $114,700 to $165,700, with particularly sharp increases of 8.8% in both 2022 and 2024. This sustained growth outpaced rent increases, creating the noted divergence where home values are rising faster than rents. However, recent momentum has shifted negatively; the FHFA House Price Index shows a year-over-year decline of 3.62% in 2025, underperforming the Alabama state average of +2.79% by 6.41 percentage points. This recent contraction suggests a correction phase following the 2022-2024 surge, likely influenced by the high 7.32% national mortgage rate which limits buyer purchasing power.
+Let me organize the key data points:
+- Median Home Value: $165,700 (2024)
+- Median Gross Rent: $939/month
+- Median Household Income: $51,197
+- Population: 58,811
+- Owner Occupancy: 61.3%
+- Price-to-Income: 3.24 (national 3.20)
+- Rent Burden: 22.0% (national 17.2%)
+- Price-to-Rent: 14.7 (national 18.7)
+- Home value vs national: -27.2%, vs state: +3.8%
+- Income vs national: -24.7%
+- Trend: 2017 $114,700 to 2024 $165,700, accelerating growth (8.8% in 2022, 7.3% in 2023, 8.8% in 2024)
+- Employment: 11,120 jobs, avg weekly wage $945
+- Building permits: 151 units (147 SF, 4 MF)
+- Net migration: +1,834 filers
+- Mortgage rate: 7.32%
+- Composite scores: Overall 42.3, Affordability 24.8, Stability 39.5, Momentum 49.6, Vitality 62.7
 
-Regional context highlights a market that is slightly more expensive than the state average (+3.8%) but significantly cheaper than the national average (-27.2%). The local economy supports this moderate valuation with 11,120 total jobs and an average weekly wage of $945. Housing supply remains tight, with only 151 new units authorized in 2025, predominantly single-family homes, which may constrain future inventory. Positive net migration of 1,834 filers between 2021 and 2022 indicates sustained population growth, likely driven by the affordability gap with neighboring states. The composite assessment reflects this tension: vitality is moderate due to population inflows, but stability and affordability scores remain low due to the high rent burden and recent price volatility. For potential buyers, the recent price correction offers a temporary reprieve from the peak 2024 levels, while renters face persistent cost pressures relative to local income levels.</p>
+Now I need to weave all 9 points into 2-3 paragraphs, 280-320 words.
+
+Let me draft:
+
+Paragraph 1: Market classification, trend interpretation, affordability assessment, regional context.
+Paragraph 2: Data anomaly, practical implication, recent momentum (FHFA HPI not explicitly given but trend data shows acceleration), economic context.
+Paragraph 3: Score interpretation (without mentioning "Market Score" term).
+
+Target: ~300 words.
+
+Draft:
+
+Russell County presents a seller's market characterized by accelerating price appreciation and constrained supply. Median home values surged 44.5% from $114,700 in 2017 to $165,700 in 2024, with annual growth accelerating to 8.8% in both 2022 and 2024 after averaging roughly 3% pre-pandemic. Despite median values sitting 27.2% below the national average, the price-to-income ratio of 3.24 slightly exceeds the 3.20 national benchmark, reflecting local incomes that lag 24.7% behind the U.S. median. Rent burden stands at 22.0% of income versus 17.2% nationally, while the price-to-rent ratio of 14.7 remains well below the 18.7 national average, indicating ownership remains relatively attractive versus renting. Compared to Alabama, home values run 3.8% above the state average.
+
+A notable divergence exists between price and rent trajectories: home values have climbed sharply while the price-to-rent ratio remains depressed, suggesting investor activity or supply constraints</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -597,7 +607,7 @@ Regional context highlights a market that is slightly more expensive than the st
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -759,47 +769,6 @@ Regional context highlights a market that is slightly more expensive than the st
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 183.14, "2017": 188.1, "2018": 192.29, "2019": 205.38, "2020": 212.5, "2021": 234.32, "2022": 279.23, "2023": 296.61, "2024": 331.67, "2025": 319.67};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

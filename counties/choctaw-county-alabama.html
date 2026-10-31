@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">64.2</span>
+    <span class="score-number">59.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · 🔥 Boom Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 75.8</span>
       <span title="Stability">🏠 62.6</span>
-      <span title="Momentum">📈 70.9</span>
+      <span title="Momentum">📈 51.9</span>
       <span title="Vitality">⚡ 40.4</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Choctaw County
-    <strong class="up">
-      rose +12.0%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -323,6 +303,19 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Choctaw County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a median home value of $123,400 that sits 45.8% below the national average. The market is defined by exceptional affordability metrics, with a price-to-income ratio of 2.58, significantly lower than the national benchmark of 3.20, and a rent burden of 13.6% compared to the national 17.2%. These figures indicate that housing costs consume a smaller share of local household income than in most other U.S. regions. The high owner-occupancy rate of 82.4% further reinforces the stability of the local housing stock, suggesting a settled demographic rather than a transient rental population.
+
+The primary driver of recent market dynamics is a sharp acceleration in home values, which rose 27.3% year-over-year in 2022 before moderating to 10.4% in 2024. This trend reveals a significant divergence between asset appreciation and rental costs, as the price-to-rent ratio of 18.9 remains nearly identical to the national average of 18.7. This parity suggests that while home prices have surged, rental yields have not expanded proportionally, potentially limiting the financial incentive for new rental development. The local economy supports this affordability through a median household income of $47,813 and an average weekly wage of $1,260, though the small labor pool of 2,974 jobs constrains broader economic vitality.
+
+Migration data indicates a modest net inflow of 251 filers, with incoming residents earning an average of $55,550, slightly below the outflow average of $56,312. This suggests that the county attracts residents seeking lower cost-of-living environments rather than high-wage opportunities. The current 30-year fixed mortgage rate of 7.32% poses a challenge for external buyers, yet the low absolute price point maintains local accessibility. The overall market assessment reflects high affordability and strong momentum but lower vitality, driven by the limited employment base and modest population size of 12,380. For potential buyers, the market offers substantial value relative to income, while renters face minimal financial strain. The sustained appreciation since 2017, rising from $69,000 to $123,400, underscores a structural shift in the county’s housing value, driven by broader rural trends rather than local industrial expansion.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -501,7 +494,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -663,47 +656,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2015": 120.04, "2016": 128.63, "2017": 134.05, "2018": 135.23, "2019": 147.24, "2020": 142.44, "2021": 140.44, "2022": 174.45, "2023": 161.63, "2025": 180.97};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">37.8</span>
+    <span class="score-number">37.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 25.3</span>
       <span title="Stability">🏠 18.9</span>
-      <span title="Momentum">📈 64.3</span>
+      <span title="Momentum">📈 64.6</span>
       <span title="Vitality">⚡ 47.1</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Tuscaloosa County
-    <strong class="up">
-      rose +3.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -577,11 +557,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Tuscaloosa County operates as a moderately constrained buyer’s market, characterized by robust price momentum that outpaces local income growth. The median home value of $248,700 sits 9.2% above the national average, while the median household income of $66,231 trails the national mean by 2.6%. This divergence creates a price-to-income ratio of 3.76, significantly higher than the national benchmark of 3.20, indicating reduced purchasing power for local residents. Consequently, the affordability dimension of the market is under pressure, with a rent burden of 18.8% exceeding the national average of 17.2%. The price-to-rent ratio of 20.0 further suggests that buying is becoming less financially advantageous compared to renting when measured against national norms, despite the high absolute home values.
+  <p>Tuscaloosa County exhibits characteristics of a balanced market leaning toward buyer advantage, driven by a price-to-income ratio of 3.76, which exceeds the national average of 3.20 but remains below the threshold typically associated with severe distress. The affordability profile is mixed; while the rent burden stands at 18.8% of income compared to the national 17.2%, the price-to-rent ratio of 20.0 suggests that purchasing offers slightly better long-term value than renting relative to national norms. This dynamic is reinforced by a median home value of $248,700, which is 9.2% above the national average but significantly higher than the state average by 55.8%, indicating a localized premium likely tied to specific regional economic drivers.
 
-The market’s trajectory reveals a sharp acceleration in home prices, driven by a 19.0% year-over-year surge in 2022 that has since moderated to 6.4% in 2024. Recent FHFA HPI data confirms this stabilization, showing a 3.27% year-over-year increase, which slightly outperforms the Alabama state average of 2.79%. This sustained price appreciation contrasts with the relatively stable income levels, suggesting that value gains are fueled by supply constraints and external demand rather than local wage growth. Notably, the county’s home values are 55.8% higher than the state average, highlighting its premium status within Alabama. This premium is supported by positive net migration of 3,366 filers in 2021-2022, where incoming households reported an average income of $77,088, slightly higher than those leaving.
+The market’s trajectory reveals a distinct acceleration phase followed by stabilization. Home values grew at a moderate 2.7% annually from 2017 to 2019, spiked to 5.0% in 2020, and then surged 19.0% in 2022 before moderating to 6.4% in 2024. This rapid appreciation outpaced rent growth, contributing to a stability metric of 18.9/100, reflecting volatility rather than steady equilibrium. Conversely, momentum scores of 64.3/100 reflect this recent upward pressure. The divergence between the sharp price spike and more gradual rent adjustments highlights a temporary imbalance where equity gains for owners outstrip rental cost increases, a pattern often seen in markets experiencing sudden demand shocks.
 
-Economic fundamentals provide partial support for this valuation, with total employment at 75,037 jobs and an average weekly wage of $1,127. However, the high 7.32% mortgage rate continues to suppress demand, contributing to the market’s overall stress. New housing supply remains limited, with only 603 units authorized in 2025, insufficient to offset the demand from migrating households. The composite market assessment reflects this tension: while momentum scores are relatively high due to consistent price appreciation, stability and affordability metrics remain weak. The market is defined by a disconnect between rising asset values and stagnant local income, creating a challenging environment for first-time buyers while offering capital appreciation for existing owners. The data indicates a market where entry costs are increasingly prohibitive relative to local earnings, necessitating careful financial planning for prospective purchasers.</p>
+Economic fundamentals provide context for these shifts. With 75,037 total jobs and an average weekly wage of $1,127, the local economy supports housing demand, yet the median household income of $66,231 lags behind the national average by 2.6%. Net migration of +3,366 filers between 2021 and 2022, with inflows averaging $77,088 in income, suggests that higher-earning newcomers are fueling the price appreciation. Housing supply, with 603 new units authorized in 2025, appears insufficient to fully offset this demand, particularly given the 61.4% owner-occupancy rate. The current 7.32% mortgage rate further constrains buyer purchasing power, potentially slowing the momentum seen in 2022. For prospective buyers, the data suggests a market where entry costs are rising but remain relatively accessible compared to coastal metros, while renters face a slightly elevated cost burden relative to income. The overall assessment is driven by strong momentum and vitality scores offsetting weak affordability and stability metrics, resulting in a composite rating that signals a stressed but active market environment.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -764,7 +744,7 @@ Economic fundamentals provide partial support for this valuation, with total emp
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -926,47 +906,6 @@ Economic fundamentals provide partial support for this valuation, with total emp
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 245.24, "2017": 251.2, "2018": 260.43, "2019": 271.53, "2020": 283.09, "2021": 305.75, "2022": 343.0, "2023": 354.87, "2024": 381.99, "2025": 394.49};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

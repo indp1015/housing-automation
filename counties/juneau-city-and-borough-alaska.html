@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">54.8</span>
+    <span class="score-number">52.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 28.9</span>
       <span title="Stability">🏠 30.4</span>
-      <span title="Momentum">📈 88.3</span>
+      <span title="Momentum">📈 77.1</span>
       <span title="Vitality">⚡ 82.4</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Juneau City and Borough
-    <strong class="up">
-      rose +6.1%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -407,11 +387,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Juneau City and Borough functions as a distinctively challenging market for prospective buyers, characterized by a price-to-income ratio of 4.42, which significantly exceeds the national average of 3.20. This affordability gap is reinforced by a price-to-rent ratio of 25.9, far above the 18.7 national benchmark, suggesting that purchasing equity is currently less cost-effective than renting for many households. While the median household income of $101,661 is 49.5% higher than the national mean, it fails to keep pace with the 97.3% premium on home values relative to the U.S. average. The market is not a renter’s paradise either, as the median gross rent of $1,444 consumes 17.0% of median income, aligning closely with the national rent burden average of 17.2%. Consequently, the area leans toward a balanced but expensive environment where high incomes are offset by disproportionately high asset prices.
+  <p>Juneau City and Borough operates as a distinct renter’s market, characterized by a price-to-rent ratio of 25.9, significantly above the national average of 18.7. This disparity indicates that purchasing offers superior long-term value compared to renting, despite the high entry barrier. The market is further defined by a median home value of $449,300, which stands 97.3% above the national average and 58.5% above the state average. While the median household income of $101,661 is 49.5% higher than the national norm, it fails to fully offset the premium pricing, resulting in a price-to-income ratio of 4.42, well above the national benchmark of 3.20.
 
-Recent trend data reveals a sharp acceleration in home values, with year-over-year growth spiking to 13.0% in 2022 before moderating to 3.9% in 2024. However, the FHFA House Price Index indicates a more recent 6.06% annual increase, underperforming the state average of 8.28% by 2.22 percentage points. This divergence highlights a notable pattern: while home values have risen rapidly, rent growth has lagged, creating a widening gap between ownership costs and rental expenses. The local economy supports this dynamic through robust vitality, evidenced by 11,408 total jobs and an average weekly wage of $1,285. Yet, housing supply remains constrained, with only 117 new units authorized in 2025, including just 34 single-family homes. Net migration of +1,233 filers between 2021 and 2022 further intensifies demand, with inflows averaging $96,880 in income.
+The recent trajectory reveals a pronounced acceleration in asset values. After modest growth of 0.3% to 2.7% between 2017 and 2020, home values surged 13.0% in 2022 before moderating to 3.9% in 2024. This momentum contrasts with the relatively stable rent burden of 17.0%, which aligns closely with the national average of 17.2%. The divergence between escalating home prices and stable rental costs suggests that the investment appeal of ownership is strengthening, even as immediate affordability remains strained. This dynamic is supported by strong local economic fundamentals, including an average weekly wage of $1,285 and a net migration inflow of 1,233 filers in 2021-2022, indicating sustained demographic demand.
 
-The overall market assessment reflects strong momentum and vitality, driven by positive net migration and wage growth, but is heavily penalized by low affordability and stability scores. The 7.32% national mortgage rate exacerbates the cost of entry, making the 63.6% owner-occupancy rate a reflection of established residents rather than new entrants. For potential buyers, the data suggests that the premium for Juneau real estate is justified by high local wages but remains steep relative to income. Renters face standard national cost burdens, but the rising price-to-rent ratio indicates that the long-term cost of ownership is becoming increasingly prohibitive compared to the current rental baseline. The market’s high vitality scores are thus counterbalanced by the structural difficulty of accessing housing at current price points, creating a bifurcated landscape where economic strength does not translate into broad housing accessibility.</p>
+Supply constraints further complicate the landscape. With only 117 new units authorized in 2025, including just 34 single-family homes, the market faces a tight inventory against a population of 31,794. The current 7.32% mortgage rate adds significant carrying costs, exacerbating the affordability challenge reflected in the low affordability metric. However, the high momentum and vitality scores are driven by robust employment, with 11,408 total jobs, and consistent price appreciation. For potential buyers, the data suggests that while entry costs are high, the long-term equity potential is strong due to the price-to-rent spread. Renters, conversely, face a stable but uncompetitive cost structure relative to ownership. The market’s stability is slightly compromised by the rapid price escalation, yet the underlying economic vitality and demographic inflows provide a solid foundation for sustained demand. The overall assessment highlights a market where high momentum and vitality are counterbalanced by significant affordability pressures, creating a challenging environment for first-time buyers but a favorable one for long-term investors.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -595,7 +575,7 @@ The overall market assessment reflects strong momentum and vitality, driven by p
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -757,47 +737,6 @@ The overall market assessment reflects strong momentum and vitality, driven by p
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 398.8, "2017": 409.22, "2018": 423.86, "2019": 430.95, "2020": 439.05, "2021": 472.16, "2022": 528.61, "2023": 567.63, "2024": 563.49, "2025": 597.64};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-stressed">
   <div class="score-main">
-    <span class="score-number">45.8</span>
+    <span class="score-number">48.3</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 57.0</span>
       <span title="Stability">🏠 25.8</span>
-      <span title="Momentum">📈 64.5</span>
+      <span title="Momentum">📈 74.3</span>
       <span title="Vitality">⚡ 30.8</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Barbour County
-    <strong class="up">
-      rose +0.7%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -385,6 +365,19 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Barbour County, Alabama, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 2.45, significantly below the national average of 3.20. With a median home value of $112,900 and a median household income of $46,042, the county offers substantial entry-level accessibility. The rent burden stands at 17.9% of income, marginally higher than the 17.2% national benchmark, yet the price-to-rent ratio of 13.7 remains well below the national 18.7, suggesting that homeownership is comparatively more economical than long-term renting. This affordability profile is reinforced by the fact that home values sit 50.4% below the national average and 29.3% below the state average, positioning the county as a low-cost outlier in the regional landscape.
+
+The market has experienced a pronounced recovery trajectory, shifting from a 4.6% decline in 2020 to a peak 14.7% appreciation in 2022, before moderating to a 2.7% increase in 2024. This stabilization indicates a transition from rapid correction to normalized growth. Notably, the trend signal reveals that home values and rents are rising at similar rates, suggesting a balanced adjustment rather than a speculative divergence. However, the local economy presents structural constraints that temper this momentum. Total employment stands at only 6,203 jobs with an average weekly wage of $875, while new housing supply is critically limited to just 14 single-family units in 2025. This scarcity of new construction, combined with a net positive migration of 455 filers, creates underlying pressure on existing inventory despite the low absolute price points.
+
+The composite assessment reflects a "Stressed" condition, driven primarily by low stability and vitality scores, which correlate with the limited economic base and minimal new supply. While momentum remains positive at 64.5, the affordability strength of 57.0 does not fully offset the fragility of the local employment sector. The current 7.32% mortgage rate further complicates purchasing power, yet the low price entry point mitigates monthly payment burdens relative to higher-cost markets. For potential buyers, the primary risk lies in the thinness of the local job market and the lack of new housing development, which could limit long-term wealth accumulation despite immediate affordability. Renters face a stable but unexciting market, with gross rents at $688 per month offering low absolute costs, though the slight uptick in rent burden compared to national averages warrants monitoring. The data suggests a market that is accessible but economically constrained, where price growth is driven more by supply scarcity and migration than by robust local wage growth.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -563,7 +556,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -725,47 +718,6 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 204.82, "2017": 212.49, "2018": 203.3, "2019": 205.18, "2020": 219.74, "2021": 238.66, "2022": 271.74, "2023": 282.71, "2024": 273.83, "2025": 275.6};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 

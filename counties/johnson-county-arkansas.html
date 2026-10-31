@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-stressed">
+<div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">49.5</span>
+    <span class="score-number">52.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Stressed · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 39.2</span>
       <span title="Stability">🏠 62.9</span>
-      <span title="Momentum">📈 60.5</span>
+      <span title="Momentum">📈 71.3</span>
       <span title="Vitality">⚡ 34.3</span>
     </div>
   </div>
@@ -252,28 +252,8 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="chart-container fhfa-section">
-  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
-  <p class="chart-subtitle">
-    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
-     · Latest: 2025
-  </p>
-
-  
-  <div class="insight-box">
-    <strong>💡 Year-over-Year Trend:</strong>
-    Home prices in Johnson County
-    <strong class="up">
-      rose +0.3%
-    </strong>
-    year-over-year as of 2025.
-    <span class="insight-source">(Source: FHFA)</span>
-  </div>
-  
-
-  <div class="chart-wrapper">
-    <canvas id="fhfaCountyChart"></canvas>
-  </div>
+<div class="fhfa-missing">
+  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
 </div>
 
 
@@ -388,11 +368,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Johnson County, Arkansas, functions as a distinctly buyer’s market, characterized by structural affordability advantages that diverge from national norms. The price-to-income ratio stands at 2.94, significantly below the national average of 3.20, while the price-to-rent ratio of 15.5 remains well under the 18.7 national benchmark. These metrics indicate that purchasing equity is comparatively inexpensive relative to local earnings and rental costs. However, the rent burden reaches 19.0% of median household income, slightly exceeding the 17.2% national average, suggesting that while entry-level homeownership is accessible, rental housing imposes a slightly higher relative financial strain on tenants.
+  <p>Johnson County, Arkansas, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 2.94, which sits below the national average of 3.20. This affordability is further reinforced by a price-to-rent ratio of 15.5, well under the national benchmark of 18.7, suggesting that purchasing offers a more favorable long-term financial position than renting. The market’s stability is evident in the 74.1% owner-occupancy rate, yet the composite assessment reflects stress primarily through low vitality and affordability metrics rather than instability. With a median home value of $135,300, the county remains 40.6% below the national average and 4.4% below the Arkansas state average, positioning it as a cost-effective entry point for homeownership relative to broader regional trends.
 
-Trend data reveals a period of accelerated appreciation rather than stagnation. Median home values increased from $95,400 in 2017 to $135,300 in 2024, representing a cumulative gain of approximately 41.8%. This growth was punctuated by a sharp 10.6% surge in 2022 and an 8.4% rise in 2024, outpacing the modest 0.7% increase seen in 2021. Despite this upward trajectory, the FHFA HPI indicates a recent cooling, with a mere 0.30% year-over-year change in 2025, underperforming the Arkansas state average of 1.09%. This divergence suggests that the rapid appreciation cycle is stabilizing, with price growth decelerating as the market finds a new equilibrium.
+Recent momentum indicates a significant acceleration in home values, with an 8.4% year-over-year increase in 2024 following a 10.6% surge in 2022. This upward trajectory contrasts with the relatively modest rent burden of 19.0% of household income, slightly above the national 17.2% average. The divergence between rapid price appreciation and slower rent growth suggests that housing demand is outpacing supply constraints, particularly given the minimal new construction activity. In 2025, only 13 new single-family units were authorized, with zero multi-family permits, indicating a tight supply pipeline that may sustain pressure on existing inventory. Concurrently, net migration of +566 filers between 2021 and 2022, with inflowing residents earning an average of $51,218, demonstrates a demographic inflow that supports demand despite the local median household income of $45,995.
 
-The regional context highlights a market that is undervalued relative to both state and national averages, sitting 4.4% below the state median and 40.6% below the national median. Economic fundamentals provide modest support, with a median household income of $45,995 and average weekly wages of $834. Housing supply remains extremely constrained, evidenced by only 13 new building permits authorized in 2025, all for single-family units. This scarcity, combined with positive net migration of 566 filers, sustains demand pressure. The low vitality score reflects the limited economic base, with only 6,669 total jobs and 486 establishments. Consequently, while the market offers strong entry-level affordability and stable ownership rates at 74.1%, the limited job market and low construction activity cap long-term growth potential. Potential buyers benefit from current price-to-income advantages, whereas renters face slightly elevated cost burdens relative to their incomes.</p>
+The local economic context presents a mixed signal for market sustainability. While total employment stands at 6,669 jobs with an average weekly wage of $834, the limited job base constrains the depth of the buyer pool. The 7.32% national mortgage rate further complicates affordability, as higher borrowing costs offset the county’s lower price points. Consequently, the market exhibits strong momentum driven by supply scarcity and migration, yet faces vitality challenges due to modest economic expansion and low establishment counts. For potential buyers, the current environment favors those with stable income, as the gap between local and national prices offers a buffer against interest rate volatility. Renter’s perspectives are less advantageous given the low price-to-rent ratio, which diminishes the financial incentive to lease in this specific geographic segment.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -576,7 +556,7 @@ The regional context highlights a market that is undervalued relative to both st
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-10-31. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-01. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -738,47 +718,6 @@ The regional context highlights a market that is undervalued relative to both st
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
-
-<script>
-(function() {
-  const series = {"2016": 141.66, "2017": 143.65, "2018": 150.45, "2019": 157.77, "2020": 161.4, "2021": 173.35, "2022": 203.38, "2023": 225.18, "2024": 234.31, "2025": 235.02};
-  const years = Object.keys(series).sort();
-  const values = years.map(y => series[y]);
-
-  const ctx = document.getElementById('fhfaCountyChart');
-  if (!ctx) return;
-
-  new Chart(ctx.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-        label: 'FHFA HPI (2000=100)',
-        data: values,
-        borderColor: '#27ae60',
-        backgroundColor: 'rgba(39, 174, 96, 0.15)',
-        borderWidth: 3,
-        pointRadius: 4,
-        tension: 0.3,
-        fill: true
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'top' } },
-      scales: {
-        y: {
-          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
-          ticks: { color: '#27ae60' },
-          beginAtZero: false
-        },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-})();
-</script>
 
 
 
