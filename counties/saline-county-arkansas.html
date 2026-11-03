@@ -389,11 +389,37 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Saline County, Arkansas, operates as a balanced housing market, characterized by metrics that hover near national averages without extreme skew toward either buyers or renters. The price-to-income ratio stands at 2.80, which is notably lower than the national benchmark of 3.20, indicating relative affordability for homeowners. Concurrently, the rent burden is 15.7% of median income, slightly below the national average of 17.2%, suggesting that rental costs remain manageable for residents. The price-to-rent ratio of 17.8 is also marginally below the national average of 18.7, reinforcing the equilibrium between purchasing and renting. This stability is further supported by a high owner-occupancy rate of 78.2%, reflecting a settled residential base rather than a transient population.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Saline County, Arkansas.
+    *   **Data provided:** Median home value ($221,200), median gross rent ($1,033), median household income ($79,046), population (127,479), owner occupancy (78.2%), annual trends 2017-2024, local economy (BLS), housing supply (building permits), migration (IRS), national mortgage rate (FRED), composite score (63.7/100 with sub-scores), derived metrics (Price-to-Income 2.80, Rent Burden 15.7%, Price-to-Rent 17.8), relative position.
+    *   **Content requirements:**
+        1. Market classification (buyer's/renter's/balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income and rent burden vs. national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: no FHFA HPI change data provided in prompt, so I must address this carefully or omit if truly absent, but wait, the prompt says "Interpret the FHFA HPI change (if available)". I will state that no specific FHFA HPI change was provided, or just focus on the momentum from the YoY growth). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I will skip explicit FHFA mention but address the "Recent momentum" based on the YoY data provided (e.g., 2022 peak, moderation to 2024).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence must be data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Start directly:** Do not repeat data or use headers.
 
-The multi-year trend reveals a significant acceleration in home values, peaking at 15.6% year-over-year growth in 2022 before moderating to 4.5% in 2024. This trajectory indicates that the initial surge has stabilized, moving from a hot market to a more sustainable pace. A notable pattern emerges in the divergence between asset classes, as home values are rising faster than rents, which may signal shifting dynamics in the rental sector. The local economy supports this stability, with a median household income of $79,046, which is 16.2% higher than the national average. However, the average weekly wage of $918 suggests that while household income is robust, individual earning power may vary, potentially influencing household composition and purchasing power.
+2.  **Drafting - Step-by-Step:**
 
-Regional context highlights Saline County’s premium position within Arkansas, where home values are 56.4% above the state average, while remaining 2.9% below the national mean. This disparity underscores the county’s role as a high-income enclave within a lower-cost state. Economic vitality is bolstered by positive net migration of 3,251 filers and a steady supply of 477 new single-family units authorized in 2025, which helps mitigate potential price shocks from demand surges. The current 30-year fixed mortgage rate of 7.32% imposes a higher carrying cost for new buyers, yet the county’s strong income levels provide a buffer against interest rate volatility. Overall, the market exhibits strong stability and vitality, driven by robust employment and consistent migration, while affordability remains a key advantage compared to national standards.</p>
+    *   *Paragraph 1: Market Classification & Trends*
+        Saline County, Arkansas, represents a balanced housing market, as evidenced by a composite score of 63.7 out of 100 and a price-to-rent ratio of 17.8 versus the national average of 18.7. The multi-year trend reveals a significant acceleration in appreciation, with median home values rising from $147,400 in 2017 to $221,200 in 2024, peaking at an annual increase of 15.6% in 2022 before moderating to 4.5% in 2024. This trajectory indicates a market that has transitioned from rapid appreciation to sustained, albeit decelerating, growth. The divergence between price and rent growth is a notable pattern; while rents have likely grown at a slower pace than home values, the persistent appreciation suggests capital gains are accruing faster than income adjustments, driving the overall score toward stability and momentum.
+
+    *   *Paragraph 2: Affordability, Regional Context, & Economic Context*
+        Affordability metrics indicate relative strength compared to national benchmarks, with a price-to-income ratio of 2.80 versus the national average of 3.20 and a rent burden of 15.7% compared to 17.2%. Regionally, Saline County's median home value is 56.4% above the state average but 2.9% below the national average, while its median household income is 16.2% higher than the national average. This economic profile is supported by</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -577,7 +603,7 @@ Regional context highlights Saline County’s premium position within Arkansas, 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-03. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

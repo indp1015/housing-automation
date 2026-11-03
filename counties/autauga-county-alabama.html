@@ -429,6 +429,35 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Autauga County, Alabama.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 3 cohesive paragraphs (no bullet points or headers). No generic statements; every sentence must be data-driven.
+    *   **Perspective:** Professional, analytical tone, third person only.
+    *   **Content Requirements:**
+        1.  Market classification (buyer's, renter's, balanced) with justification.
+        2.  Trend interpretation (multi-year price/rent trends).
+        3.  Affordability assessment (price-to-income, rent burden vs. national).
+        4.  Regional context (state/national averages).
+        5.  Data anomaly/notable pattern (divergence between price and rent growth).
+        6.  Practical implication for buyers/renters.
+        7.  Recent momentum (FHFA HPI change - note: the prompt says "Interpret the FHFA HPI change (if available)", but no specific FHFA HPI change number is given in the data, just the composite score. I need to interpret based on available data or note the lack of specific FHFA data but infer from the trend momentum). *Wait, looking at the prompt: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI change is explicitly provided in the data block, I must rely on the trend momentum (home values rising +4.7% YoY) to address this, or state that the momentum reflects a continuation of value appreciation despite rate increases.* Let me re-read: "Note: Peak YoY was +16.3% in 2022, moderating to +4.7% in 2024." This is the momentum.
+        8.  Economic context (employment, supply, migration, mortgage rates).
+        9.  Score interpretation (affordability, stability, momentum, vitality drivers without saying "Market Score").
+    *   **Constraints:** No predictions/speculation/future forecasts. No "I", "we", "you". Start directly with the analysis.
+
+2.  **Drafting - Paragraph by Paragraph Strategy:**
+    *   *Paragraph 1: Classification, Trends, and Anomaly.* Classify as balanced (or renter's leaning, but 77.1% owner occupancy suggests buyer's market, though affordability is low. Let's argue "balanced" or "buyer's" due to high owner occupancy, but heavily constrained by affordability). Actually, Price-to-Income is 2.86 (below national avg of 3.20), Rent Burden is 20.9% (above national avg of 17.2%). Rent Burden > Income burden suggests it leans renter's, but Owner Occupancy is 77.1%. Let's classify as "balanced" or "buyer's constrained". The prompt asks "Buyer's, renter's, or balanced market?". Given 77.1% owner occupancy and Price-to-Income < national average, it's a buyer's market, but affordability is poor. Let's say "balanced, leaning buyer's". Wait, Price-to-Rent is 13.7 (National avg 18.7), meaning prices are relatively cheap compared to rents, favoring buyers. Rent burden is higher than income burden. Let's classify as "balanced, leaning buyer's".
+    *   *Paragraph 2: Affordability, Regional Context, and Economic Context.* Compare PTI (2.86 vs 3.20), Rent Burden (20.9% vs 17.2%). Regional: Home value is $207,200 (9% below national, 29.8% above state). Migration is net inflow (+1,795 filers). Employment is 10,285 jobs, avg wage $1,017. Supply is tight (200 new single-family units, 0 multi-family). Mortgage rate is 7.24%.
+    *   *Paragraph 3: Practical Implication, Momentum, and Score Drivers.* Practical implication: buyers face high mortgage rates and tight supply, while renters face higher-than-average rent burdens. Momentum: Home values rose from $143k (2017) to $20</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Autauga County on Our Sister Sites</h3>
@@ -606,7 +635,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-03. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
