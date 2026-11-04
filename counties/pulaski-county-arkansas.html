@@ -557,11 +557,33 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Pulaski County, Arkansas, functions as a moderately stressed market where affordability constraints significantly outweigh strong momentum indicators. The market leans toward a balanced-to-buyer’s dynamic, evidenced by a price-to-rent ratio of 16.6, which sits below the national average of 18.7, suggesting that homeownership remains relatively more attractive than long-term renting compared to broader U.S. trends. However, this structural advantage is tempered by an affordability score of 24.7, driven by a price-to-income ratio of 3.41, which exceeds the national benchmark of 3.20. With a median home value of $214,700 and a median household income of $62,873, the county exhibits a 5.7% discount to the national home value average, yet this discount does not fully offset the 7.5% income deficit, creating a persistent affordability gap for local residents.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Pulaski County, Arkansas.
+    *   **Length:** 280-320 words (approx. 2-3 paragraphs).
+    *   **Style:** Professional, analytical tone, third person only, data-driven, no predictions/speculation/future forecasts, no generic statements, no bullet points or headers.
+    *   **Content Requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (county vs state/national).
+        5. Data anomaly/notable pattern (e.g., price vs rent divergence).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but there is no FHFA HPI data provided in the prompt, just a composite score. I need to address this carefully based on available data).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (weave drivers of affordability, stability, momentum, vitality into narrative without using the exact phrase "Market Score").
+    *   **Starting Condition:** Begin directly with the analysis. Do not repeat data or use headers.
 
-The trend data reveals a period of accelerated appreciation that has recently moderated but remains robust. Home values surged 12.8% year-over-year in 2022 before settling to 7.6% in 2024, indicating sustained momentum despite high national mortgage rates of 7.32%. This price growth outpaces rent increases, as the median gross rent stands at $1,080, resulting in a rent burden of 20.6% of income, significantly higher than the 17.2% national average. This divergence suggests that the housing market is tightening, with supply constraints contributing to rising costs for both buyers and renters. The county’s economic foundation supports this activity, with 211,280 jobs and positive net migration of 5,750 filers, though the average weekly wage of $1,211 limits purchasing power relative to price growth.
+2.  **Drafting - Step-by-Step:**
 
-Regional context highlights Pulaski County’s dominance within Arkansas, where home values are 51.8% higher than the state average, reflecting its status as the primary economic hub. New construction activity, with 1,705 units authorized in 2025, including 1,483 single-family homes, indicates an attempt to alleviate supply pressures, though this volume is modest relative to the population of 399,818. The overall market assessment is driven by high momentum and vitality scores, which reflect strong demand and economic activity, but these are heavily penalized by low stability and affordability metrics. For potential buyers, the data suggests that while entry points are lower than national averages, the rapid pace of appreciation and high mortgage rates create a challenging environment, requiring careful consideration of long-term income stability versus short-term price volatility.</p>
+    *   *Requirement 1: Market Classification.* Balanced market. Justification: Price-to-income ratio is 3.41 (above national avg of 3.20), but rent burden is 20.6% (below national avg of 17.2% - wait, 20.6% is *higher* than 17.2%, meaning it's *less* affordable for renters, or rather, higher rent burden means less affordable. Let me re-read: "Rent Burden: 20.6% of income (National avg: 17.2%)". 20.6% > 17.2%, so it is less affordable than the national average for renters. Price-to-rent is 16.6 (below national avg of 18.7), which makes prices relatively cheaper compared to rents. So, balanced between buyers and renters, leaning slightly towards renter affordability issues but buyer affordability is stretched). Let's call it a "balanced market" or "buyer's market" because price-to-rent is below average, but affordability is stressed overall. Actually, Price-to-Income is high (3.41 vs 3.20), meaning buyers are stretched. Rent burden is high (20.6% vs 17.2%), meaning renters are also stretched. A balanced market where neither side has a clear edge, though buyers face higher price-to-income ratios.
+
+    *   *Requirement 2: Trend interpretation.* 2017 to 2024 shows steady appreciation from $148,300 to $214,700. The YoY growth accelerated to +12.8% in 2022, moderated to +7.6% in 2024. Rents also trended upward, though specific rent trend isn't given, just median gross rent of $1080. The divergence between price growth (+7.6% in 2024) and the earlier rapid spike (+12.8% in 2022) suggests a cooling of the most aggressive appreciation phase.
+
+    *   *Requirement 3: Affordability.* Price-to-income ratio of 3.41 exceeds the national average of 3.20, indicating buyer affordability is strained relative to local incomes. Conversely, the rent burden of 20.6% surpasses the national average of 17.2%, indicating renters also face financial pressure.
+
+    *   *Requirement 4: Regional context.* Home values sit 51.8% above the state average but 5.7% below the national average, reflecting a strong regional pull from the state while lagging the broader U.S. housing benchmark.
+
+    *   *Requirement 5: Data anomaly.* The notable pattern is the divergence between price and rent dynamics. While home values appreciated rapidly, the rent burden remains elevated, creating a scenario where both buyers and renters experience affordability</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -745,7 +767,7 @@ Regional context highlights Pulaski County’s dominance within Arkansas, where 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

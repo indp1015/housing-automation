@@ -557,11 +557,28 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Ventura County operates as a distinctively renter-favorable market, characterized by extreme valuation disconnects relative to local earning power. The price-to-income ratio stands at 7.49, more than double the national average of 3.20, while the price-to-rent ratio of 29.6 significantly exceeds the national benchmark of 18.7. These metrics indicate that purchasing equity is disproportionately expensive compared to renting, creating a structural barrier for owner-occupants despite the county’s 64.6% owner occupancy rate. The affordability dimension is critically strained, with a rent burden of 25.3% of household income compared to the 17.2% national average, suggesting that even rental housing consumes a substantial portion of median earnings.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Ventura County, California.
+    *   **Data provided:** Current market data (2024), annual trends (2017-2024), local economy (BLS), housing supply, migration, national mortgage rate, composite score, derived metrics, relative position.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific analysis points to cover, woven into 2-3 cohesive paragraphs without bullet points or headers.
+    *   **Style:** Professional, analytical tone, third person only, data-driven (no predictions/speculation/generic statements).
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: no specific FHFA HPI change provided in the prompt, so I must infer from available data or state that momentum is driven by the +7.1% YoY home value growth). *Self-correction: The prompt says "Interpret the FHFA HPI change (if available)" - it's not explicitly in the text, but the trend shows +7.1% YoY in 2024. I will reference the 2024 YoY growth as the momentum signal.*
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score based on the provided data).
 
-Trend analysis reveals a period of accelerated appreciation followed by moderating growth, with median home values rising from $520,300 in 2017 to $822,700 in 2024. The peak year-over-year increase of 13.4% in 2022 has since decelerated to 7.1%, indicating a stabilization in price momentum. However, a notable divergence exists between asset classes: home values are rising faster than rents, which currently sit at a median of $2,317 per month. This divergence suggests that the capital appreciation of owned property is outpacing the income generated from leasing, further eroding the relative value of rental investments. Regional context underscores this isolation; Ventura County home values are 261.3% above the national average and 35.0% above the California state average, while median household income of $109,797 is only 61.5% above the national mean. This disparity highlights that local wages have not kept pace with the region’s premium pricing structure.
-
-Economic fundamentals provide limited relief to this affordability crisis. With 288,572 employed residents and an average weekly wage of $1,336, the labor market supports high demand but fails to bridge the valuation gap. Housing supply remains constrained, with only 1,609 new units authorized in 2025, including 1,069 multi-family units, which is insufficient to offset the net inflow of 3,081 tax filers. The current 30-year mortgage rate of 7.32% further exacerbates carrying costs for prospective buyers. Consequently, the market exhibits strong momentum in price appreciation but suffers from low vitality and stability due to affordability constraints. The composite assessment reflects a stressed environment where high momentum is counterbalanced by severe affordability deficits, driven primarily by the divergence between asset values and local income levels.</p>
+2.  **Drafting - Point by Point Integration:**
+    *   *Point 1 (Classification):* Balanced market leaning buyer's, justified by high owner occupancy (64.6%) and rising values, yet affordability constraints suggest a renter's tilt. Actually, let's look at the score: Overall 34.2/100 (Stressed). Rent Burden is 25.3% (national 17.2%). Price-to-income is 7.49 (national 3.20). High prices relative to income suggest buyer's market dynamics, but high rent burden suggests renters are squeezed. Let's classify it as a buyer's market constrained by high prices, or a balanced market with strong buyer momentum. The prompt asks: "Buyer's, renter's, or balanced market? Justify with specific metrics." Let's say: A buyer's market constrained by elevated prices, evidenced by a price-to-income ratio of 7.49 versus the national average of 3.20, though the rent burden of 25.3% indicates significant cost pressures on renters.
+    *   *Point 2 (Trends):* From 2017 to 2024, median home values rose from $520,300 to $822,700, accelerating from +3.5% to +13.4% in 2022 before moderating to +7.1% in 2024, while median gross rent increased from an implied lower base to $2,317/month. Wait, I don't have rent trends for 2017-2024, only current rent ($2,317). I can only state that the multi-year price appreciation outpaced typical stability, peaking at +13.4% in 2022 before moderating to +7.1% in 2024.
+    *   *Point 3 (Affordability):* Price-to-income ratio of 7.49 vastly exceeds the national average of 3.20, indicating severe unaffordability for buyers, while the rent burden of 25.3% exceeds the national average of 17.2%, compressing disposable income for renters.
+    *   *Point 4 (Regional Context):* Home values sit 261.3% above the national average and 35.0% above the state average, while local median household income reaches $109,797, 61.5% above the national norm,</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -745,7 +762,7 @@ Economic fundamentals provide limited relief to this affordability crisis. With 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

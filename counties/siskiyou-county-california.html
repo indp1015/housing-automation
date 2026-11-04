@@ -492,9 +492,33 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Siskiyou County presents a stressed buyer's market characterized by severe affordability constraints despite modest absolute price levels. The price-to-income ratio of 5.24 substantially exceeds the 3.20 national benchmark, while the 22.2% rent burden surpasses the 17.2% national average, indicating that both ownership and rental costs consume disproportionate shares of local earnings. Median home values have climbed from $176,600 in 2017 to $309,500 in 2024, a 75.3% cumulative increase driven by consistent annual appreciation between 5.5% and 13.3%, with the 2022 surge of 13.3% marking a notable acceleration. The price-to-rent ratio of 23.6, well above the 18.7 national norm, confirms that purchase prices have outpaced rental growth, signaling a structural divergence favoring landlords over prospective buyers.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Siskiyou County, California.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 2-3 cohesive paragraphs, no bullet points or headers.
+    *   **Tone:** Professional, analytical, third person only.
+    *   **Constraints:** No predictions/speculation/future forecasts. Every sentence must be data-driven. No generic statements. Do not mention "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Content Requirements:**
+        1.  Market classification (buyer's, renter's, balanced) with justification.
+        2.  Trend interpretation (multi-year price and rent trends).
+        3.  Affordability assessment (price-to-income, rent burden vs national).
+        4.  Regional context (county vs state/national averages).
+        5.  Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6.  Practical implication for buyer/renter.
+        7.  Recent momentum (interpret FHFA HPI change - wait, FRED data is given as 30-year fixed mortgage rate: 7.24%, but the prompt says "Interpret the FHFA HPI change (if available) and its significance". I don't have an FHFA HPI number in the prompt, so I must infer it from the context or just discuss the mortgage rate / recent momentum without making up a specific FHFA HPI number, or note that the mortgage rate is the key driver of recent momentum). *Correction*: The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI is provided, I will focus on the high mortgage rate (7.24%) as the driver of recent momentum/stagnation.
+        8.  Economic context (employment, supply, migration, mortgage rates).
+        9.  Score interpretation (explain which axes drive the overall score based on the provided composite metrics).
 
-Regionally, the county sits 35.9% above the national median home value yet 49.2% below the California average, reflecting its position as a relatively affordable enclave within a high-cost state. Median household income of $59,095 trails the national figure by 13.1%, while average weekly wages of</p>
+2.  **Drafting - Step-by-Step Integration:**
+
+    *   *Requirement 1 & 2 & 8 (Classification, Trends, Economic Context):*
+        Siskiyou County presents a buyer’s market, evidenced by a median home value of $309,500 against a median gross rent of $1,091, yielding a price-to-rent ratio of 23.6 versus a national average of 18.7. The multi-year trend reveals accelerating appreciation, jumping from $176,600 in 2017 to $309,500 in 2024, while gross rents remained relatively flat at $1,091. This divergence indicates that housing demand outpaces rental supply, a dynamic reinforced by a net migration inflow of 1,074 filers and a local employment base of 9,601 jobs. However, the housing supply remains constrained, with only 41 new single-family units authorized in 2025, limiting price discovery and sustaining buyer demand.
+
+    *   *Requirement 3 & 4 (Affordability, Regional Context):*
+        Affordability is severely strained, with a price-to-income ratio of 5.24 compared to the national average of 3.20, and a rent burden of 22.2% versus the 17.2% national benchmark. Regionally, home values exceed the national average by 35.9% but sit 49.2% below the state average, reflecting a highly localized economic profile where median household income ($59,095) trails the national norm by 13.1%. These disparities underscore a market where purchasing power is significantly eroded by the high cost of living relative to local earnings.
+
+    *   *Requirement 5, 6, 7, 9 (Anomaly, Implication, Momentum, Score Drivers):*
+        A notable pattern is the sustained decoupling of home prices from rent growth, which has historically suppressed rental affordability despite rising property values. For prospective buyers or renters, this means transaction costs remain exceptionally high relative to local wages, and securing a mortgage at the current 30-year fixed rate of 7.24% further exacerbates affordability challenges. The composite assessment, driven primarily by extreme affordability deficits and weak stability, reflects a market under severe pressure. Momentum is</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -677,7 +701,7 @@ Regionally, the county sits 35.9% above the national median home value yet 49.2%
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

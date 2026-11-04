@@ -306,11 +306,34 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Searcy County, Arkansas, functions as a distinct buyer’s market, characterized by high owner occupancy at 79.4% and a price-to-rent ratio of 15.1, which sits well below the national average of 18.7. This structural advantage is reinforced by a median home value of $110,000, positioning the market 51.7% below the national median and 22.2% below the Arkansas state average. The affordability profile is robust, with a price-to-income ratio of 2.48 compared to the national benchmark of 3.20, and a rent burden of only 16.4% of income, slightly under the national 17.2% threshold. These metrics indicate that housing costs remain manageable relative to local earning power, despite the median household income of $44,426 being 34.7% lower than the national mean.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Searcy County, Arkansas.
+    *   **Data provided:** Current market data (2024 ACS), annual trends (2017-2024), local economy (BLS QCEW), migration (IRS), national mortgage rate (FRED), composite score, derived metrics, relative position.
+    *   **Content requirements:**
+        1. Market classification (buyer's/renter's/balanced) with justification.
+        2. Trend interpretation (multi-year price/rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (county vs. state/national).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, FHFA HPI isn't explicitly in the prompt, but "recent momentum" and "Trend signal: Home values and rents are rising at similar rates" are there. I need to interpret the momentum based on the provided text or general knowledge of FHFA HPI if it's a standard reference, but actually, the prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no specific FHFA HPI change number is given in the prompt, I must rely on the "Trend signal: Home values and rents are rising at similar rates" and the overall +1.8% YoY trend. Wait, I should just interpret the momentum based on the 2024 data (+1.8%) and the general trend). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." It's not explicitly provided as a number, so I will focus on the +1.8% YoY home value growth and the stability of the trend.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (weave drivers of affordability, stability, momentum, vitality into narrative without saying "Market Score").
+    *   **Style requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence data-driven.
+        *   Length: 280-320 words (~2-3 paragraphs).
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+        *   Begin directly with the analysis. Do not repeat data or use headers.
 
-Trend analysis reveals a market stabilizing after a period of volatility. Home values rose from $89,700 in 2017 to $110,000 in 2024, with year-over-year growth moderating from a peak of 9.3% in 2018 to 1.8% in 2024. A notable anomaly occurred in 2020, when values dipped 4.3% to $99,000, diverging from the general upward trajectory before recovering in subsequent years. Currently, home values and rents are rising at similar rates, suggesting equilibrium rather than speculative divergence. The local economic base supports this stability but limits vitality, evidenced by only 1,077 total jobs and an average weekly wage of $697. While net migration was positive at 288 filers between 2021 and 2022, the small population of 7,859 residents constrains broader economic dynamism.
+2.  **Drafting - Step-by-Step:**
 
-The current environment is further shaped by a 30-year fixed mortgage rate of 7.32%, which impacts purchasing power despite low absolute prices. The editorial assessment of the market highlights strong stability and affordability but flags limited momentum and vitality, reflecting the slow growth rates and modest employment base. For prospective buyers, the low price-to-income ratio offers significant entry leverage, while renters benefit from low cost burdens. However, the limited employment pool of 148 establishments suggests that local income growth may remain constrained, keeping housing demand tied to external migration patterns rather than internal economic expansion. The market’s resilience is driven by affordability and stability, whereas momentum remains neutral, indicating a steady but slow-moving housing sector.</p>
+    *   *Paragraph 1: Classification, Trends, and Anomaly*
+        Searcy County exhibits a balanced housing market, characterized by moderate price appreciation and stable rent dynamics. Over the 2017–2024 period, median home values rose from $89,700 to $110,000, while median gross rents increased from $538 to $606, reflecting a sustained upward trajectory. A notable pattern emerges in the divergence between price and rent growth; although both metrics have trended</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -494,7 +517,7 @@ The current environment is further shaped by a 30-year fixed mortgage rate of 7.
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

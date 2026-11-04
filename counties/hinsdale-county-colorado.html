@@ -318,11 +318,22 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Hinsdale County, Colorado, operates as a distinctly renter-favorable market, characterized by a price-to-rent ratio of 31.2, which is significantly higher than the national average of 18.7. This disparity indicates that purchasing is currently less financially efficient than renting for most households. The market’s affordability is critically constrained, with a price-to-income ratio of 5.76 compared to the national benchmark of 3.20. Although the median household income of $75,972 exceeds the national average by 11.7%, it fails to offset the median home value of $437,900, which stands 92.3% above the national mean. Consequently, the affordability dimension of the market’s overall assessment is severely compromised, dragging down the composite evaluation despite strong momentum indicators.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Hinsdale County, Colorado.
+    *   **Length:** 280-320 words (approx. 2-3 paragraphs).
+    *   **Structure:** 9 specific analysis points to cover (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation). *Wait, the prompt says "Write a 280-320 word analysis covering: [9 items]... Write in 2-3 cohesive paragraphs. No bullet points or headers." This means I need to integrate these 9 points naturally into 2-3 paragraphs without using headers or bullets.*
+    *   **Style:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, data-driven.
+    *   **Content constraints:** Do not mention "Market Score" explicitly; weave its drivers into the narrative. Begin directly with the analysis. No repeating data or headers.
 
-Recent trends reveal a volatile but ultimately stabilizing trajectory. Home values surged 18.9% in 2023 before moderating to a negligible -0.2% decline in 2024, signaling a plateau after a period of aggressive appreciation. This price stabilization contrasts with the noted trend of rents rising faster than home values, suggesting shifting demand dynamics. The local economy provides limited support for sustained housing growth, with only 196 total jobs and an average weekly wage of $699. Furthermore, housing supply remains extremely constrained, with just eight new single-family units authorized in 2025 and zero multi-family developments. Migration data shows perfect equilibrium, with 300 filers entering and 300 leaving the county, indicating no demographic pressure to drive further price inflation.
-
-The market’s vitality is further dampened by the high cost of entry relative to local earning potential. With a 7.32% 30-year mortgage rate, the high price-to-income ratio makes homeownership inaccessible for a significant portion of the population, reinforcing the renter’s market classification. The stability metric reflects the recent volatility, where the sharp 2023 spike was followed by immediate stagnation. While the momentum axis benefits from the recent high-growth years, the affordability and vitality axes are weighed down by the disconnect between local wages and asset prices. For potential buyers, the data suggests that entry barriers remain high, while renters face a burden of 18.5% of their income, slightly above the national average of 17.2%. The lack of new multi-family construction and the small population base of 1,005 residents limit the market’s capacity to absorb external shocks, keeping the overall assessment in a stressed category.</p>
+2.  **Deconstruct the Data & Map to Prompts:**
+    *   *Market classification:* Renter's vs. buyer's vs. balanced. Rent Burden is 18.5% (National avg 17.2%), Price-to-Income is 5.76 (National avg 3.20), Price-to-Rent is 31.2 (National avg 18.7). High price-to-income and price-to-rent indicate a renter's market, but rent burden is slightly below national average, suggesting some buyer demand but high prices. Let's classify as "Renter's" due to the extreme price-to-income ratio and price-to-rent ratio, though rent burden is slightly favorable. Actually, wait. Rent burden 18.5% < 17.2%? No, 18.5% > 17.2%. So it's slightly above national average. Price-to-income 5.76 >> 3.20. Price-to-rent 31.2 >> 18.7. It's a renter's market.
+    *   *Trend interpretation:* 2017-2024 price trend: +1.8%, +5.7%, -7.1%, +4.2%, +9.0%, +18.9%, -0.2%. Rent trend isn't explicitly given as a series, but relative position says "Rents are rising faster than home values". Rent Burden is rising (18.5% vs 17.2%).
+    *   *Affordability assessment:* Price-to-income 5.76 vs 3.20 (very unaffordable). Rent burden 18.5% vs 17.2% (slightly less affordable than national).
+    *   *Regional context:* Home value vs national avg: +92.3%. vs state avg: +2.4%. Income vs national avg: +11.7%.
+    *   *Data anomaly:* Divergence between price and rent growth (rents rising faster than home values). Also, net migration is 0 filers, but inflow/outflow are equal. Wait, the prompt specifically mentions "e.g., divergence between price and rent growth" as an example of an unusual pattern. I will use that.
+    *   *Practical implication:* Buyers face high barriers; renters should expect higher costs relative to income.
+    *   *Recent momentum:* FHFA HPI change? The prompt doesn't give a specific FHFA number, just "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I can say "Given the moderation from the 2023 peak of +18.9% YoY to a -0.2% in 2024..." or just note the recent deceleration. Wait, the prompt says "Interpret the FHFA HPI change (if available)". Since it's not provided, I will focus on the YoY trend moderation from +18.9% to -0.2%.
+    *   *Economic context:* Total Employment 196, Avg Weekly Wage $699, Establishments 69. New Units Authorized 8 (all single-family). Mortgage rate</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -506,7 +517,7 @@ The market’s vitality is further dampened by the high cost of entry relative t
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

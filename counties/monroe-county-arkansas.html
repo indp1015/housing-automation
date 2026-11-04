@@ -304,6 +304,37 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Monroe County, Arkansas.
+    *   **Data provided:** Current market data (ACS 5-Year), annual trend detail (2017-2024), local economy (BLS QCEW), migration (IRS), national mortgage rate (FRED), composite market score, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words.
+    *   **Format constraints:** 2-3 cohesive paragraphs. No bullet points or headers. Third person only. No predictions/speculation/future forecasts. Data-driven only. No explicit mention of "Market Score" (weave drivers into narrative).
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (county vs state/national).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, FRED mortgage rate is given, but FHFA HPI isn't explicitly given in the prompt, though it says "Interpret the FHFA HPI change (if available)" - I will just focus on the recent momentum from the 2024 YoY +7.9% and the overall composite score/trend). *Self-correction: The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI data is explicitly provided in the text, I will interpret the recent momentum based on the provided 2024 YoY growth of +7.9% and the composite score drivers.*
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality - weave into narrative).
+
+2.  **Drafting - Step-by-Step:**
+
+    *   *Paragraph 1: Classification, Trends, Regional Context, Affordability.*
+        Monroe County, Arkansas, presents a balanced housing market characterized by moderate price appreciation and constrained affordability. The median home value of $88,700, rising from $64,300 in 2018 to $88,700 in 2024, reflects a steady recovery rather than explosive growth. However, the Price-to-Income Ratio of 2.05 versus the national average of 3.20 indicates severe affordability constraints, leaving buyers with limited purchasing power. Regionally, home values sit 61.0% below the national average and 37.3% below the state average, suggesting a localized market underpricing compared to broader benchmarks. The Rent Burden of 17.1% closely mirrors the national average of 17.2%, indicating that renters are not disproportionately squeezed by housing costs relative to their income, but the low Price-to-Rent ratio of 12.0 versus the national 18.7 suggests homes are relatively cheap on a rent-equivalent basis, yet this does not offset the income-based affordability gap.
+
+    *   *Paragraph 2: Anomaly, Economic Context, Practical Implication, Momentum.*
+        A notable pattern in this market is the divergence between price and rent growth; while home values surged 19.7% year-over-year in 2020 and moderated to a +7.9% increase in 2024, rents have remained relatively static, creating a disconnect where homeowners benefit from rising asset values while renters face stable, unchanging costs. This dynamic is reinforced by the local economy, which employs just 1,353 people across 200 establishments with an average weekly wage of $841, limiting the pool of potential buyers and driving net migration of only 58 filers in 2021-2022. With the current 30-year fixed mortgage rate at 7.24%, financing remains challenging, further suppressing demand. For prospective buyers, the high price-to-income ratio means that even with moderate price increases, purchasing power remains tightly bound to local wages. Conversely, renters enjoy a stable cost environment, but the lack of population inflow suggests limited long-term rental demand. The overall composite rating of 3</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Monroe County on Our Sister Sites</h3>
@@ -481,7 +512,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

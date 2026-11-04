@@ -553,6 +553,37 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Jefferson County, Colorado.
+    *   **Data provided:** Current market data (2024 ACS), annual trend detail (2017-2024), local economy (BLS), housing supply (Census), migration (IRS), national mortgage rate (FRED), composite score, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words. Approximately 2-3 paragraphs. No bullet points or headers.
+    *   **Style requirements:** Professional, analytical tone. Third person only. No predictions/speculation/future forecasts. No generic statements (every sentence must be data-driven). No mention of "Market Score" explicitly (weave drivers into narrative).
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (compare to state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication (what buyer/renter should know).
+        7. Recent momentum (interpret FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but no FHFA HPI data is provided in the prompt. I need to handle this carefully. The prompt provides "Recent momentum: Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I will note that the available FRED mortgage rate of 7.24% is the relevant recent momentum indicator, or simply omit if strictly impossible, but better to use the 7.24% mortgage rate as the recent momentum driver since FHFA isn't there. Wait, let me re-read: "Recent momentum: Interpret the FHFA HPI change (if available) and its significance." Since it's not available, I can just focus on the 30-year fixed mortgage rate of 7.24% from FRED as the recent momentum factor, or state that without the FHFA HPI, the mortgage rate serves as the recent momentum indicator. Let's use the 7.24% mortgage rate as the recent momentum signal.)
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality - weave into narrative without saying "Market Score").
+
+2.  **Drafting - Step-by-Step:**
+
+    *   *Paragraph 1: Classification, Trends, and Affordability*
+        Jefferson County exhibits a buyer's market, driven by a price-to-income ratio of 5.76 compared to the national average of 3.20, and a rent burden of 20.2% versus the national average of 17.2%. The multi-year trend reveals a dramatic escalation in home values, rising from $334,100 in 2017 to $637,600 in 2024, while median gross rent climbed only to $1,861. This divergence indicates that home values are outpacing rent growth, a characteristic feature of a buyer's market where transaction volumes favor sellers despite elevated prices. Affordability remains strained, with the price-to-rent ratio of 28.6 far exceeding the national average of 18.7, signaling that purchasing power is significantly eroded relative to renting.
+
+    *   *Paragraph 2: Regional Context, Anomaly, and Momentum*
+        Relative to Colorado and national averages, Jefferson County sits at +49.1% above the state median home value and +180.0% above the national average, while median household income is +62.7% above the national benchmark. A notable anomaly is the widening gap between the peak year-over-year price appreciation of +20.2% in 2022 and the moderated +5.5% in 2024, which aligns with the recent momentum indicated by the 30-year fixed mortgage rate at 7.24%. This sustained high mortgage rate, combined with net migration inflows of 266,950 filers averaging $117,722, sustains demand despite constrained affordability. Local employment</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Jefferson County on Our Sister Sites</h3>
@@ -730,7 +761,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

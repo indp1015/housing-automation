@@ -389,11 +389,23 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Chaffee County, Colorado, exhibits characteristics of a severely stressed seller’s market, driven by extreme affordability deficits rather than traditional supply-demand imbalances. The median home value of $665,700 stands at 192.4% above the national average, while the median household income of $84,132 is only 23.7% higher than the national norm. This disparity results in a price-to-income ratio of 7.91, nearly 2.5 times the national average of 3.20, indicating that local purchasing power is significantly outpaced by asset values. Similarly, the price-to-rent ratio of 34.4 is nearly double the national benchmark of 18.7, suggesting that rental costs are disproportionately high relative to property values, a dynamic that typically favors sellers and long-term investors over first-time buyers.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Chaffee County, Colorado.
+    *   **Data provided:** Current market data (2024), annual trends (2017-2024), local economy (BLS), housing supply (Census), migration (IRS), national mortgage rate (FRED), composite score (editorial), derived metrics, relative position.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific points to cover, woven into 2-3 cohesive paragraphs without bullet points or headers.
+    *   **Style:** Professional, analytical, third person only, no predictions/speculation/future forecasts, every sentence data-driven, no generic statements.
+    *   **Constraint:** Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
 
-The multi-year trend reveals a period of rapid appreciation that is now moderating but remains elevated. Home values increased from $313,200 in 2017 to $665,700 in 2024, with the peak year-over-year growth reaching 23.7% in 2022 before settling to 11.2% in 2024. This sustained growth aligns with positive net migration of 1,316 filers between 2021 and 2022, where incoming residents reported an average income of $103,936, slightly higher than the outflow average. However, local economic fundamentals show strain; with only 6,866 total jobs and an average weekly wage of $948, the labor market may not fully support the current price levels. Housing supply remains tight, with 175 new units authorized in 2025, predominantly single-family homes, which does little to alleviate the pressure on the broader housing stock.
-
-Affordability metrics confirm the market’s stress, with a rent burden of 23.0% compared to the national average of 17.2%. The high vitality of the region, reflected in strong migration inflows and high owner occupancy at 74.1%, contrasts sharply with the low stability and affordability indicators. The 7.32% mortgage rate further compounds the affordability challenge, making monthly payments on a median-priced home difficult for average local earners. Consequently, the market is defined by a disconnect between high asset values and local income levels, driven more by external demand and limited supply than by local economic capacity. Potential participants must recognize that entry barriers are substantial, with both purchase and rental costs significantly exceeding regional and national norms.</p>
+2.  **Deconstruct the Content Requirements:**
+    *   *Point 1: Market classification:* Buyer's, renter's, or balanced? Justify with specific metrics. (Price-to-income ratio is 7.91 vs 3.20 national -> strongly buyer's).
+    *   *Point 2: Trend interpretation:* Multi-year price and rent trends. (Prices rose from $313k to $665k, rents from ~$1300 to $1611, both rising at similar rates, peaking in 2022 at +23.7% YoY).
+    *   *Point 3: Affordability assessment:* Price-to-income and rent burden vs national. (Price-to-income 7.91 vs 3.20; Rent burden 23.0% vs 17.2%).
+    *   *Point 4: Regional context:* Compare to state and national. (Home value +192.4% vs national, +55.7% vs state; Income +23.7% vs national).
+    *   *Point 5: Data anomaly/notable pattern:* Divergence between price and rent growth? Wait, the prompt says "Trend signal: Home values and rents are rising at similar rates". But the derived metrics show Price-to-Rent ratio of 34.4 vs 18.7 national. Also, the composite score has Affordability 3.3/100, Stability 41.2, Momentum 37.0, Vitality 83.0. The anomaly could be the extreme Price-to-Income ratio (7.91) or the divergence between the high price growth (+11.2%) and the low affordability score (3.3). Let's look at the "Price-to-Rent Ratio: 34.4 (National avg: 18.7)" - this indicates a strong divergence where prices far outpace rents compared to the national baseline. Or the anomaly is that despite rising prices, the rent burden is still below the national average, but the price-to-income is astronomical. Let's focus on the Price-to-Rent divergence (34.4 vs 18.7) as the notable pattern, or the extreme Price-to-Income ratio (7.91 vs 3.20). I will use the Price-to-Rent divergence as the notable pattern.
+    *   *Point 6: Practical implication:* What should a buyer/renter know? (Buyers face high barriers due to 7.91 P/I ratio; renters are relatively better off on rent burden but face high absolute rent).
+    *   *Point 7: Recent momentum:* FHFA HPI change? The prompt mentions "Interpret the FHFA HPI change (if available)". No specific FHFA data is provided in the text, only the composite score. I must interpret the momentum based on the provided data (YoY price growth of +11.2%, which is significant given the historical peak of +23.7% in 2022, showing a moderation but continued strength).
+    *   *Point 8: Economic context:* Employment (6,866 jobs, $948/week), housing supply (175 units, mostly single-family), migration (+1,316 filers inflow), mortgage rate (7.24%). How do these shape the market? High single-family supply limits inventory, driving prices up; moderate employment supports demand;</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -577,7 +589,7 @@ Affordability metrics confirm the market’s stress, with a rent burden of 23.0%
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

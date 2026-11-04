@@ -304,6 +304,40 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Sedgwick County, Colorado.
+    *   **Data Provided:** Current market data (median home value $149k, rent $774, income $52.3k, pop 2304, 71.8% owner occupancy), annual trends (2017-2024: $91.5k to $149k, peak +16.5% in 2022), local economy (356 jobs, avg wage $864, 78 establishments), migration (+56 net, 880 inflow/824 outflow), mortgage rate (7.24%), composite score (43.6/100, Affordability 48, Stability 31.1, Momentum 59.8, Vitality 32.3), derived metrics (Price/Income 2.84 vs 3.20, Rent Burden 17.7% vs 17.2%, Price/Rent 16.0 vs 18.7), relative position (Home value -34.6% national, -65.1% state; Income -23.0% national), trend signal (values rising faster than rents).
+    *   **Tasks:**
+        1. Market classification (Buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income and rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but there is no FHFA HPI change provided in the data, only the national 30-year fixed rate of 7.24%. I need to interpret the significance of the mortgage rate or note that FHFA HPI isn't explicitly provided but the national rate is 7.24%, or just address the recent momentum based on the provided data like the +4.4% YoY in 2024). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since it's not available, I will focus on the 2024 YoY growth of +4.4% and the national mortgage rate of 7.24% as the recent momentum driver.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements. Every sentence must be data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+        *   Begin directly with the analysis. Do not repeat the data or use headers.
+
+2.  **Drafting - Paragraph by Paragraph Strategy:**
+    *   *Paragraph 1: Classification, Trends, Anomaly.* Focus on market classification (balanced or renter's? Rent burden is 17.7% which is close to national avg 17.2%, but price/income is 2.84 vs 3.20, meaning it's relatively affordable, but stability and vitality are low scores. Actually, a renter's market often has high rent burden or low price/income. Here, price/income is lower than national, suggesting buyers have some power, but the overall score is low. Let's classify as a buyer's market because Price/Income < National and Price/Rent < National, but wait, Stability and Vitality are very low (31.1, 32.3). Let's call it a buyer's market driven by affordability, but constrained by stability/vitality. Or just "balanced" since rent burden is near national average.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Sedgwick County on Our Sister Sites</h3>
@@ -481,7 +515,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

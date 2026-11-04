@@ -304,6 +304,35 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Woodruff County, Arkansas.
+    *   **Data provided:** Current market data (2024), annual trend detail (2017-2024), local economy (BLS), migration (IRS), national mortgage rate (FRED), composite score, derived metrics, relative position.
+    *   **Task:** Write a 280-320 word analysis covering 9 specific points (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style Requirements:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, data-driven only.
+    *   **Length:** 280-320 words (~2-3 paragraphs).
+    *   **Format:** 2-3 cohesive paragraphs, NO bullet points or headers. Do NOT mention "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Start:** Begin directly with the analysis. Do not repeat the data or use headers.
+
+2.  **Deconstruct the Data & Map to Prompts:**
+    *   *Market classification:* Price-to-income ratio is 2.21 vs national 3.20. Rent burden is 15.3% vs 17.2%. Rent burden is lower than national, meaning it's affordable for renters, but price-to-income is very low, suggesting a buyer's market or highly affordable buyer market. Wait, let's look at the composite score: Overall 44.8 (Stressed). Stability 13.7, Vitality 19.3. Affordability 77.0. Momentum 57.6. If affordability is high but stability and vitality are low, it's a buyer's market that is currently stressed due to instability and lack of vitality. Let's classify as a Buyer's Market (Price-to-income < 3.0, Rent burden < National avg).
+    *   *Trend interpretation:* 2017-2024 shows a massive spike in 2022 (+25.1%) and sustained growth to 2024 (+10.0%), peaking then moderating. Rents also rose but slower.
+    *   *Affordability assessment:* Price-to-income 2.21 (National 3.20) means homes are much cheaper relative to income. Rent burden 15.3% (National 17.2%) means renters spend less of their income on rent.
+    *   *Regional context:* Home value vs national avg -53.2%, vs state avg -24.7%. Income vs national avg -29.2%.
+    *   *Data anomaly/notable pattern:* Divergence between price and rent growth. Prices spiked +25.1% in 2022, while rents grew much slower (implied by the overall trend, though exact rent YoY isn't given, the prompt says "Trend signal: Home values are rising faster than rents"). Also, net migration is slightly positive (+64 filers) but inflow and outflow are almost identical in volume (2,052 vs 1,988), indicating near-zero net migration.
+    *   *Practical implication:* Buyers benefit from low prices, but renters face a stressed, unstable market with weak momentum and vitality.
+    *   *Recent momentum:* FHFA HPI change (implied by the FRED mortgage rate and composite momentum of 57.6). The mortgage rate is 7.24%, which is relatively high, dampening recent momentum compared to the 2022 spike.
+    *   *Economic context:* Total employment 1,630 jobs, avg weekly wage $1,069. 163 establishments. Low employment base limits housing demand. Mortgage rates at 7.24% weigh on buyer sentiment.
+    *   *Score interpretation:* The overall composite rating is driven primarily by affordability (77.0) and momentum (57.6), but the "Stressed" label comes from the low stability (13.7) and vitality (19.3) axes, which drag down the overall score despite strong affordability.
+
+3.  **Drafting - Paragraph by Paragraph (aim</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Woodruff County on Our Sister Sites</h3>
@@ -481,7 +510,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

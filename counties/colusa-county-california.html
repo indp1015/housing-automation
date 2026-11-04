@@ -410,11 +410,23 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Colusa County exhibits characteristics of a renter’s market, primarily driven by a price-to-rent ratio of 28.3, which significantly exceeds the national average of 18.7. This disparity indicates that purchasing is financially less favorable relative to renting compared to broader U.S. benchmarks. The affordability profile is further strained by a price-to-income ratio of 5.20, nearly double the national average of 3.20, suggesting that median household income of $75,672 supports limited purchasing power relative to the $393,400 median home value. While the rent burden stands at 18.3%, slightly above the national 17.2%, the primary financial pressure falls on prospective homeowners rather than tenants.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Colusa County, California.
+    *   **Data provided:** Current market data (2024 ACS), annual trends (2017-2024), local economy (BLS), housing supply, migration, mortgage rate, composite score, derived metrics, relative position.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific points to cover (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, every sentence data-driven, no "Market Score" term explicitly used (weave drivers into narrative).
+    *   **Format:** 2-3 cohesive paragraphs, NO bullet points or headers. Begin directly with analysis.
 
-Trend analysis reveals a period of rapid appreciation followed by stabilization. Home values surged 19.8% in 2022, moderating to 4.9% in 2024, while rents have risen more slowly, creating a widening gap between asset appreciation and rental costs. This divergence highlights a market where asset values are decoupling from immediate rental yields. Regionally, the county’s median home value is 35.4% below the California average but 72.8% above the national mean, positioning it as an outlier within the state. Local economic fundamentals remain modest, with only 7,143 total jobs and a low average weekly wage of $1,171, which limits local income growth potential.
-
-Supply constraints and migration patterns further shape market dynamics. With only 17 new housing units authorized in 2025, the housing stock is tightening, potentially sustaining price momentum despite high mortgage rates of 7.32%. Net migration of +177 filers indicates slight population growth, yet the inflow and outflow average incomes are nearly identical ($73,505 vs. $73,412), suggesting limited income-driven demand shifts. The overall market assessment reflects low vitality and stability scores, driven by weak local employment depth and high affordability barriers. Momentum remains moderate due to continued, albeit slower, price appreciation, but the composite picture is one of stress, where high entry costs and limited supply outpace local earning capacity. Potential buyers face significant entry hurdles, while renters encounter a market where long-term rental costs may eventually align with inflated property values.</p>
+2.  **Deconstruct the Data & Map to Requirements:**
+    *   *Market classification:* Rent burden is 18.3% (National avg 17.2%), Price-to-Rent is 28.3 (National avg 18.7), but Price-to-Income is 5.20 (National avg 3.20). High price-to-income suggests a renter's market or highly unaffordable for buyers, but rent burden is slightly below national average. Let's classify as a renter's market due to high price-to-income ratio and high price-to-rent ratio.
+    *   *Trend interpretation:* Home values rose from $223,600 (2017) to $393,400 (2024). Peak YoY +19.8% in 2022, moderating to +4.9% in 2024. Rents likely rose similarly but slower.
+    *   *Affordability assessment:* Price-to-Income 5.20 vs 3.20 national. Rent burden 18.3% vs 17.2%. Very poor affordability for buyers; renters slightly better off than national average but still stretched.
+    *   *Regional context:* Home value +72.8% vs national, -35.4% vs state. Income +11.3% vs national.
+    *   *Data anomaly:* Divergence between price and rent growth (Price-to-Rent ratio 28.3 vs Price-to-Income 5.20). Also, net migration is nearly zero (+177 out of ~9k filers), indicating stability. Wait, the prompt says "divergence between price and rent growth" - I need to check if rent data is given. The prompt gives Median Gross Rent ($1157) and Price-to-Rent (28.3). The trend section only gives home value trends. I will focus on the Price-to-Income vs Rent Burden divergence or the price-to-rent ratio being exceptionally high.
+    *   *Practical implication:* Buyers face severe affordability constraints (5.20x income); renters have slightly lower burden than national average but still face high costs. Stability is low (Score 20).
+    *   *Recent momentum:* FHFA HPI change isn't explicitly given in the text, just "FRED mortgage rate 7.24%". Wait, point 7 says "Interpret the FHFA HPI change (if available) and its significance." It's not available in the text, so I must note that no HPI change data was provided, or interpret the mortgage rate's impact on momentum. Actually, the prompt says "if available". I will mention the absence of HPI data or focus on the mortgage rate's effect on buyer demand. Let's stick strictly to the data: "Recent momentum is reflected in the moderating year-over-year appreciation..." wait, the prompt asks to interpret the FHFA HPI change *if available*. Since it's not, I will state that the absence of HPI data precludes a specific momentum interpretation, though the mortgage rate of 7.24% caps buyer demand.
+    *   *Economic context:* 7,143 jobs, avg wage $1,171. Supply is tight (17 new units authorized). Migration is near zero (+1</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -598,7 +610,7 @@ Supply constraints and migration patterns further shape market dynamics. With on
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

@@ -389,11 +389,40 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Cleburne County, Arkansas, presents a complex housing environment characterized by strong recent momentum but constrained affordability. The market leans slightly toward a renter’s advantage, evidenced by a price-to-rent ratio of 17.4, which is below the national average of 18.7. This metric suggests that renting is relatively more cost-effective than purchasing for local residents. However, the owner-occupancy rate stands at 80.6%, indicating a solid base of homeownership that stabilizes the local housing stock. The composite assessment of this market reflects high momentum, driven by significant recent price appreciation, yet it is tempered by poor affordability scores and limited economic vitality.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Cleburne County, Arkansas.
+    *   **Data provided:** Current market data (2024), annual trend detail (2017-2024), local economy (BLS QCEW 2025), housing supply (Census 2025), migration (IRS 2021-2022), national mortgage rate (FRED 2026-10-29), composite score (0-100), derived metrics, relative position.
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: prompt says "if available", but no FHFA HPI number is explicitly given in the text, wait... let me check. The prompt says "Interpret the FHFA HPI change (if available)". The provided text doesn't have a specific FHFA HPI number, just the mortgage rate and overall score. I will focus on the momentum from the price trend or the overall score's momentum of 71.5). *Correction*: The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no specific FHFA HPI change is provided in the data block, I must interpret the "Momentum: 71.5/100" from the composite score as the recent momentum indicator, or note that the price trend shows sustained upward momentum. Let's use the +3.0% YoY trend and the high Momentum score.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only (no "I", "we", "you").
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
 
-From 2017 to 2024, median home values increased from $127,000 to $179,800, representing a cumulative gain of approximately 41.6%. This trajectory includes a volatile period where values dipped in 2019 and 2020 before surging 16.5% in 2022 and maintaining positive growth through 2024 at 3.0%. This pattern reveals a market that recovered from a brief stagnation to enter a phase of rapid expansion, now moderating. Notably, home values are rising faster than rents, creating a divergence that pressures potential buyers. The affordability challenge is acute; the price-to-income ratio is 3.22, nearly identical to the national average of 3.20, despite the county’s median household income of $55,798 being 17.9% below the national mean. Furthermore, the rent burden is 18.5% of income, exceeding the national benchmark of 17.2%.
+2.  **Drafting - Step-by-Step:**
 
-The regional context highlights a significant premium over the state average, with home values 27.1% higher than the Arkansas median, while remaining 21.0% below the national average. This disparity is driven by robust net migration of 841 filers between 2021 and 2022, where inflows slightly outpaced outflows. However, the local economy shows signs of strain, with only 5,654 total jobs and a mere five new housing units authorized in 2025. This severe supply constraint, combined with a 7.32% national mortgage rate, limits purchasing power. The high momentum score is driven by the recent price appreciation, while the low vitality score reflects the thin employment base and stagnant new construction. For stakeholders, the data indicates a market where entry is increasingly difficult due to rising prices outpacing income growth, despite the relative affordability of the asset compared to national peers.</p>
+    *   *Paragraph 1: Classification, Trends, and Affordability*
+        *   Classification: Balanced market. Justification: Price-to-income ratio is 3.22 (national avg 3.20), meaning prices are slightly elevated relative to income, but rent burden is only 18.5% (national avg 17.2%), indicating strong affordability for renters.
+        *   Trends: Price trends show significant appreciation, peaking at +16.5% in 2022 before moderating to +3.0% in 2024, while median gross rent remains relatively flat at $859.
+        *   Affordability: The price-to-income ratio of 3.22 closely mirrors the national average of 3.20, suggesting moderate affordability constraints, whereas the 18.5% rent burden falls below the 17.2% national benchmark, indicating renter affordability is favorable.
+
+    *   *Paragraph 2: Regional Context, Anomaly, and Economic Context*
+        *   Regional: Home values sit 21.0% below the national average but 27.1% above the state average, reflecting a localized premium driven by regional cost differences rather than broad national trends.
+        *   Anomaly: A notable divergence exists between price and rent growth, as home values appreciate faster than rental rates, inflating the price-to-rent ratio to 17.4 compared to the national average of 18.7.
+        *   Economic: Local employment provides 5,654 jobs with an average weekly wage of $817, while a constrained housing supply of only 5</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -577,7 +606,7 @@ The regional context highlights a significant premium over the state average, wi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

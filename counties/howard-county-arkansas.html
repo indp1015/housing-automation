@@ -306,11 +306,24 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Howard County, Arkansas, presents a complex market dynamic characterized by strong price momentum but constrained economic vitality. With a median home value of $153,900 and a median household income of $45,603, the price-to-income ratio stands at 3.37, slightly above the national average of 3.20. This metric, combined with a rent burden of 18.2% against a national benchmark of 17.2%, suggests a market that is tightening for both buyers and renters, leaning slightly toward a seller’s environment for inventory despite the low absolute price points. The owner-occupancy rate of 72.5% indicates a stable residential base, yet the affordability axis remains under pressure relative to local earning power.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Howard County, Arkansas.
+    *   **Data provided:** Current market data (ACS 5-Year), annual trends (2017-2024), local economy (BLS QCEW), migration (IRS), national mortgage rate (FRED), composite score (editorial), derived metrics, relative position.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific analysis tasks to cover.
+    *   **Style:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, no "I", "we", "you".
+    *   **Format:** 2-3 cohesive paragraphs, NO bullet points or headers. Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Start:** Begin directly with the analysis. No repeating data or using headers.
 
-The most striking feature of this market is the rapid acceleration in home values, which have risen 64.1% since 2017, including a 13.7% jump in 2024 alone. This surge significantly outpaces the modest median gross rent of $690, creating a divergence where asset values are decoupling from local wage growth. The average weekly wage of $913 translates to an annual income well below the national norm, highlighting a structural mismatch between housing costs and local employment capacity. While the county’s home values are 32.4% below the national average and 8.8% above the state average, the local economy supports only 4,934 total jobs across 302 establishments. This limited economic base fails to fully support the current valuation trajectory, suggesting that external factors or speculative demand may be driving prices rather than intrinsic local demand.
-
-Migration data reveals a net inflow of 216 filers, with incoming residents earning an average of $53,224, slightly higher than those leaving. This modest demographic shift contributes to the market’s momentum, which is the strongest driver of the county’s overall composite rating. However, this momentum is counterbalanced by low vitality scores, reflecting the thin employment landscape and limited commercial depth. The 7.32% mortgage rate further complicates entry, as high financing costs interact with rising home prices to squeeze purchasing power. For potential buyers, the risk lies in overpaying relative to local income ceilings, while renters face a stable but non-expansive rental sector. The market’s stability is compromised by the rapid price appreciation outstripping wage growth, indicating a fragile equilibrium where any slowdown in external demand could lead to significant correction. Ultimately, Howard County offers below-average entry prices but carries elevated risk due to the disconnect between housing values and the local economic engine.</p>
+2.  **Drafting - Step-by-Step Integration of Tasks:**
+    *   *Task 1: Market classification.* Needs buyer's, renter's, or balanced. Given median home value ($153,900) vs median gross rent ($690/mo -> $8,280/yr) and income ($45,603), let's calculate rent burden: 18.2% (given). Price-to-income is 3.37. Rent burden is slightly above national average but manageable. Home prices are rising faster than rents. Owner occupancy is 72.5%. This suggests a renter's market or a transitioning market. Wait, if rents are low and home prices are high relative to income, it leans towards a renter's market or highly constrained buyer market. Let's call it a renter's market given the rent burden is higher than the national average (18.2% vs 17.2%) and price appreciation outpaces rent growth.
+    *   *Task 2: Trend interpretation.* Prices rose from $94,100 (2017) to $153,900 (2024). Rents? We don't have exact rent trend, but derived metric says "Home values are rising faster than rents". This indicates strong demand outpacing supply, typical of a renter's market where buyers are squeezed.
+    *   *Task 3: Affordability assessment.* Price-to-income ratio is 3.37 vs national avg 3.20. Rent burden is 18.2% vs 17.2%. Both indicate above-average affordability stress for buyers, though renters face a slightly higher burden than the national norm.
+    *   *Task 4: Regional context.* Home value is +8.8% vs state avg, but -32.4% vs national avg. Income is -32.9% vs national avg. Thus, relative to the nation, Howard County is significantly less affordable, though slightly above the Arkansas average.
+    *   *Task 5: Data anomaly/notable pattern.* The divergence between price growth (avg ~12.7% YoY over the period) and implied rent stagnation (rent burden rising above national average) creates a notable pattern where housing affordability deteriorates for owners while slightly worsening for renters compared to baseline. Also, the net migration is nearly zero (4,683 in, 4,467 out), which is unusual for a growing county.
+    *   *Task 6: Practical implication.* Buyers should anticipate extended purchasing timelines due to high price-to-income ratios and constrained inventory, while renters may face limited rental options despite a slight rent burden increase.
+    *   *Task 7: Recent momentum.* FHFA HPI change isn't explicitly provided in the prompt (only FRED mortgage rate 7.24%). Wait, the prompt says "Interpret the FHFA HPI change (if available)". It's not available in the text. I must address this carefully. I can note that without the specific FHFA HPI change data, the recent momentum is evidenced by the 2024 year-over-year increase of 13.7%, which outpaces the 8.1% in 2023, indicating accelerating price appreciation.
+    *   *Task 8: Economic context.* Employment is 4,934 jobs at $913/week. Low wage base limits local purchasing power. 3</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -494,7 +507,7 @@ Migration data reveals a net inflow of 216 filers, with incoming residents earni
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

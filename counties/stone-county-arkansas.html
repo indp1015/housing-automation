@@ -306,11 +306,34 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Stone County, Arkansas, exhibits a complex market dynamic characterized by strong price momentum but severe affordability constraints. With a median home value of $171,600 and a median household income of $40,943, the price-to-income ratio stands at 4.19, significantly exceeding the national average of 3.20. This disparity indicates that while the market is not strictly a buyer’s market in terms of inventory pressure, it is heavily skewed against local income earners, creating a stressed environment for potential homeowners. The price-to-rent ratio of 22.8, compared to the national average of 18.7, further suggests that purchasing is structurally more expensive relative to renting than in most other U.S. regions, despite the low median gross rent of $626.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Stone County, Arkansas.
+    *   **Data provided:** Median home value ($171,600), median gross rent ($626/mo), median household income ($40,943), population (12,568), owner occupancy (75.9%), annual trends 2017-2024, local economy (2,119 jobs, $725/wk wage, 273 establishments), migration (+476 net, inflow 4,341 at $49,536, outflow 3,865 at $48,978), mortgage rate (7.24%), composite score (39.8/100), derived metrics (Price-to-Income 4.19, Rent Burden 18.3%, Price-to-Rent 22.8, relative position).
+    *   **Required Elements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income and rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., price vs rent divergence).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: FHFA HPI change isn't explicitly given in the prompt, but the prompt says "Interpret the FHFA HPI change (if available) and its significance" - wait, looking at the data, there is no FHFA HPI change provided in the prompt. I must address this based on available data or note the lack of specific FHFA data while interpreting the recent momentum from the YoY growth of 14.9%). *Correction*: The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I will focus on the recent momentum indicated by the +14.9% YoY increase and the overall trend signal mentioned in the prompt ("Trend signal: Home values are rising faster than rents").
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score and why).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only (no "I", "we", "you").
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence data-driven.
+        *   Length: 280-320 words.
+        *   Structure: 2-3 cohesive paragraphs, NO bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+        *   Begin directly with the analysis. Do not repeat the data or use headers.
 
-The multi-year trend reveals high volatility, with home values surging 26.4% in 2022 and continuing to rise 14.9% in 2024, reaching $171,600. This rapid appreciation contrasts sharply with the modest rent growth, signaling a divergence where asset values are outpacing rental income potential. Such volatility undermines market stability, as evidenced by the sharp 10.5% decline in 2021, which suggests the market is sensitive to external shocks rather than driven by steady local demand. The recent momentum is robust, yet the underlying stability remains fragile due to these historical swings.
+2.  **Drafting - Step-by-Step:**
 
-Regional context highlights that Stone County’s home values are 21.3% above the Arkansas state average, yet local incomes lag 39.8% behind the national mean. This gap is exacerbated by limited local economic vitality, with only 2,119 total jobs and an average weekly wage of $725. Although net migration of 476 filers indicates population growth, the average income of incoming residents ($49,536) does not sufficiently bridge the affordability gap. The high composite momentum score is driven by price appreciation, but this is counterbalanced by low affordability and vitality scores. For prospective buyers, the 7.32% mortgage rate compounds the cost burden, making entry difficult despite the county’s lower absolute price point. Renter burden at 18.3% of income is only slightly above the national average, suggesting that renting remains the more financially accessible option for the majority of the population in this economically constrained region.</p>
+    *   *Paragraph 1: Classification, Trends, and Anomaly*
+        *   Need to classify: Balanced or renter's? Owner occupancy is 75.9%, which suggests a buyer's market leaning towards balanced, but affordability is very low (Price-to-Income 4.19 vs 3.20). Rent burden is 18.3% (national avg 17.2%), so it's slightly above average rent burden, meaning buyers struggle more than renters. Let's call it a buyer's market constrained by affordability, or a renter's market for buyers. Actually, Price-to-Income of 4.19 is very high. Rent burden 18.3% is slightly higher than national. Let's classify as a buyer's market heavily skewed by affordability constraints, or a renter's market. The prompt asks "Buyer's, renter's, or balanced". Given owner occupancy is 75.9% but PTI is 4.19, it's likely a renter's market where buyers face high barriers, or a buyer's market with high barriers. Let's go with "renter's market" because the high price-to-income ratio and rent burden indicate buyers cannot easily enter,</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -493,7 +516,7 @@ Regional context highlights that Stone County’s home values are 21.3% above th
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

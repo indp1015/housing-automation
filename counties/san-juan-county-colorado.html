@@ -318,11 +318,20 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>San Juan County presents a distinct renter’s market, characterized by extreme valuation disparities relative to income. The price-to-income ratio stands at 5.56, significantly exceeding the national average of 3.20, while the price-to-rent ratio of 36.3 is nearly double the national benchmark of 18.7. Although the median home value of $432,500 is only 1.2% above the state average, it is 89.9% higher than the national mean. This divergence suggests that local housing costs are decoupled from broader national trends, driven by specific regional factors rather than general market inflation. The low owner occupancy rate of 52.9% further underscores a market where renting remains the dominant or necessary housing strategy for a large portion of the population, despite the high absolute cost of ownership.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for San Juan County, Colorado.
+    *   **Data provided:** Current market data (2024, ACS), annual trend detail (2017-2024), local economy (BLS QCEW), housing supply (Census permits), migration (IRS), national mortgage rate (FRED), composite score, derived metrics, relative position.
+    *   **Task:** Write a 280-320 word analysis covering 9 specific points (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style Requirements:** Professional, analytical tone. Specific numbers/percentages. Third person only. No predictions/speculation/future forecasts. No generic statements. Data-driven only.
+    *   **Length:** 280-320 words. Approximately 2-3 paragraphs.
+    *   **Formatting:** No bullet points or headers. Begin directly with the analysis. Do not repeat the data or use headers. Weave the "Market Score" drivers into the narrative without explicitly using the term "Market Score".
 
-Trend analysis reveals volatile appreciation patterns, with median home values surging 18.1% in 2023 before moderating to 6.3% in 2024. This recent stabilization follows a period of sharp gains, indicating a market that has cooled from its peak momentum. In contrast, the median gross rent of $992 represents a rent burden of only 15.3% of the median household income of $77,824, which is slightly below the national average of 17.2%. This apparent affordability in the rental sector contrasts sharply with the unaffordability of ownership, creating a bifurcated market where renters face manageable relative costs while buyers confront prohibitive entry barriers. The economic foundation is fragile, supported by only 355 total jobs and an average weekly wage of $815, which limits the depth of the buyer pool.
-
-The market’s vitality is sustained by positive net migration of 39 filers and 21 new housing units authorized in 2025, yet this supply is insufficient to offset the high demand relative to the small population of 724. The low stability metric reflects the high volatility observed in recent price swings, while the high vitality score is driven by the strong income levels and active migration. With mortgage rates at 7.32%, the high price-to-income ratio becomes even more pronounced, effectively locking out many local residents from homeownership. Potential buyers must recognize that the premium paid for property in San Juan County is not fully supported by local wage growth, whereas renters benefit from a more balanced cost structure relative to their earnings. The market remains defined by its disconnect between high asset values and modest local economic output, a dynamic that shapes all housing decisions in the region.</p>
+2.  **Deconstruct the 9 Points & Map to Data:**
+    *   *1. Market classification:* Balanced market? Rent Burden is 15.3% (lower than national avg of 17.2%), but Price-to-Income Ratio is 5.56 (much higher than national avg 3.20). Median rent $992 vs median home value $432,500. Rent burden suggests buyers are relatively more affordable compared to income, but price-to-income ratio indicates high prices. Let's classify as "Renter's market" or "Balanced" leaning renter? Actually, Price-to-Income is 5.56, Rent Burden is 15.3%. Usually, if Price-to-Income > 4 and Rent Burden < 30%, it's balanced, but Price-to-Rent is 36.3 vs 18.7, meaning prices are very high relative to rents. Wait, let's look at the numbers. Home value $432,500 / Income $77,824 = 5.56. Rent $992 / Income $77,824 = 1.27%. Rent burden is 15.3%. If rent burden is low, it might be a buyer's market for renters, but price-to-income is high. Let's classify as "Balanced" or leaning "Buyer's" because Price-to-Income is high, but Rent Burden is low. Actually, standard definitions: if Price-to-Income > 5, it's a buyer's market. Here it's exactly 5.56. Let's call it a "Balanced market" or "Renter's market" because rent burden is below national average (15.3% vs 17.2%). Let's go with "Renter's market" or "Balanced" leaning renter. Let's justify: Rent burden of 15.3% is below the 17.2% national average, indicating strong affordability for renters, despite a high price-to-income ratio of 5.56.
+    *   *2. Trend interpretation:* Prices rose from $269,400 in 2017 to $432,500 in 2024, peaking at +18.1% YoY in 2023, moderating to +6.3% in 2024. Rents likely rose similarly. The deceleration in growth rate suggests stabilization after a rapid ascent.
+    *   *3. Affordability assessment:* Price-to-income ratio of 5.56 vastly exceeds the national average of 3.20, indicating severe unaffordability for homebuyers. Conversely, the rent burden of 15.3% falls below the 17.2% national average, indicating superior affordability for renters.
+    *   *4. Regional context:* Home values are +89.9% above the national average and +1.2% above the state average. Income is +14.4% above the national average.
+    *   *5. Data anomaly:* The divergence between price</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -506,7 +515,7 @@ The market’s vitality is sustained by positive net migration of 39 filers and 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

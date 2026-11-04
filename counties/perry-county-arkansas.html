@@ -306,11 +306,27 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Perry County, Arkansas, exhibits characteristics of a buyer’s market, primarily driven by a price-to-income ratio of 2.33, which is significantly lower than the national average of 3.20. This affordability is reinforced by a price-to-rent ratio of 13.5, well below the national benchmark of 18.7, indicating that purchasing is comparatively more economical than renting. The market’s stability is underscored by an owner-occupancy rate of 80.4% and a rent burden of 17.3%, aligning closely with the national average of 17.2%. However, the market’s vitality is constrained by a small economic base, with only 702 total jobs and 146 establishments, resulting in an average weekly wage of $891. This limited employment ecosystem contributes to a low vitality metric, despite the county’s strong affordability and stability scores.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Perry County, Arkansas.
+    *   **Data provided:** Current market data (median home value $130,200, rent $805, income $55,764, pop 10,101, owner occ 80.4%), annual trends (2017-2024), local economy (702 jobs, $891/wk), migration (+133 net, inflow 3457, outflow 3324), mortgage rate (7.24%), composite score (59.2 overall, affordability 63, stability 72.6, momentum 77.4, vitality 14.1), derived metrics (P/I 2.33, Rent Burden 17.3%, P/R 13.5, relative position -42.8% vs national, -8.0% vs state, income -18.0%).
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income and rent burden vs national).
+        4. Regional context (compare to state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change significance - *Note: FHFA HPI change isn't explicitly given in the prompt, but "Recent momentum" implies interpreting the trend or general momentum based on the provided data, specifically the momentum score of 77.4 and the trend signal "Home values are rising faster than rents". I will address this by noting the upward price trajectory outpacing rent growth.* Wait, the prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no specific FHFA HPI number is provided, I must interpret the momentum based on the available trend data: prices rising faster than rents, yielding a high momentum score of 77.4).
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score and why, grounded in data).
+    *   **Style requirements:** Professional, analytical, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, 280-320 words, 2-3 cohesive paragraphs, no bullet points or headers. Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Length check:** 280-320 words.
 
-The multi-year trend reveals a period of significant appreciation followed by recent stagnation. Home values surged from $99,100 in 2017 to a peak growth rate of 11.4% in 2019, reaching $130,200 by 2024. However, the most recent year-over-year change of just 0.7% signals a sharp deceleration in momentum. This plateau contrasts with the earlier rapid appreciation, suggesting that the initial post-2018 recovery has matured. The divergence between price and rent growth is notable; while home values have risen steadily, the rent burden remains stable, implying that rental demand is not outpacing housing supply. This balance supports the classification of the market as stable rather than volatile, with home values rising faster than rents in the broader trend but currently leveling off.
-
-Regional context highlights that Perry County’s median home value is 42.8% below the national average and 8.0% below the Arkansas state average, while median household income is 18.0% below the national mean. This suggests the county is a value-oriented market within a broader low-cost region. Migration data shows a net inflow of 133 filers between 2021 and 2022, with average incomes of incoming and outgoing filers being nearly identical ($56,106 and $56,653, respectively), indicating no significant demographic shift in economic status. The current 30-year fixed mortgage rate of 7.32% poses a challenge for affordability, yet the low entry price of $130,200 mitigates this impact. For potential buyers, the low price-to-income ratio offers a favorable entry point, while renters benefit from a balanced market where housing costs do not disproportionately consume income. The overall market dynamics are driven by high affordability and stability, offset by limited economic vitality and slowing price momentum.</p>
+2.  **Drafting - Section by Section Integration:**
+    *   *Market Classification:* Balanced market. Justification: Owner occupancy is 80.4%, but the Price-to-Income ratio of 2.33 is significantly below the national average of 3.20, and the Rent Burden of 17.3% is nearly identical to the national average of 17.2%. This indicates a market where buyers have some leverage but renters face manageable costs, leaning toward a balanced rather than a buyer's market.
+    *   *Trend Interpretation:* The multi-year price trajectory shows a recovery from a 2018 trough of $95,400 to a 2024 peak of $130,200, representing a 36.8% increase over seven years, while median gross rent remained relatively flat at $805. This divergence indicates that housing demand is outpacing rental supply.
+    *   *Affordability & Regional Context:* Affordability is heavily skewed by regional context; the price-to-income ratio of 2.33 is 0.87 points below the national benchmark, while the rent burden matches it exactly. Relative to the national average, home values sit 42.8% below parity, though this county sits 8.0% below the state average, indicating a broader affordability challenge despite strong relative stability.
+    *   *Anomaly & Momentum:* A notable pattern is the divergence between price and rent growth, where home values appreciate faster than rental rates, driving the high momentum rating of 77.4. This signals robust buyer interest, though the low vitality score of</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -494,7 +510,7 @@ Regional context highlights that Perry County’s median home value is 42.8% bel
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

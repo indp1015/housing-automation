@@ -555,11 +555,23 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Arapahoe County operates as a distinctly seller’s market, characterized by significant structural imbalances between asset values and local purchasing power. The median home value of $561,200 stands at 146.5% above the national average, while the price-to-income ratio of 5.55 vastly exceeds the national benchmark of 3.20. This severe affordability gap is mirrored in the rental sector, where the price-to-rent ratio of 24.7 surpasses the national average of 18.7, and the rent burden consumes 22.4% of median household income compared to the national 17.2%. Consequently, the market exhibits acute stress, with affordability metrics driving the overall assessment of market health downward despite strong underlying economic vitality.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Arapahoe County, Colorado.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific points to cover (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, data-driven.
+    *   **Format:** 2-3 cohesive paragraphs, NO bullet points or headers. Begin directly with the analysis. Do NOT mention "Market Score" explicitly; weave its drivers into the narrative.
 
-The multi-year trend reveals a period of rapid appreciation that is now moderating. Home values surged by 15.6% in 2022, the peak annual growth rate, before decelerating to 6.7% in 2024. This trajectory indicates a cooling momentum, yet prices remain elevated relative to income growth. A notable divergence exists between asset appreciation and rental costs, as home values are rising faster than rents, suggesting that the ownership premium is expanding. This pattern is supported by robust local economic fundamentals, including 299,680 total jobs and an average weekly wage of $1,747. Furthermore, net migration of 8,830 filers between 2021 and 2022, with inflowing households averaging $119,316 in income, has sustained demand. However, new housing supply, with 3,599 units authorized in 2025, remains insufficient to fully offset this demographic pressure, particularly given the 64.7% owner-occupancy rate.
-
-Current economic conditions further constrain buyer entry. With the 30-year fixed mortgage rate at 7.32%, monthly carrying costs remain high for the median household earning $101,087. The market’s vitality is evident in the employment sector and population growth, but stability is compromised by the high cost of entry. The composite assessment reflects a market where strong economic output and population inflows are counterbalanced by extreme price-to-income disparities. For prospective buyers, the data indicates a high barrier to entry, while renters face above-average cost burdens. The moderating price growth suggests a potential plateau in value increases, but the fundamental affordability gap persists, keeping the market in a stressed condition relative to national norms. The interplay of high wages, persistent migration, and limited new supply continues to support price levels, even as interest rates dampen immediate purchasing capacity.</p>
+2.  **Deconstruct the Data & Map to Requirements:**
+    *   *Market classification:* Balanced market? Justify with metrics (Price-to-Income 5.55 vs 3.20, Rent Burden 22.4% vs 17.2%).
+    *   *Trend interpretation:* 2017-2024 price growth (+11.9% to +6.7%), rent growth implied but not explicitly given as a trend line, wait, the prompt says "Home values are rising faster than rents" in Relative Position. Let's calculate implied rent growth or just state the divergence. Actually, I can just reference the price trend and the relative position note about price outpacing rent.
+    *   *Affordability assessment:* P/I ratio 5.55 vs 3.20; Rent burden 22.4% vs 17.2%. Both above national averages.
+    *   *Regional context:* Home value +146.5% vs national, +31.3% vs state; Income +48.7% vs national.
+    *   *Data anomaly/notable pattern:* Peak YoY price growth was +15.6% in 2022, moderating to +6.7% in 2024. Divergence between price and rent growth (price rising faster than rent).
+    *   *Practical implication:* Buyers face high costs, renters also struggle with burden, but supply is steady.
+    *   *Recent momentum:* FHFA HPI change (implied by the composite score and FRED mortgage rate of 7.24%). Wait, the prompt asks to interpret the FHFA HPI change "if available". The data doesn't explicitly give an FHFA HPI number, but the composite score is "Stressed" (36.2/100) and momentum is 46.0. I will mention the moderation of price growth from +15.6% (2022) to +6.7% (2024) alongside the elevated mortgage rate (7.24%), indicating decelerating but still strong price appreciation under stress.
+    *   *Economic context:* Employment 299,680, avg wage $1,747, permits 3,599, net migration +8,830. High wages and migration support prices, while permits provide some supply.
+    *   *Score interpretation:* Weave affordability (6.4), stability (42.6), momentum</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -742,7 +754,7 @@ Current economic conditions further constrain buyer entry. With the 30-year fixe
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

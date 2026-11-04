@@ -368,11 +368,30 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Trinity County presents a distinctively stressed buyer’s market, characterized by extreme affordability constraints that outweigh recent price stabilization. The median home value of $325,800 sits 43.1% above the national average, yet local median household income of $53,002 lags 22.1% below the national norm. This disparity drives a price-to-income ratio of 6.15, nearly double the national benchmark of 3.20, indicating severe entry barriers for prospective homeowners. Consequently, the market leans heavily toward renters, although the rent burden of 24.3% of income also exceeds the 17.2% national average, suggesting that affordability challenges persist across both ownership and rental segments. The composite assessment reflects this tension, with affordability scoring a critical 3.4 out of 100, significantly dragging down the overall vitality despite moderate stability.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Trinity County, California.
+    *   **Data provided:** Current market data (2024), annual trends (2017-2024), local economy (BLS), housing supply, migration, national mortgage rate, composite score, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words. Approximately 2-3 paragraphs. No bullet points or headers.
+    *   **Style requirements:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements (every sentence must be data-driven).
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, FRED data is given, but prompt says "Interpret the FHFA HPI change (if available)" - I should mention the recent mortgage rate or the FHFA HPI if implied by the 2024 data, but since no FHFA HPI number is explicitly given, I will focus on the 2024 YoY -1.0% trend and the 30-year fixed mortgage rate of 7.24% as the recent momentum indicator). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI value is provided in the text, I can refer to the 2024 YoY change of -1.0% as the recent momentum, or note that the FHFA HPI change aligns with the 2024 YoY decline. Actually, I'll just discuss the 2024 YoY -1.0% as the recent momentum.
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (weave drivers of affordability, stability, momentum, vitality into narrative without saying "Market Score").
+    *   **Start condition:** Begin directly with the analysis. Do not repeat data or use headers.
 
-Trend analysis reveals a market that has cooled after a sharp 2022 surge of 8.4%. Home values have moderated to a 1.0% decline in 2024, stabilizing after the peak, while rents continue to rise faster than home values. This divergence creates a complex dynamic where rental costs are becoming increasingly prohibitive relative to the stagnant or slightly declining cost of ownership. The price-to-rent ratio of 25.3, well above the national 18.7, suggests that buying may offer better long-term value than renting, provided the initial capital barrier can be overcome. Recent momentum indicators are mixed; while price growth has flattened, the underlying pressure from rising rents signals continued stress on household budgets.
+2.  **Drafting - Step-by-Step:**
 
-Regional context further isolates Trinity County as an outlier within California. Home values are 46.5% below the state average, yet the local economy is fragile, supporting only 1,823 jobs with an average weekly wage of $991. Housing supply is critically low, with just 33 new single-family units authorized in 2025 and zero multi-family construction, limiting the ability to meet demand. Although net migration is positive at 224 filers, the small population base of 15,860 makes the market highly sensitive to external economic shifts. The 7.32% national mortgage rate exacerbates the affordability crisis, as high borrowing costs compound the already elevated price-to-income ratio. For potential buyers, the market offers limited inventory and high entry costs, while renters face escalating monthly expenses. The data indicates a market where structural supply shortages and low local wages create persistent affordability stress, preventing a return to balanced conditions despite the recent slowdown in price appreciation.</p>
+    *   *Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context.*
+        Trinity County presents a renter's market, driven by a significant divergence between home values and rental growth. The median home value of $325,800 has declined 1.0% year-over-year in 2024, following an 8.4% peak in 2022, while median gross rents have risen faster than home values over the multi-year period. This divergence creates a notable anomaly: despite a 6.15 price-to-income ratio—nearly double the national average of 3.20—the 24.3% rent burden remains far below the national average of 17.2%, indicating severe affordability constraints for buyers but relatively manageable costs for renters. Regionally, the county's home values sit 43.1% above the national average but 46.5% below the state average, while median income lags the national average by 22.1%.
+
+    *   *Paragraph 2: Economic context, Recent momentum, Practical implication.*
+        Economic factors heavily shape this dynamic; with only 1,823 jobs and an average weekly wage of $991, local employment levels are constrained, yet net migration of +224 filers suggests some population inflow. The housing supply remains heavily skewed toward single-family construction (33 new units out of 33 total), which limits inventory diversity and exacerbates renter competition. Recent momentum shows moderation following the 2022 peak, as the 30-year fixed mortgage rate of 7.24% and the 2024 YoY decline in home prices indicate a cooling but still elevated market. For a potential buyer, the high price-to-income ratio and constrained single-family supply make purchasing highly challenging, whereas renters face rising rents without corresponding appreciation, making this a renter's market</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -556,7 +575,7 @@ Regional context further isolates Trinity County as an outlier within California
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

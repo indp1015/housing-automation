@@ -389,11 +389,26 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Bent County, Colorado, exhibits a distinct buyer’s market profile, characterized by a price-to-rent ratio of 10.5, significantly below the national average of 18.7. This metric indicates that purchasing is substantially more cost-effective than renting, a structural advantage reinforced by a 65.2% owner-occupancy rate. The market’s affordability is further supported by a price-to-income ratio of 2.93, which sits below the national benchmark of 3.20, suggesting that median home values remain accessible relative to local earning power. However, this affordability is undercut by a high rent burden of 27.8% of median household income, nearly double the national average of 17.2%, creating a bifurcated landscape where homeownership is comparatively cheap but renting is disproportionately expensive.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Bent County, Colorado.
+    *   **Data provided:** Current market data (2024), annual trend detail (2017-2024), local economy (BLS QCEW), housing supply (Census), migration (IRS), national mortgage rate (FRED), composite market score, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words. Exactly 2-3 cohesive paragraphs. No bullet points or headers. No "I", "we", "you". Third person only. No predictions/speculation/future forecasts. Every sentence must be data-driven. No generic statements.
+    *   **Content requirements:**
+        1. Market classification (Buyer's, renter's, or balanced).
+        2. Trend interpretation.
+        3. Affordability assessment.
+        4. Regional context.
+        5. Data anomaly/notable pattern.
+        6. Practical implication.
+        7. Recent momentum (FHFA HPI change - *Wait, the prompt says "Interpret the FHFA HPI change (if available)" but there is no FHFA HPI change provided in the text. I must address this carefully, perhaps noting the absence of this specific metric or interpreting the overall momentum score of 47.1 based on the available data.* Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I should state that the FHFA HPI change is not provided, but the overall momentum of 47.1 indicates a moderate upward trend, or just focus on the momentum score. Actually, I can just say "The composite momentum of 47.1 indicates..." without explicitly mentioning FHFA since the data doesn't have it, or note that the FHFA HPI change is unavailable but momentum remains positive. Let's just interpret the momentum score as requested by the bullet point).
+        8. Economic context.
+        9. Score interpretation (affordability, stability, momentum, vitality).
+    *   **Style:** Professional, analytical, specific numbers/percentages, third person, data-driven only.
 
-The multi-year trend reveals a dramatic acceleration in home values, with median prices surging from $77,700 in 2017 to $146,900 in 2024. This trajectory includes exceptional year-over-year growth rates of 24.5% in 2022 and 24.6% in 2023, before moderating to 6.5% in 2024. This rapid appreciation contrasts sharply with the relatively stable median gross rent of $1,162, indicating a significant divergence where asset values are rising faster than rental costs. This pattern suggests that the recent price spikes may be driven by low inventory and speculative activity rather than fundamental shifts in rental demand. The county’s economic foundation remains fragile, with only 649 total jobs and an average weekly wage of $1,003, which limits the depth of the local buyer pool. Furthermore, housing supply is critically constrained, with only one new unit authorized in 2025, ensuring that any influx of demand will continue to pressure prices.
+2.  **Drafting - Step-by-Step:**
 
-Regional context highlights Bent County’s extreme discount to broader markets; home values are 65.6% below the Colorado state average and 35.5% below the national mean. While net migration of +132 filers suggests modest population growth, the average income of inflowing residents ($50,327) is nearly identical to the county median, indicating that new arrivals are not bringing significantly higher purchasing power. The current 30-year mortgage rate of 7.32% poses a significant barrier to entry, as high interest rates amplify the cost of borrowing despite the low absolute price point. Consequently, the market’s stability is compromised by its reliance on a narrow economic base and minimal new construction. For potential buyers, the low price-to-rent ratio offers a long-term value proposition, but the lack of employment diversity and housing supply creates volatility risks. Renters face a challenging environment where high rent burdens persist despite the county’s low overall cost of living, making the transition to ownership the primary financial strategy for local households.</p>
+    *   *Requirement 1: Market classification.* Rent burden is 27.8% vs national avg 17.2%. Price-to-income is 2.93 vs national 3.20. Rent-to-price is 10.5 vs 18.7. High rent burden and lower price-to-income suggest a renter's market, though price-to-income is close to national average. Let's classify as a renter's market due to the significantly higher rent burden (27.8% vs 17.2%) and price-to-rent ratio (10.5 vs 18.7).
+    *   *Requirement 2: Trend interpretation.* Prices rose from $77,700 in 2017 to $146,900 in 2024, a +86.7% increase. Rents rose from $1,162 to $1,162 (wait, median gross rent isn't given for past years, but current is $1,16</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -577,7 +592,7 @@ Regional context highlights Bent County’s extreme discount to broader markets;
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

@@ -318,11 +318,36 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Rio Grande County presents a complex housing landscape characterized by strong momentum but constrained affordability. The market leans toward a balanced profile, though specific metrics suggest increasing pressure on buyers. With a price-to-income ratio of 3.72, significantly above the national average of 3.20, and a price-to-rent ratio of 21.1 compared to the national 18.7, purchasing remains more burdensome than renting. However, the rent burden sits at 17.6% of income, nearly identical to the national benchmark of 17.2%, indicating that rental costs are not disproportionately high relative to local earnings. The 67.1% owner-occupancy rate further supports a stable, established residential base rather than a transient rental market.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Rio Grande County, Colorado.
+    *   **Data provided:** Current market data (ACS 5-Year), annual trends (2017-2024), local economy (BLS QCEW), housing supply (Census), migration (IRS), national mortgage rate, composite score (editorial), derived metrics, relative position.
+    *   **Content requirements:**
+        1. Market classification (buyer's/renter's/balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - *Wait, no FHFA HPI change data is provided in the prompt, just the FRED mortgage rate and composite score. I need to handle this carefully based on available data or note the absence if strictly required, but the prompt says "Interpret the FHFA HPI change (if available)". Since it's not available, I will focus on the momentum from the 2024 price jump of +11.2% YoY and the Rent Burden/Price-to-Rent metrics.* Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI change is explicitly given, I will interpret the recent momentum based on the 2024 price increase (+11.2%) and the Rent Burden/Price-to-Rent ratio trends, or simply state that the recent price surge indicates strong momentum. Wait, I must be careful not to hallucinate an FHFA number. I will mention the recent 11.2% YoY price increase as the momentum driver).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention "Market Score" explicitly; weave drivers into narrative.
+        *   Begin directly with the analysis. No repeating data or headers.
 
-Trend analysis reveals a volatile yet upward trajectory. Home values surged from $143,000 in 2017 to $239,500 in 2024, reflecting a compound growth pattern punctuated by a brief 3.3% dip in 2021. The most recent year saw an 11.2% increase, signaling robust demand. This appreciation outpaces the 5.3% lower income levels compared to national averages, widening the affordability gap. Notably, home values are rising at a similar rate to rents, suggesting broad-based inflationary pressure across both ownership and rental segments. The county’s home values remain 44.0% below the Colorado state average, positioning it as a relative value proposition within the state, despite being 5.2% above the national median.
+2.  **Drafting - Step-by-Step:**
 
-Economic fundamentals provide mixed signals for future stability. Local employment stands at 3,480 jobs with an average weekly wage of $949, which supports the median household income of $64,411. Housing supply is limited, with only 42 new units authorized in 2025, predominantly single-family. This low construction volume, combined with positive net migration of 431 filers, creates a supply-demand imbalance that likely sustains price growth. The high vitality score is driven by this demographic inflow and economic activity, whereas the low stability score reflects the volatility in price trends and the widening affordability gap. The 7.32% mortgage rate further complicates entry for buyers, making the current environment challenging for those seeking to transition from renting to owning. Consequently, the market exhibits high vitality due to migration and construction constraints, but struggles with affordability and stability due to rapid price appreciation relative to income growth.</p>
+    *   *Paragraph 1: Classification, Trends, and Anomaly*
+        *   Classification: Balanced market? Justification: Price-to-income ratio is 3.72 (above national avg 3.20), but rent burden is 17.6% (close to national 17.2%). Median home value ($239,500) is 5.2% above national average, but 44.0% below state average. Let's call it a balanced market because affordability is tight but rent burden is manageable.
+        *   Trends: Prices rose from $143k (2017) to $239.5k (2024), peaking at $202.3k in 2022 before dipping to $180.6k in 2021, then recovering. Rents rose steadily from $945 median to a higher implied value, but wait, the prompt says "Home values and rents are rising at similar rates" in relative position. Actually, the derived metrics say Price-to-Rent is 21.1 (national 18.7). So prices are rising faster than rents relative to each other, or rents haven't kept up with the price surge. The anomaly: divergence between price and rent growth. Price grew significantly while rent burden remained stable relative to income.
+        *   Drafting P1: Rio Grande County presents a balanced housing market, characterized by a price-to-income ratio of 3.72 versus a national average of 3.20, indicating higher purchase costs relative to earnings, yet a rent burden of 17.6% that closely aligns</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -505,7 +530,7 @@ Economic fundamentals provide mixed signals for future stability. Local employme
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

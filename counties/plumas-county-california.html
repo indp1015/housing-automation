@@ -429,11 +429,25 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Plumas County exhibits a distinct renter’s market dynamic, characterized by significant affordability constraints despite moderate price appreciation. The price-to-income ratio stands at 5.46, substantially exceeding the national average of 3.20, while the rent burden consumes 21.7% of median household income compared to the 17.2% national norm. These metrics indicate that homeownership has become increasingly inaccessible relative to local earnings, which remain slightly below the national mean at $66,031. The market’s stress is further evidenced by a composite assessment where affordability scores a mere 7.9 out of 100, dragging down the overall evaluation despite reasonable stability and momentum scores. This divergence suggests that while the market retains structural integrity, the cost of entry has outpaced local economic growth.
-
-Trend analysis reveals a period of accelerated appreciation, with home values rising 15.3% in 2022 before moderating to 10.0% in 2024. This sustained growth contrasts with the relatively stable rent environment, where the price-to-rent ratio of 25.1 remains well above the 18.7 national average. The data indicates that home values are appreciating faster than rents, a pattern often associated with supply constraints rather than broad-based inflation. With only 44 new single-family units authorized in 2025 and zero multi-family permits, the housing supply is insufficient to meet demand, particularly given the net inflow of 356 filers between 2021 and 2022. The local economy, supported by 4,281 jobs and an average weekly wage of $1,106, lacks the depth to support such rapid price increases, creating a mismatch between asset values and resident purchasing power.
-
-Regional context further isolates Plumas County’s unique position; while home values are 58.2% above the national average, they remain 40.9% below the California state median. This disparity highlights the county’s role as a more affordable alternative within a high-cost state, yet local affordability metrics remain poor. The current 7.32% mortgage rate exacerbates the affordability gap, making monthly payments disproportionately high for the median household. Consequently, the market’s vitality, scored at 52.8, reflects a community that is active but financially strained. Potential buyers face a challenging environment where entry costs are high relative to income, while renters encounter burdens that exceed national norms. The combination of limited new supply and positive net migration suggests that pressure on housing costs will persist, driven by structural supply deficits rather than speculative bubbles.</p>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Plumas County, California.
+    *   **Data provided:** Median home value ($360,200), median gross rent ($1,194), median household income ($66,031), population (19,423), owner occupancy (74.6%), annual trends (2017-2024), employment (4,281 jobs, avg wage $1,106), establishments (866), new permits (44 units, all single-family), net migration (+356 filers, inflow 7,703 @ $80,301, outflow 7,347 @ $79,601), mortgage rate (7.24%), composite score (42.4/100 overall, 7.9 affordability, 55.0 stability, 62.7 momentum, 52.8 vitality), derived metrics (P/I: 5.46 vs 3.20, Rent Burden: 21.7% vs 17.2%, P/R: 25.1 vs 18.7), relative position (home value +58.2% national, -40.9% state; income -2.9% national).
+    *   **Tasks:**
+        1. Market classification (Buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (P/I and rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., price vs rent growth divergence).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: not explicitly provided in data, but I must interpret "recent momentum" based on available data like the 2024 YoY +10.0% or general FHFA context if implied, wait, the prompt says "Interpret the FHFA HPI change (if available)". Since it's not explicitly in the data block, I should refer to the 2024 YoY +10.0% trend as the recent momentum indicator, or just state that without a specific FHFA HPI change figure provided, the recent momentum is reflected in the 2024 YoY +10.0% increase). *Self-correction*: The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no specific FHFA HPI change number is given, I will reference the 2024 year-over-year increase of +10.0% as the recent momentum signal, noting its acceleration from 2022's +15.3%.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score and why, without using the term "Market Score").
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements. Every sentence data-</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -617,7 +631,7 @@ Regional context further isolates Plumas County’s unique position; while home 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

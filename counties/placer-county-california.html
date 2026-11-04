@@ -555,11 +555,34 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Placer County operates as a distinctly seller’s market, characterized by extreme pricing pressures relative to local earning power. The median home value of $688,100 stands at 202.2% above the national average, while the price-to-income ratio of 5.93 significantly exceeds the national benchmark of 3.20. This disparity indicates that typical households require nearly six years of income to purchase a median home, a level of financial strain far beyond national norms. Consequently, the affordability metric is critically low, driving the overall market assessment toward a stressed classification. The high barrier to entry is further compounded by a price-to-rent ratio of 27.7, which is 48% higher than the national average of 18.7, suggesting that purchasing remains financially more burdensome than renting for most residents.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Placer County, California.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 2-3 cohesive paragraphs, no bullet points or headers. No "I", "we", "you".
+    *   **Style:** Professional, analytical tone, data-driven, third person only, no predictions/speculation/future forecasts.
+    *   **Content Requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, FRED mortgage rate is given, but FHFA HPI isn't explicitly given in the prompt. I need to interpret "Recent momentum: Interpret the FHFA HPI change (if available) and its significance." Since FHFA HPI isn't explicitly provided in the data, I will focus on the trend signal provided in the prompt: "Trend signal: Home values are rising faster than rents" and the YoY changes, or note that momentum is driven by sustained appreciation). *Correction*: The prompt says "Interpret the FHFA HPI change (if available)". It's not available in the text. I will reference the YoY home value growth and the overall momentum score.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
 
-Trend analysis reveals a period of rapid appreciation followed by stabilization. Home values surged 16.3% in 2022 before moderating to 4.4% growth in 2024, indicating that the initial post-pandemic spike has cooled but not reversed. Meanwhile, the rent burden of 21.4% of income remains elevated compared to the national 17.2%, reflecting persistent pressure on the rental sector. A notable divergence exists where home values are rising faster than rents, a pattern often associated with supply constraints and strong demand for ownership. The local economy supports this demand through a median household income of $115,998, which is 70.6% above the national average, yet this income growth has not kept pace with asset appreciation.
+2.  **Drafting - Step-by-Step:**
 
-Regional context highlights Placer’s position as a premium market within California, with home values 12.9% above the state average. Economic fundamentals remain robust, with 165,925 jobs and an average weekly wage of $1,448, supported by positive net migration of 6,352 filers. However, the 7.32% mortgage rate significantly increases monthly carrying costs, further suppressing buyer demand. Housing supply, with 3,254 new units authorized in 2025, appears insufficient to alleviate the structural shortage. The stability axis of the market is moderate at 60.2, reflecting consistent but slowing growth, while vitality remains strong at 66.5 due to economic activity. For potential buyers, the combination of high interest rates and double-digit price premiums relative to national averages suggests a challenging entry point, while renters face costs that consume a disproportionate share of their income. The market remains resilient but deeply skewed toward those with substantial financial resources.</p>
+    *   *Paragraph 1: Classification, Trends, Affordability, Regional Context.*
+        Placer County presents a balanced housing market, characterized by strong demand metrics offset by severe affordability constraints. The Price-to-Income ratio of 5.93 far exceeds the national average of 3.20, while the Rent Burden of 21.4% remains above the national benchmark of 17.2%. Regionally, the median home value of $688,100 sits 202.2% above the national average and 12.9% above the state average, reflecting a premium locale with elevated cost pressures. The multi-year price trajectory from $413,300 in 2017 to $688,100 in 2024 demonstrates a robust appreciation trend, peaking at an annual increase of 16.3% in 2022 before moderating to 4.4% in 2024, indicating a deceleration in momentum rather than a reversal.
+
+    *   *Paragraph 2: Anomaly, Practical Implication, Economic Context, Score Interpretation.*
+        A notable pattern in this market is the divergence between price and rent growth; while median gross rents rose from $1,900 to $2,069 over the same period, the escalation in home values outpaced rental increases significantly. This divergence implies that buyers are capturing the majority of the housing wealth creation, leaving renters with less benefit from rising asset prices. For prospective occupants, the high price-to-rent ratio of 27.7 versus the national average of 18.7 indicates that purchasing is currently the more financially advantageous strategy compared to renting, despite the strain on affordability. Economically, the local labor market—boasting 165,925 jobs and an average weekly wage of $1,448—provides a solid income base that supports demand, though the concurrent 3,254 new authorized units suggest supply is expanding to meet this demand. Consequently, the overall composite rating of 45.1/100 is heavily driven by the severely compromised affordability axis (7.5/100), which drags down the stability and momentum scores, while the underlying vitality remains supported by population inflows of 172,852 filers at an average income of $131,737.
+
+3.  **Review and Refine (Word Count and Constraint Check):**
+
+    *   *Current Draft Word Count Check:*
+        Placer County presents a balanced housing market, characterized by strong</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -743,7 +766,7 @@ Regional context highlights Placer’s position as a premium market within Calif
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

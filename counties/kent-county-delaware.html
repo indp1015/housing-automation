@@ -557,11 +557,32 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Kent County, Delaware, exhibits characteristics of a stressed buyer’s market, driven primarily by significant affordability constraints rather than a lack of demand. The price-to-income ratio stands at 4.25, substantially exceeding the national average of 3.20, while the rent burden consumes 21.8% of median household income compared to the national norm of 17.2%. These metrics indicate that both homeownership and renting are disproportionately expensive relative to local earnings, placing the county in a high-cost tier despite its median home value of $316,600. The market classification is further supported by the 72.5% owner-occupancy rate, which suggests a stable but increasingly unaffordable housing stock for new entrants.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Kent County, Delaware.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 2-3 cohesive paragraphs, no bullet points or headers.
+    *   **Style:** Professional, analytical tone, third person only, data-driven, no predictions/speculation, no generic statements.
+    *   **Content Requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but there is no FHFA HPI provided in the data. I must interpret the momentum based on the provided data, specifically the YoY growth rates or the composite score's momentum). Let me re-read: "Recent momentum: Interpret the FHFA HPI change (if available) and its significance." Since FHFA HPI isn't in the data, I will interpret "momentum" based on the provided metrics (Price +8.9%, Rent burden 21.8%, Momentum score 64.6). Wait, I can just focus on the momentum aspect of the trends.
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (weave drivers of affordability, stability, momentum, vitality into the narrative without using the exact phrase "Market Score").
 
-Trend analysis reveals a period of accelerated appreciation that has outpaced income growth. Home values surged 14.1% year-over-year in 2022 before moderating to 8.9% in 2024, yet prices remain 39.0% above the national average. In contrast, the median gross rent of $1,354 implies a price-to-rent ratio of 19.5, slightly above the national average of 18.7, indicating that rental costs are also tightening but not as drastically as purchase prices. This divergence highlights a structural shift where asset values are decoupling from local purchasing power. The county’s median household income of $74,477 is 9.5% above the national average, yet this income premium is insufficient to offset the 39% premium in housing costs, creating a persistent affordability gap.
+2.  **Drafting - Step-by-Step:**
 
-Regional context further underscores the market’s unique position. While Kent County home values are 9.7% below the Delaware state average, they remain significantly elevated nationally. The local economy supports this demand through strong migration trends, with a net gain of 5,054 tax filers in 2021-2022, though inflow and outflow incomes are nearly identical at approximately $67,000. Housing supply remains constrained, with only 1,261 new units authorized in 2025, predominantly single-family homes, which fails to address the broader demand surge. The current 30-year fixed mortgage rate of 7.32% exacerbates the affordability crisis, making monthly payments on the median home prohibitively high for average-income households. Consequently, the market’s vitality is driven by momentum and external demand rather than local economic fundamentals, resulting in a composite profile where stability is undermined by acute affordability stress. Potential buyers face a challenging entry point, while renters encounter rising costs that limit long-term financial flexibility.</p>
+    *   *Paragraph 1: Market Classification, Trends, and Affordability*
+        Kent County, Delaware, exhibits a renter-dominated market, evidenced by a median gross rent of $1,354 compared to a median home value of $316,600. The multi-year price trajectory shows significant appreciation, escalating from $205,800 in 2017 to $316,600 in 2024, with year-over-year gains peaking at 14.1% in 2022 before moderating to 8.9% in 2024. Conversely, median gross rent grew at a much slower pace, indicating a divergence where home values outpaced rental costs. This dynamic suggests a buyer's market is currently constrained by high prices, forcing consumers toward renting despite the overall appreciation. Affordability remains strained relative to national benchmarks; the price-to-income ratio stands at 4.25 against a national average of 3.20, and the rent burden reaches 21.8% compared to the 17.2% national average.
+
+    *   *Paragraph 2: Regional Context, Anomaly, and Economic Context*
+        Regional positioning reveals Kent County's home values sit 39.0% above the national average but 9.7% below the state average, while median income is 9.5% higher than the national norm. A notable anomaly is the rapid appreciation of home values against stagnant or slower-growing rents, which compresses the price-to-rent ratio to 19.5 versus the national average of 18.7. Economically, the local labor market presents a paradox: total employment figures are reported as zero in the BLS QCEW data, yet the county sustains 5,948 establishments and attracts a net migration of 5,054 filers, alongside a 30-year mortgage rate of 7.24%. High housing supply—1,261 new authorized units, predominantly single-family at 1,030—further pressures affordability, while elevated mortgage rates restrict buyer access.
+
+    *   *Paragraph 3: Practical Implication and Score Interpretation*
+        For prospective buyers, the combination of above-average regional demand, constrained supply, and elevated price-to-income ratios renders homeownership highly challenging. For renters, the moderate rent burden and stable rental market offer some relief, but the diverging price and rent trajectories limit long-term equity building. The composite rating of 46.3 reflects a stressed market heavily weighed down by affordability</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -724,7 +745,7 @@ Regional context further underscores the market’s unique position. While Kent 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-04. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
