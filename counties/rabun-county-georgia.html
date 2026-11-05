@@ -389,11 +389,22 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Rabun County’s housing market exhibits a distinct renter’s advantage, driven by a price-to-rent ratio of 23.5, which significantly exceeds the national average of 18.7. This metric indicates that purchasing is substantially more expensive relative to leasing costs, favoring those who can leverage lower monthly rent burdens of 18.6% against a median home value of $295,200. The market classification is further supported by a price-to-income ratio of 4.37, well above the national benchmark of 3.20, suggesting that ownership costs are disproportionately high for local earners. While the owner occupancy rate stands at 77.1%, the high entry price relative to income creates a structural barrier for first-time buyers, pushing demand toward the rental sector where median gross rent is $1,047.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Rabun County, Georgia.
+    *   **Data provided:** Current market data (median home value, rent, income, population, occupancy), annual trends (2017-2024), local economy (BLS), housing supply (Census), migration (IRS), national mortgage rate, composite score, derived metrics (P/I, rent burden, P/R), relative position.
+    *   **Task:** Write a 280-320 word analysis covering 9 specific points (market classification, trend interpretation, affordability assessment, regional context, data anomaly, practical implication, recent momentum, economic context, score interpretation).
+    *   **Style Requirements:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, exactly 280-320 words, 2-3 cohesive paragraphs, NO bullet points or headers. Do NOT mention "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Length constraint:** 280-320 words.
 
-The multi-year trend reveals a period of extreme volatility followed by stabilization. Home values surged from $157,800 in 2017 to $295,200 in 2024, peaking with a 24.2% year-over-year increase in 2022. However, recent momentum has reversed; the FHFA HPI shows a 1.18% year-over-year decline in 2025, underperforming the Georgia state average by 3.01 percentage points. This divergence between the long-term appreciation and recent price correction highlights a market in transition. Notably, home values are rising faster than rents, a pattern that typically signals a shift in supply dynamics or a lag in rental market adjustment to higher purchase prices. The local economy supports this complexity, with only 4,836 total jobs and an average weekly wage of $818, indicating limited local income growth to support the elevated price point.
-
-Affordability remains the primary driver of stress in this market, reflected in the low affordability component of the composite assessment. The county’s home values are 49.1% above the state average, yet median household income of $67,493 is nearly identical to the national mean, creating a significant cost-of-living disparity. Migration data shows a net inflow of 656 filers, with incoming residents earning an average of $79,596, suggesting that wealthier out-of-county buyers are driving up prices beyond what local employment can sustain. With 128 new units authorized in 2025, predominantly single-family, the supply response is modest relative to the 17,312 population. Potential buyers face a market where recent price softening offers a temporary reprieve, but the fundamental disconnect between local wages and asset values persists, making long-term affordability a critical concern for any prospective entrant.</p>
+2.  **Deconstruct the 9 Points & Map to Data:**
+    *   *Point 1: Market classification.* Balanced? Renter's? Buyer's? Justify with metrics. P/I ratio is 4.37 (national avg 3.20) -> buyer's market. Rent burden is 18.6% (national avg 17.2%) -> slightly renter's but close. Overall, P/I > 3.5 suggests a buyer's market, but affordability is stretched. Let's call it a "balanced" or "buyer's-leaning" market due to high P/I and P/R, but tight affordability. Actually, P/I of 4.37 is very high. Rent burden is below national average, so renters have some breathing room, but buyers are squeezed. Let's classify as "buyer's-leaning" or "balanced" with strong buyer preference due to P/R of 23.5 vs 18.7. I will call it a "buyer's-leaning" market.
+    *   *Point 2: Trend interpretation.* Home values rising faster than rents. 2017-2024: +24.2% (2022), +15.1% (2023), +8.3% (2024). Rents: Median gross rent $1047/month. Wait, I don't have rent trend data, just current median rent. But the prompt says "Home values are rising faster than rents" in the relative position note. I can state that home values have outpaced rent growth over the multi-year period, indicating appreciation-driven dynamics.
+    *   *Point 3: Affordability assessment.* Price-to-income ratio 4.37 vs 3.20. Rent burden 18.6% vs 17.2%. High P/I means high cost burden; low rent burden means renters are somewhat protected, but overall affordability is poor compared to national norms.
+    *   *Point 4: Regional context.* Home value vs national avg: +29.6%. vs state avg: +49.1%. Income vs national avg: -0.7%. So prices are high relative to both income and peers.
+    *   *Point 5: Data anomaly.* Divergence between price and rent growth. Prices rose rapidly (up to +24.2%), while the rent burden is actually below the national average, suggesting rents haven't kept pace with the explosive price appreciation.
+    *   *Point 6: Practical implication.* Buyers face high barriers (P/I 4.37); renters benefit from relatively lower burden (18.6%) but must watch mortgage rates (7.24%).
+    *   *Point 7: Recent momentum.* FHFA HPI change (implied by the 2024 +8.3% YoY and composite score). The moderation from +24.2% peak to +8.3% indicates a cooling trend in momentum.
+    *   *Point 8: Economic context.* Employment 4,836, avg wage $818. Supply: 128 new units (mostly single-family 122). Migration: net inflow of 656 filers. Mortgage rate 7.24%. Supply</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -576,7 +587,7 @@ Affordability remains the primary driver of stress in this market, reflected in 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

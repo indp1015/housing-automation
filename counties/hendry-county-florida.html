@@ -387,6 +387,44 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Hendry County, Florida.
+    *   **Data provided:** Current market data (2024), annual trends (2017-2024), local economy, housing supply, migration, national mortgage rate, composite score, derived metrics, relative position.
+    *   **Length:** 280-320 words. Approximately 2-3 paragraphs. No bullet points or headers.
+    *   **Style:** Professional, analytical tone. Third person only. No predictions/speculation/future forecasts. No generic statements. Every sentence must be data-driven.
+    *   **Content requirements:**
+        1. Market classification (Buyer's, renter's, or balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (county vs. state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (interpret FHFA HPI change - *Wait, the prompt says "Interpret the FHFA HPI change (if available)" but there is no FHFA HPI change provided in the data. I need to handle this gracefully. Maybe infer from the trend data or note the absence of specific FHFA data while referencing the overall upward momentum indicated by the YoY increases.* Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I should focus on the composite score or the YoY trends as the proxy for momentum, or explicitly state that the momentum is reflected in the YoY appreciation rates. Actually, I can just discuss the momentum indicated by the YoY growth rates, or note that without a specific FHFA HPI figure, the momentum is inferred from the YoY appreciation. Let me just weave it into the momentum section carefully.)
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (explain which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Negative constraints:** Do NOT mention the term "Market Score" explicitly. Do NOT repeat data or use headers. No "I", "we", "you".
+
+2.  **Drafting - Step-by-Step:**
+
+    *   *Requirement 1 & 4 & 9: Classification, Regional Context, Score Interpretation*
+        Hendry County presents a buyer's market, driven by an elevated Price-to-Income ratio of 3.89 compared to the national average of 3.20, alongside an affordability score of 16.4 out of 100. Relative to Florida, home values sit 22.9% below the state average, yet they remain 3.7% above the national mean. The composite assessment of this region heavily weights affordability and stability, with these two axes pulling the overall evaluation down to a 35.4 rating, while vitality contributes significantly at 83.3.
+
+    *   *Requirement 2 & 5: Trend Interpretation & Anomaly*
+        The multi-year price trajectory reveals a sharp escalation, peaking at a +31.1% year-over-year increase in 2022 before moderating to +15.6% in 2024. Notably, this appreciation outpaces the growth in median gross rent, creating a divergence where home values rise faster than rental rates. This decoupling suggests a market increasingly skewed toward owner-occupancy rather than renter demand.
+
+    *   *Requirement 3 & 6: Affordability & Practical Implication*
+        Affordability remains strained, as the rent burden stands at 21.3% of median household income against a national benchmark of 17.2%. For prospective buyers, the combination of a high price-to-income ratio and a 30-year fixed mortgage rate of 7.24% severely limits purchasing power. Conversely, renters face moderate but persistent cost pressures relative to local incomes.
+
+    *   *Requirement 7 & 8: Momentum & Economic Context*
+        Recent momentum is evidenced by the sustained YoY appreciation despite the moderation from the 2022 peak, indicating underlying demand persists even as transaction volumes may cool. Economically, the presence of 10</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Hendry County on Our Sister Sites</h3>
@@ -564,7 +602,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

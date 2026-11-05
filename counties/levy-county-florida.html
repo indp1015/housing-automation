@@ -389,11 +389,26 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Levy County, Florida, presents a complex market dynamic characterized by strong price momentum but constrained affordability. The median home value of $190,600 sits 16.3% below the national average and 33.0% below the Florida state average, yet the price-to-income ratio of 3.36 exceeds the national benchmark of 3.20. This divergence indicates that local income levels, averaging $56,750, have not kept pace with the rapid appreciation of housing assets. Consequently, the market leans toward a renter’s advantage in terms of entry barriers, as the price-to-rent ratio of 18.7 aligns precisely with the national average, suggesting that renting remains a financially comparable alternative to buying for many households. The high owner-occupancy rate of 81.4% further limits the rental inventory, potentially pressuring the $850 median gross rent despite the relatively low rent burden of 18.0%.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Levy County, Florida.
+    *   **Data provided:** Current market data (2024 ACS), annual trend detail (2017-2024), local economy (BLS QCEW 2025), housing supply (Census Building Permits 2025), migration (IRS County-to-County 2021-2022), national mortgage rate (FRED 2026-10-29), composite score (editorial, 0-100), derived metrics, relative position, analysis tasks.
+    *   **Length constraints:** 280-320 words. Approximately 2-3 paragraphs.
+    *   **Style requirements:** Professional, analytical tone. Use specific numbers and percentages. Third person only. No predictions/speculation/future forecasts. No generic statements (every sentence must be data-driven). No bullet points or headers. Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, or balanced).
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (county vs state/national averages).
+        5. Data anomaly or notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication (what a buyer/renter should know).
+        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available) and its significance" but no FHFA HPI data is provided in the prompt. I need to handle this gracefully. I will note that the FHFA HPI is not explicitly provided in the dataset but can be inferred from the YoY home value growth of +11.2%, which aligns with recent FHFA HPI trends showing sustained increases). *Correction*: The prompt says "if available". Since it's not in the provided text, I will focus on the YoY home value growth (+11.2% in 2024) as the proxy for recent momentum, or simply omit it if it forces me to say "data not provided". Let's look closely: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI number is given, I will interpret the 2024 YoY home value growth (+11.2%) as the recent momentum indicator, noting that this aligns with broader FHFA HPI upticks. Wait, better to just state the 2024 YoY growth as the momentum driver since FHFA isn't explicitly listed, or acknowledge the lack of direct FHFA data while using the 2024 YoY figure to represent momentum. Let's just use the 2024 YoY growth of +11.2% as the recent momentum metric.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score - affordability, stability, momentum, vitality).
 
-The multi-year trend reveals a period of sustained acceleration, with home values rising from $88,700 in 2017 to $190,600 in 2024. Although the peak year-over-year growth of 16.6% in 2022 has moderated to 11.2% in 2024, the cumulative appreciation remains significant. This trajectory is supported by net migration inflows of 1,736 filers between 2021 and 2022, indicating demographic demand that outpaces the local housing supply. With only 244 new units authorized in 2025, predominantly single-family homes, the limited construction pipeline fails to match the velocity of price increases. The local economic base, comprising 7,147 jobs and an average weekly wage of $879, provides a stable foundation but lacks the wage growth necessary to sustainably support the current price levels without external income sources.
+2.  **Drafting - Step-by-Step:**
 
-Affordability remains the primary constraint, reflected in the low affordability metric of 34.8, while stability scores high at 89.1 due to consistent, albeit slowing, price appreciation. The momentum score of 36.0 suggests that while prices are rising, the rate of increase is decelerating from its peak, signaling a potential cooling period rather than a correction. For prospective buyers, the 7.32% mortgage rate exacerbates the affordability gap, making the $190,600 median price point less accessible relative to local incomes. Renter’s face a market where the financial burden is moderate, but the lack of multi-family development (only 4 units authorized) suggests limited long-term rental expansion. The data indicates a market where asset values are decoupling from local earnings power, driven more by migration and investment demand than by local wage growth.</p>
+    *   *Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context.*
+        Levy County presents a balanced housing market, characterized by an owner occupancy rate of 81.4% and a median home value of $190,600. The multi-year price trajectory reveals a consistent upward shift, escalating from $88,700 in 2017 to $190,600 in 2024, with year-over-year gains peaking at +16.6% in 2022 before moderating to +11.2% in 2024. A notable anomaly exists in the divergence between price and rent growth; while median gross rent remained relatively stagnant compared to the accelerating home values, the price-to-rent ratio matches the national average exactly at 18.7. Affordability metrics reflect this tension, with the price-to-income ratio sitting at 3.36 against a national average of 3.20, and a rent burden of 18.0% matching the national benchmark of 17.2%. Regionally, Levy County lags significantly behind both the national average—home</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -577,7 +592,7 @@ Affordability remains the primary constraint, reflected in the low affordability
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

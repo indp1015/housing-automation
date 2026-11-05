@@ -515,11 +515,29 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Barrow County, Georgia, operates as a balanced market leaning toward buyer advantage, evidenced by a price-to-rent ratio of 18.6, which aligns closely with the national average of 18.7. This parity suggests that the cost of purchasing is proportionate to the cost of renting, mitigating extreme pressure on either side of the transaction spectrum. However, the market exhibits significant stress in affordability metrics, where the price-to-income ratio stands at 3.65, exceeding the national benchmark of 3.20. Consequently, homeowners face a higher burden relative to their earnings, while renters experience a rent burden of 19.6% of income, compared to the national average of 17.2%. These figures indicate that while the market is structurally balanced in terms of asset valuation, the financial entry barriers remain elevated for median-income households.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Barrow County, Georgia.
+    *   **Data provided:** Median Home Value ($294,700), Median Gross Rent ($1,318), Median Household Income ($80,653), Population (89,886), Owner Occupancy (78.5%), Annual Trend 2017-2024, Local Economy (BLS), Housing Supply (Permits), Migration (IRS), Mortgage Rate (FRED), Composite Score (47.5/100), Derived Metrics (P/I 3.65, Rent Burden 19.6%, P/R 18.6), Relative Position.
+    *   **Tasks:**
+        1. Market classification (Buyer's, renter's, or balanced) with metrics.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income and rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: prompt says "Interpret the FHFA HPI change (if available)" but no specific FHFA data is given in the prompt except the mortgage rate. I must interpret the recent momentum based on the provided data, specifically the +15.5% YoY home value increase and the composite score momentum of 34.2/100).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style Requirements:** Professional, analytical, third person only, no predictions/speculation/future forecasts, data-driven, 280-320 words, 2-3 cohesive paragraphs, NO bullet points or headers. Do NOT mention the term "Market Score" explicitly; weave drivers into narrative.
+    *   **Length constraint:** 280-320 words.
 
-The multi-year trend reveals a period of rapid appreciation that has since moderated. Home values surged from $134,300 in 2017 to $294,700 in 2024, with a peak year-over-year increase of 24.7% in 2022. Recent momentum has decelerated, with the FHFA House Price Index showing only a 1.00% year-over-year increase in 2025, underperforming the Georgia state average of 1.83%. This divergence highlights a cooling phase following the pandemic-era boom. A notable pattern is the divergence between price and rent growth; home values are rising faster than rents, suggesting that capital appreciation is outpacing the cost of living for tenants. This dynamic may incentivize some renters to buy if financing costs allow, though the current 7.32% national mortgage rate limits immediate purchasing power.
+2.  **Drafting - Section by Section:**
 
-Regional context places Barrow County above both state and national averages in home value, at 48.9% and 29.4% higher, respectively, while median household income is 18.6% above the national mean. The local economy supports this valuation through robust vitality, indicated by a high vitality component in the composite assessment, driven by 21,214 total jobs and an average weekly wage of $1,073. Housing supply remains active, with 1,584 new units authorized in 2025, predominantly single-family homes. Net migration of +2,981 filers between 2021 and 2022 further supports demand, with inflowing households earning an average of $76,047. The overall market assessment reflects strong economic vitality and stability, offset by low affordability and slowing momentum. Potential buyers should note that while price growth has moderated, the high price-to-income ratio persists, requiring careful budgeting. Renter costs remain manageable relative to national norms, but the gap between buying and renting costs is narrowing, potentially shifting long-term housing strategies.</p>
+    *   *Task 1: Market Classification*
+        *   P/R ratio is 18.6 (National avg 18.7). This is essentially flat to slightly above national average. Rent burden is 19.6% (National avg 17.2%). Rent burden is higher than national average, but P/R is basically tied. Owner occupancy is 78.5%. High owner occupancy suggests a strong buyer base, but the rent burden being slightly above national average and P/R hovering around national average leans toward a *balanced* market rather than a buyer's market (where P/R would be much lower than national) or a renter's market (where rent burden would be significantly higher). Let's call it a balanced market.
+
+    *   *Task 2: Trend Interpretation*
+        *   Price trend: 2017-2024, increasing from $134,300 to $294,700. Peak YoY +24.7% in 2022, moderating to +15.5% in </p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -703,7 +721,7 @@ Regional context places Barrow County above both state and national averages in 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

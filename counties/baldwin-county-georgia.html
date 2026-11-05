@@ -408,11 +408,23 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Baldwin County, Georgia, functions as a distinctively affordable market, characterized by a price-to-income ratio of 3.34, which aligns closely with the national average of 3.20. However, the market is not a traditional renter’s paradise, as the rent burden stands at 20.4% of household income, exceeding the national benchmark of 17.2%. The price-to-rent ratio of 16.4, below the national average of 18.7, suggests that purchasing remains slightly more cost-effective than renting relative to local income levels, yet the high rent burden indicates significant pressure on tenants. This dynamic creates a balanced-to-buyer’s environment where entry-level costs are low, but rental costs consume a disproportionate share of earnings compared to broader national trends.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Baldwin County, Georgia.
+    *   **Data provided:** Current market data (2024), Annual trend detail (2017-2024), Local economy (BLS), Housing supply, Migration, National mortgage rate, Composite Market Score (0-100), Derived metrics, Relative position.
+    *   **Tasks:** 9 specific analytical points to cover (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style requirements:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, data-driven.
+    *   **Length:** 280-320 words, approximately 2-3 paragraphs, NO bullet points or headers.
+    *   **Start:** Begin directly with the analysis. Do not repeat data or use headers.
 
-The trajectory of home values reveals a period of intense appreciation followed by recent stabilization. From 2017 to 2024, median home values surged from $108,800 to $181,900, with a peak year-over-year increase of 18.7% in 2022. This rapid escalation contrasts sharply with the current FHFA HPI data, which shows a 2.02% decline in the most recent period, underperforming the state’s 1.83% growth by 3.85 percentage points. This divergence highlights a cooling phase where price momentum has reversed, while the long-term trend remains upward. The local economy supports this volatility, with only 12,277 total jobs and an average weekly wage of $820, limiting the purchasing power necessary to sustain double-digit price increases. Furthermore, new housing supply is constrained, with only 95 units authorized in 2025, primarily single-family homes, which may exacerbate future scarcity despite current price softening.
-
-Affordability remains the primary driver of the market’s stress indicators, with scores reflecting the tension between rising asset values and stagnant local incomes. While the county’s median home value is 20.1% below the national average, the median household income is also 20.0% below the national norm, resulting in a neutral relative affordability position. The recent negative price momentum, coupled with a national 30-year fixed mortgage rate of 7.32%, creates a challenging entry point for buyers seeking leverage. Migration data shows a net inflow of 841 filers, with incoming households earning slightly more ($61,831) than outgoing ones ($61,449), suggesting a gradual shift toward higher-income residents that could support future demand. Ultimately, the market is defined by its low absolute price points but high relative rental costs, offering value to buyers while presenting significant financial strain for renters in a context of slowing price growth and tight local supply.</p>
+2.  **Drafting - Step-by-Step Incorporation of Data and Tasks:**
+    *   *Task 1: Market Classification.* Need to decide if it's buyer's, renter's, or balanced. Rent burden is 20.4% (national avg 17.2%). Price-to-income is 3.34 (national avg 3.20). Price-to-rent is 16.4 (national avg 18.7). Rent burden > national avg, price-to-income > national avg, price-to-rent < national avg. This suggests a renter-skewed or buyer-unfriendly market, leaning towards "renter's" or "balanced but unaffordable for buyers." Let's call it a renter-dominated market due to elevated rent burden.
+    *   *Task 2: Trend interpretation.* Home values rose from $108,800 in 2017 to $181,900 in 2024, peaking at +18.7% YoY in 2022 before moderating to +10.4% in 2024. Rents also likely grew, but the prompt doesn't give rent trend data directly, just current rent vs value. Wait, I need to check if I can infer rent trends. The prompt says "Trend signal: Home values are rising faster than rents" in the relative position section. So values outpaced rents.
+    *   *Task 3: Affordability assessment.* Price-to-income ratio of 3.34 exceeds the national average of 3.20, indicating buyer unaffordability. Rent burden of 20.4% surpasses the 17.2% national average, signaling that renters face higher financial pressure than typical households.
+    *   *Task 4: Regional context.* Home value is $181,900, which is 20.1% below the national average and 8.1% below the state average. Income is $54,403, 20.0% below the national average. The county is significantly undervalued relative to both peers.
+    *   *Task 5: Data anomaly.* The divergence between price-to-income (3.34) being above national average while price-to-rent (16.4) is below national average, combined with the noted "trend signal" that home values are rising faster than rents, creates an anomaly where affordability for buyers is strained even as the market appears relatively cheaper on a pure price-to-rent basis compared to the national norm. Also, the massive spike in 2022 (+18.7%) followed by a moderation to +10.4% shows a cooling trend post-peak.
+    *   *Task 6: Practical implication.* Potential buyers should be cautious given the elevated price-to-income ratio and regional undervaluation; potential renters should note the high rent burden exceeding national averages.
+    *   *Task 7: Recent momentum.* The FHFA HPI change isn't explicitly provided in the prompt text, but the prompt asks to "Interpret the FHFA HPI change (if available)". Since it's not in the text, I will reference the recent momentum indicated by the moderation of the YoY growth from +18.7% in 2022 to +10.4% in 2024, suggesting decelerating momentum.
+    *   *Task 8:</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -596,7 +608,7 @@ Affordability remains the primary driver of the market’s stress indicators, wi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

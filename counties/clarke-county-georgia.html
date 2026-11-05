@@ -473,11 +473,33 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Clarke County presents a distinct divergence between strong economic vitality and severe affordability constraints, classifying the environment as heavily skewed toward renters despite high ownership barriers. The market is not a traditional buyer’s or renter’s market in the conventional sense, but rather a stressed ecosystem where high demand outpaces local income growth. With a price-to-income ratio of 5.57, significantly exceeding the national average of 3.20, and a rent burden of 27.3% compared to the national 17.2%, residents face disproportionate financial pressure. This affordability crisis is the primary driver behind the low stability metrics, indicating that while the housing stock is active, the financial sustainability for average households is compromised.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Clarke County, Georgia.
+    *   **Data provided:** Median home value ($298,900), median gross rent ($1219), median household income ($53,625), population (129,609), owner occupancy (41.4%), price trend 2017-2024, local economy (jobs, wages), housing supply (new units), migration data, national mortgage rate (7.24%), composite score (29.5/100: Affordability 3.1, Stability 13.9, Momentum 45.2, Vitality 69.1), derived metrics (P/I ratio 5.57, Rent burden 27.3%, P/R ratio 20.4), relative position (home value +31.3% vs national, +51.0% vs state; income -21.1% vs national).
+    *   **Tasks:**
+        1. Market classification (Buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (P/I and rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, no FHFA HPI change is explicitly given in the prompt, but the prompt says "Interpret the FHFA HPI change (if available)". I only have the composite score. I must interpret the momentum from the composite score or note the lack of specific FHFA data and focus on the composite score's momentum of 45.2). *Correction*: The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI change is provided, I will interpret the "Momentum" axis (45.2/100) as the proxy for recent momentum, or just state that without a specific FHFA HPI change figure, the momentum is reflected in the 45.2 score and the YoY price growth of +9.9%. Let's stick to interpreting the momentum score and the YoY price growth.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality axes driving the overall score).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements. Every sentence data-driven.
+        *   Length: 280-320 words (~2-3 paragraphs).
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave drivers into narrative.
+    *   **Start directly with analysis.** Do not repeat data or use headers.
 
-The multi-year trend reveals a period of rapid appreciation that has only recently begun to moderate. Home values surged from $154,600 in 2017 to $298,900 in 2024, with a peak year-over-year increase of 21.7% in 2022. Although recent momentum has decelerated to 9.9% in 2024 and 5.45% according to the latest FHFA HPI data, prices continue to outpace the state’s 1.83% growth rate. This outperformance is supported by robust economic fundamentals, including a net migration gain of 2,733 filers with average incomes near $78,000 and 748 new housing units authorized in 2025. However, the local economy’s average weekly wage of $1,099 lags behind the rising housing costs, creating a structural gap. The 41.4% owner-occupancy rate remains low, suggesting that many prospective buyers are priced out, pushing demand toward the rental sector where the price-to-rent ratio of 20.4 indicates premiums over the national norm.
-
-Regional context further highlights the disparity, as Clarke County home values sit 51.0% above the Georgia average while household incomes remain 21.1% below the national mean. The high vitality score is driven by this sustained population inflow and construction activity, which keeps the market dynamic despite affordability challenges. For potential participants, the data suggests that entry barriers are high; buyers face a 7.32% mortgage rate environment that exacerbates the already strained price-to-income ratio, while renters must accept that housing costs consume a larger share of income than typical benchmarks. The market’s trajectory is defined by strong demand fundamentals colliding with static income levels, resulting in a landscape where price growth is decelerating but still outpaces local wage adjustments, maintaining a premium valuation relative to both state and national averages.</p>
+2.  **Drafting - Paragraph by Paragraph Strategy:**
+    *   *Paragraph 1: Classification, Trends, and Regional Context.* Classify as a renter's market (or buyer's market? Let's check: Rent burden 27.3% vs national 17.2%. Price-to-income 5.57 vs national 3.20. Owner occupancy 41.4% is relatively low compared to typical ~60-65%. Rent burden is high. So it's a renter's market). Justify with rent burden and P/I ratio. Mention regional context: home values are 31.3% above national average but income is 21.1% below national average.
+    *   *Paragraph 2: Anomalies, Affordability, Economic Context, and Momentum/Score.* Address the divergence between price and rent growth. Address affordability (high rent burden). Economic context: high mortgage rates (7.24%), strong migration inflow (+2,733 filers), new housing supply (748 units). Interpret the composite score drivers: low affordability (3.1) and low stability (13.9) drag the overall score down, while moderate momentum (45.2</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -660,7 +682,7 @@ Regional context further highlights the disparity, as Clarke County home values 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

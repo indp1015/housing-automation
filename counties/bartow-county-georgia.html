@@ -557,11 +557,55 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Bartow County, Georgia, functions as a balanced market with a slight lean toward buyer advantage, evidenced by a price-to-rent ratio of 19.0, which aligns closely with the national average of 18.7. While the median home value of $289,000 sits 46.0% above the state average, the median household income of $82,243 is 20.9% above the national mean, providing a stronger affordability cushion than typical for the region. The price-to-income ratio of 3.51 exceeds the national benchmark of 3.20, indicating that home prices are rising faster than local earnings, yet the 72.8% owner-occupancy rate suggests a stable, established residential base rather than a speculative bubble.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Bartow County, Georgia.
+    *   **Data provided:** Current market data (2024 ACS), Annual trend detail (2017-2024), Local economy (BLS QCEW 2025), Housing supply (Census 2025), Migration (IRS 2021-2022), National mortgage rate (FRED 2026-10-29), Composite Market Score, Derived metrics, Relative position.
+    *   **Tasks to cover:**
+        1. Market classification (Buyer's/Renter's/Balanced) with justification.
+        2. Trend interpretation (multi-year price & rent trends).
+        3. Affordability assessment (Price-to-income, Rent burden vs national).
+        4. Regional context (State and national averages).
+        5. Data anomaly/notable pattern (e.g., price vs rent growth divergence).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: prompt says "Interpret the FHFA HPI change (if available)" but no FHFA HPI data is explicitly given in the text, wait... let me check the provided data. Ah, there is no FHFA HPI data in the prompt. The prompt says "Interpret the FHFA HPI change (if available)". I must address this carefully or note that it's not available, OR look for a subtle clue. Wait, the prompt says "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the provided text, I should state that FHFA HPI data is not available in the provided dataset, but the recent momentum of the 30-year mortgage rate at 7.24% and the price growth indicate a specific trajectory. Actually, let me just mention that without the specific FHFA HPI data, the recent momentum is reflected in the sustained YoY price increases and elevated mortgage rates, which signals a transitioning market.) Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since it's not available, I will focus on the mortgage rate and price trends as the proxy for momentum.
+        8. Economic context (Employment, supply, migration, mortgage rates).
+        9. Score interpretation (Explain which axes drive the overall score: affordability, stability, momentum, vitality, grounded in data).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only (no "I", "we", "you").
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Length constraint:** 280-320 words.
 
-The multi-year trend reveals a significant acceleration in home values, peaking at 23.6% year-over-year growth in 2022 before moderating to 10.2% in 2024. This trajectory contrasts with the recent FHFA HPI data, which shows only a 2.07% year-over-year increase in 2025, slightly outpacing the state’s 1.83% growth. This divergence between long-term Census estimates and short-term mortgage-based indices suggests that while long-term appreciation has been robust, recent momentum has cooled. Notably, home values are rising faster than rents, with a rent burden of 18.5% slightly above the national 17.2%, implying that renting has become relatively less attractive compared to purchasing for those with adequate income.
+2.  **Drafting - Section by Section (incorporating constraints):**
 
-Economic fundamentals support this stability, with 42,033 total jobs and an average weekly wage of $1,186. The market is further bolstered by strong vitality, indicated by 1,030 new housing units authorized in 2025 and a net migration inflow of 2,927 filers between 2021 and 2022. However, affordability remains the primary constraint, with a composite affordability metric of 30.1 reflecting the strain of a 7.32% mortgage rate on a $289,000 median home. While the county exhibits high vitality and steady employment, the gap between price growth and income growth, combined with elevated mortgage costs, creates a stressed environment for entry-level buyers. Potential purchasers should note that while the market is cooling from its 2022 peak, the premium paid relative to state averages requires careful income verification to ensure sustainable debt servicing.</p>
+    *   *Constraint Checklist & Confidence Score:*
+        1. Market classification? Yes.
+        2. Trend interpretation? Yes.
+        3. Affordability assessment? Yes.
+        4. Regional context? Yes.
+        5. Data anomaly? Yes.
+        6. Practical implication? Yes.
+        7. Recent momentum (FHFA HPI)? Yes (addressing absence).
+        8. Economic context? Yes.
+        9. Score interpretation (weave drivers)? Yes.
+        10. Professional tone? Yes.
+        11. Specific numbers? Yes.
+        12. Third person? Yes.
+        13. No predictions/speculation? Yes.
+        14. No generic statements? Yes.
+        15. 280-320 words? Yes.
+        16. 2-3 paragraphs? Yes.
+        17. No bullet points/headers? Yes.
+        18. No "Market Score" term? Yes.
+        Confidence Score: 5/5.
+
+    *   *Drafting Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context*
+        Bartow County exhibits a buyer's market classification, driven by a</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -745,7 +789,7 @@ Economic fundamentals support this stability, with 42,033 total jobs and an aver
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

@@ -368,11 +368,34 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Jackson County, Florida, functions as a balanced market with a distinct lean toward renter-friendliness, characterized by a price-to-rent ratio of 11.6, significantly below the national average of 18.7. This metric indicates that purchasing is comparatively more economical than renting for long-term residents, yet the overall affordability remains constrained. The median home value of $120,800 stands at 46.9% below the national average, while the median household income of $49,149 trails the national mean by 27.7%. Consequently, the price-to-income ratio of 2.46 is favorable compared to the national benchmark of 3.20, suggesting that entry-level homeownership is accessible despite the region’s lower income base. However, the rent burden of 21.1% exceeds the national average of 17.2%, indicating that tenants face higher relative housing costs compared to their earnings.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Jackson County, Florida.
+    *   **Data provided:** Median home value ($120,800), median gross rent ($865), median household income ($49,149), population (48,250), owner occupancy (75.9%), annual trends (2017-2024), employment (9,485 jobs, avg wage $916, 947 establishments), building permits (98 new units, 96 single-family, 2 multi-family), migration (+1,362 net, inflow 17,075 @ $53,405, outflow 15,713 @ $54,546), mortgage rate (7.24%), composite score (Overall 61.3, Affordability 45.6, Stability 70.5, Momentum 74.8, Vitality 56.3), derived metrics (Price-to-Income 2.46 vs 3.20, Rent Burden 21.1% vs 17.2%, Price-to-Rent 11.6 vs 18.7), relative position (Home value -46.9% national, -57.5% state; Income -27.7% national).
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income and rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (interpret FHFA HPI change if available - *Wait, no FHFA HPI data is provided in the prompt, but I need to interpret "Recent momentum" based on available data like the +6.1% YoY home value increase or the Momentum score of 74.8*). Let me re-read: "Interpret the FHFA HPI change (if available)". Since it's not explicitly in the text, I will reference the recent momentum indicated by the 2024 home value growth (+6.1%) and the high Momentum score (74.8/100).
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (explain which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only (no "I", "we", "you").
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence must be data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Starting condition:** Begin directly with the analysis. Do not repeat the data or use headers.
 
-The multi-year trend reveals a period of accelerated appreciation, with home values rising from $94,900 in 2017 to $120,800 in 2024, representing a cumulative increase of approximately 27.3%. Notably, the 8.1% year-over-year growth in 2022 was followed by a sharp deceleration to 0.5% in 2023, before rebounding to 6.1% in 2024. This volatility suggests a market adjusting to external economic pressures rather than experiencing steady, organic growth. A significant data point is the net migration of +1,362 filers between 2021 and 2022, where inflows averaged $53,405 in income versus $54,546 for outflows. This modest net gain, combined with a total employment base of only 9,485 jobs and an average weekly wage of $916, highlights a limited local economic engine. The housing supply remains tight, with only 98 new units authorized in 2025, predominantly single-family, which may sustain price pressure despite the national mortgage rate of 7.32% dampening demand.
+2.  **Drafting - Step-by-Step:**
 
-Affordability metrics drive the lower stability and vitality assessments, as the high rent burden and modest income levels limit purchasing power. The momentum is currently positive, evidenced by the 6.1% price increase in 2024, but this is tempered by the high interest rate environment. For potential buyers, the low price-to-rent ratio offers a compelling long-term investment case, provided they can secure financing at prevailing rates. Renters, however, face a challenging landscape where housing costs consume a larger share of income than the national norm. The economic context, defined by low employment density and modest wage growth, suggests that while prices are rising, the underlying demand drivers are not robust enough to support sustained, high-velocity appreciation without external migration or policy shifts. The market remains accessible relative to national standards but lacks the economic depth to buffer against further rate increases or economic downturns.</p>
+    *   *Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context.*
+        Jackson County presents a balanced housing market, evidenced by a median home value of $120,800 against a median gross rent of $865. The multi-year trend reveals a steady appreciation trajectory, with home values rising from $94,900 in 2017 to $120,800 in 2024, while rents increased from $99,000 to $113,900 over the same period. A notable anomaly is the divergence between price and rent growth: the 2022 home value spike of +8.1% YoY outpaced the rent growth, creating a temporary disconnect that has since normalized. Affordability is a primary constraint, as the price-to-income ratio of 2.46 significantly trails the national average of 3.20, and the rent burden of 21.1%</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -556,7 +579,7 @@ Affordability metrics drive the lower stability and vitality assessments, as the
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

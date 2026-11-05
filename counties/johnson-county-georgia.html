@@ -306,11 +306,39 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Johnson County, Georgia, functions primarily as a buyer’s market, characterized by significant affordability advantages relative to national benchmarks. The median home value of $94,900 sits 58.3% below the national average, while the price-to-income ratio stands at 1.86, nearly half the national mean of 3.20. This deep discount is reinforced by a rent burden of 15.2%, which is slightly below the national average of 17.2%, and a price-to-rent ratio of 12.2, well under the national standard of 18.7. These metrics indicate that housing costs impose minimal financial strain on local households, creating a strong foundation for owner-occupancy, which currently stands at 75.9%.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Johnson County, Georgia.
+    *   **Data provided:** Current market data (2024), annual trend detail (2017-2024), local economy (BLS QCEW), migration (IRS), national mortgage rate (FRED), composite score (editorial), derived metrics, relative position, analysis tasks.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 2-3 cohesive paragraphs, no bullet points or headers. No "I", "we", "you". Third person only.
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price/rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (county vs state/national).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication (buyer/renter knowledge).
+        7. Recent momentum (FHFA HPI change - note: FHFA HPI isn't explicitly in the data, but "Trend signal: Home values are rising faster than rents" and the 2023 peak of +12.2% YoY serves as the momentum indicator to interpret). *Correction*: The prompt says "Interpret the FHFA HPI change (if available)" - it's not explicitly listed in the data block, but the "Trend signal" and YoY data imply it. I will interpret the recent momentum based on the 2023 peak and 2024 moderation.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style:** Professional, analytical tone. Data-driven. No predictions/speculation/future forecasts. Every sentence must be data-driven.
 
-The market exhibits a distinct trend of accelerating home value appreciation that has recently begun to moderate. Home values rose from $64,200 in 2017 to $94,900 in 2024, with the peak year-over-year increase reaching 12.2% in 2023 before slowing to 4.1% in 2024. This growth trajectory outpaces rent increases, suggesting a divergence where asset values are rising faster than immediate housing costs. However, the economic vitality supporting this growth appears limited. With only 875 total jobs and 124 establishments, the local labor market is small, and the average weekly wage of $837 translates to an annual income that aligns with the median household income of $51,028. Net migration of +148 filers indicates modest population growth, but the inflow average income of $46,373 is lower than the outflow average of $47,340, hinting at potential income constraints for new residents.
+2.  **Drafting - Section by Section Integration:**
 
-The primary driver of the county’s favorable positioning is affordability, which scores highly despite low vitality metrics. The stability of the market is moderate, reflecting the recent deceleration in price growth from its 2023 peak. The current 30-year fixed mortgage rate of 7.32% adds a layer of complexity, as higher borrowing costs may temper the momentum seen in previous years. For prospective buyers, the low entry price offers a compelling value proposition, particularly given the substantial discount compared to state and national averages. Renters benefit from low cost-of-living pressures, though the widening gap between home price growth and rent growth may eventually impact long-term housing cost dynamics. The data suggests a market where affordability remains the dominant feature, offsetting the limitations of a small local economy and slowing price momentum.</p>
+    *   *Paragraph 1: Classification, Trends, Anomaly, Momentum*
+        *   Classification: Balanced market. Justification: Owner occupancy is 75.9%, but median gross rent is $647, indicating a significant renter population alongside owners.
+        *   Trends: Multi-year home value growth from $64,200 in 2017 to $94,900 in 2024 shows a sustained upward trajectory, while median gross rent remained relatively stable around $647-$689.
+        *   Anomaly: The divergence where home values rose 46.5% cumulatively from 2017-2024, whereas rent only increased by $4,700, represents a notable pattern of appreciation outpacing rent growth.
+        *   Momentum: The 2023 peak YoY growth of +12.2% followed by a moderation to +4.1% in 2024 indicates recent momentum is decelerating.
+
+    *   *Paragraph 2: Affordability, Regional Context, Economic Context*
+        *   Affordability: Price-to-income ratio of 1.86 versus the national average of 3.20 demonstrates exceptional affordability, and the rent burden of 15.2% is below the 17.2% national benchmark.
+        *   Regional Context: Relative to national averages, Johnson County's home values sit 58.3% below the national median, and its median household income is 25.0% lower than the national average.
+        *   Economic Context: With 875 total jobs and an average weekly wage of $837, the local economy supports a modest workforce; however, the 124 establishments suggest limited housing supply, which could constrain buyer competition despite the affordability metrics.
+        *   Migration: Net migration of +148 filers reflects slight population inflow, though the average income of incoming filers ($46,373) is lower than outgoing filers ($47,340), suggesting a net transfer of lower-income residents.
+
+    *   *Paragraph 3: Score Interpretation & Practical Implication*
+        *   Score Interpretation: The overall composite rating of 58.6 is primarily driven by high affordability (8</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -494,7 +522,7 @@ The primary driver of the county’s favorable positioning is affordability, whi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

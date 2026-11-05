@@ -557,11 +557,33 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Sussex County, Delaware, functions as a balanced market with distinct affordability constraints, characterized by a median home value of $382,600 and a median household income of $81,497. The market is neither a clear buyer’s nor renter’s advantage; rather, it presents a high cost of entry relative to local earnings. The price-to-income ratio stands at 4.69, significantly exceeding the national average of 3.20, while the price-to-rent ratio of 25.8 surpasses the national benchmark of 18.7. This disparity indicates that purchasing equity is comparatively more expensive than renting, yet the rent burden of 18.2% remains only slightly above the national average of 17.2%, suggesting that rental housing remains a more accessible entry point for local residents despite the high absolute costs.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Sussex County, Delaware.
+    *   **Data provided:** Current market data (2024), annual trend detail (2017-2024), local economy (BLS QCEW), housing supply (Census building permits), migration (IRS), national mortgage rate, composite market score, derived metrics, relative position.
+    *   **Tasks:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price/rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (county vs. state/national).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - *Wait, FHFA HPI isn't explicitly in the prompt, but "Recent momentum: Interpret the FHFA HPI change (if available)" - I need to infer or state that the recent momentum is reflected in the 2024 YoY +8.3% and the moderating 2022 peak*). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since FHFA HPI isn't provided in the text, I should focus on the provided trend data (Peak YoY was +13.8% in 2022, moderating to +8.3% in 2024) as the proxy for recent momentum.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive overall score: affordability, stability, momentum, vitality, grounded in data).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Start:** Begin directly with the analysis. Do not repeat data or use headers.
 
-Trend analysis reveals a period of accelerated appreciation that has begun to moderate. Home values increased by 13.8% in 2022, the peak year of the recent cycle, before decelerating to 8.3% in 2024. This sustained growth has pushed home values 68.0% above the national average and 9.2% above the state average. The divergence between price and rent growth is notable, as home values are rising faster than rents, a pattern often associated with strong demand for ownership in areas with limited new supply. Although 3,885 new units were authorized in 2025, the heavy skew toward single-family homes (3,264 units) compared to multi-family units (621) limits the expansion of the rental inventory, potentially sustaining higher price points for detached homes.
+2.  **Drafting - Section by Section (incorporating constraints):**
 
-The local economic context supports this stability. With total employment at 86,295 jobs and an average weekly wage of $1,092, the labor market provides a solid foundation for household income, which is 19.9% above the national mean. Net migration of 7,370 filers further indicates sustained demographic growth, with incoming residents earning an average of $94,749, slightly higher than those leaving. However, the current 30-year fixed mortgage rate of 7.32% acts as a significant headwind, reducing purchasing power and contributing to the low affordability metric. Consequently, the market exhibits high stability and vitality, driven by robust employment and population inflows, but remains constrained by affordability. Potential buyers face a challenging landscape where high mortgage rates and premium valuations require substantial income to secure financing, while renters may find relatively moderate burden rates compared to the extreme cost of ownership. The data suggests a market that is economically healthy but financially demanding for entry-level purchasers.</p>
+    *   *Task 1 & 2 & 5 (Classification, Trends, Anomaly):* Sussex County exhibits a balanced housing market, driven by sustained price appreciation outpacing rent growth, which historically indicates buyer strength rather than a renter's market. The multi-year trajectory shows median home values rising from $242,900 in 2017 to $382,600 in 2024, with year-over-year increases peaking at 13.8% in 2022 before moderating to 8.3% in 2024. A notable pattern is the divergence between price and rent growth; while home values surged over eight percent annually during the peak years, rents remained relatively stagnant, creating a pronounced price-to-</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -724,7 +746,7 @@ The local economic context supports this stability. With total employment at 86,
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-05. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
