@@ -318,11 +318,30 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Chattahoochee County, Georgia, functions as a distinctively affordable buyer’s market, characterized by deep value relative to national benchmarks. The median home value of $102,700 stands 54.9% below the national average, resulting in a price-to-income ratio of 1.68, less than half the national norm of 3.20. This extreme affordability is further evidenced by a price-to-rent ratio of 6.3, significantly lower than the national average of 18.7, suggesting that homeownership is substantially more cost-effective than renting for local residents. However, the market exhibits severe volatility, reflected in a stability metric near zero. Home values surged 36.1% in 2021 to a peak of $129,300 in 2022, only to retract 22.8% in 2023 before stabilizing with a 2.9% increase in 2024. This erratic price action contrasts sharply with the relative consistency of median gross rent, which remains at $1,348 monthly, creating a notable divergence where asset values fluctuate wildly while rental costs remain steady.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Chattahoochee County, Georgia.
+    *   **Data provided:** Current market data (2024 ACS), annual trends (2017-2024), local economy (BLS QCEW 2025), housing supply, migration, national mortgage rate, composite market score, derived metrics, relative position.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific analysis points to cover, but written in 2-3 cohesive paragraphs without bullet points or headers. No generic statements, every sentence must be data-driven. Third person only. No predictions/speculation/future forecasts. No mention of "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Content constraints:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (interpret FHFA HPI change - wait, there is no FHFA HPI in the prompt, just FRED mortgage rate. I need to interpret the recent momentum based on available data, perhaps the 2024 YoY +2.9% or the overall score momentum of 73.8/100). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since it's not available, I will interpret the recent momentum indicated by the 2024 YoY price growth (+2.9%) and the high Momentum score (73.8/100).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality drivers).
 
-The economic foundation of the county is fragile, with total employment limited to 1,729 jobs across 128 establishments and an average weekly wage of $1,010. Despite the low income base, net migration of 917 filers between 2021 and 2022 indicates sustained demographic interest, though incoming residents average incomes of $49,641, below the county median. Housing supply is critically constrained, with only three new single-family units authorized in 2025 and zero multi-family projects, limiting the ability to meet demand organically. The current 30-year fixed mortgage rate of 7.32% introduces significant carrying costs, yet the low entry price point mitigates this for qualified buyers. The rent burden is 26.5% of income, exceeding the national average of 17.2%, which pressures tenants but does not similarly constrain owners given the low purchase prices.
-
-Market vitality is driven by momentum and affordability rather than stability. The composite assessment places the market in a stressed category, primarily due to the extreme variance in home values over the recent seven-year period. The 2023 correction erased much of the 2021-2022 appreciation, leaving the market in a consolidation phase. For potential buyers, the low price-to-income ratio offers substantial equity potential, provided they can navigate the high mortgage rates and thin local job market. Renters face a higher cost burden relative to income, making the transition to ownership financially advantageous despite the market's historical volatility. The lack of new construction suggests that existing inventory will remain the primary driver of market dynamics, with price discovery heavily influenced by the small, stable population of 8,887 residents.</p>
+2.  **Drafting - Point by Point Integration:**
+    *   *Point 1 (Classification):* Balanced market. Justification: Rent burden (26.5%) is higher than national average (17.2%), but price-to-income ratio (1.68) is well below national average (3.20), indicating buyers still have purchasing power despite lower absolute values.
+    *   *Point 2 (Trends):* Price peaked at $129,300 in 2022 (+15.9% YoY) before crashing to $99,800 in 2023 (-22.8% YoY), recovering slightly to $102,700 in 2024 (+2.9% YoY). Rent remained relatively stable around $1,348.
+    *   *Point 3 (Affordability):* Price-to-income ratio of 1.68 versus a national average of 3.20 indicates strong buyer affordability, while the 26.5% rent burden exceeds the national benchmark of 17.2%, signaling that renting remains more accessible than buying.
+    *   *Point 4 (Regional Context):* Home values sit at -54.9% of the national average and -48.1% of the state average, while median household income is 10.2% below the national norm, keeping the county relatively undervalued compared to broader economic scales.
+    *   *Point 5 (Anomaly):* A notable pattern is the divergence between price and rent growth; after prices plummeted 22.8% in 2023, they only recovered 2.9% in 2024, whereas rents showed minimal fluctuation, creating a persistent gap where buyers face inflated prices relative to rental yields.
+    *   *Point 6 (Practical Implication):* Potential buyers should recognize that while the price-to-income ratio suggests room to enter the market, the rent burden and regional undervaluation mean purchasing requires careful financial scrutiny, whereas renters benefit from lower absolute costs despite stagnant wage growth.
+    *   *Point 7 (Momentum):* The recent momentum, reflected in the 2024 year-over-year price recovery of 2.9% and a high Momentum index of 73.8 out of 100,</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -506,7 +525,7 @@ Market vitality is driven by momentum and affordability rather than stability. T
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

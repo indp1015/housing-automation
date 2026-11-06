@@ -450,6 +450,43 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Bonneville County, Idaho.
+    *   **Data provided:** Current market data (2024 ACS), annual trend detail (2017-2024), local economy (BLS), housing supply, migration, national mortgage rate, composite score, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words. Approximately 2-3 paragraphs. No bullet points or headers.
+    *   **Content requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price/rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (compare to state/national).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (interpret FHFA HPI change - *Wait, FRED data is given as 30-year fixed mortgage rate 7.24%. The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI change is explicitly given in the data, I must infer from the mortgage rate or note its impact on momentum without making up a specific HPI number, or just interpret the mortgage rate's effect on momentum.* Let me re-read: "Recent momentum: Interpret the FHFA HPI change (if available) and its significance." Since no specific HPI change is provided, I will interpret the mortgage rate's impact on recent momentum/stability, or state that the lack of a specific HPI change implies reliance on the mortgage rate as the primary driver of recent momentum). Let's look at the data again. National mortgage rate is 7.24%. I will use this to explain recent momentum.
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (explain drivers of overall score: affordability, stability, momentum, vitality, grounded in data).
+    *   **Style requirements:** Professional, analytical tone. Third person only. No predictions/speculation. No generic statements. Every sentence data-driven.
+    *   **Starting condition:** Begin directly with the analysis. Do not repeat data or use headers.
+
+2.  **Drafting - Step-by-Step:**
+
+    *   *Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context*
+        *   Classification: Balanced market. Justification: Rent burden matches national average (17.2%), but price-to-income ratio is significantly higher than national average (4.66 vs 3.20), indicating buyers face substantial financial strain despite renters being comparably burdened.
+        *   Trends: Price growth has been robust, peaking at +24.8% in 2022 before moderating to +12.8% in 2024, while rent growth outpaced price growth over the multi-year period.
+        *   Anomaly: The divergence between rising home values and rents suggests escalating transaction costs relative to ongoing cash flow, a notable pattern in this county.
+        *   Regional Context: Home values sit 62.0% above the national average but only 3.8% above the state average, indicating a localized premium driven by income levels that are 16.3% higher than the national norm.
+
+    *   *Paragraph 2: Economic context, Practical implication, Momentum, Score interpretation*
+        *   Economic context: Local employment of 56,558 jobs and net migration of +3,310 filers provide underlying demand, yet new units authorized (1,219) are insufficient to absorb this demand, compressing buyer availability. The 30-year fixed mortgage rate of 7.24% further restricts affordability.
+        *   Practical implication: A potential buyer should recognize the elevated price-to-income ratio of 4.66, meaning a median household income of $79,068 is inadequate to service a median home value of $368,800 under standard loan terms, whereas a renter faces a manageable 17.2% rent burden.
+        *   Momentum: The recent moderation of YoY price growth from +24.8% to +12.8%, coupled with the sustained mortgage rate</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Bonneville County on Our Sister Sites</h3>
@@ -627,7 +664,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

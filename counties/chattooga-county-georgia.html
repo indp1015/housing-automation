@@ -387,6 +387,33 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Chattooga County, Georgia.
+    *   **Length:** 280-320 words (approx. 2-3 paragraphs).
+    *   **Style:** Professional, analytical, third-person only, data-driven, no predictions/speculation/future forecasts, no generic statements, no bullet points or headers, do not explicitly mention "Market Score" (weave its drivers: affordability, stability, momentum, vitality).
+    *   **Content Requirements:**
+        1. Market classification (Buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (vs state/national averages).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but there is no FHFA HPI change provided in the data. I must note this or infer based on the provided data, e.g., 2024 YoY +17.1% is a massive surge, indicating strong recent momentum. Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since no specific FHFA HPI number is given, I will interpret the 2024 year-over-year price increase of +17.1% as the recent momentum driver, or state that the available data shows a 17.1% YoY increase representing significant recent momentum).
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality drivers).
+
+2.  **Drafting - Step-by-Step:**
+
+    *   *Requirement 1: Market Classification*
+        *   Owner occupancy is 66.8%, but Price-to-Income is 2.30 (National avg 3.20), Rent Burden is 18.9% (National avg 17.2%), Rent-to-Price is 12.2 (National avg 18.7). Wait, if Price-to-Rent is lower than national, it means prices are relatively cheaper than rents compared to the national average. This leans towards a renter's market? Or buyer's market? Let's look at the composite score: Overall 41.1/100 (Stressed), Affordability 55.7, Stability 17.2, Momentum 56.8, Vitality 29.5. The low stability and vitality, but high affordability and momentum... Actually, a renter's market is characterized by high rent burdens or low price-to-rent ratios. Here, price-to-rent is 12.2 (cheaper than national 18.7), meaning houses are relatively affordable compared to rents. Rent burden is 18.9% (close to national 17.2%). Let's classify as a renter's market because rents are rising faster than home values (Trend signal: Home values are rising faster than rents - wait, the prompt says "Trend signal: Home values are rising faster than rents". If values rise faster, that usually indicates a buyer's market (demand outstripping supply). But the price-to-rent ratio is lower than national, meaning houses are cheaper relative to rent. Let's re-evaluate: Price-to-Rent 12.2 vs 18.7. This means for every dollar of rent, you pay $12.20 for a house. National is $18.70. So houses are more affordable relative to rent here. Rent burden 18.9% vs 17.2%. Rents are slightly higher burden. Let's classify as a renter's market due to the rapid appreciation outpacing rent growth, making housing less accessible to buyers despite the low price-to-rent ratio, or perhaps a balanced market leaning renter. Actually, standard definitions: Buyer's = prices falling or stable, rents falling. Renter's = rents rising faster than prices. Here, prices rose 17.1% in 2024, rents rose faster (implied by the divergence noted in</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Chattooga County on Our Sister Sites</h3>
@@ -564,7 +591,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

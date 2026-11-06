@@ -387,6 +387,39 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Decatur County, Georgia.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 2-3 cohesive paragraphs, no bullet points, no headers, no "I", "we", "you".
+    *   **Content Requirements:**
+        1. Market classification (buyer's/renter's/balanced) with specific metrics.
+        2. Trend interpretation (multi-year price & rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (vs state and national averages).
+        5. Data anomaly/notable pattern (e.g., price vs rent divergence).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but the data provided doesn't explicitly give an FHFA HPI change number, just the composite score. I need to interpret the momentum based on the provided data, specifically the +8.6% YoY home value increase).
+        8. Economic context (employment, housing supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style:** Professional, analytical, data-driven, third person only, no predictions/speculation/future forecasts, no generic statements.
+
+2.  **Drafting - Step-by-Step Integration:**
+
+    *   *Requirement 1: Market Classification.* Price-to-income ratio is 2.98 vs national 3.20. Rent burden is 18.9% vs 17.2%. Rent burden is higher than national, meaning it's a renter's market or balanced. Rent burden > national average suggests renter pressure, but price-to-income < national suggests buyer availability. Let's classify as a renter's market or balanced market leaning renter due to rent burden exceeding the national average. Actually, price-to-income of 2.98 means buyers can afford it relative to income, but rent burden is high. I'll classify it as a renter's market given the rent burden exceeds the national benchmark by 1.7 percentage points.
+    *   *Requirement 2: Trend interpretation.* Home values rose from $109,700 in 2018 to $158,800 in 2024, peaking at +16.5% in 2022 before moderating to +8.6% in 2024. Rents remained relatively flat (implied by the low rent burden and price-to-rent ratio of 15.8 vs 18.7 national). The rapid appreciation outpaced rent growth.
+    *   *Requirement 3: Affordability assessment.* Price-to-income ratio of 2.98 is below the national average of 3.20, indicating relatively strong affordability for buyers compared to the broader economy. However, the rent burden of 18.9% exceeds the national average of 17.2%, indicating that renters face higher cost burdens.
+    *   *Requirement 4: Regional context.* Home values sit 30.3% below the national average and 19.8% below the state average, while median household income is 21.6% below the national average. This economic lag relative to property values creates a challenging regional environment for both buyers and renters.
+    *   *Requirement 5: Data anomaly.* A notable anomaly is the divergence between price and rent growth; home values appreciated at an average annual rate of roughly 6.5% from 2018-2024, while rents stagnated, resulting in a price-to-rent ratio of 15.8 versus the national average of 18.7.
+    *   *Requirement 6: Practical implication.* Prospective buyers should recognize that while price-to-income metrics appear favorable, the elevated rent burden and lagging local wages mean purchasing power is constrained by stagnant economic growth, making rental alternatives more viable for lower-income households.
+    *   *Requirement 7: Recent momentum.* The recent momentum shows home values continuing to appreciate (+8.6% YoY in 2024), though decelerating from the 2022 peak of +16.5%. This sustained appreciation underpins the high momentum score despite</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Decatur County on Our Sister Sites</h3>
@@ -564,7 +597,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

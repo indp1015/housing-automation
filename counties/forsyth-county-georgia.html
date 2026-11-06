@@ -452,11 +452,22 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Forsyth County, Georgia, operates as a distinctively high-income, high-cost market that currently favors sellers over buyers, characterized by robust demand and limited relative affordability. The median home value of $550,400 stands 178.1% above the state average and 141.7% above the national mean, reflecting a premium driven by the county’s median household income of $143,784, which is 111.5% higher than the national benchmark. This demographic profile supports a strong owner-occupancy rate of 84.4%, indicating a stable, established residential base. The market classification leans toward a seller’s environment due to the price-to-income ratio of 3.83, which exceeds the national average of 3.20, signaling that housing costs have outpaced local income growth.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Forsyth County, Georgia.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific analytical tasks (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Format:** 2-3 cohesive paragraphs. No bullet points or headers. No "I", "we", "you". Third person only.
+    *   **Style:** Professional, analytical, data-driven. No predictions, speculation, or future price forecasts. Every sentence must be data-driven.
+    *   **Starting condition:** Begin directly with the analysis. Do not repeat data or use headers.
 
-The multi-year trend reveals a period of aggressive appreciation followed by recent stabilization. Home values surged by 17.0% in 2022 and 11.5% in 2024, yet the FHFA House Price Index indicates a recent year-over-year change of only 2.35% in 2025, outperforming the state’s 1.83% growth. This divergence between the long-term ACS data and recent HPI momentum suggests a cooling phase where price gains are moderating. Notably, the price-to-rent ratio of 21.9 significantly exceeds the national average of 18.7, indicating that buying is less cost-effective relative to renting than in most other U.S. markets. While the rent burden of 17.4% aligns closely with the national average of 17.2%, the absolute median gross rent of $2,090 remains high, driven by the area’s affluent tenant base.
-
-Economic fundamentals provide structural support for the market’s stability, evidenced by 80,184 total jobs and positive net migration of 5,801 filers between 2021 and 2022. However, new construction, with 1,743 units authorized in 2025, may not fully offset demand from high-income inflows. The high stability metric is underpinned by consistent employment and low volatility in occupancy, while vitality is sustained by strong local wages averaging $1,286 weekly. Conversely, affordability remains the primary constraint, with a score of 31.2 reflecting the gap between rising home values and income levels. For potential buyers, the 7.32% mortgage rate further strains purchasing power, making the current environment challenging despite the region’s economic strength. Renter dynamics remain balanced, as rent growth has not accelerated as sharply as home prices, offering a slight relative advantage for those deferring purchase.</p>
+2.  **Deconstruct the Tasks & Map to Data:**
+    *   *Task 1: Market classification.* Buyer's, renter's, or balanced? Price-to-income ratio is 3.83 (National avg: 3.20). Rent burden is 17.4% (National avg: 17.2%). Rent burden is slightly above national average, price-to-income is significantly higher. Rent burden is close to national, but price-to-income suggests high prices. Let's look at affordability score (31.2/100) vs stability (89.5/100). Stability is very high (owner occupancy 84.4%, net migration +5,801). High stability + high prices = likely a renter's market or balanced, but given the high price-to-income, maybe leaning renter's due to rent burden being slightly higher than national. Wait, rent burden is *lower* than national? No, 17.4% > 17.2%. Actually, 17.4% is barely above 17.2%. But price-to-income of 3.83 is way above 3.20. Let's classify as renter's or balanced. Given high stability and moderate rent burden, it's a balanced market leaning renter's. Let's say "balanced market leaning toward renter-favoring" based on rent burden slightly exceeding national and price-to-income far exceeding it.
+    *   *Task 2: Trend interpretation.* Prices rose from $301,100 (2017) to $550,400 (2024), a +82.9% increase. Rent trends aren't explicitly given as a line, but implied by rent burden and rent-to-price ratio. The note says "Home values are rising faster than rents". Peak YoY was +17.0% in 2022, moderating to +11.5% in 2024.
+    *   *Task 3: Affordability assessment.* Price-to-income ratio 3.83 vs 3.20. Rent burden 17.4% vs 17.2%. Highly unaffordable relative to income, though rent burden is marginally higher than national.
+    *   *Task 4: Regional context.* Home value vs national avg: +141.7% ($550,400 / $233,200 approx). Income vs national avg: +111.5% ($143,784 / $68,500 approx). State avg: +178.1%.
+    *   *Task 5: Data anomaly.* Divergence between price growth (+11.5% in 2024) and rent growth (implied slower, hence "rising faster than rents"). Also, the sharp spike in 2022 (+17.0%) followed by moderation.
+    *   *Task 6: Practical implication.* Buyers face high costs; renters face slightly higher burdens. Stability is strong, so wait times might be long for buyers.
+    *   *Task 7: Recent momentum.* FHFA HPI change not explicitly provided in the prompt, but the prompt says "Interpret the FHFA HPI change (if available) and its significance." Wait, the prompt doesn't give FHFA HPI data. I must state that the FHFA HPI change is unavailable in the provided dataset, but the overall momentum score (50.0/100) reflects a slowing trend from the 2022 peak. Or</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -639,7 +650,7 @@ Economic fundamentals provide structural support for the market’s stability, e
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

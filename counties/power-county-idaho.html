@@ -316,6 +316,33 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Power County, Idaho.
+    *   **Data provided:** Current market data (2024), annual trend (2017-2024), local economy (BLS QCEW 2025), housing supply (Census 2025), migration (IRS 2021-2022), national mortgage rate (FRED 2026-10-29), composite score (editorial 0-100), derived metrics, relative position.
+    *   **Task:** Write a 280-320 word analysis covering 9 specific points (market classification, trend interpretation, affordability assessment, regional context, data anomaly/pattern, practical implication, recent momentum, economic context, score interpretation).
+    *   **Style Requirements:** Professional, analytical tone, specific numbers/percentages, third person only (no "I", "we", "you"), no predictions/speculation/future forecasts, no generic statements, every sentence data-driven.
+    *   **Length:** 280-320 words, approximately 2-3 cohesive paragraphs. No bullet points or headers.
+    *   **Constraint:** Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Start:** Begin directly with the analysis. No repeating data or headers.
+
+2.  **Deconstruct the Data & Map to Requirements:**
+    *   *Market classification:* Rent burden is 15.1% (national avg 17.2%), price-to-income is 3.48 (national avg 3.20). Renters have a lower burden than the national average, but buyers face a higher P/I ratio. It's a balanced market.
+    *   *Trend interpretation:* Prices rose from $132,600 (2017) to $212,900 (2024), a +60.3% increase. Rents presumably rose similarly (implied by P/R ratio of 23.1 vs national 18.7, meaning rents are relatively high compared to prices, or prices rose faster than rents). Wait, let's look at rent trend. I don't have explicit rent trend, but P/R ratio is 23.1 (national 18.7). If P/R is higher, either prices rose faster than rents, or rents are higher relative to prices. The prompt says "Trend signal: Home values are rising faster than rents". So prices outpaced rents.
+    *   *Affordability assessment:* Price-to-income ratio 3.48 vs 3.20 national. Rent burden 15.1% vs 17.2% national. Renters are slightly more affordable than the national average, buyers are less so.
+    *   *Regional context:* Home value -6.5% vs national, -40.1% vs state. Income -10.1% vs national.
+    *   *Data anomaly:* Price-to-rent ratio is 23.1 vs 18.7 national, and home values rising faster than rents. Also, net migration is +106 filers (very low absolute number given population of 8,133).
+    *   *Practical implication:* Buyers should be cautious due to high P/I and mortgage rates (7.24%). Rents are manageable but supply is tight (only 5 new units authorized, all single-family).
+    *   *Recent momentum:* FHFA HPI change isn't explicitly in the data, but the prompt asks to interpret it "if available". Wait, the prompt says "Interpret the FHFA HPI change (if available) and its significance." The provided data doesn't explicitly list an FHFA HPI change, but the 2024 price is +11.3% YoY, which aligns with strong momentum. I will reference the 11.3% YoY price increase as the momentum indicator.
+    *   *Economic context:* Employment 3,224, avg wage $1,172, 243 establishments. Supply is very constrained (5 new units, all single-family). Mortgage rate 7.24%. Migration is nearly zero (+106).
+    *   *Score interpretation:* Overall 50.4 (Challenging). Affordability 49</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Power County on Our Sister Sites</h3>
@@ -492,7 +519,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

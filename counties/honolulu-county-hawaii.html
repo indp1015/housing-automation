@@ -555,11 +555,30 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Honolulu County operates as a severely constrained renter’s market, characterized by extreme entry barriers for prospective homeowners. The price-to-income ratio stands at 8.45, more than double the national average of 3.20, while the price-to-rent ratio of 35.9 significantly exceeds the national benchmark of 18.7. These metrics indicate that purchasing is financially prohibitive for the median household, which earns $106,195 annually against a median home value of $897,500. Consequently, the market dynamics favor long-term tenants, as the high cost of ownership relative to income forces a substantial portion of the population into the rental sector, where the median gross rent of $2,083 consumes 23.5% of household income, well above the national norm of 17.2%.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Honolulu County, Hawaii.
+    *   **Data provided:** Median home value ($897,500), median gross rent ($2,083), median household income ($106,195), population (1,001,146), owner occupancy (59.8%), annual trends 2017-2024, local economy (BLS), housing supply (permits), migration (IRS), mortgage rate (7.24%), composite score (33.6/100), derived metrics (P/I ratio 8.45, Rent burden 23.5%, P/R ratio 35.9), relative position, and specific tasks to cover.
+    *   **Length constraints:** 280-320 words.
+    *   **Style requirements:** Professional, analytical tone, specific numbers/percentages, third person only (no "I", "we", "you"), no predictions/speculation/future forecasts, no generic statements, data-driven.
+    *   **Structure:** 2-3 cohesive paragraphs, no bullet points or headers. Begin directly with the analysis. Do not repeat the data or use headers.
+    *   **Content requirements:**
+        1. Market classification (Buyer's, renter's, or balanced) + justification.
+        2. Trend interpretation (multi-year price & rent trends).
+        3. Affordability assessment (P/I, rent burden vs national).
+        4. Regional context (vs state/national).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: FHMA HPI is mentioned in prompt as "FHFA HPI change" but the prompt says "Interpret the FHMA HPI change (if available)" - wait, looking at the prompt: "Interpret the FHMA HPI change (if available) and its significance." Actually, the prompt says "Recent momentum: Interpret the FHMA HPI change (if available) and its significance." Wait, I don't see FHMA HPI data in the provided text. Let me re-read. Ah, the prompt says "Interpret the FHMA HPI change (if available)". Since it's not in the data, I will interpret the recent momentum based on the provided data, specifically the 2022 peak YoY of +14.5% and the moderation to +2.8% in 2024, which reflects a cooling trend).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (explain which axes drive the overall score: affordability, stability, momentum, vitality, grounded in data).
 
-Trend analysis reveals a distinct deceleration in price appreciation following a sharp spike. Home values increased by 14.5% in 2022 before moderating to 2.8% in 2024. Current FHFA data reflects this cooling, with a year-over-year index change of +1.40%, which underperforms the broader state trend of +5.93% by 4.53 percentage points. This divergence suggests that while statewide housing demand remains robust, Honolulu County is experiencing relative price stagnation compared to its peers. The local economy supports this stability through 360,796 total jobs and an average weekly wage of $1,351, yet the housing supply of only 1,446 new units authorized in 2025 remains insufficient to alleviate structural scarcity. Net migration of +7,204 filers further pressures the limited inventory, maintaining high demand despite the high national mortgage rate of 7.32%.
+2.  **Drafting - Step-by-Step:**
 
-The overall market assessment reflects a critical imbalance between vitality and affordability. While momentum indicators show positive but slowing price growth, the stability and affordability axes are heavily penalized by the county’s premium valuation, which sits 294.1% above the national average. The high owner-occupancy rate of 59.8% masks the underlying tension between stagnant wage growth relative to asset prices and persistent migration inflows. For stakeholders, the data indicates a market where rental costs remain a significant financial burden, and home equity accumulation is hindered by the disconnect between median incomes and asset values. The recent underperformance relative to the state average signals a potential correction phase, yet the fundamental supply constraints and high migration levels continue to support elevated price levels, keeping the market in a stressed condition for both buyers and renters.</p>
+    *   *Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context.*
+        Honolulu County exhibits a balanced market characterized by robust demand but severe affordability constraints, driven by a price-to-income ratio of 8.45 versus the national average of 3.20 and a rent burden of 23.5% compared to 17.2%. The multi-year price trajectory reveals a sharp acceleration, peaking at an annual increase of 14.5% in 2022 before moderating to 2.8% in 2024, indicating a cooling momentum. A notable anomaly is the divergence between price and rent growth; while home values surged from $626,400 in 2017 to $897,500 in 2024, rents rose at a much slower pace, yielding a price-to-rent ratio of 35.9 against a national average of 18.7. Regionally, the county's median home value sits 294.1% above the national average and 12.4% above the state average, while median income remains 56.2% higher than the national norm.
+
+    *   *Paragraph 2: Economic Context, Practical Implication, Score Interpretation.*
+        Economic conditions heavily shape this landscape: total employment stands at 360,796 jobs with an average weekly wage of $1,351, while new authorized units total 1,446 across single-family and multi-</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -729,7 +748,7 @@ The overall market assessment reflects a critical imbalance between vitality and
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

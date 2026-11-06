@@ -450,6 +450,44 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Kootenai County, Idaho.
+    *   **Data provided:** Current market data (2024), annual trend detail (2017-2024), local economy (BLS), housing supply, migration, national mortgage rate, composite market score, derived metrics, relative position.
+    *   **Required content points:**
+        1. Market classification (buyer's, renter's, balanced).
+        2. Trend interpretation.
+        3. Affordability assessment.
+        4. Regional context.
+        5. Data anomaly/notable pattern.
+        6. Practical implication.
+        7. Recent momentum (FHFA HPI - note: FHFA HPI isn't explicitly in the prompt, but "Recent momentum: Interpret the FHFA HPI change..." implies I should focus on recent momentum based on the trends or general market direction, though the prompt says "if available" - wait, the prompt doesn't give FHFA HPI data, but it gives YoY changes. I will interpret the recent momentum from the 2024 YoY change of +11.0% and rent growth). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since FHFA HPI isn't in the data, I will reference the recent price/rent momentum (e.g., 2024 YoY +11.0% for homes, and rent growth implied by the rising home values vs rents). Actually, I can just discuss the recent momentum based on the provided YoY figures.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality).
+    *   **Style requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements. Every sentence must be data-driven.
+        *   Length: 280-320 words (~2-3 paragraphs).
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Start directly with the analysis.** Do not repeat data or use headers.
+
+2.  **Drafting - Section by Section Integration:**
+    *   *Market Classification:* Balanced market. Justify with Price-to-Income ratio (6.34 vs 3.20) and Rent Burden (21.9% vs 17.2%). Also, owner occupancy is 71.3%, leaning buyer-side, but affordability is strained. Wait, 71.3% owner occupancy is high, but the high P/I ratio suggests buyers are struggling. Let's call it a "buyer's market constrained by affordability" or just "balanced" given the rent burden is moderate but price-to-income is very high. Let's go with "buyer's market" because the Price-to-Income ratio is nearly double the national average, making it difficult for typical buyers, despite high owner occupancy. Actually, a balanced market might fit better if we consider the high owner occupancy. Let's justify: "A buyer's market constrained by affordability, as evidenced by a Price-to-Income ratio of 6.34 versus the national average of 3.20."
+    *   *Trend Interpretation:* Prices rose from $212,900 in 2017 to $518,700 in 2024, while rents rose from an implied low to $1,492. The peak YoY increase was +23.8% in 2022, moderating to +11.0% in 2024.
+    *   *Affordability Assessment:* Rent burden is 21.9% of income, above the 17.2% national average, but the Price-to-Rent ratio of 29.0 far exceeds the 18.7 national average, indicating severe unmet demand.
+    *   *Regional Context:* Home values sit at +127.8% above the national average and +46.0% above the state average, while incomes are +20.4% above the national average.
+    </p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Kootenai County on Our Sister Sites</h3>
@@ -627,7 +665,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

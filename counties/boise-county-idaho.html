@@ -364,6 +364,29 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Boise County, Idaho.
+    *   **Data provided:** Current market data (2024), annual trends (2017-2024), local economy, housing supply, migration, mortgage rate, composite score, derived metrics, relative position.
+    *   **Task:** Write a 280-320 word analysis covering 9 specific points (market classification, trend interpretation, affordability assessment, regional context, data anomaly/notable pattern, practical implication, recent momentum, economic context, score interpretation).
+    *   **Style Requirements:** Professional, analytical tone; specific numbers/percentages; third person only; no predictions/speculation/future forecasts; no generic statements; 280-320 words; 2-3 cohesive paragraphs; no bullet points or headers; do NOT mention "Market Score" explicitly.
+    *   **Start condition:** Begin directly with the analysis. No repetition of data or headers.
+
+2.  **Deconstruct the 9 Points & Map to Data:**
+    *   *Point 1: Market classification.* Justify with metrics. Price-to-income is 6.04 vs 3.20 national. Rent burden is 12.9% vs 17.2%. Rent burden is low, but price-to-income is high. Renters have good affordability, buyers don't. Balanced market? Renter's leaning towards balanced, buyer's leaning towards renter's due to low rent burden. Let's call it a "balanced-to-renter-favorable" market based on rent burden, or just "balanced" given the price-to-income ratio. Actually, the prompt asks "Buyer's, renter's, or balanced?" Rent burden is 12.9% (good for renters), P/I is 6.04 (bad for buyers). It's a balanced market where renters have an edge on affordability but buyers face high prices.
+    *   *Point 2: Trend interpretation.* 2017-2024: +7.7%, +16.6%, +1.1%, +18.5%, +32.7%, +14.8%, +12.3%. Rapid appreciation peaking in 2022 (+32.7%) and moderating in 2024. Rent median is $850. Prices rose faster than rents.
+    *   *Point 3: Affordability assessment.* Price-to-income ratio 6.04 vs 3.20 national. Rent burden 12.9% vs 17.2% national. Renters are highly affordable relative to income; buyers are not.
+    *   *Point 4: Regional context.* Home value vs national avg: +109.1%. vs state avg: +34.0%. Income vs national avg: +15.8%. High values, moderate income growth.
+    *   *Point 5: Data anomaly/notable pattern.* Divergence between price and rent growth. Prices rose much faster than rents (implied by P/R ratio 46.7 vs 18.7 national, and the trend data showing +32.7% in 2022 while rent only went up moderately). Wait, I don't have rent trend data, but the derived metric Price-to-Rent is 46.7 vs 18.7, and the relative position says "Home values are rising faster than rents". Also, multi-family supply is 0, which constrains rental supply and might drive up rents, but wait, if multi-family is 0, why are rents rising? Maybe single-family demand drives both. The notable pattern is the rapid appreciation outpacing rent growth.
+    *   *Point 6: Practical implication.* Renters benefit from low rent burden, but buyers face high price-to-income ratios and constrained supply (single-family only, no multi-family).
+    *   *Point 7: Recent momentum.* FHFA HPI change (if available) - the prompt mentions "Interpret the FHFA HPI change (if available)" but doesn't provide the FHFA HPI number, only the FRED mortgage rate of 7.24%. I must interpret the recent momentum based on the provided data (moderating YoY growth from +32.7% in 2022 to +12.3% in 2024,</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Boise County on Our Sister Sites</h3>
@@ -541,7 +564,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

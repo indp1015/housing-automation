@@ -368,11 +368,39 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Marion County, Illinois, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 1.68, less than half the national average of 3.20. With a median home value of $103,000 and a median household income of $61,240, the county offers significant entry-level accessibility. The rent burden stands at 15.6% of income, slightly below the national benchmark of 17.2%, further reinforcing affordability for both owners and renters. Despite these low absolute costs, the market exhibits strong momentum, with the FHFA House Price Index rising 6.17% year-over-year, outpacing the state’s 5.54% growth. This recent acceleration follows a notable spike in 2022, when prices surged 14.9%, before moderating to 2.9% in 2024. The divergence between rapid price appreciation and relatively stable rent growth suggests a shifting dynamic where equity accumulation is outpacing rental cost inflation.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Marion County, Illinois.
+    *   **Length:** 280-320 words (approx 2-3 paragraphs).
+    *   **Content Requirements:**
+        1. Market classification (buyer's, renter's, or balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income and rent burden vs national).
+        4. Regional context (state/national averages).
+        5. Data anomaly/notable pattern (e.g., price vs rent divergence).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: the prompt says "FHFA HPI change (if available)" but doesn't explicitly provide a specific FHFA number in the data, just the composite score. I need to interpret what I can from the provided data, perhaps referencing the momentum score of 70.5 or the YoY growth). Wait, looking at the data: "Recent momentum: Interpret the FHFA HPI change (if available) and its significance." There is no specific FHFA HPI number given, but the composite score has a Momentum of 70.5/100. I will focus on the momentum metric and the year-over-year growth rates.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (explain which axes drive the overall score based on the data).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only.
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence must be data-driven.
+        *   No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+        *   Begin directly with the analysis. No repeating data or headers.
 
-Regional context highlights Marion County’s position as a value-oriented market, sitting 32.7% below the state average home value and 54.8% below the national mean. However, the local economic foundation appears fragile, contributing to lower stability metrics. Total employment is limited to 10,214 jobs across 712 establishments, with an average weekly wage of $1,003. Housing supply is extremely constrained, with only 12 new units authorized in 2025, including just four single-family homes. This scarcity, combined with a net migration inflow of 531 filers, creates upward pressure on prices despite the small population base of 37,000. The low vitality score reflects this limited economic engine, where job growth and new construction are insufficient to sustain long-term demographic expansion without external inflows.
+2.  **Drafting - Step-by-Step:**
 
-For potential buyers, the current environment presents an opportunity to acquire assets at a fraction of national costs, though the 7.32% mortgage rate significantly impacts monthly carrying costs. The high owner-occupancy rate of 74.7% indicates a stable residential base, yet the low vitality and stability indicators suggest that market resilience relies heavily on consistent net migration rather than internal economic generation. Investors and residents should note that while affordability remains a primary driver, the recent price momentum signals a tightening market. The combination of minimal new supply and positive net migration suggests that the current affordability gap may narrow over time, making early entry strategically advantageous compared to higher-cost regional alternatives.</p>
+    *   *Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context.*
+        *   Classification: Balanced market. Justification: Rent burden is 15.6% (below 17.2% national avg), Price-to-Income is 1.68 (well below 3.20 national avg), but Owner Occupancy is 74.7% and Price-to-Rent is 10.8 (below 18.7 national avg). Let's use the affordability metrics to justify "balanced" or leaning buyer's, but wait, the prompt asks to classify as buyer's, renter's, or balanced. Given high owner occupancy (74.7%) and low P/I (1.68), it leans buyer's, but the rent burden is low. Actually, a "balanced" market often means neither extreme. Let's call it a balanced market driven by strong affordability metrics offset by moderate stability concerns.
+        *   Trends: Median home values rose from $71,900 in 2017 to $103,000 in 2024, while median gross rents increased from $794 to roughly $860+ (implied by the 2.9% increase in home value, though rent isn't explicitly given a YoY, the trend is upward). The peak YoY growth of +14.9% in 2022 moderated to +2.9% in 2024.
+        *   Anomaly: Divergence between price and rent growth. Home values rose much faster than rents historically.
+        *   Regional: Home values sit at -54.8% of national average and -32.7% of state average. Income is -9.9% of national avg.
+
+    *   *Paragraph 2: Economic context, Practical implication, Momentum, Score interpretation.*
+        *   Economic context: Total employment is 10,214 jobs with an average weekly wage of $1,003. Housing supply is constrained with only 12 new units authorized (4 single-family, 8 multi-family). Mortgage rate is 7.24%. Migration shows net inflow of 15,029 filers but outflow of 14,498, resulting in</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -556,7 +584,7 @@ For potential buyers, the current environment presents an opportunity to acquire
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

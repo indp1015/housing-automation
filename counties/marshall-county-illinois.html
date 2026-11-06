@@ -427,6 +427,34 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Marshall County, Illinois.
+    *   **Data provided:** Median home value ($142,800), median gross rent ($782), median household income ($71,585), population (11,647), owner occupancy (79.2%), annual trends 2017-2024, local economy (2,415 jobs, $997/wk), housing supply (3 new units, all single-family), migration (+297 net, inflow 5,173, outflow 4,876), mortgage rate (7.24%), composite score (Overall 71.5, Affordability 89.5, Stability 70.1, Momentum 73.5, Vitality 43.9), derived metrics (P/I 1.99, Rent burden 13.1%, P/R 15.2, relative position).
+    *   **Required Elements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (compare to national benchmarks).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - note: the prompt says "Interpret the FHFA HPI change (if available)" but no FHFA HPI data is explicitly provided in the text, only the 30-year fixed mortgage rate of 7.24%. I must interpret based on available data or note the mortgage rate as the proxy for recent momentum). *Correction*: The prompt asks to interpret "the FHFA HPI change (if available)". Since it's not explicitly provided, I will interpret the recent mortgage rate / price momentum based on the provided 30-year fixed rate and YoY price growth.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (weave drivers into narrative, don't use the exact term "Market Score").
+    *   **Style Requirements:** Professional, analytical, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, 280-320 words, 2-3 cohesive paragraphs, no bullet points/headers.
+    *   **Starting Condition:** Begin directly with the analysis. Do not repeat data or use headers.
+
+2.  **Drafting - Step-by-Step:**
+
+    *   *Element 1: Classification.* Balanced market. Justification: Owner occupancy is high at 79.2%, but the rent burden is low at 13.1% compared to the national average of 17.2%, indicating strong buyer power, while the overall score and dynamics suggest a balanced mix. Let's look at the numbers: P/I ratio is 1.99 vs national 3.20, meaning homes are highly affordable to buyers relative to income. Rent burden is 13.1% vs 17.2%, meaning renters are also well-compensated. So, a balanced market where both buyers and renters find value.
+    *   *Element 2: Trends.* Price grew from $103,300 in 2017 to $142,800 in 2024, peaking at +11.9% in 2022 before moderating to +3.6% in 2024. Rent trends are less volatile but generally rising, though the divergence from price growth is notable. Actually, wait. The prompt says "Home values are rising faster than rents" in the relative position section. Let's check the rent trend. The prompt doesn't give rent year-by-year, just the current median ($782). But the derived metric says "Price-to-Rent Ratio: 15.2 (National avg: 18.7)". This means prices are falling relative to rents compared to the national average, OR rents are rising faster than prices. Wait, if P/R is lower than national, rents are rising faster than prices. The relative position section says "Trend signal: Home values are rising faster than rents". This contradicts the P/R</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Marshall County on Our Sister Sites</h3>
@@ -604,7 +632,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

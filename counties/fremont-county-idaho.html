@@ -431,11 +431,35 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Fremont County, Idaho, presents a complex housing landscape characterized by significant valuation premiums relative to local income, classifying it as a challenging environment for both buyers and renters. The market exhibits a distinct divergence between asset appreciation and rental costs, with home values rising 38.0% above the national average while the median gross rent remains modest at $864 per month. This disparity results in a price-to-rent ratio of 30.3, substantially higher than the national benchmark of 18.7, indicating that purchasing equity is currently less financially efficient than renting for many households. The affordability metric further underscores this strain, as the price-to-income ratio stands at 4.32 compared to the national average of 3.20, suggesting that local wages do not fully support the current cost of homeownership despite a median household income of $72,683.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Fremont County, Idaho.
+    *   **Data provided:** Current market data (2024), Annual trend detail (2017-2024), Local economy (BLS QCEW 2025), Housing supply (Census Building Permits 2025), Migration (IRS 2021-2022), National mortgage rate, Composite Market Score, Derived metrics, Relative position.
+    *   **Content requirements:**
+        1.  Market classification (Buyer's, renter's, or balanced).
+        2.  Trend interpretation (multi-year price and rent trends).
+        3.  Affordability assessment (price-to-income, rent burden vs national).
+        4.  Regional context (state and national averages).
+        5.  Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6.  Practical implication (what buyer/renter should know).
+        7.  Recent momentum (FHFA HPI change - *Wait, FHFA HPI isn't explicitly given in the prompt, but I need to interpret "the FHFA HPI change" based on the available data or infer it from the trends. Actually, looking at the prompt: "Interpret the FHFA HPI change (if available) and its significance." Since FHFA HPI isn't explicitly in the data, I must infer it from the YoY home value changes or note that it aligns with the 2024 +11.5% YoY increase, or just state that the recent momentum is reflected in the 2024 YoY +11.5% gain.* Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI number is provided, I will reference the 2024 YoY +11.5% as the proxy for recent momentum, or state that the FHFA HPI change mirrors the 2024 YoY increase of 11.5%, indicating sustained upward momentum).
+        8.  Economic context (employment, housing supply, migration, mortgage rates).
+        9.  Score interpretation (explain which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Use specific numbers and percentages.
+        *   Third person only (no "I", "we", "you").
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence must be data-driven.
+        *   Length: 280-320 words.
+        *   Format: 2-3 cohesive paragraphs, no bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Length constraint:** 280-320 words.
 
-The trend trajectory reveals a period of rapid expansion followed by moderating growth. Home values surged from $157,700 in 2017 to $314,200 in 2024, with peak annual growth reaching 23.6% in 2021 before decelerating to 11.5% in the most recent year. Recent momentum data from the FHFA HPI shows a year-over-year increase of 2.47%, which lags behind the state average of 3.48%, signaling a relative underperformance in the immediate term. This slowdown contrasts with the county’s strong vitality, evidenced by a net migration inflow of 434 filers and new construction permits for 156 units, including 126 single-family homes. However, the local economic base remains limited, with only 2,753 total jobs and an average weekly wage of $875, which constrains the purchasing power necessary to sustain high price points.
+2.  **Drafting - Section by Section:**
 
-Regional context highlights that while Fremont County’s home values are 11.6% below the state average, its income levels are 6.9% above the national mean, creating a unique position where high-income residents face high housing costs. The 82.6% owner occupancy rate suggests a stable, established community, yet the current 7.32% national mortgage rate exacerbates affordability challenges. The composite assessment reflects this tension, with high vitality scores driven by migration and construction activity, but lower momentum and affordability scores due to the widening gap between asset prices and local earnings. For potential participants, the data indicates that while the market is active and growing, the premium paid for housing relative to local wages remains a significant barrier, particularly for first-time buyers relying on median incomes.</p>
+    *   *Market Classification & Trends:* Fremont County exhibits a balanced market, driven by a 38.0% premium over the national average median home value of $314,200, yet affordability constraints remain pronounced. The multi-year trajectory reveals a sharp acceleration: median home values surged from $157,700 in 2017 to $314,200 in 2024, a compound annual growth rate exceeding 17%, while gross rents climbed more modestly to $864/month. This divergence indicates a market where buyer demand outpaces renter demand, yet the high price-to-rent ratio of 30.3 signals that purchasing remains exceptionally costly relative to renting.
+
+    *   *Affordability, Regional Context, Anomaly:* Affordability metrics reveal significant strain; the price-to-income ratio of 4.32 far exceeds the national average of 3.20, and the rent burden of 14.3% appears favorable on paper but masks deeper affordability issues when considering the county's $72,683 median household income. Regionally, the county's home values sit 11.6% below the state average, reflecting localized price pressures despite national appreciation. A notable pattern emerges in the migration data, where inflow of 5,296 filers outpaces outflow of 4,862</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -619,7 +643,7 @@ Regional context highlights that while Fremont County’s home values are 11.6% 
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

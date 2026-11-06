@@ -469,6 +469,37 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Hawaii County, Hawaii.
+    *   **Data provided:** Current market data (2024 ACS), annual trends (2017-2024), local economy (BLS), housing supply (Census), migration (IRS), national mortgage rate (FRED), composite score, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words. Exactly 2-3 cohesive paragraphs. No bullet points or headers.
+    *   **Content requirements:**
+        1. Market classification (buyer's/renter's/balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs. national).
+        4. Regional context (county vs. state vs. national).
+        5. Data anomaly/notable pattern (e.g., price vs. rent divergence).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - *Wait, FHFA HPI isn't explicitly in the prompt, but it says "Interpret the FHFA HPI change (if available)" - I need to check if there's a hint. The prompt doesn't give a specific FHFA number, just the mortgage rate of 7.24%. I will interpret the recent momentum based on the 2024 YoY growth of +6.8% and the high mortgage rate context, or note that recent momentum is moderating from the 2022 peak.* Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since no specific FHFA number is given, I'll focus on the trend signal mentioned in the prompt: "Home values are rising faster than rents" and the moderation from the 2022 peak to the 2024 +6.8% growth).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
+    *   **Style requirements:** Professional, analytical tone. Specific numbers/percentages. Third person only. No predictions/speculation/future forecasts. No generic statements. Data-driven only.
+
+2.  **Drafting - Paragraph by Paragraph Strategy:**
+    *   *Paragraph 1: Classification, Trends, and Affordability/Regional Context.* Focus on classifying the market. The high Price-to-Income ratio (6.60 vs 3.20) and Rent Burden (23.0% vs 17.2%) indicate a buyer's market, though the composite score suggests stress. Compare county to national/state. Note the price-rent divergence.
+    *   *Paragraph 2: Economic Context and Practical Implications.* Discuss employment (59,210 jobs, $1,096/wk), housing supply (1,230 units authorized, mostly single-family), migration (+4,630 net filers), and mortgage rates (7.24%). Tie this to the practical implication for buyers/renters. Mention the FHMA/momentum (moderating from 2022 peak).
+    *   *Paragraph 3: Score Interpretation.* Explain how affordability (4.0/100), stability (51.3), momentum (59.1), and vitality (71.3) drive the overall score (43.1/100). Affordability drags it down severely due to the 6.60 price-to-income ratio.
+
+3.  **Drafting & Word Count Management:**
+    *   *Drafting Paragraph 1:* Hawaii County exhibits a buyer's market characterized by constrained affordability and rapid appreciation, evidenced by a Price-to-Income Ratio of 6.60 versus the national average of 3.20, alongside a Rent Burden of 23.0% compared to the 17.2% national benchmark. The multi-year price trajectory reveals a sharp acceleration, jumping from $316,000 in 2017 to $519,300 in 2024, peaking at a +17.9% year-over-year increase in 2022 before moderating to +6.8% in 202</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Hawaii County on Our Sister Sites</h3>
@@ -632,7 +663,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-06. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
