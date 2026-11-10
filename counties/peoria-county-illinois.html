@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$864/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$859/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17143&price=158500">
     Open full mortgage calculator for Peoria County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">51.9</span>
+    <span class="score-number">54.9</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Challenging · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Challenging · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 55.7</span>
       <span title="Stability">🏠 36.1</span>
-      <span title="Momentum">📈 72.6</span>
+      <span title="Momentum">📈 84.8</span>
       <span title="Vitality">⚡ 40.0</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Peoria County
+    <strong class="up">
+      rose +6.4%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -557,11 +577,33 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Peoria County, Illinois, functions as a balanced market with distinct affordability advantages, characterized by a price-to-income ratio of 2.43, significantly below the national average of 3.20. The median home value of $158,500 sits 30.4% below the national mean, while the price-to-rent ratio of 13.3 indicates that purchasing is substantially more cost-effective than renting compared to the national norm of 18.7. This structural advantage supports a stable owner-occupancy rate of 67.0%, suggesting a market where equity accumulation remains accessible despite broader economic headwinds. The recent acceleration in home values, marked by a 13.1% year-over-year increase in 2022, has moderated to a 3.9% rise in 2024, aligning more closely with the 6.42% recent FHFA HPI growth rate. This convergence of price and rent growth signals a market stabilizing after the post-pandemic surge, with the county currently outperforming the Illinois state average by 0.88 percentage points in recent price appreciation.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Peoria County, Illinois.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific points to cover (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation). No bullet points or headers, just 2-3 cohesive paragraphs.
+    *   **Style:** Professional, analytical tone, third person only, data-driven (no predictions/speculation), specific numbers/percentages.
+    *   **Constraint:** Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
 
-Affordability remains the primary driver of the county’s favorable standing, as the rent burden sits at 18.3% of income, only slightly above the national average of 17.2%. However, stability metrics are constrained by the volatility observed in the 2022 price spike, which temporarily disrupted long-term trend patterns that had remained relatively flat between 2017 and 2021. The local economic foundation supports this resilience, with 91,480 total jobs and an average weekly wage of $1,515. Migration data reinforces this stability, showing a net inflow of 2,841 filers between 2021 and 2022, with incoming households earning an average of $92,306. Despite this demographic strength, housing supply remains constrained, with only 73 new single-family units authorized in 2025 and zero multi-family permits, limiting new inventory against the backdrop of a 7.32% national mortgage rate.
+2.  **Deconstruct the Data:**
+    *   Median Home Value: $158,500
+    *   Median Gross Rent: $993/month
+    *   Median Household Income: $65,108
+    *   Population: 179,645
+    *   Owner Occupancy Rate: 67.0%
+    *   Price trend: 2017 ($128k) -> 2024 ($158.5k). Peak YoY +13.1% in 2022, moderating to +3.9% in 2024.
+    *   Employment: 91,480 jobs, Avg Weekly Wage $1,515.
+    *   Supply: 73 new units (all single-family).
+    *   Migration: Net +2,841 filers. Inflow avg income $92,306 vs Outflow avg income $93,988.
+    *   Mortgage Rate: 7.24%.
+    *   Composite Score drivers: Affordability (55.7), Stability (36.1), Momentum (72.6), Vitality (40.0). Overall 51.9.
+    *   Derived Metrics: P/I 2.43 (Nat avg 3.20), Rent Burden 18.3% (Nat avg 17.2%), Price/Rent 13.3 (Nat avg 18.7).
+    *   Relative Position: Home value vs national -30.4%, vs state +3.6%. Income vs national -4.3%.
+    *   Anomaly: Price and rents rising at similar rates, but rent burden is slightly above national average while price-to-income is well below. Wait, let's look closer. Price grew from 2017 to 2024. Rent? Not explicitly given a trend, but derived metrics show Price/Rent 13.3 vs Nat 18.7. Rent burden 18.3% vs Nat 17.2%. The notable pattern/anomaly: Home values are rising significantly (+23.7% from 2017 to 2024), while the price-to-income ratio remains below the national average (2.43 vs 3.20), indicating high affordability relative to local incomes, despite the overall score being "Challenging". Also, the outflow of migrants has a higher average income than inflow ($93,988 vs $92,306), suggesting a slight brain drain or higher-earning outflow. Also, housing supply is extremely constrained (73 single-family units, zero multi-family), which drives up prices.
 
-The market’s vitality is tempered by the low number of new construction permits, which may limit long-term accessibility for first-time buyers. The composite assessment reflects strong momentum and affordability, offset by moderate stability and vitality scores. For potential buyers, the data suggests that while entry costs are low relative to national peers, the lack of new supply and rising rates create a competitive environment for existing inventory. Renters, meanwhile, face a slightly higher income burden than the national average, though the significant price-to-rent differential makes homeownership a more financially prudent long-term strategy. The county’s performance relative to the state, outpacing Illinois by 3.6% in home values, underscores its relative strength in the regional housing landscape.</p>
+3.  **Drafting - Section by Section (incorporating into 2-3 paragraphs):**
+
+    *   *Paragraph 1: Classification, Trends, and Affordability*
+        Peoria County presents a balanced housing market, driven by a strong buyer momentum and constrained supply that elevates home values. Over the seven-year period from 2017 to 2024, median home values climbed from $128,000 to $158,500, with year-over-year growth peaking at an annualized 13.1% in 2022 before moderating to 3.9% in 2024. This sustained appreciation, juxtaposed against a price-to-income ratio of 2.43 compared to the national average of 3.20, indicates robust demand but relatively favorable affordability for residents earning the median household income of $65,</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -745,7 +787,7 @@ The market’s vitality is tempered by the low number of new construction permit
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -907,6 +949,47 @@ The market’s vitality is tempered by the low number of new construction permit
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 308.14, "2017": 299.26, "2018": 295.53, "2019": 299.77, "2020": 305.88, "2021": 325.0, "2022": 360.02, "2023": 391.04, "2024": 416.37, "2025": 443.11};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

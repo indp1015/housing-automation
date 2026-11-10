@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$570/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$566/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17175&price=104500">
     Open full mortgage calculator for Stark County →
@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">69.8</span>
+    <span class="score-number">75.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · ⚖️ Stable Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 90.5</span>
       <span title="Stability">🏠 76.3</span>
-      <span title="Momentum">📈 71.4</span>
+      <span title="Momentum">📈 93.1</span>
       <span title="Vitality">⚡ 28.7</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Stark County
+    <strong class="up">
+      rose +24.1%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -315,6 +335,34 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Stark County, Illinois.
+    *   **Data provided:** Median home value ($104,500), median gross rent ($735), median household income ($62,878), population (5,308), owner occupancy (80.1%), annual trend 2017-2024, local economy (BLS QCEW), housing supply (Census Building Permits), migration (IRS), national mortgage rate (FRED), composite score (editorial), derived metrics (Price-to-Income, Rent Burden, Price-to-Rent), relative position.
+    *   **Tasks:** Cover 9 specific points (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style requirements:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, every sentence data-driven.
+    *   **Length:** 280-320 words, approximately 2-3 paragraphs. No bullet points or headers.
+    *   **Start:** Begin directly with the analysis. Do not repeat data or use headers.
+
+2.  **Drafting - Point by Point Integration:**
+    *   *Point 1: Market classification.* Balanced market. Justify: Price-to-income ratio is 1.66 vs national avg 3.20; Rent burden is 14.0% vs national avg 17.2%. Both indicate strong affordability, leaning towards a renter's or balanced market rather than a buyer's market.
+    *   *Point 2: Trend interpretation.* Multi-year trends show a sharp recovery starting in 2022 (+10.4% YoY) followed by moderation to +1.0% in 2024. Home values and rents are rising at similar rates, indicating a balanced but cooling momentum.
+    *   *Point 3: Affordability assessment.* Price-to-income of 1.66 is significantly below the national average of 3.20, reflecting high affordability. The 14.0% rent burden also compares favorably to the 17.2% national average.
+    *   *Point 4: Regional context.* Home values sit 54.1% below the national average and 31.7% below the state average, while household income is 7.5% below the national average. This reflects a lower-cost, lower-income regional baseline.
+    *   *Point 5: Data anomaly/notable pattern.* The divergence between price growth and rent growth, though currently similar, historically shows price appreciation outpacing rent, but the recent moderation to 1.0% suggests a potential shift toward renter-friendly conditions as price momentum decelerates.
+    *   *Point 6: Practical implication.* Potential buyers face a constrained buyer's market due to low demand and limited supply (only 1 new unit authorized in 2025), while renters benefit from low cost-of-living and favorable affordability metrics.
+    *   *Point 7: Recent momentum.* The FHFA HPI change (implied by the editorial momentum of 71.4/100 and mortgage rate of 7.24%) indicates moderate, slowing momentum, as the 30-year fixed mortgage rate of 7.24% continues to weigh on transaction volume despite rising values.
+    *   *Point 8: Economic context.* Local employment is limited (1,392 jobs, $1,170 weekly wage), and housing supply is virtually nonexistent (0 multi-family, 1 single-family). Net migration is slightly positive (+67 filers), but the high outflow-to-inflow ratio for filers suggests a net drain of higher-income residents compared to inflow.
+    *   *Point 9: Score interpretation.* The composite rating of 69.8/100 is driven primarily by Affordability (90.5/100), Stability (76.3/100), and Momentum (71.4/100), while Vitality (28.7/100) drags it down significantly due to low population (5,308) and minimal new housing supply.
+
+3.  **Refining and Formatting (Targeting 280-</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -493,7 +541,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -655,6 +703,47 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2015": 131.56, "2016": 116.81, "2017": 122.5, "2018": 126.02, "2019": 123.34, "2020": 128.73, "2021": 137.3, "2022": 139.34, "2024": 147.39, "2025": 182.91};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$531/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$528/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17025&price=97400">
     Open full mortgage calculator for Clay County →
@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">65.3</span>
+    <span class="score-number">64.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 88.7</span>
       <span title="Stability">🏠 58.5</span>
-      <span title="Momentum">📈 74.1</span>
+      <span title="Momentum">📈 68.8</span>
       <span title="Vitality">⚡ 27.7</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Clay County
+    <strong class="up">
+      rose +2.0%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -318,11 +338,7 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Clay County, Illinois, functions as a distinctively affordable buyer’s market, characterized by a median home value of $97,400 and a price-to-income ratio of 1.61, which is less than half the national average of 3.20. This extreme affordability is further supported by a rent burden of 14.6%, well below the national benchmark of 17.2%, and a price-to-rent ratio of 11.0, indicating that purchasing remains significantly more cost-effective than long-term renting. The market classification is reinforced by a high owner-occupancy rate of 79.3%, suggesting a stable residential base where equity accumulation is accessible to households with a median income of $60,417. Despite these favorable entry points, the market exhibits volatile price dynamics, having surged 11.0% in 2021 and 10.6% in 2022 before correcting sharply by 9.0% in 2023. This recent stabilization is reflected in the 2024 median value of $97,400, which represents a modest 3.3% year-over-year increase, signaling a transition from speculative overheating to a more normalized growth trajectory.
-
-The primary data anomaly lies in the divergence between housing price trends and rental momentum. While home values have moderated, rents are rising faster than home values, creating a shifting dynamic that may pressure long-term rental yields. This trend is contextualized by the FHFA House Price Index, which shows a 1.99% year-over-year increase in 2025, significantly underperforming the Illinois state average of 5.54%. This relative underperformance highlights that Clay County is lagging behind broader state-level appreciation, likely due to limited local economic drivers. The local economy supports only 3,725 jobs with an average weekly wage of $1,000, and housing supply is nearly stagnant, with just two new units authorized in 2025. Although net migration is positive at 210 filers, the inflow of 5,376 residents does not sufficiently offset the structural weakness in local employment to drive robust price appreciation.
-
-Affordability remains the dominant strength of this market, driving a high composite rating in that category, while vitality scores remain low due to the constrained job base and minimal construction activity. Stability is moderate, reflecting the recent price correction and the lagging state performance. For potential buyers, the low barrier to entry provides substantial equity potential, particularly as mortgage rates hover near 7.32%, making the low absolute price point a critical mitigation factor for monthly payment obligations. Renters, however, face a tightening market where rising rents may eventually erode the historical cost advantage of renting versus owning. The combination of low price-to-income ratios and slowing price growth suggests a market that prioritizes accessibility over rapid capital appreciation, appealing primarily to income-sensitive buyers rather than investment-focused speculators seeking high-yield returns.</p>
+  <p>Clay County presents a buyer’s market characterized by exceptional affordability and low competitive intensity. The median home value of $97,400 sits 57.2% below the national average and 36.3% below the state average, yielding a price-to-income ratio of 1.61—roughly half the national 3.20</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -506,7 +522,7 @@ Affordability remains the dominant strength of this market, driving a high compo
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -668,6 +684,47 @@ Affordability remains the dominant strength of this market, driving a high compo
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 127.08, "2017": 124.01, "2018": 127.32, "2019": 130.77, "2020": 132.37, "2021": 143.44, "2022": 170.18, "2023": 147.99, "2024": 171.62, "2025": 175.03};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$751/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$747/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17075&price=137800">
     Open full mortgage calculator for Iroquois County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">70.9</span>
+    <span class="score-number">74.5</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Strong · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 83.4</span>
       <span title="Stability">🏠 86.0</span>
-      <span title="Momentum">📈 71.1</span>
+      <span title="Momentum">📈 85.4</span>
       <span title="Vitality">⚡ 33.2</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Iroquois County
+    <strong class="up">
+      rose +7.4%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -450,11 +470,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Iroquois County, Illinois, functions as a distinctively balanced market leaning toward buyer advantage, characterized by exceptional affordability metrics that contrast sharply with national norms. The price-to-income ratio stands at 2.08, significantly below the national average of 3.20, while the rent burden is 14.5% of income compared to the 17.2% national benchmark. Furthermore, the price-to-rent ratio of 14.4 is well below the national average of 18.7, indicating that ownership costs are relatively low compared to rental obligations. This affordability profile is reinforced by a median home value of $137,800, which is 39.5% below the national average and 9.9% below the Illinois state average, suggesting the local market remains accessible despite broader economic pressures.
+  <p>Iroquois County’s housing environment is fundamentally a buyer’s market. The price‑to‑income ratio of 2.08 is well below the national average of 3.20, indicating that homes cost roughly two years of median household earnings versus more than three years elsewhere. Rent burden sits at 14.5 % of income, also under the 17.2 % national level, and the price‑to‑rent ratio of 14.4 is lower than the 18.7 benchmark, all of which point to relatively inexpensive ownership and rental options that favor purchasers. Owner occupancy is high at 80 %, reinforcing the buyer‑oriented tilt.
 
-Recent trends reveal accelerating momentum, with home values rising 9.9% year-over-year in 2024, following an 8.2% increase in 2022. The FHFA House Price Index confirms this trajectory, showing a 7.38% year-over-year increase in 2025, which outpaces the Illinois state average of 5.54% by 1.84 percentage points. This price appreciation occurs alongside a notable divergence where home values are rising faster than rents, shifting the economic incentive toward homeownership. The local economy supports this stability, with a median household income of $66,255 and a positive net migration of 409 filers between 2021 and 2022. However, the housing supply remains constrained, with only 14 new single-family units authorized in 2025 and zero multi-family permits. This limited new construction, combined with an 80.0% owner-occupancy rate, suggests that inventory tightness may continue to support price growth even as the 7.32% national mortgage rate dampens broader purchasing power.
+From 2017 to 2024, median home values climbed 42 % (from $96,800 to $137,800), with the strongest annual gains in 2022 (+8.2 %) and 2024 (+9.9 %). Median gross rent, however, has risen only modestly, remaining near $799 per month and growing far slower than home values. This divergence yields a widening price‑to‑rent gap and signals that housing cost pressures are being absorbed primarily through equity gains rather than rental inflation. The composite affordability rating of 83.4/100 and stability rating of 86.0/100 are driven by the low price‑to‑income and rent‑burden metrics, while momentum (71.1/100) reflects the recent acceleration in home‑price growth. Vitality is low (33.2/100) because employment growth is modest (5,634 jobs) and new construction is limited to 14 single‑family units in 2025, suggesting constrained supply and limited economic diversification.
 
-The market’s strength is driven primarily by high stability and momentum, reflected in consistent price appreciation and low volatility relative to national averages. Conversely, vitality is constrained by a small employment base of 5,634 jobs and an average weekly wage of $1,060, which limits long-term economic diversification. For potential buyers, the low entry price and favorable price-to-rent dynamics present a compelling value proposition, particularly for those seeking to avoid the higher costs associated with urban Illinois markets. Renters, meanwhile, face a market where rental costs remain modest but are likely to adjust upward in response to the strong price appreciation seen in the owner-occupied sector. The combination of outperforming price growth and constrained supply indicates a resilient local market, though the low vitality score highlights the structural limitations of the local labor market.</p>
+Relative to Illinois, home values are 9.9 % below the state median and 39.5 % below the national median, while median income trails the nation by only 2.6 %. Net migration is slightly positive (+409 filers), with inflows and outflows having nearly identical income levels, indicating a stable demographic base rather than a talent influx. The 30‑year mortgage rate of 7.24 % raises financing costs, yet the low price base keeps monthly payments affordable. Potential buyers should view the market as cost‑effective with ample equity upside, while renters benefit from low burden but face limited rent growth and scarce new rental supply.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -638,7 +658,7 @@ The market’s strength is driven primarily by high stability and momentum, refl
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -800,6 +820,47 @@ The market’s strength is driven primarily by high stability and momentum, refl
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 183.37, "2017": 178.56, "2018": 189.73, "2019": 191.26, "2020": 200.07, "2021": 214.22, "2022": 243.57, "2023": 248.54, "2024": 277.51, "2025": 297.98};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

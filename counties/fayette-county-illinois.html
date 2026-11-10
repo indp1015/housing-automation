@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$713/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$708/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17051&price=130700">
     Open full mortgage calculator for Fayette County →
@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">59.4</span>
+    <span class="score-number">54.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 76.0</span>
       <span title="Stability">🏠 65.6</span>
-      <span title="Momentum">📈 63.6</span>
+      <span title="Momentum">📈 43.4</span>
       <span title="Vitality">⚡ 21.6</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Fayette County
+    <strong class="down">
+      fell -3.7%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -365,6 +385,39 @@
 </div>
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Fayette County, Illinois.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 2-3 cohesive paragraphs, no bullet points or headers. No "Market Score" term explicitly (weave drivers in).
+    *   **Content Requirements:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price/rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (state/national averages).
+        5. Data anomaly/notable pattern (divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but no FHFA data is provided in the input. I must address this carefully, perhaps noting the absence of specific FHFA data but inferring from the trend signal "Home values are rising faster than rents" or just focus on the provided trend data). *Correction*: The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I will reference the provided trend signal ("Home values are rising faster than rents") as the momentum indicator, or state that FHFA HPI data is not provided but the observed trend indicates accelerating price appreciation outpacing rent growth. Let's look at the trend detail: 2022 +16.6%, 2023 +2.9%, 2024 +13.9%. This shows a spike in 2022 and a subsequent pullback in 2023, then a strong rebound in 2024. Wait, the prompt says "Trend signal: Home values are rising faster than rents". I will use this.
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality driving the overall score).
+    *   **Style:** Professional, analytical, third person, data-driven, no predictions/speculation, no generic statements.
+
+2.  **Drafting - Section by Section Integration:**
+    *   *Market Classification:* Balanced market. Owner occupancy is 80.6%, but price-to-income is 2.14 (national avg 3.20), indicating strong buyer demand relative to income. Rent burden is 15.7% (national 17.2%), showing decent affordability for renters.
+    *   *Trend Interpretation:* Prices spiked 16.6% in 2022, moderated to 2.9% in 2023, then surged 13.9% in 2024, while rents grew more modestly. This divergence indicates accelerating price appreciation outpacing rent growth.
+    *   *Affordability Assessment:* Price-to-income ratio of 2.14 is significantly below the national average of 3.20, suggesting substantial purchasing power. Rent burden of 15.7% remains below the national 17.2%, indicating manageable housing costs for renters.
+    *   *Regional Context:* Home values sit 42.6% below the national average and 14.6% below the state average, yet median household income is 10.4% below the national average, keeping the price-to-income ratio relatively low.
+    *   *Data Anomaly:* The notable pattern is the rapid divergence between price and rent growth; home values appreciated much faster than rents over the 2017-2024 period, particularly the sharp 16.6% jump in 2022 followed by a 13.9% rebound in 2024.
+    *   *Practical Implication:* Buyers should note that while affordability metrics appear favorable, the accelerating price appreciation signals a competitive environment where inventory is constrained (only 3 new single-family units authorized in 2025).
+    *   *Recent Momentum:* Although specific FHFA HPI data is unavailable, the observed trend—home values rising faster than rents—indicates positive momentum, though the volatility of the 2022 spike and 2023 moderation suggests underlying market fragility.
+    *  </p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -543,7 +596,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -705,6 +758,47 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 217.23, "2017": 221.24, "2018": 217.41, "2019": 229.38, "2020": 233.1, "2021": 249.48, "2022": 262.15, "2023": 300.14, "2024": 322.65, "2025": 310.85};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

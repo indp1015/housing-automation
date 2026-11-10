@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$630/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$626/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17021&price=115500">
     Open full mortgage calculator for Christian County →
@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">67.7</span>
+    <span class="score-number">71.6</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 84.3</span>
       <span title="Stability">🏠 61.7</span>
-      <span title="Momentum">📈 77.2</span>
+      <span title="Momentum">📈 92.8</span>
       <span title="Vitality">⚡ 38.5</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Christian County
+    <strong class="up">
+      rose +8.1%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -507,6 +527,19 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>Christian County presents a buyer’s market characterized by exceptional affordability metrics. The price-to-income ratio of 1.84 sits far below the national 3.20 average, while rent burden at 15.0% of income undercuts the 17.2% national benchmark. With median home values at $115,500—49.3% below the national average and 24.5% below the state average—and a price-to-rent ratio of 12.3 versus 18.7 nationally, ownership economics heavily favor buyers over renters. The 75.2% owner-occupancy rate reflects this dynamic, though the 7.24% mortgage rate tempers purchasing power despite low absolute prices.
+
+Price appreciation has followed a distinct two-phase pattern: modest 1–3% annual gains from 2017 through 2021, a sharp 13.2% surge in 2022, and a reversion to 3.0% in both 2023 and 2024. This moderation aligns with the national rate environment, while the parallel growth rates between home values and rents suggest no speculative divergence. Supply remains constrained with only 60 single-family permits issued and zero multi-family authorizations, yet net migration turned positive at +489 filers in 2021–2022, with inbound households earning slightly less ($67,574) than outbound ($67,773). Local employment of 7,467 jobs at a $1,005 average weekly wage provides a stable but modest economic base.
+
+The market’s composite profile is driven by high affordability and strong recent momentum offset by low vitality and moderate stability. The affordability advantage stems from the wide gap between local incomes (only 7.9% below national) and housing costs (nearly 50% below national), while momentum reflects the post-2022 normalization of price growth. Low vitality scores correspond to limited new construction, stagnant population scale, and an employment base that has not expanded to absorb migration inflows. Stability metrics capture the transition from the 2022 spike to current sustainable appreciation. For participants, the data indicate a market where entry costs are low, carrying costs are manageable, but upside potential is tethered to broader regional economic acceleration rather than local supply-demand imbalances.</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Christian County on Our Sister Sites</h3>
@@ -684,7 +717,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -846,6 +879,47 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 185.53, "2017": 193.56, "2018": 200.74, "2019": 204.28, "2020": 204.25, "2021": 213.01, "2022": 239.4, "2023": 260.94, "2024": 266.48, "2025": 288.06};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

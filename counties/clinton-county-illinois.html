@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$1,049/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$1,043/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17027&price=192400">
     Open full mortgage calculator for Clinton County →
@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">69.9</span>
+    <span class="score-number">72.2</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 87.0</span>
       <span title="Stability">🏠 76.2</span>
-      <span title="Momentum">📈 75.6</span>
+      <span title="Momentum">📈 84.8</span>
       <span title="Vitality">⚡ 29.4</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Clinton County
+    <strong class="up">
+      rose +5.5%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -452,11 +472,7 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Clinton County, Illinois, operates as a distinctly balanced market with a slight tilt toward buyers, characterized by robust affordability and steady price appreciation. The price-to-income ratio stands at 2.22, significantly below the national average of 3.20, while the rent burden is only 12.6% compared to the national 17.2%. These metrics indicate that housing costs remain manageable relative to local earnings, which average $86,588 per household. The price-to-rent ratio of 17.6 sits below the national benchmark of 18.7, suggesting that purchasing is a financially competitive alternative to long-term renting. This affordability profile is reinforced by a high owner-occupancy rate of 80.3%, reflecting a stable residential base where homeownership is the dominant housing arrangement.
-
-Price trends reveal a period of significant acceleration following a stagnant phase between 2019 and 2020. Home values rose from $142,900 in 2017 to $192,400 in 2024, with the most dramatic gain occurring in 2022 at 12.2% year-over-year. Recent momentum remains positive, with the FHFA House Price Index showing a 5.48% year-over-year increase in 2025, slightly trailing the state average of 5.54%. This growth outpaces rent increases, as indicated by the diverging trends in home values and rental costs. A notable pattern is the county’s premium positioning within its state; home values are 25.7% higher than the Illinois average, driven by household incomes that are 27.3% above the national norm. Despite this strength, the county remains 15.5% below the national median home value, preserving its affordability edge.
-
-The local economic context supports this stability through modest but consistent migration, with a net gain of 465 filers between 2021 and 2022. However, housing supply is constrained, with only 51 new units authorized in 2025, predominantly single-family homes. This limited supply, coupled with a national 30-year mortgage rate of 7.32%, creates a market where entry barriers are rising due to financing costs rather than local demand shocks. The overall market vitality is moderate, reflected in a lower vitality score, but stability and momentum remain strong. Buyers benefit from low relative costs, while renters face minimal financial strain. The data suggests a mature market driven by income growth and steady demand, rather than speculative bubbles, offering a secure environment for long-term residential investment.</p>
+  <p>Clinton County’s housing market is best described as balanced, with strong buyer appeal tempered by limited supply. The median home value of $192,400 yields a price‑to‑income ratio of 2.22, well below the national benchmark of 3.20, while the median gross rent of $912 represents a rent burden of only 12.6 % of household income, indicating superior affordability. Owner occupancy at 80.3 % underscores a predominance of homeowners, yet the low price‑to‑income and rent‑burden metrics suggest a market where purchasers retain purchasing power. Regionally, home values sit 15.5 % below the national average but 25.7 % above the state median, reflecting a relatively expensive local context despite higher median incomes (+27.3 % versus the nation). A notable divergence appears between price and rent dynamics; home values have risen faster than rents, with the 2022 spike of 12.2 % followed by a 6</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -640,7 +656,7 @@ The local economic context supports this stability through modest but consistent
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -802,6 +818,47 @@ The local economic context supports this stability through modest but consistent
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 202.35, "2017": 206.11, "2018": 210.72, "2019": 215.52, "2020": 215.33, "2021": 229.42, "2022": 253.3, "2023": 282.78, "2024": 302.59, "2025": 319.18};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

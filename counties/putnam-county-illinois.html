@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$942/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$936/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17155&price=172700">
     Open full mortgage calculator for Putnam County →
@@ -98,17 +98,17 @@
 </p>
 
 
-<div class="market-score-badge tier-balanced">
+<div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">69.6</span>
+    <span class="score-number">75.1</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 83.2</span>
       <span title="Stability">🏠 74.2</span>
-      <span title="Momentum">📈 70.7</span>
+      <span title="Momentum">📈 92.4</span>
       <span title="Vitality">⚡ 42.2</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Putnam County
+    <strong class="up">
+      rose +25.1%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -315,6 +335,31 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Putnam County, Illinois.
+    *   **Data provided:** Current market data (2024), annual trends (2017-2024), local economy, housing supply, migration, national mortgage rate, composite market score, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words.
+    *   **Structure constraints:** 2-3 cohesive paragraphs, no bullet points, no headers.
+    *   **Content constraints:** Cover 9 specific points (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style constraints:** Professional, analytical tone, specific numbers/percentages, third person only (no "I", "we", "you"), no predictions/speculation/future forecasts, no generic statements, every sentence data-driven.
+
+2.  **Drafting - Point by Point Integration:**
+    *   *Point 1: Market classification.* Balanced market. Justification: Rent burden is low (13.5% vs 17.2% national), price-to-income is below national average (2.28 vs 3.20), but price-to-rent is slightly above (16.9 vs 18.7). Overall score is 69.6/100.
+    *   *Point 2: Trend interpretation.* Price growth outpaced rent growth from 2017 to 2024, peaking at +16.5% in 2022 before moderating to +2.9% in 2024. This indicates a transitioning market where appreciation has outpaced rental demand.
+    *   *Point 3: Affordability assessment.* Price-to-income ratio of 2.28 versus a national average of 3.20 demonstrates strong affordability, while the 13.5% rent burden remains well below the 17.2% national benchmark.
+    *   *Point 4: Regional context.* Home values sit 24.2% below the national average but 12.9% above the state average, while median household income runs 11.2% above the national average.
+    *   *Point 5: Data anomaly/notable pattern.* The divergence between price and rent growth—where home values rose significantly faster than rents over the multi-year period—creates a subtle tension in the balanced classification, as the price-to-rent ratio of 16.9 sits slightly above the 18.7 national average.
+    *   *Point 6: Practical implication.* Potential buyers should recognize that while absolute affordability is strong due to lower prices relative to income, the recent appreciation trend means transaction costs may be higher than historical norms, whereas renters benefit from the low rent burden.
+    *   *Point 7: Recent momentum.* The FHFA HPI change reflects a stabilization of the rapid 2022 price spike, moderating the momentum axis of the overall score.
+    *   *Point 8: Economic context.* Local employment of 1,684 jobs with an average weekly wage of $1,533 supports demand, but the extremely low housing supply of only 6 new single-family units authorized annually constrains inventory, while net migration of +7</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -493,7 +538,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -655,6 +700,47 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 155.68, "2017": 154.52, "2018": 158.55, "2019": 166.67, "2020": 160.31, "2021": 176.55, "2022": 178.16, "2023": 232.84, "2024": 234.71, "2025": 293.67};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

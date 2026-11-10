@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$849/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$844/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17189&price=155700">
     Open full mortgage calculator for Washington County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">70.7</span>
+    <span class="score-number">74.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Strong · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 91.0</span>
       <span title="Stability">🏠 73.2</span>
-      <span title="Momentum">📈 70.1</span>
+      <span title="Momentum">📈 86.4</span>
       <span title="Vitality">⚡ 38.0</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Washington County
+    <strong class="up">
+      rose +8.6%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -315,6 +335,35 @@
 <!-- 🆕 Sub-Market Activity (Top ZIPs) -->
 
 
+
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Washington County, Illinois.
+    *   **Length:** 280-320 words (approx 2-3 paragraphs).
+    *   **Structure:** 9 specific analytical points to cover (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Style:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, data-driven.
+    *   **Formatting:** 2-3 cohesive paragraphs. No bullet points or headers. Begin directly with the analysis. Do not repeat data or use headers.
+
+2.  **Deconstruct the Data:**
+    *   *Median Home Value:* $155,700; *Median Gross Rent:* $818; *Median Household Income:* $78,224; *Population:* 13,627; *Owner Occupancy Rate:* 84.1%
+    *   *Trends (2017-2024):* 2017: $108,100 -> 2024: $155,700. Peak YoY +19.1% in 2022, moderating to +3.9% in 2024. Rents trend is implied to be rising slower than prices (Price-to-Rent ratio 15.9 vs National 18.7).
+    *   *Local Economy:* Total Employment: 5,434; Avg Weekly Wage: $1,240; Establishments: 336.
+    *   *Housing Supply:* New Units: 15 (all single-family, 0 multi-family).
+    *   *Migration:* Net +174 filers; Inflow 5,884 (avg inc $83,135); Outflow 5,710 (avg inc $83,982).
+    *   *Mortgage Rate:* 30-year fixed at 7.24%.
+    *   *Composite Score:* Overall 70.7; Affordability 91.0; Stability 73.2; Momentum 70.1; Vitality 38.0.
+    *   *Derived Metrics:* P/I Ratio 1.99 (National 3.20); Rent Burden 12.5% (National 17.2%); Price/Rent 15.9 (National 18.7).
+    *   *Relative Position:* Home value -31.6% vs National; +1.8% vs State; Income +15.0% vs National. Trend signal: values rising faster than rents.
+
+3.  **Drafting - Point by Point Integration:**
+    *   *Point 1 (Classification):* Balanced market? Wait, owner occupancy is 84.1%, high. Price-to-income is 1.99 (affordable), rent burden 12.5% (very affordable). But vitality is low (38.0) and supply is tight (15 units). Let's classify as "Affordable and stable" leaning slightly towards a balanced buyer's market due to affordability metrics, but constrained by low vitality and supply. Actually, let's look at the prompt: "Buyer's, renter's, or balanced market?" Given affordability is 91/100 and rent burden is low, it's highly accessible for buyers, making it a buyer's market on affordability, though constrained by supply. Let's call it a buyer's market driven by affordability, despite stability concerns. Or just "balanced" given the high owner occupancy and moderate momentum. Let's go with "buyer's market" due to the exceptionally low price-to-income ratio (1.99) and low rent burden (12.5%), which outpace national averages significantly.
+    *   *Point 2 (Trend interpretation):* Prices rose from $108,100 in 2017 to $155,700 in 2024, peaking at a +19.1% annual increase in 202</p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
 
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
@@ -493,7 +542,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -655,6 +704,47 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 170.77, "2017": 178.71, "2018": 181.37, "2019": 178.29, "2020": 187.7, "2021": 192.77, "2022": 222.04, "2023": 238.54, "2024": 246.44, "2025": 267.61};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$1,742/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$1,732/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17197&price=319600">
     Open full mortgage calculator for Will County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">64.6</span>
+    <span class="score-number">66.0</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 55.8</span>
       <span title="Stability">🏠 89.0</span>
-      <span title="Momentum">📈 68.0</span>
+      <span title="Momentum">📈 73.4</span>
       <span title="Vitality">⚡ 43.3</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Will County
+    <strong class="up">
+      rose +4.6%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -557,11 +577,9 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Will County, Illinois, functions as a balanced housing market characterized by strong economic fundamentals and moderate affordability relative to national standards. The area’s median home value of $319,600 sits 40.4% above the national average, yet this premium is partially offset by a median household income of $109,984, which exceeds the national mean by 61.7%. Consequently, the price-to-income ratio of 2.91 remains below the national average of 3.20, indicating that local purchasing power supports current price levels without excessive strain. Similarly, the rent burden of 16.0% is slightly lower than the national average of 17.2%, suggesting that rental costs are manageable for residents. However, the market is not without tension; the price-to-rent ratio of 18.2 is marginally below the national average of 18.7, implying that buying offers a slight cost advantage over renting, though the gap is narrow.
+  <p>Will County’s housing market is classified as balanced, reflecting an 82.8% owner‑occupancy rate and a price‑to‑income ratio of 2.91, which is below the national average of 3.20. Median home values of $319,600 sit 40.4% above the national benchmark and 108.9% above the state average, while median household income of $109,984 remains 61.7% higher than the national figure. Rent burden at 16.0% is slightly lower than the national 17.2% and the price‑to‑rent ratio of 18.2 is marginally under the national 18.7, indicating modest affordability relative to income and rental costs. The multi‑year price trajectory shows steady acceleration, with a peak YoY jump of 13.7% in 2022 and a continued rise of 7.2% in 2024, outpacing the modest rent growth implied by the rent‑burden metric. This divergence—home values rising faster than rents—creates a notable pattern where price appreciation is not fully supported by rental market gains, suggesting a potential imbalance in value validation.
 
-The multi-year trajectory reveals a significant acceleration in home values, particularly during the 2022 surge of 13.7% year-over-year, which has since moderated to 7.2% in 2024. Recent FHFA data shows a 4.60% year-over-year increase, underperforming the Illinois state average of 5.54% by 0.94 percentage points. This deceleration suggests a cooling phase after the pandemic-era spike. A notable pattern emerges in the divergence between asset classes: home values are rising faster than rents, which may pressure renters to transition to ownership if their incomes remain stable. The local economy supports this demand, with 234,668 jobs and an average weekly wage of $1,191. Net migration of +5,152 filers between 2021 and 2022 further bolsters demand, while 1,993 new housing units authorized in 2025 provide limited supply relief, with single-family homes accounting for 90% of permits.
-
-Stability is the primary driver of the market’s resilience, evidenced by the 89.0 stability metric, while vitality lags at 43.3 due to constrained supply growth relative to population inflows. The 7.32% national mortgage rate adds friction to entry-level transactions, potentially extending the period of renting for some demographics. For prospective buyers, the current environment offers a window where income levels comfortably cover debt obligations, given the favorable price-to-income ratio. Renters should note that while monthly costs are low relative to income, the rapid appreciation of home values may erode the long-term financial advantage of renting. The market’s strength is underpinned by robust employment and positive net migration, but the slowing price growth relative to the state average indicates a maturing market rather than a speculative bubble.</p>
+Practical implications for buyers and renters include the need to account for a 7.24% national 30‑year fixed mortgage rate that raises financing costs, while the local employment base of 234,668 jobs with an average weekly wage of $1,191 provides income support. The housing supply of 1,993 new units authorized in 2025, dominated by 1,797 single‑family permits, indicates limited new construction relative to demand. Net migration of +5,152 filers, with inflows and outflows of similar high‑income households, reinforces demographic stability but also adds pressure on existing inventory. The composite rating’s strongest axes—stability (89.0) and momentum (68.0)—are driven by consistent price gains and low turnover, whereas affordability (55.8) and vitality (43.3) remain constrained by elevated home values and modest supply growth, shaping a market where price appreciation outpaces income and rental dynamics.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -745,7 +763,7 @@ Stability is the primary driver of the market’s resilience, evidenced by the 8
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -907,6 +925,47 @@ Stability is the primary driver of the market’s resilience, evidenced by the 8
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 356.24, "2017": 370.6, "2018": 385.69, "2019": 397.67, "2020": 402.65, "2021": 442.41, "2022": 504.65, "2023": 548.84, "2024": 587.22, "2025": 614.25};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

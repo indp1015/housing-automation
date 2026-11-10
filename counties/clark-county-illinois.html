@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$722/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$718/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17023&price=132400">
     Open full mortgage calculator for Clark County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">70.7</span>
+    <span class="score-number">70.4</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Strong · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 88.0</span>
       <span title="Stability">🏠 84.0</span>
-      <span title="Momentum">📈 65.9</span>
+      <span title="Momentum">📈 64.8</span>
       <span title="Vitality">⚡ 34.1</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Clark County
+    <strong class="up">
+      rose +3.1%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -410,11 +430,13 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Clark County, Illinois, functions as a distinctly buyer’s market, characterized by exceptional affordability and strong owner occupancy. The price-to-income ratio stands at 1.82, significantly below the national average of 3.20, while the rent burden is 14.2% of income compared to the national 17.2%. These metrics indicate that housing costs are disproportionately low relative to local earning power, with a median household income of $72,927 supporting a median home value of $132,400. The price-to-rent ratio of 12.8, well under the national 18.7, further reinforces the financial advantage for purchasers over tenants. This affordability profile is the primary driver of the market’s high stability and low entry barriers, distinguishing it from higher-cost urban centers.
+  <p>Clark County’s housing market is classified as a buyer‑oriented environment. The price‑to‑income ratio of 1.82 is well below the national benchmark of 3.20, and rent consumes only 14.2 % of household income versus the 17.2 % national average, indicating strong affordability. Owner‑occupied homes comprise 80.3 % of units, yet the median home value of $132,400 is 41.9 % lower than the national median, reinforcing buyer advantage. The median gross rent of $861/month further supports renter affordability, though the rent‑burden metric remains modest.
 
-Price appreciation has been robust and sustained, with home values rising from $87,400 in 2017 to $132,400 in 2024, representing a cumulative gain of approximately 51.5%. Annual growth accelerated sharply between 2021 and 2023, peaking at 10.0% in 2022, before moderating to 7.6% in 2024. However, recent FHFA HPI data for 2025 shows a deceleration to 3.10% year-over-year, underperforming the Illinois state average of 5.54% by 2.44 percentage points. This divergence suggests that while the long-term trend is upward, immediate momentum is cooling relative to the broader state. Notably, the data indicates home values are rising faster than rents, a pattern that typically favors equity accumulation for owners but may limit rental yield potential for investors.
+The multi‑year price trajectory shows accelerating appreciation, rising from $87,400 in 2017 to $132,400 in 2024 (7.6 % YoY). This 51 % cumulative gain outpaces the modest rent growth implied by the rent‑burden figure, creating a divergence where home values increase faster than rental income. The trend signals robust demand and limited supply, evidenced by only nine new units authorized in 2025 (five single‑family, four multi‑family). Migration data reveal a net inflow of 292 filers, with average incomes near $70,000, suggesting population pressure on housing.
 
-The regional context highlights a small, stable economy with 3,437 total jobs and an average weekly wage of $925. Housing supply is extremely constrained, with only nine new units authorized in 2025, including five single-family homes. This scarcity, combined with a net inflow of 292 filers in 2021-2022, supports price resilience despite the current 7.32% mortgage rate. The market’s vitality score is comparatively low, reflecting the limited economic scale and job base, yet this is offset by high affordability and stability. For prospective buyers, the low entry price and strong historical appreciation suggest favorable conditions, provided they account for the slower recent growth rate relative to state trends. Renters face a less competitive environment, given the low rent burden and high owner occupancy rate of 80.3%, which limits rental inventory growth. The overall market profile is driven by affordability and stability rather than rapid economic expansion or high vitality.</p>
+Affordability metrics rank high: the price‑to‑income ratio and rent‑burden are both below national averages, contributing to a high composite rating in affordability and stability. The local economy provides 3,437 jobs with an average weekly wage of $925, while the 30‑year mortgage rate of 7.24 % remains elevated but does not offset the low price levels. The modest housing supply and steady inbound migration sustain upward price momentum, while the vitality component remains low due to limited new construction.
+
+Without FHFA HPI data, direct momentum assessment is constrained, but the year‑over‑year price increase of 7.6 % aligns with strong market momentum. Potential buyers benefit from low entry costs and high owner‑occupancy stability, while renters enjoy relatively low rent burdens. The data collectively indicate a balanced yet buyer‑favored market where affordability drives activity, supply constraints fuel price growth, and migration sustains demand.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -598,7 +620,7 @@ The regional context highlights a small, stable economy with 3,437 total jobs an
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -760,6 +782,47 @@ The regional context highlights a small, stable economy with 3,437 total jobs an
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 134.8, "2017": 140.06, "2018": 140.37, "2019": 144.74, "2020": 152.17, "2021": 163.44, "2022": 181.47, "2023": 204.21, "2024": 215.46, "2025": 222.14};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

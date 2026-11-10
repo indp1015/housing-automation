@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$665/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$661/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17053&price=122000">
     Open full mortgage calculator for Ford County →
@@ -100,7 +100,7 @@
 
 <div class="market-score-badge tier-challenging">
   <div class="score-main">
-    <span class="score-number">56.3</span>
+    <span class="score-number">57.6</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
@@ -108,7 +108,7 @@
     <div class="score-breakdown">
       <span title="Affordability">💰 67.5</span>
       <span title="Stability">🏠 47.2</span>
-      <span title="Momentum">📈 70.8</span>
+      <span title="Momentum">📈 76.0</span>
       <span title="Vitality">⚡ 32.8</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Ford County
+    <strong class="up">
+      rose +4.5%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -366,11 +386,42 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Ford County, Illinois, functions as a distinctively affordable buyer’s market, characterized by a price-to-income ratio of 1.95, which is substantially lower than the national average of 3.20. This affordability is reinforced by a price-to-rent ratio of 11.0, well below the national benchmark of 18.7, suggesting that homeownership remains a significantly more cost-effective long-term strategy than renting. While the median home value of $122,000 sits 20.3% below the state average, the county’s median household income of $62,439 is only 8.2% below the national mean, creating a favorable value proposition for local residents. The rent burden stands at 17.7% of income, marginally above the national average of 17.2%, indicating that while housing costs are low relative to income, rental expenses are becoming a slightly more significant financial obligation.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Ford County, Illinois.
+    *   **Data provided:** Current market data (median home value, rent, income, population, owner occupancy), annual trends (2017-2024), local economy (BLS), housing supply, migration, mortgage rate, composite score, derived metrics, relative position.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific analysis points to cover, but written in 2-3 cohesive paragraphs without bullet points or headers.
+    *   **Style:** Professional, analytical tone, specific numbers/percentages, third person only, no predictions/speculation/future forecasts, no generic statements, every sentence data-driven.
+    *   **Constraint Checklist & Confidence Score:**
+        1. Analyze Ford County? Yes.
+        2. Cover market classification? Yes.
+        3. Cover trend interpretation? Yes.
+        4. Cover affordability assessment? Yes.
+        5. Cover regional context? Yes.
+        6. Cover data anomaly/pattern? Yes.
+        7. Cover practical implication? Yes.
+        8. Cover recent momentum? Yes.
+        9. Cover economic context? Yes.
+        10. Cover score interpretation? Yes.
+        11. Professional/analytical tone? Yes.
+        12. Specific numbers/percentages? Yes.
+        13. Third person only? Yes.
+        14. No predictions/speculation? Yes.
+        15. No generic statements? Yes.
+        16. 280-320 words? Yes.
+        17. 2-3 cohesive paragraphs? Yes.
+        18. No bullet points/headers? Yes.
+        19. Do NOT mention "Market Score" explicitly? Yes (weave drivers into narrative).
+        *Confidence Score: 5/5*
 
-Recent market dynamics reveal a period of rapid appreciation following a stagnant mid-2010s. Home values surged 12.1% in 2022 before moderating to 3.3% in 2024, yet the FHFA House Price Index indicates a current year-over-year increase of 4.51%. This growth, however, lags behind the state’s 5.54% increase, positioning Ford County as an underperformer relative to Illinois trends. A notable divergence exists between home price appreciation and rental trends, where rents are rising faster than home values, signaling a tightening rental market that may incentivize further transition to ownership. The local economic foundation is modest, with only 4,733 total jobs and an average weekly wage of $1,175, which limits broader economic vitality despite the housing affordability.
-
-Supply constraints and migration patterns further shape the market landscape. With only 14 new single-family units authorized in 2025 and zero multi-family construction, the housing inventory is extremely limited, potentially supporting sustained price growth despite the current 7.32% mortgage rate. Net migration of +125 filers between 2021 and 2022 suggests a stable, if not rapidly expanding, population base. The overall market assessment reflects high momentum due to the recent price surge and strong affordability metrics, but this is counterbalanced by low vitality scores stemming from the small employment base and limited new construction. For potential buyers, the low entry price and favorable income ratios present a compelling opportunity, while renters face increasing pressure from rising costs in a market with minimal new supply. The stability of the market is moderate, as the recent rapid price increases have not yet been fully normalized, creating a landscape where affordability remains the primary driver of residential demand.</p>
+2.  **Drafting - Point by Point Integration:**
+    *   *Point 1 (Classification):* Balanced market. Justify with rent burden (17.7% vs 17.2% national) and price-to-income (1.95 vs 3.20). Wait, rent burden is close to national, price-to-income is far below national. Let's look at owner occupancy (72.3%) and median rent ($923). Actually, a balanced market usually has high rent burden or price-to-income near 2-3. Here, price-to-income is 1.95, which is quite affordable for a buyer, but rent burden is slightly above national average. Let's classify as renter's leaning or balanced. The prompt asks to justify with specific metrics. Rent burden of 17.7% is above the 17.2% national average, indicating renter affordability is slightly stretched compared to buyers.
+    *   *Point 2 (Trend interpretation):* 2017-2024 shows a sharp recovery starting in 2021 (+2.6%), peaking in 2022 (+12.1%), moderating to +4.1% in 2023 and +3.3% in 2024. Rent trends are rising faster than home values.
+    *   *Point 3 (Affordability):* Price-to-income ratio of 1.95 is significantly below the national average of 3.20, making homes highly accessible to buyers. Conversely, the rent burden of 17.7% slightly exceeds the national average of 17.2%, indicating renters face marginally higher financial pressure.
+    *   *Point 4 (Regional context):* Home values sit 46.4% below the national average and 20.3% below the state average, while median income is 8.2% below the national average. This regional underperformance suggests lower cost of living but also constrained purchasing power.
+    *   *Point 5 (Data anomaly):* The divergence where rents are rising faster than home values, despite overall price appreciation, creates an unusual dynamic where the renter segment faces tighter affordability constraints than the buyer segment.
+    *   *Point 6 (Practical implication):* Potential buyers should note the historically low price-to-income ratio, which may not persist given recent appreciation. Renters should monitor the diverging rent growth, which outpaces home value growth, potentially tightening long-term housing cost burdens.
+    *   *Point</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -554,7 +605,7 @@ Supply constraints and migration patterns further shape the market landscape. Wi
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -716,6 +767,47 @@ Supply constraints and migration patterns further shape the market landscape. Wi
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 207.15, "2017": 211.96, "2018": 218.3, "2019": 222.52, "2020": 220.52, "2021": 240.47, "2022": 269.92, "2023": 283.53, "2024": 326.17, "2025": 340.89};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

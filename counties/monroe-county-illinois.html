@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$1,538/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$1,529/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17133&price=282100">
     Open full mortgage calculator for Monroe County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">71.0</span>
+    <span class="score-number">74.1</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Strong · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 75.1</span>
       <span title="Stability">🏠 92.8</span>
-      <span title="Momentum">📈 69.9</span>
+      <span title="Momentum">📈 82.4</span>
       <span title="Vitality">⚡ 38.8</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Monroe County
+    <strong class="up">
+      rose +6.5%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -450,6 +470,50 @@
 
 
 
+<div class="market-notes">
+  <h2>📝 Local Market Analysis</h2>
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Monroe County, Illinois.
+    *   **Data provided:** Current market data (2024), Annual trend detail (2017-2024), Local economy (BLS), Housing supply (Census), Migration (IRS), National mortgage rate (FRED), Composite score, Derived metrics, Relative position.
+    *   **Tasks:**
+        1. Market classification (buyer's, renter's, balanced) with justification.
+        2. Trend interpretation (multi-year price and rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (state and national averages).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (interpret FHFA HPI change if available - *Wait, FHFA HPI isn't explicitly in the data, but the prompt says "Interpret the FHFA HPI change (if available) and its significance". The provided data has "National Mortgage Rate: 7.24%" and "Trend signal: Home values are rising faster than rents" under Relative Position. I will focus on the mortgage rate and the trend signal as the momentum indicator, or note the lack of specific FHFA HPI data but infer from the 6.2% YoY price growth.* Let me re-read: "Recent momentum: Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI is explicitly listed, I will interpret the recent +6.2% YoY price growth as the momentum indicator, or reference the national mortgage rate's impact on momentum. Actually, I should just address the momentum based on the provided data points: +6.2% YoY price growth and 7.24% mortgage rate).
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (affordability, stability, momentum, vitality drivers).
+    *   **Style Requirements:**
+        *   Professional, analytical tone.
+        *   Specific numbers and percentages.
+        *   Third person only (no "I", "we", "you").
+        *   No predictions, speculation, or future price forecasts.
+        *   No generic statements; every sentence data-driven.
+        *   Length: 280-320 words.
+        *   2-3 cohesive paragraphs. No bullet points or headers.
+        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
+    *   **Length constraint:** 280-320 words. Approximately 2-3 paragraphs.
+
+2.  **Drafting - Section by Section (incorporating constraints):**
+
+    *   *Constraint Checklist & Confidence Score:*
+        1. 280-320 words? Yes.
+        2. 2-3 paragraphs? Yes.
+        3. No headers/bullets? Yes.
+        4. No "I", "we", "you"? Yes.
+        5. No predictions/speculation? Yes.
+        6. No generic statements? Yes.
+        7. No "Market Score"? Yes.
+        8. Third person? Yes.
+        </p>
+  <p class="notes-source">
+    Compiled from U.S. Census ACS 2024 5-Year Estimates,
+    FHFA House Price Index, BLS QCEW, and IRS migration data.
+  </p>
+</div>
+
 <!-- 🆕 Cross-links to sister sites -->
 <div class="cross-link-box">
   <h3>🔗 Explore Monroe County on Our Sister Sites</h3>
@@ -626,7 +690,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -788,6 +852,47 @@
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 225.69, "2017": 232.05, "2018": 241.03, "2019": 249.09, "2020": 253.07, "2021": 272.94, "2022": 308.71, "2023": 331.45, "2024": 354.85, "2025": 378.04};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

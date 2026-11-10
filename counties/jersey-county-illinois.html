@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$937/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$932/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17083&price=171900">
     Open full mortgage calculator for Jersey County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-strong">
   <div class="score-main">
-    <span class="score-number">72.1</span>
+    <span class="score-number">75.7</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Strong · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Strong · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 88.6</span>
       <span title="Stability">🏠 82.2</span>
-      <span title="Momentum">📈 74.6</span>
+      <span title="Momentum">📈 88.8</span>
       <span title="Vitality">⚡ 31.7</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Jersey County
+    <strong class="up">
+      rose +7.3%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -389,11 +409,39 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Jersey County, Illinois, operates as a distinctly buyer’s market, characterized by significant affordability advantages and stable ownership patterns. With a median home value of $171,900, the county sits 24.5% below the national average, yet it commands a 12.3% premium over the Illinois state average. This disparity is reinforced by a price-to-income ratio of 2.14, which is substantially lower than the national benchmark of 3.20, indicating that local incomes, averaging $80,361, support housing costs far more effectively than in typical U.S. markets. The 80.5% owner-occupancy rate further cements the area’s status as a stable residential hub rather than a transient rental corridor.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Jersey County, Illinois.
+    *   **Length:** 280-320 words.
+    *   **Structure:** 9 specific points to cover (Market classification, Trend interpretation, Affordability assessment, Regional context, Data anomaly/notable pattern, Practical implication, Recent momentum, Economic context, Score interpretation).
+    *   **Format:** 2-3 cohesive paragraphs. No bullet points or headers. No "I", "we", "you". No predictions/speculation. Every sentence must be data-driven.
+    *   **Tone:** Professional, analytical.
+    *   **Constraint Checklist & Confidence Score:**
+        1. 280-320 words? Yes.
+        2. 2-3 paragraphs? Yes.
+        3. No bullets/headers? Yes.
+        4. No first-person? Yes.
+        5. No predictions? Yes.
+        6. Data-driven only? Yes.
+        7. Cover all 9 points? Yes.
+        8. Begin directly without repeating data/headers? Yes.
+        Confidence Score: 5/5.
 
-Recent market dynamics reveal a period of accelerating momentum that has outpaced broader state trends. The FHFA House Price Index recorded a 7.35% year-over-year increase in 2025, outperforming the Illinois average of 5.54% by 1.81 percentage points. This sharp appreciation follows a volatile decade, including a 10.1% surge in 2022, though growth has moderated to 1.8% in the latest Census data. A notable divergence exists between asset classes, as rents are rising faster than home values, suggesting shifting demand pressures within the rental segment. Despite this, the rent burden remains low at 12.6% of income, well below the national 17.2% average, ensuring that both buyers and renters face manageable financial obligations.
+2.  **Drafting - Point by Point Integration:**
+    *   *Point 1: Market classification.* Balanced market. Justify: Price-to-income ratio is 2.14 vs national 3.20; rent burden is 12.6% vs national 17.2%. Both metrics indicate strong affordability, leaning buyer's but with renter stability.
+    *   *Point 2: Trend interpretation.* Prices rose from $135,400 (2017) to $171,900 (2024), peaking at +10.1% in 2022 before moderating to +1.8% in 2024. Rents are rising faster than home values.
+    *   *Point 3: Affordability assessment.* Price-to-income ratio of 2.14 significantly undercuts the national average of 3.20, indicating highly affordable homeownership. Rent burden of 12.6% is well below the national 17.2%, making renters relatively comfortable.
+    *   *Point 4: Regional context.* Home values sit 24.5% below the national average but 12.3% above the state average. Income is 18.2% above the national average.
+    *   *Point 5: Data anomaly.* Divergence between rent and price growth; rents are rising faster than home values, a notable pattern given the overall price moderation in 2024.
+    *   *Point 6: Practical implication.* Buyers benefit from a low price-to-income ratio, while renters face less pressure due to low rent burdens, though the rising rent trend warrants caution for future cost increases.
+    *   *Point 7: Recent momentum.* FHFA HPI change (implied by the national mortgage rate of 7.24% and momentum score) reflects a slowing but still positive trajectory, though the momentum axis scores 74.6/100.
+    *   *Point 8: Economic context.* Employment of 3,928 jobs with an average weekly wage of $887 supports demand. Zero new multi-family units authorized limits supply options, while net migration of +291 filers indicates modest population inflow.
+    *   *Point 9: Score interpretation.* The composite rating of 72.1/100 is driven primarily by affordability (88.6) and stability (82.2), which outweigh the lower vitality (31.7) due to limited housing supply and population growth.
 
-The market’s vitality is constrained by limited economic scale, a factor reflected in the low vitality component of the composite assessment. With only 3,928 total jobs and 358 establishments, the local labor base is small, though average weekly wages of $887 suggest higher-quality employment. Housing supply remains tight, with just 39 new single-family units authorized in 2025 and zero multi-family construction, which likely contributes to sustained price appreciation. Positive net migration of 291 filers indicates demographic growth, but the high national mortgage rate of 7.32% acts as a structural headwind for new entrants. Consequently, the market’s strength is driven primarily by exceptional affordability and strong recent price momentum, while economic vitality remains a secondary, weaker pillar due to the limited employment base.</p>
+3.  **Refining and Word Count Management:**
+    *   Let's write a draft and count words.
+
+    *Draft 1:*
+    Jersey County, Illinois, presents as a balanced housing market, driven by exceptionally strong affordability metrics that tip the scales toward buyer appeal despite moderate renter affordability. The price-to-income ratio of 2.14 drastically undercuts the national average of 3.20, while the rent burden of 12.6% remains well below the national benchmark of 17.2%, indicating robust purchasing power and low rental pressure. Over the 2017–2024 period, median home values climbed from $135,400 to $171,900, peaking at</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -577,7 +625,7 @@ The market’s vitality is constrained by limited economic scale, a factor refle
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -739,6 +787,47 @@ The market’s vitality is constrained by limited economic scale, a factor refle
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 211.01, "2017": 213.73, "2018": 217.03, "2019": 223.57, "2020": 226.23, "2021": 238.66, "2022": 254.03, "2023": 302.22, "2024": 301.69, "2025": 323.86};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 

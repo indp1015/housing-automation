@@ -89,8 +89,8 @@
 
 <p class="payment-teaser">
   💰 <strong>Estimated monthly payment:</strong>
-  from <strong>$843/mo</strong>
-  <span class="teaser-detail">(20% down, 30-yr fixed at 7.24%)</span>
+  from <strong>$838/mo</strong>
+  <span class="teaser-detail">(20% down, 30-yr fixed at 7.18%)</span>
   &nbsp;·&nbsp;
   <a href="https://mortgage.dataindp.com/calculator.html?state=IL&county=17103&price=154600">
     Open full mortgage calculator for Lee County →
@@ -100,15 +100,15 @@
 
 <div class="market-score-badge tier-balanced">
   <div class="score-main">
-    <span class="score-number">61.6</span>
+    <span class="score-number">65.8</span>
     <span class="score-denom">/ 100</span>
   </div>
   <div class="score-meta">
-    <span class="score-tier-label">Market Score: Balanced · ⚖️ Stable Phase</span>
+    <span class="score-tier-label">Market Score: Balanced · 📈 Growth Phase</span>
     <div class="score-breakdown">
       <span title="Affordability">💰 77.3</span>
       <span title="Stability">🏠 45.9</span>
-      <span title="Momentum">📈 76.8</span>
+      <span title="Momentum">📈 93.3</span>
       <span title="Vitality">⚡ 38.8</span>
     </div>
   </div>
@@ -252,8 +252,28 @@
 
 <!-- 🆕 FHFA HTML 섹션 삽입 위치 ① -->
 
-<div class="fhfa-missing">
-  <p>ℹ️ FHFA HPI data is not available for this county due to limited mortgage transaction volume.</p>
+<div class="chart-container fhfa-section">
+  <h2>📊 Recent Market Momentum (FHFA HPI)</h2>
+  <p class="chart-subtitle">
+    FHFA House Price Index — All-Transactions, Annual (2000 = 100)
+     · Latest: 2025
+  </p>
+
+  
+  <div class="insight-box">
+    <strong>💡 Year-over-Year Trend:</strong>
+    Home prices in Lee County
+    <strong class="up">
+      rose +8.8%
+    </strong>
+    year-over-year as of 2025.
+    <span class="insight-source">(Source: FHFA)</span>
+  </div>
+  
+
+  <div class="chart-wrapper">
+    <canvas id="fhfaCountyChart"></canvas>
+  </div>
 </div>
 
 
@@ -513,11 +533,26 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>Lee County, Illinois, operates as a balanced market with distinct affordability advantages, evidenced by a price-to-income ratio of 2.20, significantly below the national average of 3.20. The median home value of $154,600 sits 32.1% under the national benchmark, while the median gross rent of $894 results in a rent burden of just 15.3% of income, compared to the 17.2% national norm. These figures indicate that housing costs remain accessible relative to local purchasing power, supported by a median household income of $70,292, which exceeds the national average by 3.4%. The price-to-rent ratio of 14.4 further suggests that buying is financially competitive with renting, reinforcing the county’s status as a value-oriented housing environment.
+  <p>1.  **Analyze the Request:**
+    *   **Topic:** Housing market analysis for Lee County, Illinois.
+    *   **Data Provided:** Current market data (2024), annual trends (2017-2024), local economy (BLS QCEW 2025), housing supply (Census permits 2025), migration (IRS 2021-2022), national mortgage rate (FRED 2026-10-29), composite score metrics, derived metrics, relative position.
+    *   **Length constraints:** 280-320 words. Approximately 2-3 paragraphs. No bullet points or headers.
+    *   **Content requirements:**
+        1. Market classification (Buyer's/Renter's/Balanced) with justification.
+        2. Trend interpretation (multi-year price/rent trends).
+        3. Affordability assessment (price-to-income, rent burden vs national).
+        4. Regional context (county vs state/national).
+        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
+        6. Practical implication for buyer/renter.
+        7. Recent momentum (FHFA HPI change - *Wait, the prompt says "Interpret the FHFA HPI change (if available) and its significance" but no FHFA HPI change is explicitly provided in the text. I need to infer based on the provided data, or note the lack of specific FHFA data but infer from the overall momentum score of 76.8 and YoY trend of -0.3% / +5.4%. Actually, looking at the prompt: "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the data, I should focus on the provided momentum data: Price YoY -0.3%, Rent YoY +5.4%, Momentum score 76.8. Wait, rent grew faster than price. That's the anomaly! Let me re-read the anomaly section: "Identify any unusual patterns (e.g., divergence between price and rent growth)." Yes, price went down -0.3%, rent went up +5.4%. That is the divergence. I will frame the "recent momentum" around this divergence and the overall momentum score of 76.8.)
+        8. Economic context (employment, supply, migration, mortgage rates).
+        9. Score interpretation (which axes drive the overall score, grounded in data).
+    *   **Style requirements:** Professional, analytical tone. Specific numbers/percentages. Third person only. No predictions/speculation/future forecasts. Every sentence data-driven. No generic statements. Do NOT mention "Market Score" explicitly; weave drivers into narrative.
+    *   **Starting condition:** Begin directly with the analysis. Do not repeat data or use headers.
 
-Price trajectories reveal a period of rapid appreciation followed by stabilization. Home values surged 15.2% in 2022, peaking at $147,100, before moderating to a slight 0.3% decline in 2024. However, recent FHFA HPI data indicates a resurgence in momentum, with an 8.77% year-over-year increase, outperforming the Illinois state average of 5.54% by 3.23 percentage points. This divergence between the Census data showing flat values and the FHFA index showing strong growth suggests that recent transaction prices are accelerating even as broader valuation estimates stabilize. The local economy supports this resilience through a low unemployment context implied by 9,932 total jobs and an average weekly wage of $1,150. New housing supply remains constrained, with only 32 units authorized in 2025, limiting inventory growth. Meanwhile, net migration of +507 filers indicates sustained demographic interest, with incoming residents earning slightly less than those leaving, yet the overall inflow maintains population stability.
-
-The market’s composite assessment reflects high momentum and strong affordability, offset by lower vitality and stability scores. The high momentum is driven by the 8.77% HPI growth, while affordability is anchored by the 2.20 price-to-income ratio. Conversely, the lower vitality score correlates with the modest employment base of 620 establishments and limited new construction. For prospective buyers, the combination of below-national price points and rising transaction values suggests a favorable entry window, provided that the 7.32% mortgage rate does not erode purchasing power. Renters benefit from the low 15.3% rent burden, though the price-to-rent ratio of 14.4 implies that long-term homeownership offers greater equity potential. The county’s performance, slightly above the state average in home values but well below national costs, positions it as a stable, affordable option within the Illinois housing landscape.</p>
+2.  **Drafting - Section by Section Integration:**
+    *   *Market Classification:* Balanced market. Justification: Rent burden is 15.3% (national avg 17.2%), meaning renters are relatively less strained than the national average, yet price-to-income ratio of 2.20 (national avg 3.20) indicates high cost relative to local income. Overall composite score of 61.6 reflects a balanced state.
+    *   *Trend Interpretation:</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -701,7 +736,7 @@ The market’s composite assessment reflects high momentum and strong affordabil
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-07. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
@@ -863,6 +898,47 @@ The market’s composite assessment reflects high momentum and strong affordabil
 <!-- 👆 여기까지 👆 -->
 
 <!-- 🆕 FHFA 스크립트 삽입 위치 ② -->
+
+<script>
+(function() {
+  const series = {"2016": 269.23, "2017": 274.73, "2018": 281.18, "2019": 289.21, "2020": 296.28, "2021": 310.66, "2022": 356.25, "2023": 386.72, "2024": 407.48, "2025": 443.2};
+  const years = Object.keys(series).sort();
+  const values = years.map(y => series[y]);
+
+  const ctx = document.getElementById('fhfaCountyChart');
+  if (!ctx) return;
+
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: years,
+      datasets: [{
+        label: 'FHFA HPI (2000=100)',
+        data: values,
+        borderColor: '#27ae60',
+        backgroundColor: 'rgba(39, 174, 96, 0.15)',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'top' } },
+      scales: {
+        y: {
+          title: { display: true, text: 'HPI (2000 = 100)', color: '#27ae60' },
+          ticks: { color: '#27ae60' },
+          beginAtZero: false
+        },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 
 
