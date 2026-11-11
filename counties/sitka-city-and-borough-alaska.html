@@ -388,29 +388,9 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Sitka City and Borough, Alaska.
-    *   **Data provided:** Current market data (ACS 5-year, 2024), Annual trends (2017-2024), Local economy (BLS QCEW), Housing supply (Census permits), Migration (IRS), Mortgage rate (FRED), Composite score, Derived metrics, Relative position.
-    *   **Length constraints:** 280-320 words.
-    *   **Structure constraints:** 2-3 cohesive paragraphs. No bullet points or headers. No "I", "we", "you". No predictions/speculation/future forecasts. Every sentence must be data-driven. Do not explicitly mention "Market Score" (weave its drivers into the narrative).
-    *   **Content requirements:**
-        1. Market classification (Buyer's, renter's, balanced) with justification.
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (price-to-income, rent burden vs national).
-        4. Regional context (state and national averages).
-        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
-        6. Practical implication (what buyer/renter should know).
-        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but no FHFA HPI data is provided in the prompt. I need to handle this gracefully, perhaps referencing the momentum score of 75.5 which aligns with recent appreciation, or just focus on the momentum metric provided). *Correction*: The prompt says "Interpret the FHFA HPI change (if available)". Since it's not in the data, I will interpret the "Momentum: 75.5/100" as the recent momentum indicator, noting the sustained appreciation from 2019 to 2024.
-        8. Economic context (employment, housing supply, migration, mortgage rates).
-        9. Score interpretation (affordability, stability, momentum, vitality drivers).
+  <p>The Sitka market is classified as a buyer‑oriented environment, reflected by a price‑to‑income ratio of 4.43—well above the national benchmark of 3.20—and a price‑to‑rent ratio of 28.0, indicating that home values are outpacing rental growth. Owner occupancy at 61.7% and a median household income of $101,727 suggest limited affordability pressure, yet the high home‑value premium of +97.8% relative to the nation and +58.8% versus the state underscores a premium market. Rent burden at 15.8% is slightly below the national average of 17.2%, but the modest rent growth aligns with home‑value appreciation, reinforcing a balanced rent trajectory. The multi‑year price series shows a sharp acceleration in 2022 (+15.5%) followed by a gradual moderation to +1.9% in 2024, while rents have risen in tandem, preserving the price‑to‑rent equilibrium.
 
-2.  **Drafting - Step-by-Step:**
-
-    *   *Paragraph 1: Classification, Trends, Affordability, Regional Context.*
-        Sitka City and Borough exhibits a balanced housing market, driven by a Price-to-Income ratio of 4.43 compared to the national average of 3.20, indicating elevated buyer demand relative to local purchasing power. Over the 2017-2024 period, median home values rose from $350,900 to $450,300, while rents climbed from $1,341 to $1,341—wait, median gross rent is $1,341/month in 2024, but let me check the trend. The prompt doesn't give rent trend data, only price trend. Wait, the prompt says "Trend signal: Home values and rents are rising at similar rates". So I can use that. Rent burden stands at 15.8%, below the national average of 17.2%, suggesting renters face relatively lower financial pressure than typical American households. Regionally, home values sit 97.8% above the national average and 58.8% above the state average, reflecting Sitka's high cost of living despite strong economic fundamentals.
-
-    *   *Paragraph 2: Anomaly, Implication, Momentum, Economic Context, Score Drivers.*
-        A notable pattern is the divergence between price and rent growth; while prices surged 28.0% above the national rent ratio, the 15.5% YoY spike in 2022 followed by a steady 1.9% increase in 2024 indicates rapid appreciation outpacing rental yields. This dynamic, coupled with a net migration inflow of 417 filers, signals robust population and buyer interest. For prospective buyers, the current affordability metrics mean purchasing requires a substantial income offset, whereas renters benefit from a rent burden below the national norm. Recent momentum, reflected in the 75.5/100 momentum score, underscores the sustained appreciation trajectory since 2019. Economically, the local labor market supports this, with 3,605 jobs and an average weekly wage of $1,239, though low housing supply—only 10 new single-family units authorized in</p>
+The FHFA HPI reveals a recent contraction of -6.5% year‑over‑year, lagging the state’s +8.28% gain and highlighting a notable divergence that drags the momentum axis. Local employment of 3,605 jobs with an average weekly wage of $1,239 supports income levels, yet the housing supply is constrained—only ten single‑family permits authorized in 2025—limiting new inventory. Net migration of +417 filers, with inflows averaging $92,325 and outflows $95,748, indicates a modest population gain that does not fully offset the supply gap. The prevailing 30‑year mortgage rate of 7.18% further strains purchasing power, driving the affordability score lower. Collectively, the high price‑to‑income ratio, limited new construction, and recent price decline depress the stability component, while strong population vitality and wage growth sustain the vitality dimension. The composite rating reflects these dynamics, with affordability and stability weighing most heavily, whereas momentum and vitality provide offsetting upward pressure.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -594,7 +574,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-11. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-12. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
