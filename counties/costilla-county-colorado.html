@@ -368,31 +368,13 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Costilla County, Colorado.
-    *   **Data provided:** Current market data (2024), annual trends (2017-2024), local economy, housing supply, migration, national mortgage rate, composite score, derived metrics, relative position.
-    *   **Length constraints:** 280-320 words, approximately 2-3 cohesive paragraphs, no bullet points or headers.
-    *   **Style requirements:** Professional, analytical tone, third person only, no predictions/speculation/future forecasts, no generic statements (every sentence must be data-driven), no mention of "Market Score" explicitly (weave drivers into narrative).
-    *   **Content requirements:**
-        1. Market classification (buyer's, renter's, balanced) with justification.
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (price-to-income, rent burden vs. national).
-        4. Regional context (state and national averages).
-        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
-        6. Practical implication for buyer/renter.
-        7. Recent momentum (interpret FHFA HPI change - wait, there is no FHFA HPI change in the prompt, just FRED mortgage rate. I need to interpret the recent momentum based on available data, maybe the +7.8% YoY home value growth or the 7.24% mortgage rate). *Correction: The prompt says "Interpret the FHFA HPI change (if available)". Since it's not available, I will focus on the 2024 YoY home value growth of +7.8% and the 7.24% mortgage rate as the recent momentum indicators.*
-        8. Economic context (employment, housing supply, migration, mortgage rates).
-        9. Score interpretation (affordability, stability, momentum, vitality drivers).
+  <p>Costilla County’s housing environment functions as a buyer’s market. The median home value of $184,700 translates to a price‑to‑income ratio of 5.0, well above the national average of 3.2, yet the affordability score of 4.7/100 indicates that purchasing power remains limited relative to income. Rent burden sits at 30.2 % of household earnings, far exceeding the national 17.2 % benchmark, reinforcing buyer‑favorability because renters are paying a larger share of income for a median rent of $927. Owner‑occupancy is high at 79 %, further suggesting that demand for ownership outweighs rental demand.
 
-2.  **Drafting - Step-by-Step Incorporation of Data:**
-    *   *Market classification:* Balanced market. Justification: Owner occupancy is 79.0%, but affordability is severely strained (Price-to-Income ratio 5.01 vs 3.20 national; Rent burden 30.2% vs 17.2%). Rents are growing faster than prices (+9.4% in 2020, +18.0% in 2022/2023 vs +7.8% in 2024), pushing it toward a renter's market.
-    *   *Trend interpretation:* Prices rose from $113,000 in 2019 to $184,700 in 2024, a +64.3% increase over six years. Rents similarly escalated from an implied baseline to $927, with YoY growth peaking at +18.0% in 2022-2023 before moderating to +7.8% in 2024.
-    *   *Affordability:* Price-to-income ratio of 5.01 is nearly double the national average of 3.20, indicating severe unaffordability. Rent burden at 30.2% exceeds the national average of 17.2%.
-    *   *Regional context:* Home values sit 18.9% below the national average and 56.8% below the state average, while median income is 45.8% below the national average.
-    *   *Data anomaly:* The divergence between rent and price growth—rents surged past prices in percentage terms during the 2022-2023 boom, a notable anomaly given the region's historically low incomes.
-    *   *Practical implication:* Buyers face high carrying costs relative to local wages, while renters experience escalating housing costs that consume a disproportionate share of their already limited income.
-    *   *Recent momentum:* The 2024 year-over-year home value increase of +7.8% reflects continued price appreciation, though moderating from the +18.0% peak in 2022. The concurrent 30-year fixed mortgage rate of 7.24% further constrains buyer purchasing power.
-    *   *Economic context:* With only 574 jobs and an average weekly wage of</p>
+From 2017 to 2024, home values rose from $114,200 to $184,700, a cumulative increase of 61.8 % and a 7.8 % year‑over‑year gain in 2024 after peak 18 % growth in 2022 and 2023. In contrast, median gross rent has risen only modestly, remaining under $1,000 per month; the price‑to‑rent ratio of 16.6 is below the national 18.7, indicating that rent growth lags price appreciation. This divergence signals that valuation is being driven more by buyer activity and limited supply than by rental market strength.
+
+Relative to Colorado, the county’s home values are 56.8 % lower than the state median, while household income trails the national average by 45.8 %. Employment is minimal, with only 574 jobs and an average weekly wage of $879, and the local labor base is concentrated in 97 establishments. Nevertheless, 114 single‑family units were authorized in 2025, suggesting a modest supply response to the 94‑person net migration gain (inflows and outflows have similar income profiles). The 30‑year mortgage rate of 7.18 % adds financing cost pressure, especially for buyers facing the high price‑to‑income ratio.
+
+The composite rating reflects strong vitality (72.6) driven by migration inflows and new construction permits, but weak affordability (4.7) and moderate stability (54.0) depress the overall assessment. Stability is supported by a steady owner‑occupancy rate, while momentum (46.4) mirrors the recent deceleration of price growth from double‑digit to 7.8 % YoY. Potential buyers should recognize that low price levels relative to state norms and a high owner‑occupancy rate create entry opportunities, yet financing costs and income constraints limit purchasing capacity. Renters face a high burden and limited upside, making ownership more attractive if financing can be secured.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -576,7 +558,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-12. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

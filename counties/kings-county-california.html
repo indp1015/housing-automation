@@ -451,34 +451,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Kings County, California.
-    *   **Data provided:** Current market data (median home value $324,300, median rent $1331, income $70,995, pop 153,298, owner occ 54.2%), annual trend detail (2017-2024), local economy (BLS), housing supply (Census), migration (IRS), national mortgage rate (FRED), composite score, derived metrics, relative position.
-    *   **Tasks to cover:**
-        1. Market classification (buyer's/renter's/balanced) with justification.
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (price-to-income and rent burden vs national).
-        4. Regional context (state/national comparison).
-        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
-        6. Practical implication for buyer/renter.
-        7. Recent momentum (FHFA HPI change - wait, FHFA HPI isn't explicitly in the prompt data, but I need to interpret "recent momentum" based on available data like the +6.1% YoY or composite score momentum of 53.8). *Correction*: The prompt says "Interpret the FHFA HPI change (if available)". It's not explicitly provided in the data, so I will rely on the provided YoY growth or the Momentum score of 53.8.
-        8. Economic context (employment, housing supply, migration, mortgage rates).
-        9. Score interpretation (which axes drive the overall score, grounded in data).
-    *   **Style Requirements:**
-        *   Professional, analytical tone.
-        *   Specific numbers and percentages.
-        *   Third person only (no "I", "we", "you").
-        *   No predictions, speculation, or future price forecasts.
-        *   No generic statements; every sentence must be data-driven.
-        *   Length: 280-320 words (~2-3 paragraphs).
-        *   Format: 2-3 cohesive paragraphs. No bullet points or headers.
-        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
-    *   **Length constraint:** 280-320 words.
+  <p>The county’s housing environment is clearly a buyer‑favored market. The median home value of $324,300 translates to a price‑to‑income ratio of 4.57, well above the national average of 3.20, while the rent‑burden metric shows renters spending 22.5 % of income on housing, exceeding the national 17.2 % benchmark. Both ratios indicate that ownership is relatively more attainable than renting, especially given the modest 54.2 % owner‑occupancy rate, which suggests room for further owner‑share growth.
 
-2.  **Drafting - Step-by-Step:**
+Multi‑year price data reveal a sustained upward trajectory, with an eight‑year compound annual growth rate of roughly 7 % and a 6.1 % increase from 2023 to 2024. Rent growth, however, has lagged; the median gross rent of $1,331 per month represents a rent‑to‑value ratio of 20.3, above the national 18.7, implying that rental income is not keeping pace with home‑price appreciation. This divergence is reinforced by the FHFA HPI, which posted a 4.83 % year‑over‑year rise for the county in 2025, outpacing the state’s –0.29 % change and underscoring the county’s relative price momentum.
 
-    *   *Task 1 & 2 & 5 (Classification, Trends, Anomaly):*
-        Kings County exhibits a buyer's market trajectory, evidenced by the 6.1% year-over-year price increase in 2024 following a 15.7% spike in 2022, yet the overall median home value of $324,300 remains heavily skewed by high demand. The rent burden of 22.5% of median household income ($70,995) exceeds the national average of 17.2%, indicating that renting is still financially manageable, though less so than previously. A notable anomaly is the divergence between price and rent growth: while home values escalated by 6.1% in 2024, rents likely grew at a slower pace, reflected in</p>
+Affordability pressures are amplified by a 7.18 % 30‑year mortgage rate, which inflates monthly debt service despite the buyer‑biased price dynamics. Local economic fundamentals provide a counterbalance: 36,520 jobs and an average weekly wage of $1,016 generate a stable income base, while 507 new housing units authorized in 2025 (389 single‑family, 118 multi‑family) signal modest supply expansion. Net migration of +1,684 filers, with inflows slightly lower in income than outflows, indicates modest demographic attraction without a surge in high‑earning newcomers. The composite assessment reflects strong momentum (≈60 /100) but weak affordability (≈10 /100) and moderate stability (≈33 /100), driving the overall stressed rating. Prospective buyers should weigh the attractive price growth against high financing costs, whereas renters must recognize that rent burdens are rising faster than incomes, limiting rental‑market flexibility.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -661,7 +638,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-12. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

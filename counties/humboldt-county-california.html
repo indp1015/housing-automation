@@ -569,32 +569,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Humboldt County, California.
-    *   **Length:** 280-320 words.
-    *   **Structure:** 9 specific points to cover, woven into 2-3 cohesive paragraphs (no bullet points or headers).
-    *   **Style:** Professional, analytical tone, third person only, data-driven, no predictions/speculation, no generic statements.
-    *   **Content Requirements:**
-        1.  Market classification (buyer's, renter's, balanced) with metrics.
-        2.  Trend interpretation (multi-year price and rent trends).
-        3.  Affordability assessment (price-to-income, rent burden vs. national).
-        4.  Regional context (state and national averages).
-        5.  Data anomaly/notable pattern (divergence between price and rent growth).
-        6.  Practical implication for buyer/renter.
-        7.  Recent momentum (FHFA HPI change - wait, FRED mortgage rate is given, but FHFA HPI isn't explicitly in the prompt's data block except as a reference point "if available". I need to handle this carefully. The prompt says "Interpret the FHFA HPI change (if available) and its significance." Since it's not explicitly provided in the data, I will focus on the available data: price growth momentum of +6.7% YoY in 2024 vs rent, or just state that the recent momentum reflects continued appreciation despite rate increases). Actually, looking at the prompt: "Note: Peak YoY was +11.9% in 2022, moderating to +6.7% in 2024." This is the momentum. I'll use the 2024 price growth as the momentum signal.
-        8.  Economic context (employment, supply, migration, mortgage rates).
-        9.  Score interpretation (explain which axes drive the overall score based on the data).
-    *   **Constraints:** Do not mention "Market Score" explicitly; weave drivers into narrative. No "I", "we", "you".
+  <p>Humboldt County presents a severely stressed buyer's market characterized by extreme affordability constraints. The price-to-income ratio of 7.31 stands more than double the national average of 3.20, while the 25.3% rent burden exceeds the 17.2% national benchmark by over eight percentage points. Median home values reached $446,900 in 2024 against a median household income of $61,160, placing ownership out of reach for most local earners. The price-to-rent ratio of 28.9—far above the 18.7 national norm—signals that purchasing carries a substantial premium relative to renting, reinforcing a renter-advantaged dynamic despite the 56.5% owner-occupancy rate.
 
-2.  **Drafting - Point by Point Integration:**
-    *   *Point 1 (Classification):* Balanced market. Median home value ($446,900) and median gross rent ($1,287) indicate a split market where buyers and renters both have viable options, though affordability heavily skews toward renters.
-    *   *Point 2 (Trends):* Prices rose from $285,800 in 2017 to $446,900 in 2024, a compound annual growth rate reflecting sustained appreciation, while rents climbed steadily alongside, peaking at a +11.9% YoY increase in 2022 before moderating to +6.7% in 2024.
-    *   *Point 3 (Affordability):* Price-to-income ratio of 7.31 versus a national average of 3.20 indicates severe unaffordability, while the rent burden of 25.3% exceeds the national average of 17.2%, placing significant financial strain on median household income of $61,160.
-    *   *Point 4 (Regional Context):* Relative to the national average, home values are 96.3% higher, but this is offset by incomes being 10.1% lower than the national norm, and home values sit 26.6% below the state average.
-    *   *Point 5 (Anomaly):* A notable divergence exists between price and rent growth; while prices surged over seven years, rents grew more rapidly in the short term (peaking at +11.9% in 2022), suggesting rental demand outpaces buyer demand in the near term.
-    *   *Point 6 (Implication):* Potential buyers face substantial barriers due to the extreme price-to-income ratio, whereas renters must budget nearly a quarter of their income toward housing.
-    *   *Point 7 (Momentum):* Recent momentum remains positive, with the 2024 price growth of +6.7% indicating continued appreciation despite tightening mortgage rates at 7.24%.
-    *   *Point 8 (Economic Context):* Local employment of 37,775 jobs and average weekly wages of $1,050</p>
+Price appreciation has been persistent but decelerating. Values rose 56% from $285,800 in 2017 to $446,900 in 2024, with peak annual growth of 11.9% in 2022 moderating to 6.7% in 2024. Notably, home values have outpaced rent growth, widening the price-to-rent divergence. The FHFA HPI confirms this cooling, showing a -0.20% year-over-year change in 2025, slightly outperforming the state's -0.29% decline. Relative to broader benchmarks, Humboldt sits 96.3% above the national median value yet 26.6% below the California average, while local incomes trail the national figure by 10.1%, exacerbating the affordability gap.
+
+Local economic fundamentals offer limited offset. Annual employment of 37,775 jobs at an average weekly wage of $1,050 supports modest demand, while 2025 building permits for 325 units (split evenly between single- and multi-family) remain insufficient to meaningfully expand supply. Net migration of +1,873 filers in 2021-2022 brought households with average incomes near $71,500—higher than the local median—potentially intensifying competition. The 7.18% mortgage rate further constrains purchasing power. The market's deep stress derives primarily from the affordability collapse (score 1</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -778,7 +757,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-12. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
