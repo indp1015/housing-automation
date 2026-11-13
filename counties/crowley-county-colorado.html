@@ -326,34 +326,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Crowley County, Colorado.
-    *   **Data provided:** Median Home Value ($116,200), Median Gross Rent ($984), Median Household Income ($48,826), Population (5,647), Owner Occupancy (69.5%), Annual Trends (2017-2024), Employment (614 jobs, $1,033/wk, 58 establishments), Migration (+83 net, 1,123 inflow vs 1,040 outflow), Mortgage Rate (7.24%), Composite Score (39.6, Stressed), Derived Metrics (P/I 2.38, Rent Burden 24.2%, P/R 9.8), Relative Position (Home value -49% nat, -72.8% state; Income -28.2% nat).
-    *   **Tasks to cover:**
-        1. Market classification (Buyer's, renter's, balanced) with justification.
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (P/I and rent burden vs national).
-        4. Regional context (state and national averages).
-        5. Data anomaly/notable pattern (divergence between price and rent growth).
-        6. Practical implication for buyer/renter.
-        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available)" but no FHFA HPI data is explicitly given in the text, only the composite score and mortgage rate. I need to address this carefully or infer based on available data like the +8.9% YoY home value trend and momentum score of 69.1). *Correction*: The prompt asks to interpret the FHFA HPI change "if available". Since it's not in the data, I will focus on the "Momentum" axis of the composite score (69.1) and the +8.9% YoY home value increase, which represents recent upward momentum.
-        8. Economic context (employment, supply, migration, mortgage rates).
-        9. Score interpretation (which axes drive the overall score: affordability, stability, momentum, vitality).
-    *   **Style Requirements:**
-        *   Professional, analytical tone.
-        *   Specific numbers and percentages.
-        *   Third person only (no "I", "we", "you").
-        *   No predictions, speculation, or future price forecasts.
-        *   No generic statements; every sentence must be data-driven.
-        *   Length: 280-320 words (~2-3 paragraphs).
-        *   Write in 2-3 cohesive paragraphs. No bullet points or headers.
-        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
-    *   **Starting condition:** Begin directly with the analysis. Do not repeat the data or use headers.
+  <p>The housing market in Crowley County functions as a buyer‑oriented market. The median home value of $116,200 is only 49 % of the national average and 73 % below the Colorado average, while the price‑to‑income ratio of 2.38 is well under the national benchmark of 3.20, indicating that purchases are relatively inexpensive for local earners. Conversely, the rent burden of 24.2 % of household income exceeds the national average of 17.2 %, and the price‑to‑rent ratio of 9.8 is far below the national 18.7, suggesting that renting is less attractive relative to buying.
 
-2.  **Drafting - Step-by-Step:**
+Multi‑year data show a volatile but upward trajectory in home values. After a dip to $71,200 in 2021, values surged 30.2 % in 2022 and have continued rising, reaching $116,200 in 2024 (+8.9 % YoY). Median gross rent, however, remains modest at $984 per month, and its growth has not kept pace with home‑price appreciation, creating a widening gap between price and rent trends. This divergence is reinforced by the FHFA HPI, which records a county‑wide decline of 4.85 % YoY in 2024, underperforming the state’s -0.61 % and indicating that recent mortgage‑based transactions are pulling prices down even as the ACS‑derived median value climbs.
 
-    *   *Paragraph 1: Classification, Trends, and Affordability*
-        *   Classification: Balanced market (or renter's? Rent burden is 24.2% national avg 17.2%, meaning it's higher than average, but P/I is 2.38 national avg 3.20, meaning it's more affordable than average. Wait, if rent burden > national avg, it leans renter's, but P/I < national avg leans buyer's. Let's look at the composite score: 39.6/100 Stressed. Affordability 43.5, Stability 18.3, Momentum 69.1, Vitality 23.6. A balanced market usually has a score around 50-60. 39.6 is stressed. Let's classify as a buyer's market due to low P/I (2.38 vs 3.20) and high owner occupancy (69.5%), though affordability is strained by high rent burden (24.2% vs 17.2%). Actually, a "balanced" or "buyer's" market is often defined by P/I < 3.0. Here it's 2.38, strongly indicating a buyer's market. Let's call</p>
+Economic fundamentals are modest: total employment totals 614 jobs across 58 establishments, with an average weekly wage of $1,033, and net migration is slightly positive (+83 filers). The modest inflow of higher‑income households (average $42,002) is offset by a comparable outflow, limiting demand pressure. Mortgage rates at 7.18 % further dampen buyer enthusiasm, contributing to the low stability rating. The composite assessment reflects strong affordability (driving a higher sub‑score) but weak stability and vitality, as evidenced by the negative HPI change, limited job base, and thin housing supply. Prospective buyers should view the market as inexpensive yet vulnerable to price corrections, while renters face a higher income share devoted to housing and may benefit from the low price‑to‑rent ratio by purchasing instead of leasing.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -537,7 +514,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-14. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

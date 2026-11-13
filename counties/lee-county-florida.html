@@ -575,27 +575,9 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Lee County, Florida.
-    *   **Length:** 280-320 words. Approximately 2-3 paragraphs. No bullet points or headers.
-    *   **Style:** Professional, analytical tone. Third person only. No "I", "we", "you". No predictions, speculation, or future price forecasts. Every sentence must be data-driven. No generic statements.
-    *   **Content Requirements:**
-        1. Market classification (buyer's, renter's, balanced) with justification.
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (price-to-income, rent burden vs. national).
-        4. Regional context (state/national comparisons).
-        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
-        6. Practical implication for buyer/renter.
-        7. Recent momentum (FHFA HPI change significance - note: prompt says "Interpret the FHFA HPI change (if available)" but no specific FHFA HPI number is provided in the data, so I must interpret the general trend or note the lack of specific FHFA data while focusing on the provided trends. Wait, looking at the data: "Trend signal: Home values are rising faster than rents" is given. I should focus on the provided data and maybe mention the divergence). Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI change is explicitly given, I will focus on the provided YoY changes (11.0% in 2024) and the divergence with rents.
-        8. Economic context (employment, supply, migration, mortgage rates).
-        9. Score interpretation (explain which axes drive the overall score: affordability, stability, momentum, vitality) grounded in data. Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
-    *   **Starting condition:** Begin directly with the analysis. Do not repeat data or use headers.
+  <p>Lee County exhibits a severely affordability-constrained market transitioning from rapid appreciation to recent price correction. The price-to-income ratio of 4.76 far exceeds the 3.20 national benchmark, while rent burden consumes 27.0% of median income versus 17.2% nationally, classifying the market as deeply unaffordable for both buyers and renters. Despite a price-to-rent ratio of 17.6—slightly below the 18.7 national average suggesting relative ownership favorability—the absolute cost structure remains prohibitive. Home values at $362,200 sit 59.1% above the national median and 27.4% above the state average, while median income exceeds the national figure by only 11.9%, creating a structural mismatch amplified by 7.18% mortgage rates.
 
-2.  **Deconstruct & Draft Content by Section:**
-    *   *Section 1: Classification.* Balanced market. Justification: Price-to-income ratio of 4.76 vs national 3.20 indicates high cost, but rent burden of 27.0% vs national 17.2% indicates renters have a manageable burden relative to income, though prices are high. Rent-to-price ratio of 17.6 vs national 18.7 means prices are slightly cheaper than rents nationally, but locally prices are high. Actually, let's look at the metrics. Price-to-income is very high (4.76), suggesting a renter's or buyer's constrained market, but rent burden is moderate. Let's classify as "Renter's constrained / Buyer's constrained" or just "Balanced but skewed toward buyer's constraints due to high price-to-income ratio." Wait, the prompt asks: "Buyer's, renter's, or balanced market?" Given the high price-to-income (4.76) and high home value vs state (+27.4%), it leans buyer's constrained, but the rent burden is 27% which is below 30% threshold often used for affordability. Let's classify as "Balanced, leaning buyer's constrained." Justification: Price-to-income ratio of 4.76 significantly exceeds the national average of 3.20, indicating severe buyer constraints, while the rent burden of 27.0% remains below the typical affordability threshold, keeping renter demand viable.
-    *   *Section 2: Trends.* Price grew from $190,200 (2017) to $362,200 (2024), a 90.4% increase, peaking at +17.2% YoY in 2022. Rents likely grew similarly, but the prompt notes "Home values are rising faster than rents." This divergence is the notable pattern.
-    *   *Section 3: Affordability.* Price-to-income of 4.76 vs 3.20 national means buyers face extreme affordability challenges. Rent burden of 27.0% vs 17.2% national means renters have relatively better purchasing power per dollar of income compared to the national baseline, though absolute costs remain high.
-    *  </p>
+Multi-year trends reveal an extraordinary appreciation cycle: values surged 90.4% from $190,200 (2017) to $362,200 (2024), peaking at 17.2% year-over-year in 2022 before moderating to 11.0% in 2024. However, the FHFA House Price Index signals a sharp inflection, declining 6.68% year-over-year in 2025 against a 0.91% state gain, marking a 7.59 percentage-point underperformance. This divergence between Census-based annual estimates (still positive) and transaction-based quarterly indices (negative) suggests recent sales are repricing below prior peaks. Notably, in-migrants carry average incomes</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -779,7 +761,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-14. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

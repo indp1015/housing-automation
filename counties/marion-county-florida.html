@@ -577,37 +577,11 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Marion County, Florida.
-    *   **Data Provided:** Current market data (2024 ACS), annual trend detail (2017-2024), local economy (BLS), housing supply (Census), migration (IRS), national mortgage rate (FRED), composite score (editorial), derived metrics, relative position.
-    *   **Content Requirements:**
-        1. Market classification (buyer's, renter's, or balanced) with justification.
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (price-to-income, rent burden vs national).
-        4. Regional context (state and national averages).
-        5. Data anomaly/notable pattern (e.g., divergence between price and rent growth).
-        6. Practical implication for buyer/renter.
-        7. Recent momentum (FHFA HPI change - *Wait, FHFA HPI isn't explicitly in the prompt, but it mentions "Interpret the FHFA HPI change (if available)" - I need to check if I should infer it or if there's a missing piece. The prompt says "if available". Since I don't have the actual FHFA HPI data point, I must avoid making up a number, or I can just state that recent momentum reflects a moderating rate from the 2022 peak to 2024, which is already covered in the trend section. Let me re-read: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI value is provided in the text, I will focus on the trend signal provided: "Home values are rising faster than rents" and the YoY moderation from +21.6% (2022) to +10.1% (2024).* Wait, maybe I can just say "Recent momentum reflects a moderation in year-over-year growth..." without inventing a specific FHFA number, or acknowledge that the provided trend data captures this momentum.)
-        8. Economic context (employment, housing supply, migration, mortgage rates).
-        9. Score interpretation (explain drivers of the composite score without using the term "Market Score").
-    *   **Style Requirements:**
-        *   Professional, analytical tone.
-        *   Specific numbers and percentages.
-        *   Third person only.
-        *   No predictions, speculation, or future price forecasts.
-        *   No generic statements; every sentence must be data-driven.
-        *   Length: 280-320 words.
-        *   Structure: 2-3 cohesive paragraphs. No bullet points or headers.
-        *   Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
-    *   **Start:** Begin directly with the analysis. Do not repeat data or use headers.
+  <p>Marion County presents a stressed seller's market characterized by severe affordability constraints and moderating but persistent price momentum. The price-to-income ratio of 3.98 exceeds the national 3.20 benchmark by 24.4%, while rent burden at 25.1% of income surpasses the 17.2% national average by nearly eight percentage points, classifying both ownership and rental markets as significantly strained. Home values have doubled from $119,200 in 2017 to $243,100 in 2024, driven by a 21.6% surge in 2022 that has decelerated to 10.1% annually. The price-to-rent ratio of 15.9 sits below the 18.7 national average, indicating home prices have risen faster than rents—a divergence signaling speculative or investment-driven demand rather than fundamental rental yield expansion.
 
-2.  **Drafting - Step-by-Step:**
+Regionally, the county trades at a 14.5% discount to the Florida median yet carries a 6.8% premium to the national median, while local incomes lag the U.S. by 10.3%. The FHFA HPI shows 2025 appreciation at 0.76% year-over-year, trailing the state's 0.91% by 15 basis points, suggesting momentum is fading relative to peers. Net migration of +15,352 filers (2021–2022) with inbound incomes averaging $67,683—exceeding the local median—fuels demand, yet 5,985 new permits (90% single-family) in 2025 only partially offset cumulative deficits. Employment of 105,692 at a $1,041 average weekly wage provides limited support at current mortgage rates of 7.18%.
 
-    *   *Paragraph 1: Classification, Trends, and Anomaly.*
-        Marion County, Florida, presents a balanced market characterized by robust price appreciation alongside moderate rental demand, driven by a notable divergence between home value and rent growth. Over the 2017-2024 period, median home values surged from $119,200 to $243,100, while median gross rents climbed from $1,192 to $1,277, reflecting an 8.4% increase versus a 10.1% increase, respectively. The most pronounced anomaly is the extreme year-over-year spike to +21.6% in 2022, which moderated to +10.1% in 2024, indicating a significant deceleration in price momentum even as rents continued their upward trajectory. This divergence suggests that new construction and speculative demand are increasingly outpacing organic rental demand, pushing the market toward a buyer's equilibrium where transaction volume outpaces rental absorption.
-
-    *   *Paragraph 2: Affordability, Regional Context, and Economic Context.*
-        Affordability remains a critical constraint, as the price-to-income ratio of 3.98 far exceeds the national average of 3.20, while the rent burden stands at 25.1% compared to the 17.2% national benchmark. Relative to Florida's state average, the $243,100 median home value sits 14.5%</p>
+The market's distress stems primarily from an affordability crisis (score 11.1) where prices have detached from local earning capacity, compounded by weak momentum (31.1) as higher rates bite. Stability (59.5) benefits from high owner occupancy (77</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -791,7 +765,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-14. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

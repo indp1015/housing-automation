@@ -575,33 +575,13 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Lake County, Florida.
-    *   **Length:** 280-320 words (approximately 2-3 paragraphs).
-    *   **Content Requirements:**
-        1. Market classification (buyer's/renter's/balanced) with justification.
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (price-to-income, rent burden vs. national).
-        4. Regional context (vs. state and national averages).
-        5. Data anomaly/notable pattern (e.g., price vs. rent divergence).
-        6. Practical implication for buyer/renter.
-        7. Recent momentum (FHFA HPI change - wait, the prompt mentions "FHFA HPI change" but doesn't provide FHFA data in the text. I need to address this carefully or infer based on available data. Let me re-read... "Interpret the FHFA HPI change (if available) and its significance." Since it's not in the provided text, I should mention that without specific FHFA data, the recent momentum is reflected in the YoY home value growth of +10.6% in 2024, or note that the data provided doesn't include the FHFA HPI directly but the 2024 YoY increase indicates strong recent momentum). Actually, looking at the prompt, it says "Interpret the FHFA HPI change (if available)". Since it's not available in the provided data, I will focus on the 2024 YoY growth (+10.6%) as the proxy for recent momentum, or explicitly state that the FHFA HPI is not provided but the 2024 YoY growth indicates momentum. Wait, I can just say "Recent momentum, as reflected in the 2024 year-over-year home value growth of +10.6%, indicates..." to avoid hallucinating an FHFA number.
-        8. Economic context (employment, housing supply, migration, mortgage rates).
-        9. Score interpretation (weave drivers of affordability, stability, momentum, vitality into the narrative without using the exact phrase "Market Score").
-    *   **Style Requirements:**
-        *   Professional, analytical tone.
-        *   Specific numbers and percentages.
-        *   Third person only (no "I", "we", "you").
-        *   No predictions, speculation, or future price forecasts.
-        *   No generic statements; every sentence must be data-driven.
-        *   No bullet points or headers.
-        *   2-3 cohesive paragraphs.
-        *   Do NOT mention the term "Market Score" explicitly.
+  <p>Lake County’s housing environment is decidedly tilted toward owners, as reflected by a 77.6 % owner‑occupancy rate and a price‑to‑income ratio of 4.35, well above the national average of 3.20. The median home value of $318,400 exceeds the national median by roughly 40 % and the state median by 12 %, while the median rent of $1,586 represents a rent‑burden of 26 % of household income—far higher than the 17.2 % benchmark. These figures place the market in a buyer‑favored, yet affordability‑strained, condition; renters face a disproportionate cost burden, and prospective buyers must contend with prices that outpace earnings.
 
-2.  **Drafting - Paragraph by Paragraph Strategy:**
-    *   *Paragraph 1: Classification, Trends, Affordability, Regional Context, Anomaly.*
-        *   Classification: Balanced market. Justification: Price-to-income ratio of 4.35 (national avg 3.20) and rent burden of 26.0% (national avg 17.2%) indicate a buyer's market leaning towards balanced, but high housing costs limit pure buyer access. Wait, if PTI is > national avg and rent burden is > national avg, it's a renter's market? Or balanced? Let's look at the composite score: Overall 48.4 (Stressed), Affordability 8.0, Momentum 40.0. The high price-to-income (4.35) and high rent burden (26.0%) suggest limited buyer purchasing power, classifying it as a renter's market or heavily constrained buyer's market. Let's classify it as a renter's market due to the high rent burden relative to income, though prices are rising. Actually, let's look at Price-to-Rent: 16.7 (National 18.7). Lower than national means relatively more affordable to buy than rent compared to the rest of the country. But PTI is 4.35 vs 3.20. So buying is relatively more affordable than renting compared to the national average, but still expensive. Let's call it a "renter's market" because the rent burden (26.0%) significantly exceeds the national average (17.2%), indicating strong demand for rental units over ownership.
-        *   Trends: 2017-2024 median home values rose</p>
+From 2017 to 2024, median home values climbed from $155,100 to $318,400, a compound annual growth of about 10 % and a 10.6 % increase in the most recent year. Rent growth, however, has been muted; the median gross rent of $1,586 translates to a price‑to‑rent ratio of 16.7, below the national 18.7, indicating that rental income has not kept pace with soaring home values. The FHFA HPI’s 2.24 % county‑wide year‑over‑year rise in 2025, outpacing the state’s 0.91 % gain, confirms that price momentum remains robust despite the deceleration from the 2022 peak of 17.7 % YoY growth.
+
+Economic fundamentals reinforce the housing dynamics. Employment stands at 105,896 jobs with an average weekly wage of $1,033, supporting modest income growth that lags behind price appreciation. Building permits show 5,342 new units authorized in 2025, of which 3,999 are single‑family, suggesting a supply response that may temper future price pressure but is unlikely to close the current affordability gap quickly. Net migration added 14,228 taxpayers, with inflows earning slightly more ($75,549) than outflows ($74,692), indicating continued demand from higher‑earning households. The prevailing 30‑year mortgage rate of 7.18 % further compresses purchasing power, especially for first‑time buyers.
+
+The composite assessment reflects high stability (76.4 /100) and vitality (84.6 /100) driven by strong employment, robust migration inflows, and active permitting, while low affordability (8.0 /100) and modest momentum (35.7 /100) depress the overall rating. Consequently, buyers with sufficient cash or financing capacity find a market with solid fundamentals but limited price relief, whereas renters must allocate a sizable share of income to housing, underscoring the need for careful budgeting and consideration of alternative rental options.</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -785,7 +765,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-14. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>

@@ -409,26 +409,9 @@
 
 <div class="market-notes">
   <h2>📝 Local Market Analysis</h2>
-  <p>1.  **Analyze the Request:**
-    *   **Topic:** Housing market analysis for Levy County, Florida.
-    *   **Data provided:** Current market data (2024 ACS), annual trend detail (2017-2024), local economy (BLS QCEW 2025), housing supply (Census Building Permits 2025), migration (IRS County-to-County 2021-2022), national mortgage rate (FRED 2026-10-29), composite score (editorial, 0-100), derived metrics, relative position, analysis tasks.
-    *   **Length constraints:** 280-320 words. Approximately 2-3 paragraphs.
-    *   **Style requirements:** Professional, analytical tone. Use specific numbers and percentages. Third person only. No predictions/speculation/future forecasts. No generic statements (every sentence must be data-driven). No bullet points or headers. Do NOT mention the term "Market Score" explicitly; weave its drivers into the narrative.
-    *   **Content requirements:**
-        1. Market classification (buyer's, renter's, or balanced).
-        2. Trend interpretation (multi-year price and rent trends).
-        3. Affordability assessment (price-to-income, rent burden vs national).
-        4. Regional context (county vs state/national averages).
-        5. Data anomaly or notable pattern (e.g., divergence between price and rent growth).
-        6. Practical implication (what a buyer/renter should know).
-        7. Recent momentum (FHFA HPI change - wait, the prompt says "Interpret the FHFA HPI change (if available) and its significance" but no FHFA HPI data is provided in the prompt. I need to handle this gracefully. I will note that the FHFA HPI is not explicitly provided in the dataset but can be inferred from the YoY home value growth of +11.2%, which aligns with recent FHFA HPI trends showing sustained increases). *Correction*: The prompt says "if available". Since it's not in the provided text, I will focus on the YoY home value growth (+11.2% in 2024) as the proxy for recent momentum, or simply omit it if it forces me to say "data not provided". Let's look closely: "Interpret the FHFA HPI change (if available) and its significance." Since no FHFA HPI number is given, I will interpret the 2024 YoY home value growth (+11.2%) as the recent momentum indicator, noting that this aligns with broader FHFA HPI upticks. Wait, better to just state the 2024 YoY growth as the momentum driver since FHFA isn't explicitly listed, or acknowledge the lack of direct FHFA data while using the 2024 YoY figure to represent momentum. Let's just use the 2024 YoY growth of +11.2% as the recent momentum metric.
-        8. Economic context (employment, supply, migration, mortgage rates).
-        9. Score interpretation (which axes drive the overall score - affordability, stability, momentum, vitality).
+  <p>Levy County presents a buyer’s market characterized by moderating price momentum and persistent affordability strain. The median home value of $190,600 reflects a 115 percent cumulative increase since 2017, though annual appreciation has decelerated from a peak of 16.6 percent in 2022 to 11.2 percent in 2024. Despite this growth, values remain 16.3 percent below the national median and 33.0 percent below the state average, while median household income of $56,750 trails the national benchmark by 16.5 percent. The resulting price-to-income ratio of 3.36 exceeds the 3.20 national average, and rent burden consumes 18.0 percent of income versus 17.2 percent nationally, signaling that local purchasing power has not kept pace with asset inflation. Owner occupancy of 81.4 percent and a price-to-rent ratio of 18.7—matching the national figure—indicate a tenure structure favoring ownership, yet the affordability metrics suggest marginal buyers face significant constraints.
 
-2.  **Drafting - Step-by-Step:**
-
-    *   *Paragraph 1: Classification, Trends, Anomaly, Affordability, Regional Context.*
-        Levy County presents a balanced housing market, characterized by an owner occupancy rate of 81.4% and a median home value of $190,600. The multi-year price trajectory reveals a consistent upward shift, escalating from $88,700 in 2017 to $190,600 in 2024, with year-over-year gains peaking at +16.6% in 2022 before moderating to +11.2% in 2024. A notable anomaly exists in the divergence between price and rent growth; while median gross rent remained relatively stagnant compared to the accelerating home values, the price-to-rent ratio matches the national average exactly at 18.7. Affordability metrics reflect this tension, with the price-to-income ratio sitting at 3.36 against a national average of 3.20, and a rent burden of 18.0% matching the national benchmark of 17.2%. Regionally, Levy County lags significantly behind both the national average—home</p>
+A notable divergence emerged in 20</p>
   <p class="notes-source">
     Compiled from U.S. Census ACS 2024 5-Year Estimates,
     FHFA House Price Index, BLS QCEW, and IRS migration data.
@@ -612,7 +595,7 @@
   <strong>Data Source:</strong> U.S. Census Bureau, American Community Survey (ACS)
   2024 5-Year Estimates (2017–2024).
   Variables: B25077 (Median Home Value), B25064 (Median Gross Rent),
-  B25003 (Tenure). Data collected on 2026-11-13. The price-to-rent
+  B25003 (Tenure). Data collected on 2026-11-14. The price-to-rent
   ratio is calculated as Median Home Value ÷ (Median Monthly Rent × 12).
 </p>
 </article>
